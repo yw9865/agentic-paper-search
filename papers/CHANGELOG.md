@@ -4,6 +4,10 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-02 (user-submitted, single paper)
+
+- Opal: Private Memory for Personal AI (2604.02522) — confirmed on-topic, ORAM-style trusted-enclave memory for agentic systems combining privacy and efficiency gains.
+
 ## 2026-07-02 (user-submitted batch)
 
 User submitted 6 candidates to verify; 5 confirmed and added, 1 skipped as off-topic.

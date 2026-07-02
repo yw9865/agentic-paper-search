@@ -29,6 +29,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Shows semantic-similarity-based memory retrieval can surface contextually inappropriate memories, enabling cross-domain leakage and jailbreaks. Proposes MemGate, a lightweight neural plugin that gates memory admission between vector storage and the LLM (tested on A-Mem, Mem0, MemOS) without modifying the underlying model or database.
 
+### Opal: Private Memory for Personal AI
+- **arXiv**: 2604.02522 ([link](https://arxiv.org/abs/2604.02522))
+- **Date**: 2026-04-02
+- **Category**: Security
+- **Summary**: Confines data-dependent reasoning over agentic memory to a trusted enclave using lightweight knowledge graphs, so untrusted external storage can't observe query patterns (ORAM-style). Reports 29x higher throughput and 15x lower infrastructure cost than secure baselines — security and optimization combined in one system.
+
 ### Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees
 - **arXiv**: 2606.24322 ([link](https://arxiv.org/abs/2606.24322))
 - **Date**: 2026-06-23
