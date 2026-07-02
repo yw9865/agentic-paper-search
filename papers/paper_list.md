@@ -23,6 +23,12 @@ Format per entry:
 
 ## Security
 
+### Beyond Similarity: Trustworthy Memory Search for Personal AI Agents
+- **arXiv**: 2606.06054 ([link](https://arxiv.org/abs/2606.06054))
+- **Date**: 2026-06-04
+- **Category**: Security
+- **Summary**: Shows semantic-similarity-based memory retrieval can surface contextually inappropriate memories, enabling cross-domain leakage and jailbreaks. Proposes MemGate, a lightweight neural plugin that gates memory admission between vector storage and the LLM (tested on A-Mem, Mem0, MemOS) without modifying the underlying model or database.
+
 ### Securing LLM-Agent Long-Term Memory Against Poisoning: Non-Malleable, Origin-Bound Authority with Machine-Checked Guarantees
 - **arXiv**: 2606.24322 ([link](https://arxiv.org/abs/2606.24322))
 - **Date**: 2026-06-23
@@ -59,11 +65,29 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Survey introducing a "Memory Lifecycle Framework" mapping threats across six operational phases and four security dimensions. Argues for "Verifiable Memory Governance" — safeguards built into the storage layer itself rather than only at retrieval/execution time.
 
+### ADAM: A Systematic Data Extraction Attack on Agent Memory via Adaptive Querying
+- **arXiv**: 2604.09747 ([link](https://arxiv.org/abs/2604.09747))
+- **Date**: 2026-04-10
+- **Category**: Security
+- **Summary**: Introduces ADAM, a privacy attack extracting sensitive data from LLM agent memory/retrieval systems via adaptive querying, substantially outperforming prior attacks with up to 100% attack success rate. Underscores the need for privacy protections in current agent memory designs.
+
+### Governing Evolving Memory in LLM Agents: Risks, Mechanisms, and the Stability and Safety Governed Memory (SSGM) Framework
+- **arXiv**: 2603.11768 ([link](https://arxiv.org/abs/2603.11768))
+- **Date**: 2026-03-12 (revised 2026-05-19)
+- **Category**: Security
+- **Summary**: Proposes SSGM, a governance architecture for dynamic agent memory combining consistency verification, temporal decay modeling, and dynamic access control. Aims to prevent both unauthorized data exposure and knowledge degradation (semantic drift) during iterative memory consolidation.
+
 ### Memory Poisoning Attack and Defense on Memory Based LLM-Agents
 - **arXiv**: 2601.05504 ([link](https://arxiv.org/abs/2601.05504))
 - **Date**: 2026-01-09 (v2: 2026-01-12)
 - **Category**: Security
 - **Summary**: Studies how adversaries inject harmful instructions via query-only interactions to corrupt agent long-term memory, using clinical data across multiple LLMs; finds existing legitimate memories reduce attack success. Proposes two defenses — composite trust-score moderation and memory sanitization with temporal decay filtering.
+
+### Unveiling Privacy Risks in LLM Agent Memory
+- **arXiv**: 2502.13172 ([link](https://arxiv.org/abs/2502.13172))
+- **Date**: 2025-02-17 (revised 2025-06-03)
+- **Category**: Security
+- **Summary**: Introduces MEXTRA, a black-box attack that extracts private user information stored in LLM agent memory modules via crafted and automatically-generated prompts. Identifies key factors driving memory leakage and argues for protective measures at the memory-access layer.
 
 ## Optimization
 
@@ -96,3 +120,10 @@ Format per entry:
 - **Date**: 2026-02-22 (revised 2026-05-20)
 - **Category**: Optimization
 - **Summary**: Surveys memory architectures for long-horizon LLM agents and identifies that current benchmarks are underscaled and metrics misaligned with semantic utility. Highlights practical constraints (cross-model performance variability, computational overhead) that keep systems short of their theoretical potential.
+
+### Onyx: Cost-Efficient Disk-Oblivious ANN Search
+- **arXiv**: 2604.20401 ([link](https://arxiv.org/abs/2604.20401))
+- **Date**: 2026-04-22
+- **Category**: Optimization
+- **Note**: _Adjacent infrastructure, not agent-specific_ — general-purpose oblivious approximate-nearest-neighbor search, not framed around LLM agents. Included as relevant retrieval infrastructure for vector-backed agent memory stores.
+- **Summary**: Combines a compact intermediate representation that prunes bandwidth-intensive accesses with a locality-aware shallow tree design to reduce bandwidth and access counts for privacy-preserving ANN search on untrusted infrastructure. Reports significantly lower cost/latency than prior oblivious ANN approaches — relevant to any vector-store-backed agent memory needing confidential retrieval.
