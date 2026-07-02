@@ -95,6 +95,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Introduces MEXTRA, a black-box attack that extracts private user information stored in LLM agent memory modules via crafted and automatically-generated prompts. Identifies key factors driving memory leakage and argues for protective measures at the memory-access layer.
 
+### Always-On Agents: A Survey of Persistent Memory, State, and Governance in LLM Agents
+- **arXiv**: 2606.30306 ([link](https://arxiv.org/abs/2606.30306))
+- **Date**: 2026-06-29
+- **Category**: Security
+- **Summary**: Frames agent memories, task ledgers, permissions, credentials, and audit records as a unified "persistent-state" lifecycle (write, validate, retrieve, act, update, forget, audit, rollback), scored across six diagnostic axes (authority, scope, mutability, provenance, recoverability, actionability). Based on a 435-work coded corpus, finds the literature over-indexes on accumulating/retrieving state relative to governing, recovering, or relinquishing it, and proposes the AOEP-v0 evaluation protocol to make governance and forgetting obligations measurable.
+
+### Agents That Know Too Much: A Data-Centric Survey of Privacy in LLM Agents
+- **arXiv**: 2606.26627 ([link](https://arxiv.org/abs/2606.26627))
+- **Date**: 2026-06-25
+- **Category**: Security
+- **Summary**: Data-centric survey of privacy leakage across LLM agent surfaces — issued queries, intermediate results, written memory, and inter-agent messages — organized by data source rather than attack type. Argues information-flow control alone can't stop compositional/cross-session inference leakage and flags the lack of benchmarks that evaluate agents across multiple data surfaces (including memory) under a unified privacy policy.
+
 ## Optimization
 
 ### MemRefine: LLM-Guided Compression for Long-Term Agent Memory
@@ -133,3 +145,27 @@ Format per entry:
 - **Category**: Optimization
 - **Note**: _Adjacent infrastructure, not agent-specific_ — general-purpose oblivious approximate-nearest-neighbor search, not framed around LLM agents. Included as relevant retrieval infrastructure for vector-backed agent memory stores.
 - **Summary**: Combines a compact intermediate representation that prunes bandwidth-intensive accesses with a locality-aware shallow tree design to reduce bandwidth and access counts for privacy-preserving ANN search on untrusted infrastructure. Reports significantly lower cost/latency than prior oblivious ANN approaches — relevant to any vector-store-backed agent memory needing confidential retrieval.
+
+### Mandol: An Agglomerative Agent Memory System for Long-Term Conversations
+- **arXiv**: 2606.29778 ([link](https://arxiv.org/abs/2606.29778))
+- **Date**: 2026-06-29
+- **Category**: Optimization
+- **Summary**: Proposes a unified "memory-native" architecture (SemanticMap + SemanticGraph) that fuses key-value, vector, and graph structures to eliminate cross-database I/O, paired with LLM-free query-adaptive routing, denoising/conflict resolution, and token-budget-constrained context generation. Achieves the best overall accuracy among representative long-term agent memory systems on the LoCoMo and LongMemEval benchmarks.
+
+### Neural Procedural Memory: Empowering LLM Agents with Implicit Activation Steering
+- **arXiv**: 2606.29824 ([link](https://arxiv.org/abs/2606.29824))
+- **Date**: 2026-06-29
+- **Category**: Optimization
+- **Summary**: Represents agent procedural memory as compact implicit activation-steering vectors distilled from past experience, instead of verbose explicit textual instructions, reducing memory representation overhead. Training-free method matches instruction-based memory across four agent benchmarks and improves further when combined with explicit memory.
+
+### What Memory Do GUI Agents Really Need? From Passive Records to Active Task-Driving States
+- **arXiv**: 2606.31612 ([link](https://arxiv.org/abs/2606.31612))
+- **Date**: 2026-06-30
+- **Category**: Optimization
+- **Summary**: Introduces Active Task-Driving Memory (ATMem), which tracks each memory item's current functional status (pending/used/stale) rather than treating memory as a passive log, plus STR-GRPO, an online RL method that learns when invoking memory is actually worth its cost. Targets duplicated or overlooked actions caused by unmanaged long-horizon memory in mobile GUI agents.
+
+### HyphaeDB: A Living Knowledge Topology for Agent-First Memory
+- **arXiv**: 2606.28781 ([link](https://arxiv.org/abs/2606.28781))
+- **Date**: 2026-06-27
+- **Category**: Optimization
+- **Summary**: Reimagines HNSW vector-index topology as a gossip-based communication fabric for multi-agent memory sharing, with agents as graph nodes and "memory diffs" propagated for emergent contradiction detection and consensus formation. Single-author preprint (PostgreSQL/pgvector implementation) proposing agent-native memory infrastructure as an alternative to passive, per-agent vector stores.
