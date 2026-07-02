@@ -1,0 +1,28 @@
+You maintain the agent-memory paper tracker in this repo (agentic-paper-search).
+
+First, read papers/seen_ids.json — it is the authoritative record of what's already been recorded across all prior runs. Do not skip this step.
+
+Search arXiv (categories cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the general web for NEW papers on AGENT MEMORY (memory systems for LLM agents, multi-agent systems, or RAG-based agents) relating to either:
+- SECURITY: memory poisoning/injection attacks, privacy leakage, unauthorized memory access/exfiltration, adversarial persistence across sessions.
+- OPTIMIZATION: memory compression, retrieval efficiency, cost/latency reduction, long-horizon memory management, forgetting/consolidation strategies.
+
+Focus mainly on papers published or revised in roughly the last 3 days, but don't be overly strict about that cutoff if you find a clearly relevant paper just outside it that isn't already in seen_ids.json.
+
+Filter out anything whose arXiv ID is already in papers/seen_ids.json. For each new candidate, verify it by fetching its arXiv abstract page (or venue page) before including it — never fabricate papers, IDs, dates, or details. Watch for keyword-collision false positives (e.g. OS/hardware memory-paging papers that use the word "memory" but have nothing to do with LLM agents) and skip those.
+
+For each genuinely new, on-topic paper found:
+1. Append a properly formatted entry to the correct section (## Security or ## Optimization) of papers/paper_list.md, matching the existing format:
+   ### <Title>
+   - **arXiv**: <id> ([link](<url>))
+   - **Date**: <published date>
+   - **Category**: Security | Optimization
+   - **Summary**: 1-3 sentence summary of the contribution and why it's relevant.
+2. Add its arXiv ID to the "seen" array in papers/seen_ids.json.
+
+Prepend a dated section (today's date) to papers/CHANGELOG.md listing the titles/IDs added, or stating "No new papers found" if none.
+
+If — and only if — you added at least one new paper, send an email by running:
+  python3 scripts/send_email.py "Agent Memory Papers: N new (Security/Optimization)" "<body>"
+where N is the count and <body> lists each new paper's title, arXiv link, category, and a 1-sentence summary. Do not send an email if nothing new was found.
+
+Finally, if any files under papers/ changed, commit them with a descriptive message and push to origin main. If nothing changed, skip the commit entirely.
