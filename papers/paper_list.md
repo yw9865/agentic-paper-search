@@ -107,6 +107,72 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Data-centric survey of privacy leakage across LLM agent surfaces — issued queries, intermediate results, written memory, and inter-agent messages — organized by data source rather than attack type. Argues information-flow control alone can't stop compositional/cross-session inference leakage and flags the lack of benchmarks that evaluate agents across multiple data surfaces (including memory) under a unified privacy policy.
 
+### FragFuse: Bypassing Access Control of Large Language Model Agents via Memory-Based Query Fragmentation and Fusion
+- **arXiv**: 2606.15609 ([link](https://arxiv.org/abs/2606.15609))
+- **Date**: 2026-06-14
+- **Category**: Security
+- **Summary**: Shows prohibited content can be split across benign-looking memory writes and later reconstructed at read time, bypassing access controls without triggering detection. Achieves an 86.3% average bypass rate across four agent configurations and three access-control mechanisms, with existing prompt-injection detectors proving ineffective.
+
+### Selection Integrity for LLM Graph Memory: An Accumulability Criterion for Information-Flow-Blind Retrieval
+- **arXiv**: 2606.12290 ([link](https://arxiv.org/abs/2606.12290))
+- **Date**: 2026-06-10
+- **Category**: Security
+- **Summary**: Shows provenance-based memory defenses verify record authenticity but ignore how untrusted structural edits to a memory graph can redirect which authenticated facts get retrieved (e.g. misdirecting financial transfers via Personalized-PageRank rerouting). Introduces authselect, a defense recomputing selection over only authenticated subgraphs, which blocks the attack with minimal overhead.
+
+### Deployment-Time Memorization in Foundation-Model Agents
+- **arXiv**: 2606.10062 ([link](https://arxiv.org/abs/2606.10062))
+- **Date**: 2026-06-08
+- **Category**: Security
+- **Summary**: Characterizes agent memory design as a privacy-utility continuum (summarization intensity, retrieval scope, deletion strategy) using Personalization Recall and Adversarial Extraction Rate metrics, plus a new Forgetting Residue Score. Finds aggressive summarization cuts canary extraction 64-76% without hurting personalization, but incomplete deletion leaves ~20% of "erased" info recoverable via memory summaries.
+
+### MemAudit: Post-hoc Auditing of Poisoned Agent Memory via Causal Attribution and Structural Anomaly Detection
+- **arXiv**: 2605.23723 ([link](https://arxiv.org/abs/2605.23723))
+- **Date**: 2026-05-22
+- **Category**: Security
+- **Summary**: Combines counterfactual memory-influence scoring with structural anomaly detection to find poisoned memory records after the fact. Reduces QA-attack success from 70% to 0% and RAP-attack success from 83.3% to 0% in testing.
+
+### State Contamination in Memory-Augmented LLM Agents
+- **arXiv**: 2605.16746 ([link](https://arxiv.org/abs/2605.16746))
+- **Date**: 2026-05-16
+- **Category**: Security
+- **Summary**: Identifies "memory laundering" — toxic/adversarial context compressed into summaries that read as safe to standard detectors while still carrying hostile framing that influences future generations. Introduces the sub-threshold propagation gap (SPG) metric and shows sanitizing before summarization is far more effective than cleaning only the final summary.
+
+### MemMorph: Tool Hijacking in LLM Agents via Memory Poisoning
+- **arXiv**: 2605.26154 ([link](https://arxiv.org/abs/2605.26154))
+- **Date**: 2026-05-24
+- **Category**: Security
+- **Summary**: Injects records disguised as technical documentation/policy into agent long-term memory to steer tool-selection toward attacker-preferred (malicious) tools. Achieves up to 85.9% attack success with only three injected records and remains effective against tested defenses.
+
+### Poison Once, Exploit Forever: Environment-Injected Memory Poisoning Attacks on Web Agents
+- **arXiv**: 2604.02623 ([link](https://arxiv.org/abs/2604.02623))
+- **Date**: 2026-04-03 (v2: 2026-04-07)
+- **Category**: Security
+- **Summary**: Introduces eTAMP, the first web-agent memory-poisoning attack achieving cross-session, cross-site compromise without needing direct memory access — a single manipulated page view can silently contaminate memory and later trigger malicious behavior on an unrelated site. Finds more capable models (e.g. GPT-5-mini) are not more secure, and attack success rises under environmental stress.
+
+### Trojan Hippo: Weaponizing Agent Memory for Data Exfiltration
+- **arXiv**: 2605.01970 ([link](https://arxiv.org/abs/2605.01970))
+- **Date**: 2026-05-03 (v3: 2026-05-15)
+- **Category**: Security
+- **Summary**: Plants a dormant instruction via a single untrusted source (e.g. a crafted email) that persists in agent memory and activates later when the user discusses sensitive topics, exfiltrating data. An adaptive red-teaming benchmark across four memory architectures finds 85-100% attack success against frontier models; tested defenses cut this to 0-5% but at varying utility cost.
+
+### AgentLeak: A Benchmark for Internal-Channel Privacy Leakage in Multi-Agent LLM Systems
+- **arXiv**: 2602.11510 ([link](https://arxiv.org/abs/2602.11510))
+- **Date**: 2026-02-12
+- **Category**: Security
+- **Summary**: Argues output-only privacy audits miss leakage through inter-agent messages, shared memory, and function parameters. Across 1,000 scenarios and five commercial LLMs, finds multi-agent setups actually reduce final-output leakage (27.2% vs 43.2% single-agent) but overall system vulnerability rises to 68.9% once internal channels are counted — output-only evaluation misses 41.7% of breaches.
+
+### SuperLocalMemory: Privacy-Preserving Multi-Agent Memory with Bayesian Trust Defense Against Memory Poisoning
+- **arXiv**: 2603.02240 ([link](https://arxiv.org/abs/2603.02240))
+- **Date**: 2026-02-17
+- **Category**: Security
+- **Summary**: Local-first (no cloud, no LLM calls) multi-agent memory system defending against poisoning via architectural isolation and Bayesian trust scoring, with per-agent provenance and adaptive re-ranking. Reports 72% trust-score degradation for sleeper-style attacks, 10.6ms median search latency, and GDPR Article 17 deletion support.
+
+### Remembering More, Risking More: Longitudinal Safety Risks in Memory-Equipped LLM Agents
+- **arXiv**: 2605.17830 ([link](https://arxiv.org/abs/2605.17830))
+- **Date**: 2026-05-18
+- **Category**: Security
+- **Summary**: Introduces "temporal memory contamination" — memory-equipped agents accumulate risk across many independent, individually benign interactions, with violation rates rising as exposure length grows. Tests eight memory architectures across three deployment scenarios and argues memory safety must be evaluated longitudinally, not as a single-state snapshot.
+
 ## Optimization
 
 ### MemRefine: LLM-Guided Compression for Long-Term Agent Memory
@@ -169,3 +235,39 @@ Format per entry:
 - **Date**: 2026-06-27
 - **Category**: Optimization
 - **Summary**: Reimagines HNSW vector-index topology as a gossip-based communication fabric for multi-agent memory sharing, with agents as graph nodes and "memory diffs" propagated for emergent contradiction detection and consensus formation. Single-author preprint (PostgreSQL/pgvector implementation) proposing agent-native memory infrastructure as an alternative to passive, per-agent vector stores.
+
+### Control-Plane Placement Shapes Forgetting: An Architectural Study of Agent Memory Across Thirteen System Configurations
+- **arXiv**: 2606.15903 ([link](https://arxiv.org/abs/2606.15903))
+- **Date**: 2026-06-14 (v2: 2026-06-16)
+- **Category**: Optimization
+- **Summary**: Benchmarks 13 memory-pipeline configurations on 385 adversarial forgetting cases via a new suite (ForgetEval), finding deterministic methods fail canonicalization, LLM-based inscription-time approaches nail canonicalization but miss intent-aware deletion, and mutation-time hooks perform best overall (91.7-93.2%). Confirms production memory systems suffer more from forgetting failures than recall failures, despite benchmarks emphasizing recall.
+
+### Are We Ready For An Agent-Native Memory System?
+- **arXiv**: 2606.24775 ([link](https://arxiv.org/abs/2606.24775))
+- **Date**: 2026-06-23
+- **Category**: Optimization
+- **Summary**: Empirically evaluates 12 memory systems plus two baselines across 5 benchmark workloads/11 datasets, breaking memory into representation/storage, extraction, retrieval/routing, and maintenance. Finds no single design wins universally, and that localized maintenance is more cost-efficient than global reorganization.
+
+### ContextSniper: AntTrail's Token-Efficient Code Memory for Repository-Level Program Repair
+- **arXiv**: 2607.01916 ([link](https://arxiv.org/abs/2607.01916))
+- **Date**: 2026-07-02
+- **Category**: Optimization
+- **Summary**: A memory layer for coding agents that ranks and filters repository context (files, search results, terminal output) through an "intention-aware context gate" to produce compact evidence packets instead of raw whole-file reads. Cuts tokens 51.5% (OpenClaw) / 38.9% (Claude Code) on SWE-bench Lite with only a modest resolution-rate drop.
+
+### Active Context Compression: Autonomous Memory Management in LLM Agents
+- **arXiv**: 2601.07190 ([link](https://arxiv.org/abs/2601.07190))
+- **Date**: 2026-01-12
+- **Category**: Optimization
+- **Summary**: Introduces Focus, letting coding agents self-manage context by autonomously consolidating key insights into a persistent "Knowledge" block and discarding stale history, rather than relying on external summarization. On SWE-bench Lite, cuts tokens 22.7% (up to 57% on some tasks) with identical accuracy.
+
+### Eywa: Provenance-Grounded Long-Term Memory for AI Agents
+- **arXiv**: 2605.30771 ([link](https://arxiv.org/abs/2605.30771))
+- **Date**: 2026-05-29
+- **Category**: Optimization
+- **Summary**: Separates immutable source evidence from derived facts and uses a deterministic retrieval path requiring zero LLM calls at read time, improving auditability and update/deletion support over systems that conflate evidence and belief. Reports 90.19% accuracy on LoCoMo and 88.2% on LongMemEval-S.
+
+### Mem-π: Adaptive Memory through Learning When and What to Generate
+- **arXiv**: 2605.21463 ([link](https://arxiv.org/abs/2605.21463))
+- **Date**: 2026-05-20
+- **Category**: Optimization
+- **Summary**: Replaces similarity-based memory retrieval with a model that learns to generate concise task-specific guidance on demand — and to abstain when generation wouldn't help — via reinforcement learning, avoiding unnecessary retrieval overhead. Shows over 30% relative improvement on web-navigation tasks.
