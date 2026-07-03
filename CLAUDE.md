@@ -32,6 +32,31 @@ commits + pushes to `origin/main`, and emails a summary via
 `scripts/send_email.py` if anything new was found. Logs land in
 `~/.local/state/agentic-paper-search/`.
 
+**Cron-environment gotchas already hit once (2026-07-03) — the 9am run
+silently failed until these were fixed:**
+- `scripts/daily_scan.sh` calls the **absolute path** `~/.local/bin/claude`,
+  not bare `claude` — cron's minimal `PATH` doesn't include `~/.local/bin`.
+  If `claude` binary location ever changes, update `CLAUDE_BIN` in the script.
+- Git push uses a **dedicated SSH deploy key** (`~/.ssh/agentic_paper_search_deploy`,
+  passphrase-less, write-access deploy key on this repo only — added at
+  https://github.com/yw9865/agentic-paper-search/settings/keys), routed via
+  an SSH config alias in `~/.ssh/config`:
+  ```
+  Host github-agentic-paper-search
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/agentic_paper_search_deploy
+    IdentitiesOnly yes
+  ```
+  The repo's `origin` remote points at `git@github-agentic-paper-search:...`
+  (not the default `github.com` host) so it doesn't depend on your personal
+  key or a running ssh-agent, which cron doesn't have access to. If push
+  ever fails in cron logs with a publickey error, check `git remote -v`
+  still points at the alias, and that the deploy key is still listed (with
+  write access) on GitHub.
+- Always sanity-check by simulating cron's environment before trusting a
+  fix: `env -i HOME="$HOME" PATH="/usr/bin:/bin" bash scripts/daily_scan.sh`.
+
 **Permissions**: scoped in `.claude/settings.local.json` (gitignored, local
 machine only — recreate manually if lost): file edits limited to `papers/**`,
 Bash limited to `git add/commit/push/status/diff` and running
