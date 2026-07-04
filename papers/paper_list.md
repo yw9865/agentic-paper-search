@@ -173,7 +173,25 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Introduces "temporal memory contamination" — memory-equipped agents accumulate risk across many independent, individually benign interactions, with violation rates rising as exposure length grows. Tests eight memory architectures across three deployment scenarios and argues memory safety must be evaluated longitudinally, not as a single-state snapshot.
 
+### KidnapRAG: A Black-Box Attack for Hijacking Reasoning in Agentic Retrieval-Augmented Generation Systems
+- **arXiv**: 2607.00422 ([link](https://arxiv.org/abs/2607.00422))
+- **Date**: 2026-07-01
+- **Category**: Security
+- **Summary**: Introduces a black-box poisoning attack against Agentic RAG using three role-specific injected documents (an attention-grabbing bait, a query-redirecting chain-link, and a false-evidence document) to hijack the agent's iterative retrieval-and-reasoning loop without needing access to the query, memory store, or system internals. Shows that the iterative re-retrieval agentic RAG relies on for robustness can itself be exploited to progressively bias the agent toward attacker-controlled evidence, outperforming prior poisoning techniques under realistic black-box constraints.
+
+### ElephantAgent: Contextual State Continuity in Agentic Systems
+- **arXiv**: 2607.01919 ([link](https://arxiv.org/abs/2607.01919))
+- **Date**: 2026-07-02
+- **Category**: Security
+- **Summary**: Proposes a defense protocol against tool- and memory-poisoning attacks by maintaining a trusted-hardware-backed, verifiable ledger of authorized state transitions, detecting out-of-band tampering, and providing "Historical Traceability" for post-hoc auditing and rollback to validated states. A concrete architectural countermeasure to the "poison now, exploit later" sleeper-style memory-poisoning pattern common in the recent attack literature.
+
 ## Optimization
+
+### Auditing Forgetting in Limited Memory Language Models
+- **arXiv**: 2607.00605 ([link](https://arxiv.org/abs/2607.00605))
+- **Date**: 2026-07-01
+- **Category**: Optimization
+- **Summary**: Introduces a causal auditing framework (FULL/DEL-ON/DEL-OFF interventions) that decomposes post-deletion behavior in externalized-memory (RAG-style) LLMs into parametric leakage, retrieval-mediated correctness, and retrieval-artifact rate, tested across 12,228 alias-closure deletions in 13 databases. Finds parametric leakage is near-zero but deleted facts commonly resurface via near-neighbor retrieval (0.7-13.6% depending on database design) — meaning the database's own topology, not the model, governs whether deletion actually holds.
 
 ### MemRefine: LLM-Guided Compression for Long-Term Agent Memory
 - **arXiv**: 2606.13177 ([link](https://arxiv.org/abs/2606.13177))

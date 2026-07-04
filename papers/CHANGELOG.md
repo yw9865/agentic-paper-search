@@ -4,6 +4,17 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-04 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in the last 3 days. Found 3 new, verified, on-topic papers.
+
+**Security (2):**
+- KidnapRAG: A Black-Box Attack for Hijacking Reasoning in Agentic RAG Systems (2607.00422) — 2026-07-01
+- ElephantAgent: Contextual State Continuity in Agentic Systems (2607.01919) — 2026-07-02
+
+**Optimization (1):**
+- Auditing Forgetting in Limited Memory Language Models (2607.00605) — 2026-07-01
+
 ## 2026-07-03 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers. Only one paper fell inside the strict last-3-days window (2026-06-30 to 2026-07-03: ContextSniper, 2607.01916), so the search was widened, which surfaced a substantial backlog of clearly on-topic, previously-untracked papers from Feb–Jun 2026 that earlier runs' searches had missed. All 17 were individually verified against their arXiv abstract pages before inclusion. 17 new papers confirmed and added.
