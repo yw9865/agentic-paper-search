@@ -4,6 +4,17 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-05 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3-5 days, widened slightly to catch anything just outside that window. Found 3 new, verified, on-topic papers.
+
+**Security (1):**
+- Forensic Trajectory Signatures for Agent Memory Poisoning Detection (2606.30566) — 2026-06-29
+
+**Optimization (2):**
+- Imprint: Online Memory Compression for Long-Horizon Egocentric QA (2607.00696) — 2026-07-01
+- Memory Depth, Not Memory Access: Selective Parametric Consolidation for Long-Running Language Agents (2606.26806) — 2026-06-25
+
 ## 2026-07-04 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in the last 3 days. Found 3 new, verified, on-topic papers.

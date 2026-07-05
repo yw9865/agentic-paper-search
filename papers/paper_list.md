@@ -185,6 +185,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Proposes a defense protocol against tool- and memory-poisoning attacks by maintaining a trusted-hardware-backed, verifiable ledger of authorized state transitions, detecting out-of-band tampering, and providing "Historical Traceability" for post-hoc auditing and rollback to validated states. A concrete architectural countermeasure to the "poison now, exploit later" sleeper-style memory-poisoning pattern common in the recent attack literature.
 
+### Forensic Trajectory Signatures for Agent Memory Poisoning Detection
+- **arXiv**: 2606.30566 ([link](https://arxiv.org/abs/2606.30566))
+- **Date**: 2026-06-29
+- **Category**: Security
+- **Summary**: Finds that memory-poisoning/exfiltration attacks leave detectable tool-call trajectory signatures — e.g. a `memory_recall_fact` → `email_send_email` transition that benign sessions rarely exhibit — because the attack's information-retrieval requirements force this pattern. A random-forest classifier over 19 trajectory features reaches AUC=0.9904 across nine models (7B-120B) without retraining, and a prefix-only variant (AUC=0.934) enables real-time detection distinguishing memory-channel attacks from ordinary prompt injection using tool-call logs alone.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -289,3 +295,15 @@ Format per entry:
 - **Date**: 2026-05-20
 - **Category**: Optimization
 - **Summary**: Replaces similarity-based memory retrieval with a model that learns to generate concise task-specific guidance on demand — and to abstain when generation wouldn't help — via reinforcement learning, avoiding unnecessary retrieval overhead. Shows over 30% relative improvement on web-navigation tasks.
+
+### Imprint: Online Memory Compression for Long-Horizon Egocentric QA
+- **arXiv**: 2607.00696 ([link](https://arxiv.org/abs/2607.00696))
+- **Date**: 2026-07-01
+- **Category**: Optimization
+- **Summary**: Reframes long-horizon egocentric agent memory as online compression rather than summarization, organizing observations into explicit, recurring "Interaction Records" selected via recurrence/recency/distinctiveness signals instead of collapsing them into coarse textual summaries. On the 7-day EgoLifeQA benchmark, improves accuracy 31.0%→35.8%, cuts memory footprint 2.3x, and reduces retrieval latency 11.8x versus EgoRAG.
+
+### Memory Depth, Not Memory Access: Selective Parametric Consolidation for Long-Running Language Agents
+- **arXiv**: 2606.26806 ([link](https://arxiv.org/abs/2606.26806))
+- **Date**: 2026-06-25
+- **Category**: Optimization
+- **Summary**: Distinguishes retrieval-based "memory access" from parametrically-encoded "memory depth" (durable goal-oriented behavior), introducing a loop-drift protocol and EVAF, a surprise/valence-gated LoRA consolidation mechanism. Finds retrieval wins on factual recall while EVAF wins on goal persistence and post-context-loss recovery using only 2-3 parameter updates per 200 events.
