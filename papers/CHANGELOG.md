@@ -4,6 +4,14 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-06 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3-5 days. Found 2 new, verified, on-topic papers (both Optimization — no new Security papers found this run).
+
+**Optimization (2):**
+- Self-GC: Self-Governing Context for Long-Horizon LLM Agents (2607.00692) — 2026-07-01
+- AutoMem: Automated Learning of Memory as a Cognitive Skill (2607.01224) — 2026-07-01
+
 ## 2026-07-05 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3-5 days, widened slightly to catch anything just outside that window. Found 3 new, verified, on-topic papers.

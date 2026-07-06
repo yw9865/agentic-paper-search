@@ -307,3 +307,15 @@ Format per entry:
 - **Date**: 2026-06-25
 - **Category**: Optimization
 - **Summary**: Distinguishes retrieval-based "memory access" from parametrically-encoded "memory depth" (durable goal-oriented behavior), introducing a loop-drift protocol and EVAF, a surprise/valence-gated LoRA consolidation mechanism. Finds retrieval wins on factual recall while EVAF wins on goal persistence and post-context-loss recovery using only 2-3 parameter updates per 200 events.
+
+### Self-GC: Self-Governing Context for Long-Horizon LLM Agents
+- **arXiv**: 2607.00692 ([link](https://arxiv.org/abs/2607.00692))
+- **Date**: 2026-07-01
+- **Category**: Optimization
+- **Summary**: Treats an agent's accumulated tool results, files, plans, and constraints as indexed, recoverable context objects rather than a disposable text suffix, using a side-channel planner to propose fold/mask/prune actions with safe commit boundaries. Prunes ~44% of prefix tokens while preserving ~85% of future-continuation correctness (vs. 55-70% for heuristic baselines), and cuts production daytime input tokens 10-20%.
+
+### AutoMem: Automated Learning of Memory as a Cognitive Skill
+- **arXiv**: 2607.01224 ([link](https://arxiv.org/abs/2607.01224))
+- **Date**: 2026-07-01
+- **Category**: Optimization
+- **Summary**: Frames LLM memory management (what to encode, when to retrieve, how to organize) as a trainable "metamemory" skill, using file-system operations as first-class memory actions plus two automated optimization loops that jointly refine memory structure and the model's memory proficiency. Improves performance ~2-4x across three procedurally generated game environments (Crafter, MiniHack, NetHack) without changing task-action behavior.
