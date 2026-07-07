@@ -191,6 +191,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Finds that memory-poisoning/exfiltration attacks leave detectable tool-call trajectory signatures — e.g. a `memory_recall_fact` → `email_send_email` transition that benign sessions rarely exhibit — because the attack's information-retrieval requirements force this pattern. A random-forest classifier over 19 trajectory features reaches AUC=0.9904 across nine models (7B-120B) without retraining, and a prefix-only variant (AUC=0.934) enables real-time detection distinguishing memory-channel attacks from ordinary prompt injection using tool-call logs alone.
 
+### Your Agent's Memories Are Not Its Own: Forged Reasoning Attacks on LLM Agent Memory and Defenses
+- **arXiv**: 2607.05029 ([link](https://arxiv.org/abs/2607.05029))
+- **Date**: 2026-07-06
+- **Category**: Security
+- **Summary**: Introduces FARMA, an attack that poisons agent memory by injecting forged *reasoning traces* (not just factual entries) written in evasive language to slip past existing defenses. Proposes SENTINEL, a detection pipeline whose Reasoning Guard analyzes stored entries for authenticity, reporting near-perfect defense with zero false positives on benign traces — extending memory-poisoning defense from factual knowledge to the agent's reasoning history.
+
+### PiSAs: Benchmarking Contextual Integrity in Multi-User Agentic Systems
+- **arXiv**: 2607.05318 ([link](https://arxiv.org/abs/2607.05318))
+- **Date**: 2026-07-06
+- **Category**: Security
+- **Summary**: Introduces PiSAs, a benchmark for unintentional privacy leaks in multi-user agentic systems, arguing sensitive information can leak not only through outputs to external recipients but internally across users via inter-agent messages and shared memory. Finds state-of-the-art LLMs struggle to reliably filter sensitive content or enforce access restrictions across these channels, extending contextual-integrity evaluation to the shared-memory leakage surface.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -319,3 +331,27 @@ Format per entry:
 - **Date**: 2026-07-01
 - **Category**: Optimization
 - **Summary**: Frames LLM memory management (what to encode, when to retrieve, how to organize) as a trainable "metamemory" skill, using file-system operations as first-class memory actions plus two automated optimization loops that jointly refine memory structure and the model's memory proficiency. Improves performance ~2-4x across three procedurally generated game environments (Crafter, MiniHack, NetHack) without changing task-action behavior.
+
+### Memory-Orchestrated Semantic System (MOSS): An Auditable Agentic Memory Architecture
+- **arXiv**: 2607.04391 ([link](https://arxiv.org/abs/2607.04391))
+- **Date**: 2026-07-05
+- **Category**: Optimization
+- **Summary**: Proposes an auditable agent memory architecture that stores and queries information through a relational database with structured indexes rather than vector embeddings, logging every operation for "auditable, sovereign, structurally unbounded" memory. Demonstrated via a year-long production deployment managing a scholar's 44-million-token corpus, arguing auditability and reproducibility (not just speed/scale) are preconditions for long-lived agent memory.
+
+### PLACEMEM: Toward a Compute-Aware Memory Plane for Lifelong Agents
+- **arXiv**: 2607.04089 ([link](https://arxiv.org/abs/2607.04089))
+- **Date**: 2026-07-05
+- **Category**: Optimization
+- **Summary**: Represents agent memory as versioned "capsules" unifying semantics, provenance, validity, and reusable runtime state, enabling persistent, correction-aware memory without redundant recomputation of prior history. Prototype is a vLLM-based control plane with persistent capsule state, invalidation, and routing — a compute-aware memory plane targeting efficiency for lifelong agents.
+
+### SelfMem: Self-Optimizing Memory for AI Agents
+- **arXiv**: 2607.03726 ([link](https://arxiv.org/abs/2607.03726))
+- **Date**: 2026-07-04
+- **Category**: Optimization
+- **Summary**: Lets agents autonomously develop and refine their own memory strategies via memory tools plus feedback, instead of following predefined storage/retrieval heuristics. On the BEAM benchmark reports 40.8-48.7% gains over retrieval and compression baselines across conversation scales from 100K to 1M tokens.
+
+### A-TMA: Decoupling State-Aware Memory Failures in Long-Term Agent Memory
+- **arXiv**: 2607.01935 ([link](https://arxiv.org/abs/2607.01935))
+- **Date**: 2026-07-02
+- **Category**: Optimization
+- **Summary**: Targets "ghost memory" — the failure where outdated, current, and transitional facts coexist in memory and mislead agents. Proposes ATMA, a state-aware overlay that keeps separate records per state, builds evidence packets by state, and explicitly labels temporal information; on the new LTP benchmark it improves handling of conflicting-fact scenarios over baselines.

@@ -4,6 +4,24 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-07 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3 days. Found 6 new, verified, on-topic papers (each checked against its arXiv abstract page). One (A-TMA, 2026-07-02) fell just outside the strict window but was clearly on-topic and missed by prior runs, so it was included.
+
+**Security (2):**
+- Your Agent's Memories Are Not Its Own: Forged Reasoning Attacks on LLM Agent Memory and Defenses / FARMA + SENTINEL (2607.05029) — 2026-07-06
+- PiSAs: Benchmarking Contextual Integrity in Multi-User Agentic Systems (2607.05318) — 2026-07-06
+
+**Optimization (4):**
+- Memory-Orchestrated Semantic System (MOSS): An Auditable Agentic Memory Architecture (2607.04391) — 2026-07-05
+- PLACEMEM: Toward a Compute-Aware Memory Plane for Lifelong Agents (2607.04089) — 2026-07-05
+- SelfMem: Self-Optimizing Memory for AI Agents (2607.03726) — 2026-07-04
+- A-TMA: Decoupling State-Aware Memory Failures in Long-Term Agent Memory (2607.01935) — 2026-07-02
+
+**Near-misses considered and excluded:**
+- MemSyco-Bench: Benchmarking Sycophancy in Agent Memory (2607.01071, 2026-07-01) — memory-induced sycophancy benchmark, neither an adversarial security attack nor a compression/efficiency technique.
+- ArchEval (2607.03601) and Object-Centric Environment Modeling for Agentic Tasks (2607.02846) — agent benchmarks/experience-modeling that touch "memory" incidentally, not agent memory security or optimization methods.
+
 ## 2026-07-06 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3-5 days. Found 2 new, verified, on-topic papers (both Optimization — no new Security papers found this run).
