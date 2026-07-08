@@ -203,6 +203,30 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Introduces PiSAs, a benchmark for unintentional privacy leaks in multi-user agentic systems, arguing sensitive information can leak not only through outputs to external recipients but internally across users via inter-agent messages and shared memory. Finds state-of-the-art LLMs struggle to reliably filter sensitive content or enforce access restrictions across these channels, extending contextual-integrity evaluation to the shared-memory leakage surface.
 
+### MemLeak: Diagnosing Information Leaks in Multimodal Agent Memory
+- **arXiv**: 2606.29788 ([link](https://arxiv.org/abs/2606.29788))
+- **Date**: 2026-06-29
+- **Category**: Security
+- **Summary**: Shows that multimodal agents fail to fully forget deleted facts because the information remains recoverable from retained images via implicit visual cues in the vision-language model. Introduces an Information Provenance Graph framework and the MemLeak benchmark, demonstrating cross-modal privacy leakage where retained images enable 12.0% recovery of supposedly deleted text.
+
+### When Latent Agents Lie: KV-Cache Integrity in Multi-Agent LLM Collaboration
+- **arXiv**: 2606.28958 ([link](https://arxiv.org/abs/2606.28958))
+- **Date**: 2026-06-27
+- **Category**: Security
+- **Summary**: Demonstrates that when collaborating agents share hidden KV-cache states alongside visible messages, a malicious agent can corrupt the latent memory to force wrong answers while keeping its visible commitments plausible, bypassing text-only verification. Proposes HMAC-SHA256 manifests to authenticate the opaque latent-memory transport channel.
+
+### MEMPROBE: Probing Long-Term Agent Memory via Hidden User-State Recovery
+- **arXiv**: 2606.24595 ([link](https://arxiv.org/abs/2606.24595))
+- **Date**: 2026-06-23
+- **Category**: Security
+- **Summary**: Treats agent memory as an auditable artifact and measures how much hidden user state can be reconstructed from it after the agent provides assistance, reconstructing user attributes against ground truth. Shows memory-borne user-state recovery is a distinct privacy risk separate from task performance, stabilizing around 0.6 across memory systems.
+
+### Governed Shared Memory for Multi-Agent LLM Systems
+- **arXiv**: 2606.24535 ([link](https://arxiv.org/abs/2606.24535))
+- **Date**: 2026-06-23
+- **Category**: Security
+- **Summary**: Formalizes four failure modes of shared memory in multi-agent LLM systems and proposes systems-level governance primitives — scoped retrieval, temporal supersession, provenance tracking, and policy-based propagation — implemented in a production service (MemClaw). Argues long-context retrieval alone is insufficient and that explicit access-control/governance mechanisms are required to prevent cross-agent leakage and stale-state propagation.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -355,3 +379,21 @@ Format per entry:
 - **Date**: 2026-07-02
 - **Category**: Optimization
 - **Summary**: Targets "ghost memory" — the failure where outdated, current, and transitional facts coexist in memory and mislead agents. Proposes ATMA, a state-aware overlay that keeps separate records per state, builds evidence packets by state, and explicitly labels temporal information; on the new LTP benchmark it improves handling of conflicting-fact scenarios over baselines.
+
+### When Not to Write Memory: Governing False Promotion from Correlated Agent Traces
+- **arXiv**: 2607.02579 ([link](https://arxiv.org/abs/2607.02579))
+- **Date**: 2026-06-30
+- **Category**: Optimization
+- **Summary**: Argues agents should sometimes refrain from writing memory, since repeated observations across traces often reflect shared sources (copied content, common prompts, stale data) rather than independent evidence. Proposes GovMem, a dependency-aware write policy that distinguishes genuine corroboration from correlated noise, sharply reducing false memory promotion while keeping useful writes.
+
+### Selective Memory Retention for Long-Horizon LLM Agents
+- **arXiv**: 2606.29178 ([link](https://arxiv.org/abs/2606.29178))
+- **Date**: 2026-06-28
+- **Category**: Optimization
+- **Summary**: Introduces TraceRetain, a bounded-memory framework that scores entries by interpretable features (age, frequency, specificity) and evicts the lowest-scoring ones. Shows selective forgetting is most valuable under noisy data streams, preserving task performance even at 75% contamination while cutting the memory footprint on constrained systems.
+
+### Forget to Improve: On-Device LLM-Agent Continual Learning via Budget-Curated Memory
+- **arXiv**: 2606.25115 ([link](https://arxiv.org/abs/2606.25115))
+- **Date**: 2026-06-23
+- **Category**: Optimization
+- **Summary**: Proposes a unified "net-value-per-byte" score governing the memory lifecycle for on-device agents: evicting low-value entries within RAM/energy budgets, selectively sharing insights only when benefit exceeds transmission cost, and gating untrusted peer entries. Reports 2.7x lower memory footprint, 2.4x lower uplink usage, and injection-attack success driven to zero while maintaining accuracy.

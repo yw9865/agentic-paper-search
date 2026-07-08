@@ -4,6 +4,25 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-08 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers. The strict last-3-days window (2026-07-05 to 2026-07-08) contained no untracked papers — the July 5-6 papers are already in seen_ids.json and nothing from July 7-8 has been indexed yet. Widened slightly per policy and added 7 clearly on-topic, previously-untracked papers from late June (each verified against its arXiv abstract page).
+
+**Security (4):**
+- MemLeak: Diagnosing Information Leaks in Multimodal Agent Memory (2606.29788) — 2026-06-29
+- When Latent Agents Lie: KV-Cache Integrity in Multi-Agent LLM Collaboration (2606.28958) — 2026-06-27
+- MEMPROBE: Probing Long-Term Agent Memory via Hidden User-State Recovery (2606.24595) — 2026-06-23
+- Governed Shared Memory for Multi-Agent LLM Systems (2606.24535) — 2026-06-23
+
+**Optimization (3):**
+- When Not to Write Memory: Governing False Promotion from Correlated Agent Traces / GovMem (2607.02579) — 2026-06-30
+- Selective Memory Retention for Long-Horizon LLM Agents / TraceRetain (2606.29178) — 2026-06-28
+- Forget to Improve: On-Device LLM-Agent Continual Learning via Budget-Curated Memory (2606.25115) — 2026-06-23
+
+**Near-misses considered and excluded:**
+- MemDelta (2606.29914) and AgenticSTS (2607.02255) — memory-evaluation protocol/testbed methodology, not a security attack/defense or a concrete compression/efficiency technique.
+- Manufactured Confidence (2606.29279), TRUSTMEM (2606.25161), Supersede (2606.27472) — memory-consolidation quality/robustness studies, on the edge of scope; deferred to keep this run focused on the strongest security/optimization matches.
+
 ## 2026-07-07 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3 days. Found 6 new, verified, on-topic papers (each checked against its arXiv abstract page). One (A-TMA, 2026-07-02) fell just outside the strict window but was clearly on-topic and missed by prior runs, so it was included.
