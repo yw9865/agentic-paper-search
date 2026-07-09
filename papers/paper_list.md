@@ -227,6 +227,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Formalizes four failure modes of shared memory in multi-agent LLM systems and proposes systems-level governance primitives — scoped retrieval, temporal supersession, provenance tracking, and policy-based propagation — implemented in a production service (MemClaw). Argues long-context retrieval alone is insufficient and that explicit access-control/governance mechanisms are required to prevent cross-agent leakage and stale-state propagation.
 
+### When Claws Remember but Do Not Tell: Stealthy Memory Injection in Persistent Personal Agents
+- **arXiv**: 2607.05189 ([link](https://arxiv.org/abs/2607.05189))
+- **Date**: 2026-07-06
+- **Category**: Security
+- **Summary**: Introduces "stealth memory injection," where a single malicious email causes a persistent personal agent to secretly write a fabricated fact or preference into its long-term memory while keeping the user-facing response innocuous. Proposes WhisperBench (108 test cases across five risk categories) and MemGhost, a reward-guided payload generator, achieving 87.5% attack success against OpenClaw/GPT-5.4 and 71.4% against Claude Code SDK/Sonnet 4.6 despite existing defenses.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -391,6 +397,18 @@ Format per entry:
 - **Date**: 2026-06-28
 - **Category**: Optimization
 - **Summary**: Introduces TraceRetain, a bounded-memory framework that scores entries by interpretable features (age, frequency, specificity) and evicts the lowest-scoring ones. Shows selective forgetting is most valuable under noisy data streams, preserving task performance even at 75% contamination while cutting the memory footprint on constrained systems.
+
+### Memory in the Loop: In-Process Retrieval as Extended Working Memory for Language Agents
+- **arXiv**: 2607.05690 ([link](https://arxiv.org/abs/2607.05690))
+- **Date**: 2026-07-06
+- **Category**: Optimization
+- **Summary**: Moves memory access inside the agent's observe-reason-act loop instead of querying it externally, cutting retrieval latency from tens-hundreds of milliseconds (networked stores) to roughly 100 microseconds (in-process store, ~40us with a local embedder). Shows redundant agent actions rise monotonically with memory latency and that fast enough memory functions as "extended working memory" rather than a consulted tool, improving recall from 0/5 to 3.6-4.8/5 across GPT-5-class models.
+
+### From Passive Retrieval to Active Memory Navigation: Learning to Use Memory as a Structured Action Space
+- **arXiv**: 2607.05794 ([link](https://arxiv.org/abs/2607.05794))
+- **Date**: 2026-07-07
+- **Category**: Optimization
+- **Summary**: Proposes NapMem, which organizes user history into a linked multi-granularity "memory pyramid" (raw conversations, typed records, topic tracks, profiles) and trains an RL policy to navigate it at the right level of detail instead of passively retrieving fixed context. Improves retrieval-efficiency/accuracy tradeoffs on PersonaMem-v2, LongMemEval, and LoCoMo while preserving general reasoning ability.
 
 ### Forget to Improve: On-Device LLM-Agent Continual Learning via Budget-Curated Memory
 - **arXiv**: 2606.25115 ([link](https://arxiv.org/abs/2606.25115))

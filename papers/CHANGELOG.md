@@ -4,6 +4,22 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-09 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3 days. Found 3 new, verified, on-topic papers (each checked against its arXiv abstract page).
+
+**Security (1):**
+- When Claws Remember but Do Not Tell: Stealthy Memory Injection in Persistent Personal Agents (2607.05189) — 2026-07-06
+
+**Optimization (2):**
+- Memory in the Loop: In-Process Retrieval as Extended Working Memory for Language Agents (2607.05690) — 2026-07-06
+- From Passive Retrieval to Active Memory Navigation: Learning to Use Memory as a Structured Action Space / NapMem (2607.05794) — 2026-07-07
+
+**Near-misses considered and excluded:**
+- Agent Data Injection Attacks are Realistic Threats to AI Agents (2607.05120) — indirect prompt injection across trusted/untrusted data broadly, not specifically an agent-memory attack.
+- Narrative World Model (2607.05577) — narratology-grounded retrieval for fiction writing quality, not a security or compression/efficiency contribution.
+- DepthWeave-KV (2607.06523) and FreqDepthKV (2607.06519) — KV-cache compression for long-context LLM inference generally, not agent long-term memory systems.
+
 ## 2026-07-08 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers. The strict last-3-days window (2026-07-05 to 2026-07-08) contained no untracked papers — the July 5-6 papers are already in seen_ids.json and nothing from July 7-8 has been indexed yet. Widened slightly per policy and added 7 clearly on-topic, previously-untracked papers from late June (each verified against its arXiv abstract page).
