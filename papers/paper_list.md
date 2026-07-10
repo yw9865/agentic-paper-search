@@ -233,6 +233,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Introduces "stealth memory injection," where a single malicious email causes a persistent personal agent to secretly write a fabricated fact or preference into its long-term memory while keeping the user-facing response innocuous. Proposes WhisperBench (108 test cases across five risk categories) and MemGhost, a reward-guided payload generator, achieving 87.5% attack success against OpenClaw/GPT-5.4 and 71.4% against Claude Code SDK/Sonnet 4.6 despite existing defenses.
 
+### When Agents Remember Too Much: Memory Poisoning Attacks on Large Language Model Agents
+- **arXiv**: 2607.06595 ([link](https://arxiv.org/abs/2607.06595))
+- **Date**: 2026-07-06
+- **Category**: Security
+- **Summary**: Introduces GhostWriter, a two-phase (injection then activation) memory-poisoning attack against LLM personal assistants with long-term memory, reaching ~98% injection success and ~60% activation rates. Proposes Agentic Memory Sentry (AM-Sentry), a memory-governance defense that substantially reduces attack effectiveness while preserving agent functionality.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -415,3 +421,15 @@ Format per entry:
 - **Date**: 2026-06-23
 - **Category**: Optimization
 - **Summary**: Proposes a unified "net-value-per-byte" score governing the memory lifecycle for on-device agents: evicting low-value entries within RAM/energy budgets, selectively sharing insights only when benefit exceeds transmission cost, and gating untrusted peer entries. Reports 2.7x lower memory footprint, 2.4x lower uplink usage, and injection-attack success driven to zero while maintaining accuracy.
+
+### Akashic: A Low-Overhead LLM Inference Service with MemAttention
+- **arXiv**: 2607.05708 ([link](https://arxiv.org/abs/2607.05708))
+- **Date**: 2026-07-07
+- **Category**: Optimization
+- **Summary**: Targets multi-turn LLM agent systems that accumulate context across turns, tool calls, and cross-session workflows, where replaying the full history per request is impractical. Organizes history into bounded, semantically-linked chunks and applies hardware-software co-designed memory placement to co-locate likely co-retrieved chunks, reporting up to +10.2 points task accuracy, 1.21x throughput, and 1.88x sustainable request rate.
+
+### Light-Omni: Reflex over Reasoning in Agentic Video Understanding with Long-Term Memory
+- **arXiv**: 2607.05511 ([link](https://arxiv.org/abs/2607.05511))
+- **Date**: 2026-07-06
+- **Category**: Optimization
+- **Summary**: Replaces iterative retrieval/reasoning in long-horizon multimodal agents with a reflexive design built in a single forward pass: episodic memories are hierarchically merged into a bounded, continuously-consolidated global script paired with a parametric latent state that drives actions. Reports 12.1x speedup and 2.6x lower GPU memory alongside a 2.4% accuracy gain over M3-Agent, making it a memory-consolidation/efficiency contribution.

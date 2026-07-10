@@ -4,6 +4,22 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-10 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3 days. Found 3 new, verified, on-topic papers (each checked against its arXiv abstract page).
+
+**Security (1):**
+- When Agents Remember Too Much: Memory Poisoning Attacks on Large Language Model Agents (2607.06595) — 2026-07-06
+
+**Optimization (2):**
+- Akashic: A Low-Overhead LLM Inference Service with MemAttention (2607.05708) — 2026-07-07
+- Light-Omni: Reflex over Reasoning in Agentic Video Understanding with Long-Term Memory (2607.05511) — 2026-07-06
+
+**Near-misses considered and excluded:**
+- AgentTether (2607.06273) — graph-guided diagnosis and runtime intervention for agent reliability/repair, not an agent-memory security or optimization method.
+- Narrative World Model (2607.05577) — narratology-grounded retrieval for fiction-writing quality (already excluded 2026-07-09); not a security or compression/efficiency contribution.
+- LogicHunter (2607.06195) and CurateEvo (2607.06140) — LLM-agent framework testing and agentic post-training data curation respectively; touch "agent" but are not about agent memory.
+
 ## 2026-07-09 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3 days. Found 3 new, verified, on-topic papers (each checked against its arXiv abstract page).
