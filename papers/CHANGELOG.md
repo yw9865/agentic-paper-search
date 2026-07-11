@@ -4,6 +4,25 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-11 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3 days. Found 5 new, verified, on-topic papers (each checked against its arXiv abstract page).
+
+**Security (1):**
+- StateFuse: Deterministic Conflict-Preserving Memory for Multi-Agent Systems (2607.05844) — 2026-07-07
+
+**Optimization (4):**
+- What to Keep, What to Forget: A Rate-Distortion View of Memory Compaction in LLMs and Agents (2607.08032) — 2026-07-09
+- A Hierarchical Memory Architecture Overcomes Context Limits in Long-Horizon Multi-Agent Computational Modeling (2607.07666) — 2026-07-08
+- Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation (2607.07608) — 2026-07-08
+- NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation (2607.06678) — 2026-07-07
+
+**Near-misses considered and excluded:**
+- MemDefrag (2607.05969) and TF-Engram (2607.07388) — latent/external memory for general LLM inference (hidden-state retention, offline knowledge injection), not agent interaction-memory systems.
+- Token-Flow Firewall / TokenWall (2607.08395) — general agent runtime auditing across state, skills, and tool calls; memory is only one propagation vector, not a memory-centric defense.
+- TRACE (2607.08400) — trajectory-attribution watermarking against reseller model-substitution/rebranding (IP protection), not a memory poisoning/privacy/access contribution.
+- Multi-Agent Firewall for Privacy (2607.08282) — I/O-level privacy filtering of LLM interactions, not agent-memory-specific.
+
 ## 2026-07-10 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3 days. Found 3 new, verified, on-topic papers (each checked against its arXiv abstract page).

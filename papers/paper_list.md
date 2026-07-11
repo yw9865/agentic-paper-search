@@ -239,6 +239,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Introduces GhostWriter, a two-phase (injection then activation) memory-poisoning attack against LLM personal assistants with long-term memory, reaching ~98% injection success and ~60% activation rates. Proposes Agentic Memory Sentry (AM-Sentry), a memory-governance defense that substantially reduces attack effectiveness while preserving agent functionality.
 
+### StateFuse: Deterministic Conflict-Preserving Memory for Multi-Agent Systems
+- **arXiv**: 2607.05844 ([link](https://arxiv.org/abs/2607.05844))
+- **Date**: 2026-07-07
+- **Category**: Security
+- **Summary**: Argues that collapsing conflicting observations across multi-agent branches/replicas via silent overwrites hides tampering and disagreement. Proposes a conflict-aware replicated memory contract (standard OpSet/CRDT merge, immutable history, explicit conflict objects) that surfaces contradictions rather than resolving them early, enabling safer abstention and correction — a memory-integrity/auditability mechanism for multi-agent memory.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -433,3 +439,27 @@ Format per entry:
 - **Date**: 2026-07-06
 - **Category**: Optimization
 - **Summary**: Replaces iterative retrieval/reasoning in long-horizon multimodal agents with a reflexive design built in a single forward pass: episodic memories are hierarchically merged into a bounded, continuously-consolidated global script paired with a parametric latent state that drives actions. Reports 12.1x speedup and 2.6x lower GPU memory alongside a 2.4% accuracy gain over M3-Agent, making it a memory-consolidation/efficiency contribution.
+
+### What to Keep, What to Forget: A Rate-Distortion View of Memory Compaction in LLMs and Agents
+- **arXiv**: 2607.08032 ([link](https://arxiv.org/abs/2607.08032))
+- **Date**: 2026-07-09
+- **Category**: Optimization
+- **Summary**: Unifies KV-cache eviction, prompt pruning, architectural state limiting, and agent memory consolidation as instances of a single rate-distortion problem: what context-derived information to retain, at what fidelity, under a resource budget. Contributes one compaction objective, a seven-axis taxonomy, cross-layer transfer mechanisms, and a benchmark for repeated compaction in agent workflows, arguing that attention-magnitude/recency heuristics discard information before knowing whether future queries need it.
+
+### A Hierarchical Memory Architecture Overcomes Context Limits in Long-Horizon Multi-Agent Computational Modeling
+- **arXiv**: 2607.07666 ([link](https://arxiv.org/abs/2607.07666))
+- **Date**: 2026-07-08
+- **Category**: Optimization
+- **Summary**: Presents Ensemble QSP, a multi-agent system whose three-layer memory hierarchy keeps context bounded across extended multi-session workflows via strategic eviction of completed work, holding token usage stable (median ~301 tokens) regardless of project duration. A concrete long-horizon memory-management and cost-control contribution for multi-agent LLM workflows.
+
+### Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation
+- **arXiv**: 2607.07608 ([link](https://arxiv.org/abs/2607.07608))
+- **Date**: 2026-07-08
+- **Category**: Optimization
+- **Summary**: Proposes LaMem-VLA, which embeds historical experience directly into a VLA model's native latent space via a curator that organizes it into complementary short-term and long-term memory vaults with coordinated retrieval/integration. Maintains bounded context windows while accessing rich history and eliminates external memory-management overhead — a long-horizon memory-efficiency contribution for embodied agents.
+
+### NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation
+- **arXiv**: 2607.06678 ([link](https://arxiv.org/abs/2607.06678))
+- **Date**: 2026-07-07
+- **Category**: Optimization
+- **Summary**: Repurposes a VLA model's existing vision encoder to compress historical frames into single memory tokens, letting the pretrained policy attend over long-term history with negligible latency overhead and no external memory module. Reports large success-rate gains on long-horizon manipulation (e.g. 32.4%->84.0% in simulation) at low latency and GPU cost — a memory-compression/efficiency contribution for embodied agents.
