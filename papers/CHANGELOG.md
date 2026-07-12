@@ -4,6 +4,29 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-12 (scheduled scan)
+
+No new papers found.
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
+agent-memory papers in the last ~3 days. The most recent arXiv ID currently
+indexed is 2607.08666 (2026-07-09); arXiv has not yet announced any July 10-12
+submissions (July 12 is a Sunday). All on-topic July 9 papers are already
+handled: 2607.08032 was recorded on 2026-07-11, and the July 9 memory-adjacent
+security papers (TRACE 2607.08400, Token-Flow Firewall 2607.08395, Multi-Agent
+Firewall 2607.08282) were already evaluated and excluded as near-misses that
+same run. Nothing in the July 6-9 "just outside the window" zone is both
+on-topic and untracked.
+
+**Untracked older candidates noted (out of window, not added):** a sweep
+surfaced several clearly on-topic June papers that were never recorded by prior
+curated runs — e.g. Memory Contagion (2606.23195), Manufactured Confidence
+(2606.29279), Agent-Native Immune System (2606.28270), SMSR certified defence
+(2606.12703), MemVenom (2606.10742), GateMem (2606.18829), TRUSTMEM
+(2606.25161), Supersede (2606.27472), RaMem (2606.22844). These are 2-3 weeks
+old, so they were left out of a daily scan; flagged here in case a deliberate
+late-June backfill is wanted later.
+
 ## 2026-07-11 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new agent-memory papers published/revised in roughly the last 3 days. Found 5 new, verified, on-topic papers (each checked against its arXiv abstract page).
