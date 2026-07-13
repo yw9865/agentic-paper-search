@@ -1,0 +1,71 @@
+You maintain the agent-memory paper tracker in this repo (agentic-paper-search).
+This is the CONFERENCE scan (weekly). It is SEPARATE from the daily arXiv scan.
+Target venues for now: USENIX Security and IEEE S&P (Oakland). Continuous tracking.
+
+STEP 1 — Read state (do not skip):
+- papers/conf_seen.json is the authoritative dedup record for CONFERENCE papers.
+- papers/seen_ids.json is the arXiv dedup record. Read it too, because many conference
+  papers also have an arXiv preprint that may ALREADY be tracked there.
+- Skim the titles already in papers/paper_list.md so you don't add a paper that is
+  already recorded (it may have been added earlier via its arXiv preprint).
+
+STEP 2 — Find candidates from the official accepted-papers lists:
+Use WebSearch to locate the CURRENT official accepted-papers pages for the most recent
+and upcoming editions of each venue, then WebFetch those pages. The URLs below are
+starting points and change year to year / cycle to cycle — verify and adapt them:
+- USENIX Security: https://www.usenix.org/conference/usenixsecurity26/technical-sessions
+  and the per-cycle "accepted papers" pages (e.g. .../usenixsecurity26/summer-accepted-papers,
+  .../fall-accepted-papers, .../winter-accepted-papers). USENIX Security uses multiple
+  submission cycles that publish acceptances on a rolling basis, so check all available
+  cycles for the current edition (and next edition once its lists appear).
+- IEEE S&P (Oakland): https://sp2026.ieee-security.org/ (accepted-papers page, per cycle).
+  IEEE S&P also uses rolling cycles; check each cycle's accepted list.
+Prefer the official venue pages as the source of truth. Do not rely on memory for which
+papers were accepted — read the pages.
+
+STEP 3 — Filter STRICTLY to on-topic papers only:
+These are broad security venues; the OVERWHELMING MAJORITY of their papers are NOT about
+agent memory and must be excluded. Include a paper ONLY if it is about AGENT MEMORY
+(memory systems for LLM agents, multi-agent systems, or RAG-based agents) relating to:
+- SECURITY: memory poisoning/injection attacks, privacy leakage, unauthorized memory
+  access/exfiltration, adversarial persistence across sessions.
+- OPTIMIZATION: memory compression, retrieval efficiency, cost/latency reduction,
+  long-horizon memory management, forgetting/consolidation strategies.
+It is normal and expected for a scan to find ZERO on-topic papers. Do not stretch the
+scope to fill quota. Watch for keyword collisions (hardware/OS memory, "memory-safety"
+in the C/C++ sense, memory forensics) and exclude them.
+
+STEP 4 — Deduplicate before adding:
+Skip a candidate if ANY of these is true:
+- Its normalized title (lowercased, punctuation/whitespace stripped) already matches an
+  entry in papers/conf_seen.json for the same venue.
+- Its title already appears in papers/paper_list.md.
+- It has an arXiv ID that is already in papers/seen_ids.json.
+
+STEP 5 — For each genuinely new, on-topic, verified paper:
+1. Append an entry to the correct section (## Security or ## Optimization) of
+   papers/paper_list.md, in this venue-aware format:
+   ### <Title>
+   - **Venue**: <e.g. USENIX Security 2026 | IEEE S&P 2026>
+   - **arXiv**: <id> ([link](<url>))        (include this line ONLY if a preprint exists)
+   - **Link**: <official venue paper page or PDF URL>
+   - **Date**: <acceptance / publication date if known>
+   - **Category**: Security | Optimization
+   - **Summary**: 1-3 sentence summary of the contribution and why it's relevant.
+2. Append an object to the "seen" array in papers/conf_seen.json:
+   {"venue": "<venue>", "title": "<exact title>", "url": "<official link>", "arxiv": "<id or empty>"}
+
+STEP 6 — Prepend a dated section to papers/CHANGELOG.md, prefixed "[Conference scan]",
+listing the titles/venues added, or stating "No new conference papers found" if none.
+
+STEP 7 — If AND ONLY IF you added at least one new paper, send an email:
+  python3 scripts/send_email.py "Agent Memory Papers (conference): N new" "<body>"
+where <body> lists each new paper's title, venue, link, category, and a 1-sentence
+summary. Do not send email if nothing new was added.
+
+STEP 8 — If any files under papers/ changed, commit with a descriptive message
+(prefix the message with "Conference scan:") and push to origin main. If nothing
+changed, skip the commit entirely.
+
+Never fabricate papers, titles, venues, dates, links, or IDs. Verify every entry against
+its official venue page before adding it.
