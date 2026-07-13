@@ -4,6 +4,35 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-13 [Conference scan]
+
+No new conference papers found.
+
+First run of the weekly conference scan (USENIX Security, IEEE S&P). Read the
+official accepted-papers lists as the source of truth:
+- **USENIX Security '26 Cycle 1** (50 papers, via the technical-sessions program):
+  reviewed all titles; none concern LLM-agent memory. Cycle 2's accepted-papers
+  page is not yet published (404), so nothing to scan there yet.
+- **IEEE S&P 2026** (251 papers across both cycles): reviewed every title
+  containing memory/agent/RAG/retrieval; none concern agent memory systems.
+
+**Reviewed and excluded (out of scope):**
+- IEEE S&P "memory" hits are all hardware/OS memory or memory forensics
+  (Leafblower, GHost in the SHELL, Battering RAM, SeqAss, Heap Localization,
+  Recovering Mobile LLM Conversations via Memory Forensics) — keyword collisions,
+  not agent memory.
+- RAG-corpus security papers at both venues (USENIX "Overcoming the Retrieval
+  Barrier" IPI-into-corpora, USENIX "Five Queries Are Enough" membership
+  inference on RAG datastores, IEEE "Who Taught the Lie?" RAG poisoning
+  attribution, IEEE "GraphRAG under Fire") target the static retrieval corpus,
+  not an agent's persistent memory store — same boundary that keeps PoisonedRAG/
+  AgentPoison out of this tracker.
+- Web/browser-agent security (WebCloak, Dark Patterns on LLM web agents, Site
+  Isolation in Agentic Browsers, AI-agent data-access permissions) is agent
+  security but not memory.
+
+conf_seen.json remains empty; nothing added to paper_list.md.
+
 ## 2026-07-13 (scheduled scan)
 
 No new papers found.
