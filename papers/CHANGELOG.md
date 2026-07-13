@@ -4,6 +4,28 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-13 (scheduled scan)
+
+No new papers found.
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
+agent-memory papers in the last ~3 days. Sorting by both submittedDate and
+lastUpdatedDate, no on-topic paper carries a July 10-13 date — arXiv has still
+not announced any submissions past 2026-07-09 (today is Monday; weekend
+submissions are announced later in the ET evening). Every on-topic July paper
+surfaced (2607.08032, 2607.06595, 2607.05029, 2607.04391, 2607.04089,
+2607.03726, 2607.01935, 2607.01919, 2607.01916, 2607.02579) is already
+recorded in seen_ids.json.
+
+**Untracked July items reviewed and excluded:** Narrative World Model
+(2607.05577, fiction-writing memory) and COMFYCLAW (2607.01709, self-evolving
+image-generation skill harnesses) are near-misses, not security/optimization of
+agent interaction-memory. MemSyco-Bench (2607.01071, sycophancy in retrieved
+memory) and Multi-Head Recurrent Memory Agents (2607.01523) are on-topic but
+~12 days old, well outside the daily window. The late-June backlog flagged on
+2026-07-12 (Memory Contagion, MemVenom, RaMem, etc.) remains available for a
+deliberate backfill if wanted.
+
 ## 2026-07-12 (scheduled scan)
 
 No new papers found.
