@@ -50,6 +50,12 @@ email/git/log infrastructure as the daily scan; conference logs are prefixed `co
 `.claude/settings.local.json` — it reuses the same `papers/**` + git + `send_email.py`
 scopes as the daily scan.
 
+Conference-scan gotcha (first hit 2026-07-13): **USENIX returns HTTP 403 to a direct
+`WebFetch`.** `conf_prompt.txt` therefore instructs a fallback via the `https://r.jina.ai/<url>`
+reader proxy and tells the scan to flag an unreachable venue in the CHANGELOG rather than
+silently reporting "no new papers". If USENIX coverage ever goes quiet, check the
+`conf_*.log` for 403s and confirm the proxy fallback still resolves.
+
 **Cron-environment gotchas already hit once (2026-07-03) — the 9am run
 silently failed until these were fixed:**
 - `scripts/daily_scan.sh` calls the **absolute path** `~/.local/bin/claude`,

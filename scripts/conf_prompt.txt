@@ -23,6 +23,20 @@ starting points and change year to year / cycle to cycle — verify and adapt th
 Prefer the official venue pages as the source of truth. Do not rely on memory for which
 papers were accepted — read the pages.
 
+FETCH FALLBACK (important — automated runs are non-interactive): USENIX frequently returns
+HTTP 403 to a direct WebFetch. If a venue page is blocked (403) or otherwise unfetchable,
+retry it through the reader proxy by prefixing the URL, i.e. fetch
+  https://r.jina.ai/<original-url>
+(e.g. https://r.jina.ai/https://www.usenix.org/conference/usenixsecurity26/technical-sessions)
+which returns the same official page content as plain text. Use the proxy ONLY as a
+fallback when the direct fetch fails; the official page remains the source of truth. Do
+NOT silently skip a venue because it returned 403 — try the proxy first, and if a venue is
+genuinely unreachable, say so explicitly in the CHANGELOG entry rather than reporting a
+clean "no new papers". As a secondary cross-check for already-published proceedings you
+may also consult DBLP (https://dblp.org/db/conf/uss/ for USENIX Security,
+https://dblp.org/db/conf/sp/ for IEEE S&P), but note DBLP lags — it lists papers only once
+proceedings are published, so it misses early rolling-cycle acceptances.
+
 STEP 3 — Filter STRICTLY to on-topic papers only:
 These are broad security venues; the OVERWHELMING MAJORITY of their papers are NOT about
 agent memory and must be excluded. Include a paper ONLY if it is about AGENT MEMORY
