@@ -463,3 +463,15 @@ Format per entry:
 - **Date**: 2026-07-07
 - **Category**: Optimization
 - **Summary**: Repurposes a VLA model's existing vision encoder to compress historical frames into single memory tokens, letting the pretrained policy attend over long-term history with negligible latency overhead and no external memory module. Reports large success-rate gains on long-horizon manipulation (e.g. 32.4%->84.0% in simulation) at low latency and GPU cost — a memory-compression/efficiency contribution for embodied agents.
+
+### Shared Selective Persistent Memory for Agentic LLM Systems
+- **arXiv**: 2607.09493 ([link](https://arxiv.org/abs/2607.09493))
+- **Date**: 2026-07-10
+- **Category**: Optimization
+- **Summary**: Instead of persisting whole conversation histories (token-inefficient and quality-degrading), retains only four categories of reusable context (task specs, data schemas, tool configs, output constraints) while discarding session-specific reasoning traces, and shares this memory across users via role-based access control. A complementary zero-token data-refresh mechanism decouples generated programs from runtime data; reports 96% task completion (vs. 79% without memory, 71% with full history), 14x task-time reduction, and 97x lower per-invocation token cost.
+
+### Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents
+- **arXiv**: 2607.08716 ([link](https://arxiv.org/abs/2607.08716))
+- **Date**: 2026-07-09
+- **Category**: Optimization
+- **Summary**: Addresses long-horizon tasks where decision-relevant state is scattered across an expanding trajectory. A separate memory agent monitors the action agent's trajectory, maintains a structured memory bank, and selectively injects reminders only when needed, showing that selective intervention outperforms passive memory-bank exposure (+8.3 and +6.8 points on two benchmarks) — a long-horizon memory-management/efficiency contribution.

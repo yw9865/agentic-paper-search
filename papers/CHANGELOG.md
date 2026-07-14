@@ -4,6 +4,39 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-14 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
+agent-memory papers published/revised in roughly the last 3 days. arXiv has now
+indexed submissions through 2026-07-10 (newest ID 2607.09xxx); nothing past
+July 10 is announced yet (July 11-13 was the weekend/Monday, July 14 announces
+later this ET evening). Found 2 new, verified, on-topic papers (each checked
+against its arXiv abstract page). No new Security papers this run.
+
+**Optimization (2):**
+- Shared Selective Persistent Memory for Agentic LLM Systems (2607.09493) — 2026-07-10
+- Remember When It Matters: Proactive Memory Agent for Long-Horizon Agents (2607.08716) — 2026-07-09
+
+**Near-misses considered and excluded:**
+- Mosaic: Runtime-Efficient Multi-Agent Embodied Planning (2607.09603) — core
+  contribution is ILP-based coordination; agent-centric semantic memory is a
+  supporting mechanism, not a memory compression/efficiency contribution.
+- Harness VLA: Steering Frozen VLAs via Memory-Guided Agents (2607.08448) —
+  robotic-manipulation VLA composition; memory is an operational enabler, not
+  the contribution.
+- Seeing and Reflecting / MMEACR (2607.07108) — multimodal recommendation
+  application that uses a dual-track memory architecture; memory serves the
+  downstream recommendation task rather than being the research focus.
+- Danus (2607.06447), End-to-End LLM Flight Planning with RAG-based Memory
+  (2607.06964) — application papers that use memory incidentally.
+- Token-Flow Firewall (2607.08395) and Out of Sight (2607.08180) — general agent
+  runtime auditing / crawler content protection, already/again excluded as not
+  memory-centric.
+
+The late-June/May backlog flagged on prior runs (Memory Contagion, MemVenom,
+RaMem, Hijacking agent memory 2605.29960, etc.) remains available for a
+deliberate backfill if wanted.
+
 ## 2026-07-13 [Conference scan]
 
 No new conference papers found.
