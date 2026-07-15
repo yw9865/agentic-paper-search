@@ -245,6 +245,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Argues that collapsing conflicting observations across multi-agent branches/replicas via silent overwrites hides tampering and disagreement. Proposes a conflict-aware replicated memory contract (standard OpSet/CRDT merge, immutable history, explicit conflict objects) that surfaces contradictions rather than resolving them early, enabling safer abstention and correction — a memory-integrity/auditability mechanism for multi-agent memory.
 
+### The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory
+- **arXiv**: 2607.10608 ([link](https://arxiv.org/abs/2607.10608))
+- **Date**: 2026-07-12
+- **Category**: Security
+- **Summary**: Studies how agents behave when retrieved memory conflicts with the task (the downstream failure mode of poisoned/stale memory), tracing where memory first changes an action, whether the change carries forward, and whether the agent recovers. Using WebArena and a new MemTrapBench, finds agents tend to "comply" with the conflicting memory at the first decision point and then collapse to a low success floor, with stronger models losing more absolute capability — arguing retrieval-quality/final-success metrics miss this reliability risk.
+
+### Agents Don't Just Agree, They Remember: Benchmarking Persistent Sycophancy in Stateful Personal Agents
+- **arXiv**: 2607.10526 ([link](https://arxiv.org/abs/2607.10526))
+- **Date**: 2026-07-12
+- **Category**: Security
+- **Summary**: Introduces PASB, a 1,600-task benchmark showing that when user claims are written into durable agent memory, downstream failure rates jump from 45% (session-only memory) to 71.9% (persistent storage), via status promotion, attribution removal, and scope broadening during storage. Frames agent sycophancy as a state-writing governance problem requiring safety controls at the memory-storage layer rather than only at response generation.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -475,3 +487,15 @@ Format per entry:
 - **Date**: 2026-07-09
 - **Category**: Optimization
 - **Summary**: Addresses long-horizon tasks where decision-relevant state is scattered across an expanding trajectory. A separate memory agent monitors the action agent's trajectory, maintains a structured memory bank, and selectively injects reminders only when needed, showing that selective intervention outperforms passive memory-bank exposure (+8.3 and +6.8 points on two benchmarks) — a long-horizon memory-management/efficiency contribution.
+
+### MemDecay: Region-Aware KV Cache Eviction for Efficient LLM Agent Inference
+- **arXiv**: 2607.10582 ([link](https://arxiv.org/abs/2607.10582))
+- **Date**: 2026-07-12
+- **Category**: Optimization
+- **Summary**: A training-free KV-cache eviction strategy for LLM agents that recognizes different context regions (system instructions, plans, tool outputs, scratchpad) have different importance lifecycles rather than applying uniform rules. Reports that attention patterns differ by an order of magnitude across regions (system instructions persist ~10-12x longer than intermediate scratchpad), and assigns region-specific priorities to protect critical sections while evicting the lowest-priority pages under memory constraints — a memory/latency-efficiency contribution for agent inference.
+
+### AAFLOW+: Stateful Operator Abstraction with Zero-Copy Distributed KV Cache Orchestration for Multi-Agent Workflows
+- **arXiv**: 2607.10987 ([link](https://arxiv.org/abs/2607.10987))
+- **Date**: 2026-07-13
+- **Category**: Optimization
+- **Summary**: Treats the KV cache as a distributed-systems primitive rather than a local per-agent artifact, letting agents in a multi-agent workflow share cached context across the network without recomputation via zero-copy transfers and stateful operator abstraction. Targets redundant-computation cost in collaborative multi-agent reasoning — a cost/latency-efficiency contribution for multi-agent memory/state reuse.

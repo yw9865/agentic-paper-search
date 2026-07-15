@@ -4,6 +4,38 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-15 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
+agent-memory papers, focusing on the July 11-14 window (the 2026-07-14 run
+covered through July 10). arXiv has now indexed submissions through 2026-07-13
+(newest IDs 2607.117xx). Found 4 new, verified, on-topic papers (each checked
+against its arXiv abstract page).
+
+**Security (2):**
+- The Compliance Trap: Diagnosing How AI Agents Consume Conflicting Memory (2607.10608) — 2026-07-12
+- Agents Don't Just Agree, They Remember: Benchmarking Persistent Sycophancy in Stateful Personal Agents (2607.10526) — 2026-07-12
+
+**Optimization (2):**
+- MemDecay: Region-Aware KV Cache Eviction for Efficient LLM Agent Inference (2607.10582) — 2026-07-12
+- AAFLOW+: Stateful Operator Abstraction with Zero-Copy Distributed KV Cache Orchestration for Multi-Agent Workflows (2607.10987) — 2026-07-13
+
+**Near-misses considered and excluded:**
+- Forgetting Our Way to Shared Meaning (2607.11787) — a coordination-game /
+  cognitive-science study of how forgetting affects conceptual alignment among
+  players, not an engineered LLM-agent memory system for security/optimization.
+- OpsMem: Dual-Memory Reasoning with Cross-Memory Resonance for Failure
+  Diagnosis (2607.11357) — memory is the central mechanism, but the contribution
+  targets diagnostic reasoning quality in a narrow AIOps domain rather than the
+  security or optimization axes this tracker follows.
+- Vinci2 (2607.11523) and A Glimpse into Long-term Physical Coexistence with
+  Intelligent Robots (2607.11377) — egocentric-video / robotics application
+  papers that use persistent memory incidentally.
+
+The late-June/May backlog flagged on prior runs (Memory Contagion, MemVenom,
+RaMem, Hijacking agent memory 2605.29960, MRMS 2607.04617, etc.) remains
+available for a deliberate backfill if wanted.
+
 ## 2026-07-14 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
