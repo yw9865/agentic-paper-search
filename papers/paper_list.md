@@ -499,3 +499,15 @@ Format per entry:
 - **Date**: 2026-07-13
 - **Category**: Optimization
 - **Summary**: Treats the KV cache as a distributed-systems primitive rather than a local per-agent artifact, letting agents in a multi-agent workflow share cached context across the network without recomputation via zero-copy transfers and stateful operator abstraction. Targets redundant-computation cost in collaborative multi-agent reasoning — a cost/latency-efficiency contribution for multi-agent memory/state reuse.
+
+### ToolAtlas: Learning Once, Reusing Everywhere with Tool-Side Memory
+- **arXiv**: 2607.11126 ([link](https://arxiv.org/abs/2607.11126))
+- **Date**: 2026-07-13
+- **Category**: Optimization
+- **Summary**: Builds a persistent provider-side "tool memory" — a graph of tool capabilities, failure boundaries, and cross-tool compositions distilled through execution verification and accessed via adaptive traversal — so agents reuse learned tool knowledge across environments and frameworks without task-time exploration or retraining. Reports up to 21.61% pass@1 improvement, framing reusable tool-knowledge memory as a retrieval-efficiency/cost-reduction contribution.
+
+### Speculate with Memory: Lossless Acceleration for LLM Agents
+- **arXiv**: 2607.12236 ([link](https://arxiv.org/abs/2607.12236))
+- **Date**: 2026-07-14
+- **Category**: Optimization
+- **Summary**: Accelerates LLM-agent execution losslessly by giving the speculative predictor a memory of past agent trajectories — a transition table, episodic memory, and error tracker — so it learns to predict the agent's next actions more accurately as the memory grows (19-39% relative action-prediction accuracy gain). Speculation runs during idle periods at zero added wall-clock cost, framing trajectory memory as a cost/latency optimization for agents.

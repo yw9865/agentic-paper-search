@@ -4,6 +4,42 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-16 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
+agent-memory papers, focusing on the July 13-15 window (the 2026-07-15 run
+covered through July 13). arXiv has now indexed submissions through 2026-07-14
+(newest ID 2607.13027); nothing dated July 15 is announced yet. Found 2 new,
+verified, on-topic papers (each checked against its arXiv abstract page). No new
+Security papers this run.
+
+**Optimization (2):**
+- ToolAtlas: Learning Once, Reusing Everywhere with Tool-Side Memory (2607.11126) — 2026-07-13
+- Speculate with Memory: Lossless Acceleration for LLM Agents (2607.12236) — 2026-07-14
+
+**Near-misses considered and excluded:**
+- Isolation as a First-Class Principle for LLM-Agent System Safety (2607.12406) —
+  a boundary/isolation safety taxonomy across five agent interfaces; touches
+  memory poisoning as one vector but is a system-safety survey, not a memory
+  mechanism.
+- Critic Experience Bank (2607.12397) — a self-evolving memory bank of past
+  judgments, but the contribution is step-level confidence calibration, not a
+  memory security or compression/efficiency method.
+- PM-Bench: Evaluating Prospective Memory in LLM Agents (2607.12385) — benchmarks
+  the cognitive capability of executing delayed intentions; a memory-evaluation
+  benchmark, neither a security nor optimization technique.
+- A Formal Hierarchical Architecture for Agentic Orchestration with Stack-Based
+  Execution and Lazy Discovery (2607.11138) — tool-registry routing/orchestration
+  efficiency where lazy memory and branch isolation are byproducts, not an
+  agent-memory contribution.
+- PalmClaw (2607.13027) and "How to Realize Recursively Self-Improving Agents"
+  (2607.12254) — an on-device mobile agent framework and a multi-agent
+  self-improvement architecture; memory is an incidental component in both.
+
+The late-June/May backlog flagged on prior runs (Memory Contagion, MemVenom,
+RaMem, Hijacking agent memory 2605.29960, MRMS 2607.04617, etc.) remains
+available for a deliberate backfill if wanted.
+
 ## 2026-07-15 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
