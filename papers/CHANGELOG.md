@@ -4,6 +4,33 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-17 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
+agent-memory papers, focusing on the July 14-17 window (the 2026-07-16 run
+covered through July 14). arXiv has now indexed submissions through 2026-07-15
+(newest IDs 2607.138xx). Found 3 new, verified, on-topic papers (each checked
+against its arXiv abstract page). No new Security papers this run — the security
+search surfaced only already-tracked entries.
+
+**Optimization (3):**
+- Oracle Agent Memory as an Enterprise Memory Substrate for Long-Horizon AI Agents (2607.13157) — 2026-07-14
+- Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents (2607.13591) — 2026-07-15
+- Experience Memory Graph: One-Shot Error Correction for Agents (2607.13884) — 2026-07-15
+
+**Near-misses considered and excluded:**
+- Critic Experience Bank (2607.12397), PM-Bench (2607.12385), Isolation as a
+  First-Class Principle (2607.12406), PalmClaw (2607.13027), and the
+  self-improving-agents architecture (2607.12254) — all previously logged as
+  near-misses on the 2026-07-16 run and unchanged.
+- Forgetting Our Way to Shared Meaning (2607.11787) and LongMedBench (2607.09322) —
+  a coordination-game study of forgetting and a medical long-horizon benchmark;
+  neither a memory security nor a compression/efficiency technique.
+
+The late-June/May backlog flagged on prior runs (Memory Contagion, MemVenom,
+RaMem, Hijacking agent memory 2605.29960, MRMS 2607.04617, etc.) remains
+available for a deliberate backfill if wanted.
+
 ## 2026-07-16 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new

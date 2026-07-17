@@ -511,3 +511,21 @@ Format per entry:
 - **Date**: 2026-07-14
 - **Category**: Optimization
 - **Summary**: Accelerates LLM-agent execution losslessly by giving the speculative predictor a memory of past agent trajectories — a transition table, episodic memory, and error tracker — so it learns to predict the agent's next actions more accurately as the memory grows (19-39% relative action-prediction accuracy gain). Speculation runs during idle periods at zero added wall-clock cost, framing trajectory memory as a cost/latency optimization for agents.
+
+### Oracle Agent Memory as an Enterprise Memory Substrate for Long-Horizon AI Agents
+- **arXiv**: 2607.13157 ([link](https://arxiv.org/abs/2607.13157))
+- **Date**: 2026-07-14
+- **Category**: Optimization
+- **Summary**: Presents a database-native agent-memory substrate with a full lifecycle (ingestion through removal) and a layered architecture with scope controls, aimed at retaining task state and user-specific facts across extended interactions in enterprise deployments. Reports ~93.8% accuracy while using about 10.7x fewer tokens than flat-history baselines — a memory compression and cost-efficiency contribution for long-horizon agents.
+
+### Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents
+- **arXiv**: 2607.13591 ([link](https://arxiv.org/abs/2607.13591))
+- **Date**: 2026-07-15
+- **Category**: Optimization
+- **Summary**: Proposes MemCon, which treats memory operations as a Markov Decision Process and learns an adaptive policy — via lightweight contextual bandits, without pretraining — deciding when to retrieve, inject plans, or consolidate/forget rather than using fixed retrieval strategies. Reports cutting token consumption by 5-20% while improving task success by up to 15.2 points — a retrieval-efficiency and consolidation-policy optimization contribution.
+
+### Experience Memory Graph: One-Shot Error Correction for Agents
+- **arXiv**: 2607.13884 ([link](https://arxiv.org/abs/2607.13884))
+- **Date**: 2026-07-15
+- **Category**: Optimization
+- **Summary**: Reformulates agent failure recovery as a graph-matching problem: it distills successful workflows by comparing failed and expert trajectories and stores correction guidance in an Experience Memory Graph with task-specific and cross-task edges, enabling one-shot correction. By reusing stored corrections instead of iterative self-reflection loops, it eliminates test-time trial-and-error and reduces API calls and execution latency — a cost/latency-efficiency contribution built on a reusable agent-memory structure.
