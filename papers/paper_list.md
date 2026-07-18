@@ -257,6 +257,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Introduces PASB, a 1,600-task benchmark showing that when user claims are written into durable agent memory, downstream failure rates jump from 45% (session-only memory) to 71.9% (persistent storage), via status promotion, attribution removal, and scope broadening during storage. Frames agent sycophancy as a state-writing governance problem requiring safety controls at the memory-storage layer rather than only at response generation.
 
+### MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents
+- **arXiv**: 2607.14651 ([link](https://arxiv.org/abs/2607.14651))
+- **Date**: 2026-07-16
+- **Category**: Security
+- **Summary**: Introduces MemPoison, a benchmark of 1,227 validated cases probing injection attacks against persistent external memory across multiple memory systems and model families. Defines three escalating attack levels — direct corruption, compositional corruption, and context-triggered dormant attacks — and shows standard static-filtering defenses fail against the more sophisticated variants, arguing for context-aware defenses instead.
+
+### Token-Flow Firewall: Semantic Runtime Auditing for Persistent AI Agents
+- **arXiv**: 2607.08395 ([link](https://arxiv.org/abs/2607.08395))
+- **Date**: 2026-07-09
+- **Category**: Security
+- **Summary**: Proposes TokenWall, a runtime defense that treats persistent memory updates (alongside tool arguments and inter-component messages) as a semantic attack surface, intercepting risky natural-language flows before they reach privileged runtime sinks. Reports reducing attack success rate to 12.5% at a 97.4% benign pass rate with ~0.69s latency overhead, targeting attack propagation through long-lived agent memory.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -529,3 +541,21 @@ Format per entry:
 - **Date**: 2026-07-15
 - **Category**: Optimization
 - **Summary**: Reformulates agent failure recovery as a graph-matching problem: it distills successful workflows by comparing failed and expert trajectories and stores correction guidance in an Experience Memory Graph with task-specific and cross-task edges, enabling one-shot correction. By reusing stored corrections instead of iterative self-reflection loops, it eliminates test-time trial-and-error and reduces API calls and execution latency — a cost/latency-efficiency contribution built on a reusable agent-memory structure.
+
+### Track, Rank, Crack: Epistemic Working Memory Scales Multi-Hop Reasoning in Language Agents
+- **arXiv**: 2607.12267 ([link](https://arxiv.org/abs/2607.12267))
+- **Date**: 2026-07-14
+- **Category**: Optimization
+- **Summary**: Introduces SLEUTH, which maintains a structured epistemic working memory (Confirmed Facts, Active Hypotheses, Open Questions) to counteract context dilution as reasoning chains lengthen. Shows that organizing and managing working-memory state — not raw model capability — is what lets agents scale to longer multi-hop chains, with gains growing from +5 to +11 points as task difficulty rises; a long-horizon memory-management contribution.
+
+### MemoHarness: Agent Harnesses That Learn from Experience
+- **arXiv**: 2607.14159 ([link](https://arxiv.org/abs/2607.14159))
+- **Date**: 2026-07-14
+- **Category**: Optimization
+- **Summary**: Decomposes the agent harness into six controllable dimensions and adds a dual-layer experience bank that learns reusable control patterns from prior executions, retrieving them at inference without test-time feedback. Reports beating fixed harnesses on task performance while keeping compute competitive via cached experience retrieval — an experience-memory consolidation-and-reuse contribution.
+
+### MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations
+- **arXiv**: 2607.12893 ([link](https://arxiv.org/abs/2607.12893))
+- **Date**: 2026-07-14
+- **Category**: Optimization
+- **Summary**: Reformulates conversational memory as a sequence of lifecycle operations (remembering, forgetting, updating, reflecting) and evaluates systems via structured operation traces rather than final-answer accuracy. Across retrieval-based, parametric, and managed-memory approaches, it exposes failures in ordered memory-state reconstruction and session-level retrieval organization — a diagnostic tool for long-horizon memory management.

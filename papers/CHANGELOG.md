@@ -4,6 +4,41 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-18 (scheduled scan)
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
+agent-memory papers, focusing on the July 14-18 window (the 2026-07-17 run
+covered through July 15). arXiv has now indexed submissions through 2026-07-16
+(newest on-topic IDs 2607.146xx). Found 5 new, verified, on-topic papers (each
+checked against its arXiv abstract page).
+
+**Security (2):**
+- MemPoison: Uncovering Persistent Memory Threats and Structural Blind Spots in LLM Agents (2607.14651) — 2026-07-16
+- Token-Flow Firewall: Semantic Runtime Auditing for Persistent AI Agents (2607.08395) — 2026-07-09
+
+**Optimization (3):**
+- Track, Rank, Crack: Epistemic Working Memory Scales Multi-Hop Reasoning in Language Agents (2607.12267) — 2026-07-14
+- MemoHarness: Agent Harnesses That Learn from Experience (2607.14159) — 2026-07-14
+- MemOps: Benchmarking Lifecycle Memory Operations in Long-Horizon Conversations (2607.12893) — 2026-07-14
+
+**Near-misses considered and excluded:**
+- Isolation as a First-Class Principle (2607.12406), Critic Experience Bank
+  (2607.12397), and PM-Bench (2607.12385) — all previously logged as near-misses
+  on the 2026-07-16/07-17 runs and unchanged; kept excluded for consistency.
+  Isolation is a five-boundary agent-safety taxonomy where memory poisoning is
+  only one failure type, not a memory-focused contribution.
+- Out of Sight: Compression-Aware Content Protection against Agentic Crawlers
+  (2607.08180) — content-watermarking defense against crawlers, not an
+  agent-memory security or optimization technique.
+- RetroAgent (2607.14512), Forgetting Our Way to Shared Meaning (2607.11787) —
+  a domain-specific retrosynthesis planner and a coordination-game study of
+  forgetting; neither a memory security nor a compression/efficiency technique.
+
+Token-Flow Firewall (2607.08395) is dated 2026-07-09, just outside the recent
+window, but was not previously tracked and treats persistent memory updates as a
+core attack surface, so it is included per the "clearly relevant, not yet seen"
+allowance.
+
 ## 2026-07-17 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
