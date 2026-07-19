@@ -4,6 +4,31 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-19 (scheduled scan)
+
+No new papers found.
+
+Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
+agent-memory security/optimization papers, focusing on the July 16-19 window.
+The arXiv full-text search index still lags to ~2026-07-14, and seen_ids already
+covers through 2026-07-16 (added by the 2026-07-18 run); today is a Sunday, when
+arXiv does not announce new submissions, so no fresh on-topic papers had appeared.
+Queried the arXiv API by "agent memory" plus security terms (memory
+poisoning/injection/extraction) and optimization terms
+(compression/retrieval/forgetting/consolidation/efficiency); every result was
+already in seen_ids or off-topic.
+
+**Near-misses considered and excluded:**
+- Isolation as a First-Class Principle for LLM-Agent System Safety (2607.12406) —
+  re-verified against its abstract page; a five-boundary agent-safety taxonomy
+  where memory poisoning is only one failure type, not a memory-focused
+  contribution. Already excluded on prior runs; kept excluded.
+- MemSyco-Bench: Benchmarking Sycophancy in Agent Memory (2607.01071) and MemDelta:
+  Controlled Baselines and Hidden Confounds in Agent Memory Evaluation (2606.29914)
+  — evaluation/benchmark methodology for agent memory, not a security
+  (poisoning/privacy/access) or optimization (compression/retrieval/forgetting)
+  technique; also both well outside the recent window.
+
 ## 2026-07-18 (scheduled scan)
 
 Searched arXiv (cs.AI, cs.CL, cs.CR, cs.LG, cs.MA) and the web for new
