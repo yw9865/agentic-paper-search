@@ -4,6 +4,33 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-20 (scheduled scan)
+
+1 new paper (Security):
+
+- **Bad Memory: Evaluating Prompt Injection Risks from Memory in Agentic Systems**
+  (2607.14611) — verified against its abstract page; submitted 2026-07-16.
+  Empirically evaluates prompt-injection risk from the persistent state (memory
+  files, preferences, knowledge bases) agentic systems carry across sessions:
+  agents resist overwriting their own memory, but payloads already resident in
+  memory files are effective attack vectors for current and future sessions.
+
+Surfaced via the cs.MA / cs.CR "recent" listings — the arXiv abstract-search
+index still lags to ~2026-07-14, so date-sorted API queries did not return it.
+Cross-checked cs.AI, cs.CL, cs.LG, and cs.MA "recent" listings plus multiple
+web/API searches for the July 15-20 window.
+
+**Near-misses considered and excluded:**
+- PReM: Learning What to Preserve and When to Refresh for Context Compression
+  (2607.14327, 2026-07-15) — re-verified against its abstract page; a generic
+  long-context KV-cache/context-compression method for single-shot LLM inference
+  (32K-token QA). Makes no mention of agents, tool use, multi-turn tasks, or
+  agent memory, unlike the agent-framed compaction papers already tracked
+  (2607.08032, 2607.10582). Out of scope (agent memory) — excluded.
+- Forgetting Our Way to Shared Meaning (2607.11787) — a human coordination-game
+  study on conceptual forgetting; keyword collision on "forgetting", not agent
+  memory. Excluded.
+
 ## 2026-07-19 (scheduled scan)
 
 No new papers found.

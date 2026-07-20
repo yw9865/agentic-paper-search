@@ -269,6 +269,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Proposes TokenWall, a runtime defense that treats persistent memory updates (alongside tool arguments and inter-component messages) as a semantic attack surface, intercepting risky natural-language flows before they reach privileged runtime sinks. Reports reducing attack success rate to 12.5% at a 97.4% benign pass rate with ~0.69s latency overhead, targeting attack propagation through long-lived agent memory.
 
+### Bad Memory: Evaluating Prompt Injection Risks from Memory in Agentic Systems
+- **arXiv**: 2607.14611 ([link](https://arxiv.org/abs/2607.14611))
+- **Date**: 2026-07-16
+- **Category**: Security
+- **Summary**: Empirically evaluates prompt-injection risks arising from the persistent state (memory files, behavioral preferences, knowledge bases) that agentic systems carry across sessions, testing two agent platforms with four models in a controlled sandbox. Finds agents largely resist being tricked into overwriting their own memory with external content, but payloads *already residing* in memory files are effective attack vectors for both current and future interactions, with success rates and payload longevity varying by system, model, attack objective, and sequence complexity.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
