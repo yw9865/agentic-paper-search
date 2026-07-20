@@ -4,6 +4,38 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-20 (Conference scan)
+
+No new conference papers found.
+
+Checked the official accepted-papers lists for both tracked venues:
+- **USENIX Security 2026** — Cycle 1 accepted papers (50 papers). Direct WebFetch
+  returned HTTP 403; retrieved successfully via the `r.jina.ai` reader proxy.
+  No agent-memory papers. The Cycle 2 accepted-papers page does not yet exist
+  (404), so Cycle 1 is the full published coverage for this edition so far.
+- **IEEE S&P 2026 (Oakland)** — accepted-papers.html (254 papers), fetched
+  directly. No agent-memory papers.
+
+`conf_seen.json` is still empty; nothing added this run.
+
+**Near-misses considered and excluded (IEEE S&P 2026):**
+- GraphRAG under Fire (arXiv 2501.14050) — poisoning of GraphRAG's static
+  external knowledge-graph corpus for QA (GragPoison). General RAG-corpus
+  security, not persistent agent memory. Excluded.
+- Who Taught the Lie? Responsibility Attribution for Poisoned Knowledge in
+  Retrieval-Augmented Generation (RAGOrigin, arXiv 2509.13772) — attributes
+  which knowledge-database texts caused a RAG misgeneration. General RAG
+  corpus, not agent memory. Excluded.
+- AttnTrace: Contextual Attribution of Prompt Injection and Knowledge
+  Corruption (arXiv 2508.03793) — general prompt-injection/context attribution,
+  not agent memory. Excluded.
+- Recovering and Rehosting Mobile Local LLM Conversations and Contexts via
+  Memory Forensics — device/RAM memory forensics, a keyword collision on
+  "memory", not an agent-memory system. Excluded.
+- Also noted but out of scope for this scan: ShadowMerge (arXiv 2605.09033), a
+  genuine graph-based agent-memory poisoning attack, is an arXiv-only preprint
+  not on either venue's accepted list; left to the daily arXiv scan.
+
 ## 2026-07-20 (scheduled scan)
 
 1 new paper (Security):
