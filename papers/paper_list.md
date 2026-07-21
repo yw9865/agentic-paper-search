@@ -275,6 +275,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Empirically evaluates prompt-injection risks arising from the persistent state (memory files, behavioral preferences, knowledge bases) that agentic systems carry across sessions, testing two agent platforms with four models in a controlled sandbox. Finds agents largely resist being tricked into overwriting their own memory with external content, but payloads *already residing* in memory files are effective attack vectors for both current and future interactions, with success rates and payload longevity varying by system, model, attack objective, and sequence complexity.
 
+### Do Agents Dream of False Memories? Black-box Visual Attacks on Long-term Memory in Multimodal AI Agents
+- **arXiv**: 2607.15657 ([link](https://arxiv.org/abs/2607.15657))
+- **Date**: 2026-07-17
+- **Category**: Security
+- **Summary**: Introduces Lucid, a black-box adversarial framework that attacks the long-term memory of multimodal AI agents using imperceptible image perturbations, extending memory poisoning/injection threats from text to the visual channel. Demonstrates two attack modes — memory poisoning (corrupting stored visual memories) and memory injection — achieving 61.6% and 58.4% success respectively across multiple memory architectures without white-box access.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models

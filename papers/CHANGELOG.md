@@ -4,6 +4,39 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-21 (scheduled scan)
+
+1 new paper (Security):
+
+- **Do Agents Dream of False Memories? Black-box Visual Attacks on Long-term
+  Memory in Multimodal AI Agents** (2607.15657) — verified against its abstract
+  page; submitted 2026-07-17. Introduces Lucid, a black-box framework that
+  attacks the long-term memory of multimodal AI agents via imperceptible image
+  perturbations (memory poisoning and memory injection modes), extending
+  memory-poisoning threats from text to the visual channel; reports 61.6% /
+  58.4% success across multiple memory architectures.
+
+Surfaced via the cs.CR date-sorted API query (highest ID in the July 16-17
+batch). Cross-checked cs.AI, cs.CL, cs.LG, and cs.MA listings plus
+"long-term memory / memory compression / memory management" term searches for
+the July 16-21 window; nothing announced from July 18-21 (weekend gap — arXiv's
+newest on-topic listings top out at July 17).
+
+**Near-misses considered and excluded:**
+- MemDefrag: Latent Memory Defragmentation for Large Language Models
+  (2607.05969, submitted 2026-07-07, revised 2026-07-15) — training-free
+  ranking/reordering/forgetting over stored "memories," but those memories are
+  the model's own per-layer hidden states (an internal latent-representation
+  store), not an agent's external/episodic/RAG memory system. Out of scope
+  (model-internal memory, not agent memory). Excluded.
+- Stigmergic Graph Memory (2607.15182) — shared environment map for classical
+  multi-agent pickup/delivery (MAPF), not an LLM/RAG agent memory system.
+  Keyword collision. Excluded.
+- VTM-Nav (2607.14514), ReflectWorld-MM (2607.09759), LightMem-Ego (2607.11487)
+  — memory systems for embodied navigation / multimodal video / personal-life
+  logging; not security- or optimization-focused on the memory subsystem in the
+  senses this tracker follows. Excluded.
+
 ## 2026-07-20 (Conference scan)
 
 No new conference papers found.
