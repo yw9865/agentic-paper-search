@@ -4,6 +4,97 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-30 (scheduled scan)
+
+14 new papers (4 Security, 10 Optimization). Large batch because the previous
+recorded run was 2026-07-21, leaving a nine-day backlog (the local cron only
+fires while this machine is on).
+
+**Security:**
+
+- **ChannelGuard: Safe Models Do Not Compose into Safe Multi-Agent Systems**
+  (2607.19430) — submitted 2026-07-20. Information-bottleneck gates on every
+  inter-agent channel; shows an "apparently safe" undefended pipeline owed its
+  0.000 tool-/memory-poisoning success almost entirely to the cloud provider's
+  server-side filter.
+- **The Chronos Vulnerability: A Taxonomy of Temporal Persistence and
+  Memory-Based Deception in Agentic AI** (2607.19433) — submitted 2026-07-20.
+  Formalizes memory-based attacks that decouple compromise from effect in time
+  (memory injection, sleeper agents, "Dynamics Blindness").
+- **ConsistencyGate: Preventing Memory Contamination in LLM Agents via
+  Self-Consistency Admission Control** (2607.22962) — submitted 2026-07-25.
+  Write-time admission gate that blocks hallucinated facts from persisting as
+  false premises; three new contamination benchmarks.
+- **MemTX: Transactional Belief Commit for Stateful Agent Memory** (2607.23929)
+  — submitted 2026-07-27 (v2 2026-07-28). Snapshot-isolated memory
+  transactions with provenance/validity, tool calls gated on belief state, and
+  cascading repair on retraction.
+
+**Optimization:**
+
+- **Profile-Graph Memory for LLM Agents** (2607.19359) — abstract page lists
+  v1 as 2026-06-01 despite the 2607 identifier; recorded as listed. MemHop
+  multi-hop benchmark plus ProGraph two-layer profile/residual memory.
+- **LazyMem: Retrieve Broadly, Construct Selectively** (2607.22690) —
+  submitted 2026-07-17 (v2 2026-07-28). Query-time memory construction;
+  0.85 LongMemEval accuracy at 213 context tokens, 21x fewer than baseline.
+- **Beyond Memory Leaderboards: Evaluating Scientific Memory as Budgeted
+  Context Restoration** (2607.16848) — submitted 2026-07-18. Shows a leading
+  system's win vanishes once retrieval budget is controlled.
+- **Mechanistic Attention Guidance for Agent Memory Refinement** (2607.17621)
+  — submitted 2026-07-20. Retrieval-head attention as a utilization signal for
+  segment-level memory updates (AGMR).
+- **Supra Cognitive Modes: A Routed Architecture for Agent Memory**
+  (2607.19096) — submitted 2026-07-21. Per-query mode routing over a shared
+  substrate; note the paper itself states token ledgers and timing are
+  unavailable, so efficiency claims are unverified.
+- **MemTools: A Unified Research Framework for Interoperable Agent Memory**
+  (2607.21404) — submitted 2026-07-23. Declarative lifecycle contracts for
+  swapping memory components across systems.
+- **Ground Truth First: A Longitudinal Evaluation Instrument for Agent Memory**
+  (2607.21962) — submitted 2026-07-24. Ground-truth-first corpus construction;
+  memory-architecture rankings invert as interaction history lengthens.
+- **Keep It InMind: Benchmarking the Implicit-Association Blind Spot in Agent
+  Memory** (2607.24368) — submitted 2026-07-27. 84.0% in-context vs at most
+  14.4% retrieved on indirect queries needing a world-knowledge bridge.
+- **MemChain: Learning Interpretable Memory Traces** (2607.24097) — submitted
+  2026-07-27. Trainable post-retrieval policy producing compact grounded
+  evidence contexts (TMPO objective).
+- **UniMem: Complementary Episodic-to-Parametric Memory** (2607.26017) —
+  submitted 2026-07-28. Routing tokens consolidate recurring patterns into
+  expandable parametric memory without task boundaries.
+
+All fourteen verified against their arXiv abstract pages before inclusion.
+Surfaced via date-sorted `export.arxiv.org` API queries on agent-memory,
+memory-poisoning/injection, and long-term-memory/compression term sets across
+cs.AI, cs.CL, cs.CR, cs.LG, cs.MA, cross-checked with web search. Note:
+`export.arxiv.org` began returning HTTP 429 partway through, so verification
+was completed against `arxiv.org/abs/<id>` pages instead.
+
+**Near-misses considered and excluded:**
+
+- 2607.19292 (hidden safety-critical challenges perspective) and 2607.12406
+  (isolation as a first-class principle for LLM-agent safety) — broad agent
+  safety taxonomies where memory is one of several layers/boundaries, not
+  agent-memory-specific.
+- 2607.19156 (dimension reduction for quantum adaptive agents) — keyword
+  collision on "memory"; quantum information, unrelated to LLM agents.
+- 2607.25415 (learnable agent harness / control system), 2607.14275 (context
+  quality metrics), 2607.18886 (traceability-driven multi-agent development) —
+  agentic but not memory systems.
+- 2607.11787 (forgetting and conceptual alignment in a coordination game),
+  2607.11377 (long-term physical coexistence with robots), 2607.09322
+  (LongMedBench) — memory-adjacent but not agent-memory security or
+  optimization contributions.
+- 2607.11357 (OpsMem) and 2607.05577 (narrative writer memory) — plausible
+  Optimization entries but well outside the current window (2026-07-13 and
+  2026-07-06); left unrecorded rather than back-filled.
+- Several June-dated agent-memory papers surfaced by the same queries
+  (2606.29914, 2606.29774, 2606.28270, 2606.27499, 2606.25206) — far outside
+  the scan window.
+
+---
+
 ## 2026-07-21 (scheduled scan)
 
 1 new paper (Security):

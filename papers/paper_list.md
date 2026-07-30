@@ -281,6 +281,30 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Introduces Lucid, a black-box adversarial framework that attacks the long-term memory of multimodal AI agents using imperceptible image perturbations, extending memory poisoning/injection threats from text to the visual channel. Demonstrates two attack modes — memory poisoning (corrupting stored visual memories) and memory injection — achieving 61.6% and 58.4% success respectively across multiple memory architectures without white-box access.
 
+### ChannelGuard: Safe Models Do Not Compose into Safe Multi-Agent Systems
+- **arXiv**: 2607.19430 ([link](https://arxiv.org/abs/2607.19430))
+- **Date**: 2026-07-20
+- **Category**: Security
+- **Summary**: Shows every hop between agents in a multi-agent pipeline (planner, workers, verifier, synthesizer) is an unmonitored channel for smuggling instructions, and that an undefended pipeline scoring 0.000 attack success on tool- and memory-poisoning owes that safety almost entirely to the cloud provider's server-side filter (54 of 60 blocks on Azure GPT-5) — a dependence that outcome-only reporting hides. Proposes ChannelGuard, training-free information-bottleneck gates on each inter-agent channel that pass/compress/block text by embedding similarity to an adversarial phrase bank with no extra LLM call, blocking Tool Poisoning 30/30 at the application layer across three backends and halving prompt-injection success, though white-box adaptive paraphrase evades every embedding gate.
+
+### The Chronos Vulnerability: A Taxonomy of Temporal Persistence and Memory-Based Deception in Agentic AI
+- **arXiv**: 2607.19433 ([link](https://arxiv.org/abs/2607.19433))
+- **Date**: 2026-07-20
+- **Category**: Security
+- **Summary**: Formalizes the "Chronos Vulnerability" — memory-based attacks that compromise an agent's internal belief system and decouple the attack from its effects in time — cataloguing memory injection attacks, sleeper agents, and "Dynamics Blindness". Evaluation in the World of Workflows benchmark finds traditional content filters inadequate for stateful agents, and the paper surveys defenses spanning diagnostic trajectory guardrails, formal temporal verification, immunological memory consensus, and GPU-TEE / zero-trust memory architectures.
+
+### ConsistencyGate: Preventing Memory Contamination in LLM Agents via Self-Consistency Admission Control
+- **arXiv**: 2607.22962 ([link](https://arxiv.org/abs/2607.22962))
+- **Date**: 2026-07-25
+- **Category**: Security
+- **Summary**: Targets memory contamination in multi-turn LLM agents, where a hallucinated fact written once persists as a false premise for every subsequent step. Proposes ConsistencyGate, a fine-tuning-free write-time admission gate that queries the model repeatedly and stores a candidate fact only when its average support score clears a threshold; three new benchmarks (LoCoMo-Contam, MSC-Contam, MemContam) show reduced contamination across the board, with a trade-off on implicitly-stated facts.
+
+### MemTX: Transactional Belief Commit for Stateful Agent Memory
+- **arXiv**: 2607.23929 ([link](https://arxiv.org/abs/2607.23929))
+- **Date**: 2026-07-27 (v2 2026-07-28)
+- **Category**: Security
+- **Summary**: Argues a memory write should not constitute a belief commitment: in shared-memory multi-agent systems one agent's write becomes another's premise and eventually a side-effecting tool call, so a polluted tool result, stale update, or half-finished teammate note can silently drive an irreversible action. MemTX is a transactional protocol where records carry evidence, permissions, provenance, and validity — writes run in snapshot-isolated transactions through validation and commit stages, irreversible tool calls are gated on the current belief state, and retracting a belief triggers cascading repair of dependent records and tool effects, reporting zero downstream harm across five backbones.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -571,3 +595,63 @@ Format per entry:
 - **Date**: 2026-07-14
 - **Category**: Optimization
 - **Summary**: Reformulates conversational memory as a sequence of lifecycle operations (remembering, forgetting, updating, reflecting) and evaluates systems via structured operation traces rather than final-answer accuracy. Across retrieval-based, parametric, and managed-memory approaches, it exposes failures in ordered memory-state reconstruction and session-level retrieval organization — a diagnostic tool for long-horizon memory management.
+
+### Profile-Graph Memory for LLM Agents: Implicit Cross-Entity Traversal through Narrative Profiles
+- **arXiv**: 2607.19359 ([link](https://arxiv.org/abs/2607.19359))
+- **Date**: 2026-06-01
+- **Category**: Optimization
+- **Summary**: Argues existing long-term memory benchmarks mostly test single-hop recall, leaving multi-hop association unmeasured, and introduces MemHop (1,000 questions across five hop depths). Proposes ProGraph, a two-layer memory architecture combining narrative profile expansion with compression residuals so cross-entity traversal happens implicitly rather than via explicit graph queries, reaching 80.1% on MemHop and 78.4% on LoCoMo.
+
+### LazyMem: Retrieve Broadly, Construct Selectively for Efficient Long-Term Agent Memory
+- **arXiv**: 2607.22690 ([link](https://arxiv.org/abs/2607.22690))
+- **Date**: 2026-07-17 (v2 2026-07-28)
+- **Category**: Optimization
+- **Summary**: Defers memory construction from ingestion time to query time: a lightweight model runs over overlapping parallel segments of the retrieved candidate pool and condenses only query-pertinent material, trained by SFT plus RL with a reward for both locating relevant exchanges and producing accurate query-helpful summaries. LazyMem-4B reaches 0.85 LLM-judge accuracy on LongMemEval using 213 answer-context memory tokens — 21.0x fewer than the baseline — and transfers to LoCoMo without task-specific training while improving latency over prior query-time methods.
+
+### Beyond Memory Leaderboards: Evaluating Scientific Memory as Budgeted Context Restoration
+- **arXiv**: 2607.16848 ([link](https://arxiv.org/abs/2607.16848))
+- **Date**: 2026-07-18
+- **Category**: Optimization
+- **Summary**: Introduces two full-text scientific-memory benchmarks (PAIM, PTr) and shows memory leaderboards are uninterpretable without the full protocol — ingestion granularity, raw-text preservation, retrieval budget, retrieval modality, and judge choice all move rankings. Concretely, Graphiti's win on PAIM disappears once retrieval budget is controlled (it consumed 2.6M characters of context per query), and sparse-dense hybrid retrieval is the single most significant intervention on PTr, arguing memory should be scored as budgeted, modality-aware context restoration.
+
+### Mechanistic Attention Guidance for Agent Memory Refinement
+- **arXiv**: 2607.17621 ([link](https://arxiv.org/abs/2607.17621))
+- **Date**: 2026-07-20
+- **Category**: Optimization
+- **Summary**: Notes that self-evolving memory systems refine memory from textual signals (trajectories, reflections) alone, never checking how retrieved memory is actually used, which yields unreliable error attribution and hallucinated memory edits. Shows retrieval-head attention aggregated over memory segments and decision steps forms a context-utilization matrix exposing memory-use patterns, and builds AGMR on it to make targeted segment-level updates (correct/enhance after failures, simplify after successes, verify by re-execution), improving both task performance and memory efficiency.
+
+### Supra Cognitive Modes: A Routed Architecture for Agent Memory
+- **arXiv**: 2607.19096 ([link](https://arxiv.org/abs/2607.19096))
+- **Date**: 2026-07-21
+- **Category**: Optimization
+- **Summary**: Routes each query among distinct retrieval/synthesis payloads — fused lexical-dense lookup, graph or iterative multi-hop handling, and stratified long-form synthesis — over one shared ingest substrate of multi-granularity embeddings, extracted triples, and fact-version metadata, dispatched by a frozen semantic classifier and runtime gates. Reports 84.87% on LoCoMo factoid categories, 61.49% on MemoryAgentBench, and 86.00% on LongMemEval, but explicitly states token ledgers and end-to-end timing are unavailable, so claimed efficiency gains and causal routing effects remain unverified.
+
+### MemTools: A Unified Research Framework for Interoperable Agent Memory
+- **arXiv**: 2607.21404 ([link](https://arxiv.org/abs/2607.21404))
+- **Date**: 2026-07-23
+- **Category**: Optimization
+- **Summary**: Addresses architectural fragmentation in agent memory research, where implementations couple memory-lifecycle stages, entangle evaluation logic with specific datasets, and handle heterogeneous memory types poorly. MemTools standardizes the lifecycle via declarative data contracts so components from different systems can be swapped in, separates benchmark datasets from execution protocols for controlled comparison, and provides one runtime interface coordinating symbolic, neural, and multimodal memory — infrastructure for isolating individual memory design variables.
+
+### Ground Truth First: A Longitudinal Evaluation Instrument for Agent Memory, and the Tenure Crossover in Memory-Architecture Rankings
+- **arXiv**: 2607.21962 ([link](https://arxiv.org/abs/2607.21962))
+- **Date**: 2026-07-24
+- **Category**: Optimization
+- **Summary**: Inverts benchmark construction — facts with validity intervals and volatility classes are generated first, then rendered into chat/email by an LLM and verified, so questions derive mechanically from the script and ground truth is correct by design (~380 questions, 15 categories, including temporal validity windows, sent-vs-received trust distinctions, and injection probes). The headline result is a tenure crossover: memory-architecture rankings invert as history lengthens, with a budgeted curated-map system leading early but losing 24 points of recall by nine weeks while a provenance-typed graph climbs to 90% (p=0.031), released as the Veracium library.
+
+### Keep It InMind: Benchmarking the Implicit-Association Blind Spot in Agent Memory
+- **arXiv**: 2607.24368 ([link](https://arxiv.org/abs/2607.24368))
+- **Date**: 2026-07-27
+- **Category**: Optimization
+- **Summary**: Names the "implicit-association blind spot": retrieval assumes a needed memory resembles the query needing it, which breaks when world knowledge is the bridge (a tree-nut allergy should block a macaron request via almond flour, yet the texts share no retrievable cue). The InMind benchmark (125 expert-verified tasks, ten life domains) uses paired controls to separate never-stored from missing-bridging-knowledge from stored-but-not-surfaced, finding backbones answer 84.0% of indirect queries with the memory in context but six vector/graph/agentic memory systems reach at most 14.4% when it must be retrieved — locating the failure in the query-conditioned interface and framing routing as the open problem.
+
+### MemChain: Learning Interpretable Memory Traces for Memory-Augmented LLM Agents
+- **arXiv**: 2607.24097 ([link](https://arxiv.org/abs/2607.24097))
+- **Date**: 2026-07-27
+- **Category**: Optimization
+- **Summary**: Challenges the retrieval-as-evidence paradigm, in which raw retrieved memories are fed straight to the answer model, leaving it to resolve redundancy, conflicts, and weak relevance at substantial context cost. MemChain is a trainable post-retrieval policy that generates a question-conditioned evidence plan, builds an ordered grounded evidence trace organized by semantic role and dependency, then executes explicit memory actions to emit a compact evidence context — trained by supervised trace learning plus Trace-Guided Memory Policy Optimization, reaching state of the art on LoCoMo and LongMemEval-S while substantially shrinking the memory context.
+
+### UniMem: Complementary Episodic-to-Parametric Memory for Boundary-Agnostic Task Streams
+- **arXiv**: 2607.26017 ([link](https://arxiv.org/abs/2607.26017))
+- **Date**: 2026-07-28
+- **Category**: Optimization
+- **Summary**: Frames deployment over boundary-agnostic evolving task streams as a stability-plasticity dilemma: retrieval memory absorbs new evidence fast but never internalizes recurring execution patterns and pays inference-time retrieval overhead, while parametric memory is stable and cheap but needs explicit task boundaries and fixed parameter budgets. UniMem uses learnable routing tokens as memory controllers to keep novel or sparse tasks in an episodic buffer while consolidating recurring reliable patterns into expandable parametric memory, growing on demand without deployment task labels or uncontrolled parameter growth (+4.0 EM average across three backbones).
