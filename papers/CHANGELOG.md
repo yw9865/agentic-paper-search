@@ -4,6 +4,67 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-07-31 (scheduled scan)
+
+12 new papers (3 Security, 9 Optimization). Two entries (RSMeM, IFCMemoryBench)
+carry older submission dates but were only announced in the 2026-07-29 batch, so
+no prior run could have seen them.
+
+**Security:**
+
+- **Isolated but Exposed: Persistence-Based Memory Extraction Attack on LLM
+  Agents** (2607.23444) — submitted 2026-07-26. SPORE exfiltrates private
+  long-term memory through malicious tool-invocation parameters without
+  violating per-user isolation; 80.0% record extraction, and extracted records
+  can be re-attributed to specific users in multi-user deployments.
+- **ContainmentBench: Trace-Based Evaluation of Post-Injection Containment in
+  Tool-Using LLM Agents** (2607.23999) — submitted 2026-07-27, revised
+  2026-07-28. Shows identical "no committed harm" endpoints hide very different
+  memory-contamination traces; 73.5% of matched tainted pairs diverge in
+  trajectory or utility.
+- **MemSecBench: Tracking Agent Memory Poisoning from Persistence to Consequence
+  and Repair** (2607.27080) — submitted 2026-07-29. Write-Execute-Forget
+  protocol over 310 cases: poisoned content persists in 84.2% of cases, and
+  repair capability varies 41.3 points across 24 memory-system configurations.
+
+**Optimization:**
+
+- **RSMeM: Knowledge-Enhanced Memory Evolution for Remote Sensing Agents**
+  (2607.24772) — submitted 2026-06-11, announced late July. Distills
+  failure-annotated tool traces into reusable constraints; +6% accuracy for
+  under 1% extra experience tokens.
+- **IFCMemoryBench: Evaluating Long-Term Memory of LLM-Based Agents in BIM
+  Information Retrieval** (2607.26072) — submitted 2026-07-13, announced
+  2026-07-29. 143 multi-session tasks over 4,016 seeded prior sessions; best
+  system reaches only 32.4% accuracy under realistic ingestion scope.
+- **ACM: Agentic Context Management for Long Horizon Tasks** (2607.23809) —
+  submitted 2026-07-26. Exposes compression/offload/retrieve as agent-invoked
+  tools instead of fixed triggers, cutting peak token pressure losslessly.
+- **MemLens: A Value-Aware Memory Management System with Interactive Analytics**
+  (2607.25992) — submitted 2026-07-28. Shapley-style memory valuation plus a
+  lifecycle dashboard comparing strategies on quality, latency, and tokens.
+- **A Graph-Native Bitemporal Memory Store for Conversational AI Agents**
+  (2607.26520) — submitted 2026-07-29. Neo4j identity/content versioning with
+  valid time and transaction time; 46.7% R@10 on LongMemEval, 80% on
+  knowledge-update questions.
+- **Living-Harness Is an Interactive-Agent Evolver** (2607.26598) — submitted
+  2026-07-29. Turns trajectories into bounded harness updates written as
+  episodic memory plus a repair state graph; +10.07/+9.91 points, transferable
+  across backbones.
+- **Filesystem-Based Memory for LLM Agents: Organization, Evolution, and
+  Sustainability** (2607.26637) — submitted 2026-07-29. Organized markdown
+  stores roughly halve retrieval cost at scale, but agents cannot sustain the
+  organization, and tooling shapes structure as much as the model does.
+- **Metis: Memory Foundation Model** (2607.26760) — submitted 2026-07-29. Native
+  memory state inside the backbone accessed via memory attention, evolving
+  through the forward pass with frozen weights.
+- **Setoka: A Benchmark for Hierarchical User Understanding in Personalized
+  Agents over Heterogeneous Data** (2607.27056) — submitted 2026-07-29. Four
+  levels (semantic, episodic, behavior pattern, personality); five memory
+  systems degrade sharply above the semantic level.
+
+---
+
 ## 2026-07-30 (scheduled scan)
 
 14 new papers (4 Security, 10 Optimization). Large batch because the previous

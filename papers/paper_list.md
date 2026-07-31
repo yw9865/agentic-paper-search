@@ -305,6 +305,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Argues a memory write should not constitute a belief commitment: in shared-memory multi-agent systems one agent's write becomes another's premise and eventually a side-effecting tool call, so a polluted tool result, stale update, or half-finished teammate note can silently drive an irreversible action. MemTX is a transactional protocol where records carry evidence, permissions, provenance, and validity — writes run in snapshot-isolated transactions through validation and commit stages, irreversible tool calls are gated on the current belief state, and retracting a belief triggers cascading repair of dependent records and tool effects, reporting zero downstream harm across five backbones.
 
+### Isolated but Exposed: Persistence-Based Memory Extraction Attack on LLM Agents
+- **arXiv**: 2607.23444 ([link](https://arxiv.org/abs/2607.23444))
+- **Date**: 2026-07-26
+- **Category**: Security
+- **Summary**: Shows that per-user memory isolation, the standard production defense against long-term memory extraction, does not close the tool interface: a malicious tool can exfiltrate private memory smuggled inside invocation parameters without ever violating user-level isolation. The SPORE attack decouples adversarial commands (parked in short-term memory) from semantically neutral retrieval anchors issued in tool responses, restoring retrieval accuracy and enabling geometric optimization over embedding space to sweep unexplored memory regions, while persisted reactivation payloads continue the attack within and across sessions — 80.0% record extraction with unlimited triggers, 47.0% with only 20, and in multi-user deployments extracted records can be re-attributed to specific user identities.
+
+### ContainmentBench: Trace-Based Evaluation of Post-Injection Containment in Tool-Using LLM Agents
+- **arXiv**: 2607.23999 ([link](https://arxiv.org/abs/2607.23999))
+- **Date**: 2026-07-27 (v2 2026-07-28)
+- **Category**: Security
+- **Summary**: Argues that terminal attack/policy outcomes hide what actually happened after exposure — identical "no committed harm" endpoints can conceal very different memory contamination traces and very different losses of authorized utility. ContainmentBench is a sandboxed, trace-based benchmark that scores endpoint policy compliance, logged propagation, recovery instrumentation, and authorized structured-action completion separately; across 17,640 Qwen2.5-7B-Instruct rollouts, 73.5% of matched active-tainted pairs diverge in trajectory or utility despite identical endpoints, and taint-only enforcement collapses authorized tainted-workflow completion to 0.1642 versus 0.8567 for a trusted-ledger policy.
+
+### MemSecBench: Tracking Agent Memory Poisoning from Persistence to Consequence and Repair
+- **arXiv**: 2607.27080 ([link](https://arxiv.org/abs/2607.27080))
+- **Date**: 2026-07-29
+- **Category**: Security
+- **Summary**: Benchmarks memory poisoning as a lifecycle rather than a single success/failure event, using a Write-Execute-Forget protocol over 310 cases spanning code, science, daily-activity, and workplace scenarios to separate whether malicious content persists, whether it drives a downstream execution chain, and whether it can be selectively repaired. Injected content persists in 84.2% of cases with 50.3% full attack success; among compromised systems 59.6% complete the execution chain and only 56.1% permit selective repair, and across 24 memory-system configurations attack success spreads 16.1 points while repair capability spreads 41.3 points — architecture, not just filtering, determines both propagation and recoverability.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -655,3 +673,57 @@ Format per entry:
 - **Date**: 2026-07-28
 - **Category**: Optimization
 - **Summary**: Frames deployment over boundary-agnostic evolving task streams as a stability-plasticity dilemma: retrieval memory absorbs new evidence fast but never internalizes recurring execution patterns and pays inference-time retrieval overhead, while parametric memory is stable and cheap but needs explicit task boundaries and fixed parameter budgets. UniMem uses learnable routing tokens as memory controllers to keep novel or sparse tasks in an episodic buffer while consolidating recurring reliable patterns into expandable parametric memory, growing on demand without deployment task labels or uncontrolled parameter growth (+4.0 EM average across three backbones).
+
+### RSMeM: Knowledge-Enhanced Memory Evolution for Remote Sensing Agents with Systematic Evaluation
+- **arXiv**: 2607.24772 ([link](https://arxiv.org/abs/2607.24772))
+- **Date**: 2026-06-11 (announced late July 2026)
+- **Category**: Optimization
+- **Summary**: Addresses the fact that general-purpose LLM agents in remote sensing fail on multi-step tool execution and never consolidate those failures into reusable experience. RSMeM pairs Hierarchical Knowledge Grounding (taxonomy-aware retrieval over a hierarchical domain corpus to guide planning and tool selection) with Failure-Aware Experience Refinement, which distills failure-annotated tool-use traces into reusable constraints for the next round — a high-density consolidation strategy that on EarthBench yields a 6% accuracy gain on DeepSeek-V3.2 for under 1% additional experience tokens.
+
+### IFCMemoryBench: Evaluating Long-Term Memory of LLM-Based Agents in BIM Information Retrieval
+- **arXiv**: 2607.26072 ([link](https://arxiv.org/abs/2607.26072))
+- **Date**: 2026-07-13 (announced 2026-07-29)
+- **Category**: Optimization
+- **Summary**: Argues that conversational-recall benchmarks understate the real test of long-term memory: reusing prior-session context while acting over a live, structured, domain-specific environment. IFCMemoryBench seeds missing project context (specifications, client decisions, engineering conventions) across 4,016 prior sessions and then poses probe questions answerable only by combining remembered context with live IFC queries — 143 multi-session tasks over 19 projects, decomposed into ingestion, retrieval, and utilization. The strongest system reaches only 32.4% answer accuracy under realistic ingestion scope, with failures traced to memory that retrieves topically relevant context but stores project knowledge as fragmented facts.
+
+### ACM: Agentic Context Management for Long Horizon Tasks
+- **arXiv**: 2607.23809 ([link](https://arxiv.org/abs/2607.23809))
+- **Date**: 2026-07-26
+- **Category**: Optimization
+- **Summary**: Attacks the two failure modes of automatic context compression in long-horizon agents — lossy degradation and rigid trigger heuristics that ignore the agent's shifting analytical needs. ACM instead exposes context management as tools the agent invokes itself, deciding when to compress, offloading the removed span to external memory, and retrieving it on demand so that no information is destroyed; a companion training recipe synthesizes high-quality context-management trajectories, and the result lowers peak token pressure, sustains longer explorations, and improves run-to-run reliability on agentic search and coding.
+
+### MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents
+- **arXiv**: 2607.25992 ([link](https://arxiv.org/abs/2607.25992))
+- **Date**: 2026-07-28
+- **Category**: Optimization
+- **Summary**: Observes that current LLM memory systems are utility-agnostic, treating heterogeneous interaction records uniformly so that redundant and low-impact entries accumulate in the repository. MemLens promotes memory records to first-class data objects and provides an end-to-end interactive dashboard over the full lifecycle — Shapley-style valuation of individual memories, value-aware storage, and memory-assisted response — letting users inspect memory value, visualize hierarchical structure, and compare management strategies on response quality, retrieval latency, and token consumption.
+
+### A Graph-Native Bitemporal Memory Store for Conversational AI Agents
+- **arXiv**: 2607.26520 ([link](https://arxiv.org/abs/2607.26520))
+- **Date**: 2026-07-29
+- **Category**: Optimization
+- **Summary**: Implements cross-session persistent memory as a Neo4j graph with vector indexing rather than a context-window dump or an external service, storing each memory as an immutable identity node linked to versioned content nodes carrying two clocks — valid time (when the fact held in the world) and transaction time (when the store recorded it) — so retrieval can be replayed at any past point without erasing history, with semantic links maintained at write time via cosine similarity over 1024-dimensional embeddings. On LongMemEval, current-state retrieval reaches 46.7% R@10 overall and 80% on knowledge-update questions while temporal queries lag, and the paper enumerates the design changes needed to close that gap.
+
+### Living-Harness Is an Interactive-Agent Evolver
+- **arXiv**: 2607.26598 ([link](https://arxiv.org/abs/2607.26598))
+- **Date**: 2026-07-29
+- **Category**: Optimization
+- **Summary**: Notes that agents recover from failures within an episode yet repeat the same execution errors forever, because post-episode feedback never modifies the persistent harness that governs future runs. Living-Harness converts completed trajectories and evaluator signals into bounded harness updates under a domain-level Evolution-SOP, writing two complementary forms of procedural knowledge — episodic memory recording trigger conditions and recovery actions, plus a state graph of repair edges and transition rules — while tools and base context stay frozen, gaining 10.07 and 9.91 points over baselines across eight interactive environments with the evolved harness state transferable across model backbones.
+
+### Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability
+- **arXiv**: 2607.26637 ([link](https://arxiv.org/abs/2607.26637))
+- **Date**: 2026-07-29
+- **Category**: Optimization
+- **Summary**: Studies the increasingly common deployment pattern of holding long-term agent memory as a directory tree of markdown files, formalizing three roles over a shared memory filesystem: one integrating incoming content, one retrieving with citations, and one supplying task sequences converted into reusable skills. Organized stores roughly halve retrieval cost once the material is large, but agents cannot sustain that organization as content accumulates, and the tooling handed to the agent shapes the resulting structure as much as the backbone model does — so filesystem organization is a design parameter to be tuned, not a free win.
+
+### Metis: Memory Foundation Model
+- **arXiv**: 2607.26760 ([link](https://arxiv.org/abs/2607.26760))
+- **Date**: 2026-07-29
+- **Category**: Optimization
+- **Summary**: Proposes moving agent memory inside the backbone instead of bolting on an external module, defining native memory as a persistent, dynamically evolving memory state within the model plus native memory procedures that store and use information through ordinary model computation. Metis is a first prototype: a native memory state compressing historical information, accessed via memory attention, trained with purpose-built datasets and multiple objectives, and at inference the weights stay frozen while memory states are transformed autonomously by the forward pass — claiming architectural, end-to-end-optimization, and efficiency advantages over external memory systems, with checkpoints released.
+
+### Setoka: A Benchmark for Hierarchical User Understanding in Personalized Agents over Heterogeneous Data
+- **arXiv**: 2607.27056 ([link](https://arxiv.org/abs/2607.27056))
+- **Date**: 2026-07-29
+- **Category**: Optimization
+- **Summary**: Argues existing memory benchmarks stop at explicit fact retrieval and therefore cannot say whether a personalized agent actually understands its user. Setoka defines four ascending levels — semantic memory, episodic memory, behavior pattern, and personality trait — and uses psychology-grounded principles to synthesize user data and queries at scale while sidestepping privacy constraints; across three backbones and five memory systems over ten synthetic users, performance is strong on semantic memory and degrades sharply on the other three levels, indicating that user understanding demands cross-source integration and abstraction over long-term behavior rather than retrieval.
