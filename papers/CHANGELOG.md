@@ -4,6 +4,85 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-01 (scheduled scan)
+
+14 new papers (4 Security, 10 Optimization). The 2026-07-30 announcement batch
+supplied seven of them; the other seven are a backfill of clearly on-topic
+2026-07-20 to 2026-07-23 submissions that earlier runs missed. No 2026-07-31
+submissions were available — 2026-08-01 is a Saturday and arXiv does not
+announce over the weekend, so 2026-07-30 is the newest announced batch.
+
+**Security:**
+
+- **MIND: Lightweight and Effective Memory Injection Defense for LLM Agents via
+  Intent-Aware Information Bottleneck** (2607.28103) — submitted 2026-07-30.
+  Intent-aware information bottleneck plus a lightweight detector; cuts mean
+  ASR-r/ASR-a by 55.4%/55.3% on ReAct-StrategyQA at undefended accuracy and
+  latency, avoiding repeated LLM auditing.
+- **MemTxn: A Transaction Boundary for Source-Supported Updates and
+  Complete-State Recovery in Agent Memory** (2607.27834) — submitted
+  2026-07-30. Governance layer validating writes against cited sources; accepts
+  60/60 supported originals, rejects 179/179 hard negatives, and restores the
+  complete declared active map under persistent multi-key faults.
+- **Auditing Provenance Sensitivity in LLM Agent Action Selection** (2607.20827)
+  — submitted 2026-07-23. Holds evidence content fixed and varies only
+  provenance: unauthorized evidence changes the selected action in ~2.4% of
+  comparisons, and trusted/untrusted variants diverge in 5.4% of competing cases.
+- **Self-State Attacks on Self-Hosted AI Agents: How Far Can OS Defenses Go?**
+  (2607.17986) — submitted 2026-07-20. 43 concrete operations corrupting an
+  agent's own memory and config files via ordinary OS syscalls; a residual
+  surface stays structurally indistinguishable from legitimate writes.
+
+**Optimization:**
+
+- **MemHarness: Memory Is Reconstructed, Not Replayed** (2607.28272) —
+  submitted 2026-07-30. GRPO-trained policy reconstructs retrieved experience
+  against the current state instead of replaying it verbatim, removing negative
+  transfer on ALFWorld/WebShop.
+- **RRM: Experience-Driven Reflective Retrieval Memory for Long-Horizon
+  Multimodal Reasoning** (2607.28156) — submitted 2026-07-30. Reflective
+  experience memory distilling reusable retrieval strategies, regulated by usage
+  frequency, reuse feedback, and temporal decay.
+- **Sigma-Mem: An Online Reliability Memory for LLM-based Multi-Agent Systems**
+  (2607.27958) — submitted 2026-07-30. Stores per-peer competence and peer
+  relationship evidence as symmetric states with Weyl-bounded online updates.
+- **ChronoMem: Version Control and Semantic Rollback for Large Language Model
+  Agent Memory** (2607.27773) — submitted 2026-07-30. Snapshot-per-write
+  version history in Google's ADK with natural-language rollback and a
+  post-exposure counterfactual evaluation protocol.
+- **SKILL-KD: Contrastive Skill Distillation for LLM Agents** (2607.28048) —
+  submitted 2026-07-30. Distills student/teacher trajectory discrepancies into
+  skill patches, with Drift-Aware Skill Consolidation deciding add/delete/modify
+  or skip per patch.
+- **Bridging Inference-Time Scaling and Episodic Memory with Action-Centric
+  Graphs** (2607.27415) — submitted 2026-07-29. GAMER decouples episodic memory
+  from the LLM as an action-centric graph with TD-learned action values;
+  +20.81%/+6.17% success/progress rate.
+- **Retain or Consolidate? Budget-Dependent Operator Selection for Language
+  Agent Memory** (2607.17545) — submitted 2026-07-20, revised 2026-07-21.
+  Decomposes Merge/Abstract/Rewrite utility into coverage and replacement
+  effects; consolidation gains up to 48% absolute accuracy under tight budgets
+  while retention wins under loose ones.
+- **AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning**
+  (2607.21106) — submitted 2026-07-23. Adds local rewards from token-level
+  contributions to the final answer, resolving the credit-assignment bottleneck
+  in RL-learned memory-construction policies.
+- **PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning** (2607.20064)
+  — submitted 2026-07-22, revised 2026-07-23. Keeps a complete structured
+  interaction log and searches it programmatically: +18.0 points on ARC-AGI-3
+  with 4.2-5.8x fewer tokens.
+- **Agentic Context Management: Solving Agent Memory and Cost by Treating Them
+  as Lifecycle and Architecture Problems** (2607.21503) — submitted 2026-07-23.
+  Five-activity context lifecycle; naive accumulation is quadratic in token cost
+  while validated compaction stays linear at preserved accuracy. Distinct from
+  the similarly named ACM paper (2607.23809) already tracked.
+
+Checked and deliberately excluded: 2607.28069 (SemPIC, position-independent KV
+caching — an inference-serving cache system, not an agent memory system),
+2607.19156 (quantum adaptive agents — keyword collision on "memory").
+
+---
+
 ## 2026-07-31 (scheduled scan)
 
 12 new papers (3 Security, 9 Optimization). Two entries (RSMeM, IFCMemoryBench)

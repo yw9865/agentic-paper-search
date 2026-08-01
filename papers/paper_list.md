@@ -323,6 +323,30 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Benchmarks memory poisoning as a lifecycle rather than a single success/failure event, using a Write-Execute-Forget protocol over 310 cases spanning code, science, daily-activity, and workplace scenarios to separate whether malicious content persists, whether it drives a downstream execution chain, and whether it can be selectively repaired. Injected content persists in 84.2% of cases with 50.3% full attack success; among compromised systems 59.6% complete the execution chain and only 56.1% permit selective repair, and across 24 memory-system configurations attack success spreads 16.1 points while repair capability spreads 41.3 points — architecture, not just filtering, determines both propagation and recoverability.
 
+### MIND: Lightweight and Effective Memory Injection Defense for LLM Agents via Intent-Aware Information Bottleneck
+- **arXiv**: 2607.28103 ([link](https://arxiv.org/abs/2607.28103))
+- **Date**: 2026-07-30
+- **Category**: Security
+- **Summary**: Targets the cost side of memory-injection defense: existing mechanisms either pay for repeated LLM auditing of every retrieved memory or drown in the redundancy of multi-turn context. A preliminary analysis shows benign and poisoned trajectories differ in how subsequent behavior relates to the initial user intent, so MIND trains an intent-aware information bottleneck that compresses intent-behavior pairs into representations preserving cross-turn attack signal while filtering task-irrelevant repetition, with a lightweight detector flagging malicious memories from those representations. On ReAct-StrategyQA it cuts mean ASR-r and ASR-a by 55.4% and 55.3% while matching the undefended agent on average accuracy and latency.
+
+### MemTxn: A Transaction Boundary for Source-Supported Updates and Complete-State Recovery in Agent Memory
+- **arXiv**: 2607.27834 ([link](https://arxiv.org/abs/2607.27834))
+- **Date**: 2026-07-30
+- **Category**: Security
+- **Summary**: Observes that writable persistent memory lacks the one primitive databases take for granted — a transaction boundary — so an unsupported or corrupted write silently persists and contaminates future sessions. MemTxn is a governance layer outside the answer model that validates each write against its cited source (Ordered PatchTest), selects the visible version when facts conflict (Temporal Resolver), and restores the application-visible state after a fault from a durable snapshot journal. It accepts all 60 supported originals while rejecting all 179 hard negatives, restores the complete declared active map under persistent multi-key faults on LongMemEval-S and LoCoMo without knowing the actual physical write set, and leads MemoryAgentBench FactConsolidation across all twelve answer-model configurations.
+
+### Auditing Provenance Sensitivity in LLM Agent Action Selection
+- **arXiv**: 2607.20827 ([link](https://arxiv.org/abs/2607.20827))
+- **Date**: 2026-07-23
+- **Category**: Security
+- **Summary**: Asks whether an agent's tool and parameter choices are actually driven by context it is authorized to act on, given a prompt that mixes user requests, tool outputs, retrieved records, memory, and untrusted text. The audit holds task and evidence content fixed and varies only provenance across 450 controlled tasks and several open-weight models: trusted and untrusted variants produce different actions in 5.4% of competing cases versus 1.7% of supporting cases, and under controlled degradation unauthorized evidence shifts the outcome in roughly 2.4% of comparisons (95% CI 2.1-3.0%) — models do react to textual source-authority cues, but do not reliably confine influence to authorized sources.
+
+### Self-State Attacks on Self-Hosted AI Agents: How Far Can OS Defenses Go?
+- **arXiv**: 2607.17986 ([link](https://arxiv.org/abs/2607.17986))
+- **Date**: 2026-07-20
+- **Category**: Security
+- **Summary**: Self-hosted agents continuously rewrite their own memory and configuration files, so an adversary issuing ordinary OS system calls can compromise the agent by corrupting its own state rather than by injecting prompts. The paper formalizes these self-state attacks over four dimensions (Target, Mechanism, Granularity, Temporal), instantiates 43 concrete operations against real agent state files, and finds that access-control prevention plus workload-conditioned detection plus periodic backups mitigates most of them — while a residual surface remains structurally indistinguishable from legitimate agent writes at the OS level, arguing OS-level defense alone cannot close the gap.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -727,3 +751,63 @@ Format per entry:
 - **Date**: 2026-07-29
 - **Category**: Optimization
 - **Summary**: Argues existing memory benchmarks stop at explicit fact retrieval and therefore cannot say whether a personalized agent actually understands its user. Setoka defines four ascending levels — semantic memory, episodic memory, behavior pattern, and personality trait — and uses psychology-grounded principles to synthesize user data and queries at scale while sidestepping privacy constraints; across three backbones and five memory systems over ten synthetic users, performance is strong on semantic memory and degrades sharply on the other three levels, indicating that user understanding demands cross-source integration and abstraction over long-term behavior rather than retrieval.
+
+### MemHarness: Memory Is Reconstructed, Not Replayed
+- **arXiv**: 2607.28272 ([link](https://arxiv.org/abs/2607.28272))
+- **Date**: 2026-07-30
+- **Category**: Optimization
+- **Summary**: Identifies verbatim replay as the core defect of memory-augmented agents: retrieved experiences are injected into context regardless of whether they fit the current situation, so the gap between abstract stored experience and concrete decision-time state produces negative transfer. MemHarness has a unified policy model critique and reconstruct each retrieved experience conditioned on the present state, emitting context-grounded guidance before acting, with the reconstructive ability emerging from end-to-end GRPO training rather than hand-written rules. It substantially beats pure RL and static memory-augmented baselines on ALFWorld and WebShop, stays robust out of distribution, and the reconstruction objective doubles as latent training guidance that improves intrinsic reasoning.
+
+### RRM: Experience-Driven Reflective Retrieval Memory for Long-Horizon Multimodal Reasoning
+- **arXiv**: 2607.28156 ([link](https://arxiv.org/abs/2607.28156))
+- **Date**: 2026-07-30
+- **Category**: Optimization
+- **Summary**: Points out that multimodal long-term memory agents concentrate on what to store and have no mechanism to diagnose retrieval failures or adapt future search strategy when retrieval repeatedly returns useless evidence. RRM augments an entity-centric multimodal memory graph with a reflective experience memory that distills transferable procedural retrieval knowledge from historical trajectories and converts it into query-level guidance, while answer generation stays conditioned only on factual evidence newly retrieved from the current video; a lifecycle mechanism regulates the experience store by usage frequency, reuse feedback, and temporal decay to curb redundancy and noise. Consistently outperforms prior state of the art on M3-Bench-Robot, M3-Bench-Web, and Video-MME-Long.
+
+### Sigma-Mem: An Online Reliability Memory for LLM-based Multi-Agent Systems
+- **arXiv**: 2607.27958 ([link](https://arxiv.org/abs/2607.27958))
+- **Date**: 2026-07-30
+- **Category**: Optimization
+- **Summary**: Notes that agent memory preserves interaction content but never models which peers can be trusted and under what conditions — a gap that bites in multi-agent systems where a central model cannot directly verify plausible or correlated peer responses. Sigma-Mem records per-peer competence evidence and cross-peer relationship evidence as real symmetric states updated from post-decision correctness feedback, with Weyl's inequality bounding the spectral change of each event-level update so online adaptation stays stable without retraining any model. One write-and-read interface then serves residual steering, response-free peer routing, or reliability-weighted voting; across five Qwen-family models it tracks counterfactual reliability shifts, generalizes to unseen peers and task domains, and direct readouts beat both majority voting and the best fixed peer over the full OOD set.
+
+### ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory
+- **arXiv**: 2607.27773 ([link](https://arxiv.org/abs/2607.27773))
+- **Date**: 2026-07-30
+- **Category**: Optimization
+- **Summary**: Existing agent memory evolves forward only — accumulating, consolidating, overwriting — with no principled way to inspect, version, or revert, leaving agents brittle under corrections, concept drift, and corruption once later information has already been absorbed. ChronoMem, integrated into Google's open-source Agent Development Kit, commits a whole-memory snapshot at each write, maintains structured version histories, and maps natural-language undo intents onto concrete historical versions through hybrid lexical and semantic retrieval, rank fusion, and reranking. A post-exposure protocol then tests whether the agent can answer and summarize counterfactually as if the later updates never occurred, where ChronoMem substantially beats prompt-only and retrieval-only baselines.
+
+### SKILL-KD: Contrastive Skill Distillation for LLM Agents
+- **arXiv**: 2607.28048 ([link](https://arxiv.org/abs/2607.28048))
+- **Date**: 2026-07-30
+- **Category**: Optimization
+- **Summary**: Argues that storing skills as experience summaries or memory entries misfires for weaker student agents — a failed trajectory carries too little evidence of the missing behavior, and the teacher trajectory is too implicit to internalize as reusable guidance. SKILL-KD distills the actionable discrepancy between a student failure and the teacher trajectory on the same task into a textual skill patch, validates it by re-running the student, and refines iteratively; Drift-Aware Skill Consolidation keeps trace-linked edit histories and decides per patch whether to add a rule, delete or modify an existing one, or skip, preventing repeated local updates from degrading the store. Improves frozen student agents over fixed-model adaptation baselines across five benchmarks and two student settings.
+
+### Bridging Inference-Time Scaling and Episodic Memory with Action-Centric Graphs
+- **arXiv**: 2607.27415 ([link](https://arxiv.org/abs/2607.27415))
+- **Date**: 2026-07-29
+- **Category**: Optimization
+- **Summary**: Inference-time scaling for language agents is wasteful because each rollout is effectively stateless and redoes work already performed in earlier attempts. GAMER models historical reasoning as a dynamic action-centric graph and decouples this memory from the LLM itself to cut computational overhead, using temporal-difference learning to estimate both positive and negative values for action nodes from past outcomes; at inference the value function guides decisions bidirectionally, proposing beneficial actions and flagging risky ones, for gains of 20.81%/6.17% in success/progress rate over vanilla baselines.
+
+### Retain or Consolidate? Budget-Dependent Operator Selection for Language Agent Memory
+- **arXiv**: 2607.17545 ([link](https://arxiv.org/abs/2607.17545))
+- **Date**: 2026-07-20 (revised 2026-07-21)
+- **Category**: Optimization
+- **Summary**: Formalizes the retention-versus-consolidation choice every agent memory system makes implicitly: raw records preserve exact detail but relevant evidence may not fit a tight budget, while compression improves coverage per token at the risk of losing query-critical details, so neither is universally preferable. The paper decomposes each operator's utility (Merge, Abstract, Rewrite) into a coverage effect over evidence retention would omit and a signed replacement effect over evidence that already fits, which explains why the preferred action flips with relative budget pressure, and implements the rule as Offline Abstraction-Safety, a lightweight learner estimating action utilities from pre-generation features with held-out harm calibration. On LongMemEval consolidation gains up to 48% absolute accuracy under tight budgets while retention wins under loose ones, and LoCoMo reproduces the crossover at a smaller budget; cross-note abstraction and merging generally beat local rewriting when compression is required.
+
+### AttriMem: Attribution-Guided Process Feedback for Agent Memory Learning
+- **arXiv**: 2607.21106 ([link](https://arxiv.org/abs/2607.21106))
+- **Date**: 2026-07-23
+- **Category**: Optimization
+- **Summary**: A memory-construction policy decides what to extract, store, update, compress, or discard as interactions accumulate, but heuristic methods encode subjective task-specific rules while RL methods see only outcome- or module-level rewards that cannot identify which intermediate memory contents supported the final answer — a fine-grained credit-assignment bottleneck made worse by the absence of ground-truth targets for intermediate decisions. AttriMem supplies the missing process feedback by deriving local rewards from token-level contributions to the final answer and adding them to the global outcome reward, outperforming retrieval-based, heuristic, and RL baselines on long-horizon dialogue QA while generalizing across benchmarks and answer models and stabilizing RL optimization.
+
+### PRO-LONG: Programmatic Memory Enables Long-Horizon Reasoning
+- **arXiv**: 2607.20064 ([link](https://arxiv.org/abs/2607.20064))
+- **Date**: 2026-07-22 (revised 2026-07-23)
+- **Category**: Optimization
+- **Summary**: Frames the decisive design choice in long-horizon exploratory agents as what to save from the environment and how to load it back, where preserving more information makes retrieving the relevant detail less tractable. PRO-LONG resolves the tradeoff by keeping a complete structured interaction log and delegating retrieval to coding-agent-style search over that history instead of summarizing it away. On the full ARC-AGI-3 public game set it adds 18.0 percentage points on average over a base coding agent and matches or exceeds specialized harnesses (up to 76.1% pass@1) while using 4.2-5.8x fewer tokens.
+
+### Agentic Context Management: Solving Agent Memory and Cost by Treating Them as Lifecycle and Architecture Problems
+- **arXiv**: 2607.21503 ([link](https://arxiv.org/abs/2607.21503))
+- **Date**: 2026-07-23
+- **Category**: Optimization
+- **Summary**: Argues production agents fail on managing what sits in their reasoning context — conversation histories, large prompts, large tool definitions, ballooning tool outputs — rather than on reasoning capability, and that treating this as a storage problem misses the structure. It decomposes context management into five lifecycle activities (deciding what to remember, extracting and structuring, selecting storage, consolidating while preserving provenance, judging current relevance), shows naive accumulation grows token cost quadratically while validated compaction keeps it linear at preserved accuracy, and reports 92% on LongMemEval and 93.2% on LoCoMo for its Maximem Synap reference implementation, while flagging latency, token efficiency, and context-rot resistance as evaluation dimensions current benchmarks underexplore.
