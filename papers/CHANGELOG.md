@@ -4,6 +4,82 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-02 (scheduled scan)
+
+11 new papers (0 Security, 11 Optimization). No new announcement batch since the
+previous run: 2026-07-30 is still the newest submission date on arXiv (2026-07-31
+is a Friday whose submissions are announced Sunday evening ET, and 2026-08-01 /
+2026-08-02 fall on the weekend). This run is therefore entirely a backfill of
+clearly on-topic papers earlier runs missed, verified one by one against their
+abstract pages. Three of them (2607.22562, 2607.21604, 2607.16211) carry 2607
+identifiers but May 2026 submission timestamps on arXiv — the date recorded is
+the one arXiv reports. A targeted sweep of the memory-security literature turned
+up no unrecorded papers, hence zero Security additions.
+
+Checked and deliberately skipped as off-topic or not memory-central:
+Isolation as a First-Class Principle for LLM-Agent System Safety (2607.12406,
+isolation-boundary survey, memory only one attack type among many), MemVLN
+(2607.23504, visual-token resolution in a VLN architecture rather than an agent
+memory system), SemPIC (2607.28069, KV-cache method with no agent-memory
+framing), Dimension Reduction for Quantum Adaptive Agents (2607.19156, keyword
+collision on "memory").
+
+**Optimization:**
+
+- **Voice Memory for Agentic Speech Recognition** (2607.26410) — submitted
+  2026-07-29. Frozen corrector reads a per-domain memory file and abstains when
+  unsure while an asynchronous score-gated optimizer edits that file; cuts
+  over-correction from 64% to 35% of edits and weighted WER from 8.36% to 7.52%
+  across ten HyPoradise domains, adding zero inference-path parameters.
+- **Exploratory and Assimilating Reflection: Reflective Recall Cycle for
+  Long-term Memory** (2607.17879) — submitted 2026-07-20. Iterative exploratory
+  search bootstraps retrieval and fills an Experience Buffer that is replayed to
+  refine a global reranker; up to 17.9% retrieval improvement on two long-term
+  dialogue benchmarks, sample-efficient and robust to noisy feedback.
+- **RECON: Benchmarking Agent Memory for Compositional Reasoning over Long
+  Contexts** (2607.16716) — submitted 2026-07-18. 24 case files of 50k-100k
+  tokens testing what happens after a fact changes (cascading invalidation,
+  surviving independent support, counterfactual timelines); best non-Oracle
+  system reaches only 22.4% accuracy.
+- **From Memory to Skills: Evidence-Grounded Co-Evolution Governance for
+  Long-Horizon LLM Agents** (2607.16621) — submitted 2026-07-18. Training-free
+  MSCE crystallizes positive-expected-gain policies into callable skills with
+  evidence links, applicability constraints, and reliability estimates, using
+  reflection-weighted value backfilling to densify sparse terminal feedback.
+- **AgentBrew: Lifelong Knowledge Brewing from Strong Teachers to Weak LLM
+  Agents** (2607.16851) — submitted 2026-07-18. Distills teacher interactive
+  experience into persistent external memory for a compact student with no
+  weight updates, demonstrations, labels, or test-time teacher access.
+- **OpsMem: Dual-Memory Reasoning with Cross-Memory Resonance for Failure
+  Diagnosis** (2607.11357) — submitted 2026-07-13. Activates only state-relevant
+  long-term memory, conditions multi-agent diagnosis on short-term plus activated
+  long-term memory, and consolidates solved incidents back; +46.88% Match and
+  +18.39% Relevant over the strongest baseline on a Huawei microservice dataset.
+- **AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents**
+  (2607.02255) — submitted 2026-07-02. Bounded-memory contract keeps prompt size
+  constant regardless of task duration via typed retrieval with no appended
+  transcript; 6/10 wins with strategic skills versus 3/10 without on Slay the
+  Spire 2, with 298 trajectories and frozen memory states released.
+- **MemSyco-Bench: Benchmarking Sycophancy in Agent Memory** (2607.01071) —
+  submitted 2026-07-01, revised 2026-07-02. Five tasks measuring when memory
+  should influence a decision and how valid memory should be used, covering a
+  failure mode storage/retrieval-correctness benchmarks miss entirely.
+- **SF-AMS: Strategic Forgetting for Structured Memory in LLM Agent**
+  (2607.22562) — submitted 2026-05-29. Utility-driven survival mechanism
+  replacing static retrieval and heuristic decay; beats LightMem, MemO, and
+  A-Mem with +9.65 F1 on multi-hop reasoning under Qwen2.5-7B.
+- **AgentKVShift: Efficient KV Cache Reuse for Agentic Memory Systems**
+  (2607.21604) — submitted 2026-05-15. Decomposes the per-memory KV reuse
+  residual into a shared offset plus token-wise fluctuations and corrects even
+  un-recomputed tokens; near full-recompute quality at 10-30% refresh, 2-3.5x
+  prefill speedup on an A100.
+- **Accurate and Efficient Long-Term Memory for LLM Agents** (2607.16211) —
+  submitted 2026-05-15. MOSAIC pairs entity-typed graph storage with
+  LSH-accelerated retrieval and save-time conflict detection: 89.35% on LoCoMo
+  (+27.21 pp), 66% of injected conflicts detected versus 14%, 0.58 s per query.
+
+---
+
 ## 2026-08-01 (scheduled scan)
 
 14 new papers (4 Security, 10 Optimization). The 2026-07-30 announcement batch

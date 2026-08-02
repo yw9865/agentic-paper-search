@@ -811,3 +811,69 @@ Format per entry:
 - **Date**: 2026-07-23
 - **Category**: Optimization
 - **Summary**: Argues production agents fail on managing what sits in their reasoning context — conversation histories, large prompts, large tool definitions, ballooning tool outputs — rather than on reasoning capability, and that treating this as a storage problem misses the structure. It decomposes context management into five lifecycle activities (deciding what to remember, extracting and structuring, selecting storage, consolidating while preserving provenance, judging current relevance), shows naive accumulation grows token cost quadratically while validated compaction keeps it linear at preserved accuracy, and reports 92% on LongMemEval and 93.2% on LoCoMo for its Maximem Synap reference implementation, while flagging latency, token efficiency, and context-rot resistance as evaluation dimensions current benchmarks underexplore.
+
+### Voice Memory for Agentic Speech Recognition
+- **arXiv**: 2607.26410 ([link](https://arxiv.org/abs/2607.26410))
+- **Date**: 2026-07-29
+- **Category**: Optimization
+- **Summary**: An inference-only agent memory scheme that splits an ASR correction agent into a frozen "listener-thinker" corrector, which reads a single per-domain memory file and decides per utterance whether to act or abstain, and an asynchronous score-gated optimizer that revises that file through bounded edits accepted only on strict held-out improvement. Because the two roles are coupled solely through the memory, the learned skill stays auditable, portable across corrector families, and adds zero parameters to the inference path. Restraint is the skill the loop actually discovers: unconstrained generative error correction breaks correct tokens on up to 64% of edits on financial news versus 35% here, and weighted WER drops from 8.36% to 7.52% across ten HyPoradise domains without regressing any dataset below its 1-best baseline.
+
+### Exploratory and Assimilating Reflection: Reflective Recall Cycle for Long-term Memory
+- **arXiv**: 2607.17879 ([link](https://arxiv.org/abs/2607.17879))
+- **Date**: 2026-07-20
+- **Category**: Optimization
+- **Summary**: Existing agent memory retrieval lacks adaptability and sample efficiency and struggles to pull the right mixture of memories out of heterogeneous stores. EAR pairs Exploratory Reflection, an iterative search that bootstraps retrieval and harvests useful per-query experiences, with Assimilating Reflection, which replays those experiences from an Experience Buffer to refine a global reranker more efficiently than immediate-reward-only methods. Improves retrieval by up to 17.9% over the baseline retriever on two long-term dialogue benchmarks while staying sample-efficient and robust to noisy feedback.
+
+### RECON: Benchmarking Agent Memory for Compositional Reasoning over Long Contexts
+- **arXiv**: 2607.16716 ([link](https://arxiv.org/abs/2607.16716))
+- **Date**: 2026-07-18
+- **Category**: Optimization
+- **Summary**: Prior memory benchmarks test whether agents retrieve scattered facts or notice that a fact changed; RECON evaluates what happens *after* the change — which downstream conclusions are invalidated, which survive through independent support, and how alternative timelines would have unfolded. It spans 24 case files of 50k-100k tokens across criminal, medical, and financial domains over six memory-intensive tasks (multi-hop evidence chains, cascading invalidation, source-conflict resolution, counterfactuals, temporal constraints, temporal fact retrieval). Even the strongest non-Oracle system reaches only 22.4% accuracy, with retrieval and reasoning each surfacing as separate bottlenecks.
+
+### From Memory to Skills: Evidence-Grounded Co-Evolution Governance for Long-Horizon LLM Agents
+- **arXiv**: 2607.16621 ([link](https://arxiv.org/abs/2607.16621))
+- **Date**: 2026-07-18
+- **Category**: Optimization
+- **Summary**: MSCE is a training-free framework that converts accumulated agent experience into three coupled stores — grounded step traces, reusable procedural policies, and declarative environmental cognition — and crystallizes only policies with positive expected gain into callable skills, each retaining its evidence links, applicability constraints, and reliability estimates. Reflection-weighted value backfilling propagates sparse terminal feedback through dense local self-reflections to produce calibrated trace values, addressing the credit-assignment problem that makes naive experience accumulation unreliable. Reports substantial gains over baselines on EvoAgentBench and LoCoMo with notable cross-domain transfer and continual-learning behavior.
+
+### AgentBrew: Lifelong Knowledge Brewing from Strong Teachers to Weak LLM Agents
+- **arXiv**: 2607.16851 ([link](https://arxiv.org/abs/2607.16851))
+- **Date**: 2026-07-18
+- **Category**: Optimization
+- **Summary**: Targets the deployment reality that a compact student model serves at test time even when a stronger teacher was available during training, and distills the teacher's interactive experience into a persistent external memory instead of weights — requiring no weight updates, expert demonstrations, ground-truth labels, or test-time teacher access. A failure-triggered teacher-Ralph loop turns student failures into environment-validated memory notes to work around sparse binary feedback, while student-aware synthesis calibrates teacher knowledge to the weak executor's operational granularity so the stored guidance is actually executable. Evaluated across coding, math, and tool-use tasks with ablations.
+
+### OpsMem: Dual-Memory Reasoning with Cross-Memory Resonance for Failure Diagnosis
+- **arXiv**: 2607.11357 ([link](https://arxiv.org/abs/2607.11357))
+- **Date**: 2026-07-13
+- **Category**: Optimization
+- **Summary**: Existing LLM diagnosis methods improve on agentic reasoning or knowledge augmentation but lack a mechanism to coordinate the evolving diagnostic state with prior operational experience during iterative investigation. OpsMem uses cross-memory resonance to activate only state-relevant long-term memory, conditions multi-agent diagnosis jointly on short-term and activated long-term memory, and consolidates reusable experience from solved incidents back into the long-term store. On a real-world Huawei microservice failure dataset it improves Match and Relevant by up to 46.88% and 18.39% over the strongest baseline.
+
+### AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents
+- **arXiv**: 2607.02255 ([link](https://arxiv.org/abs/2607.02255))
+- **Date**: 2026-07-02
+- **Category**: Optimization
+- **Summary**: Proposes a bounded-memory contract in which every decision is made from a fresh user message assembled by typed retrieval, with no raw cross-decision transcript appended, so prompt size stays constant regardless of task duration and individual memory components can be ablated in isolation. Instantiated on Slay the Spire 2, which demands hundreds of sequential choices, the harness wins 6 of 10 games with strategic skills enabled versus 3 without. Releases 298 documented trajectories, frozen memory states, prompt records, and analysis tooling for reproducible study of how memory architecture drives long-horizon performance.
+
+### MemSyco-Bench: Benchmarking Sycophancy in Agent Memory
+- **arXiv**: 2607.01071 ([link](https://arxiv.org/abs/2607.01071))
+- **Date**: 2026-07-01 (revised 2026-07-02)
+- **Category**: Optimization
+- **Summary**: Retrieved memory is not uniformly beneficial — it induces sycophancy, pushing agents to over-align with the user at the cost of factual accuracy and objective reasoning, a failure mode existing benchmarks miss because they only check whether memories were stored, retrieved, or updated correctly. MemSyco-Bench instead measures *when* memory should influence a decision and *how* valid memory should be used, across five tasks: rejecting memory as factual evidence, respecting its applicable scope, resolving memory-versus-evidence conflicts, tracking memory updates, and using valid memory for personalization.
+
+### SF-AMS: Strategic Forgetting for Structured Memory in LLM Agent
+- **arXiv**: 2607.22562 ([link](https://arxiv.org/abs/2607.22562))
+- **Date**: 2026-05-29
+- **Category**: Optimization
+- **Summary**: Replaces static retrieval and heuristic time decay with a utility-driven survival mechanism that models each memory unit's long-term importance from usage redundancy and temporal signals, inducing a hierarchical structure that prioritizes stable entity-consistent information and filters noise. Composite Importance Scoring adds entity-level signals to semantic ones for retrieval robustness. On LoCoMo and LongMemEval-s it beats LightMem, MemO, and A-Mem, with the largest gain on multi-hop reasoning (+9.65 F1 under Qwen2.5-7B), then temporal reasoning (+6.91 F1) and open-domain tasks (+6.53 F1).
+
+### AgentKVShift: Efficient KV Cache Reuse for Agentic Memory Systems
+- **arXiv**: 2607.21604 ([link](https://arxiv.org/abs/2607.21604))
+- **Date**: 2026-05-15
+- **Category**: Optimization
+- **Summary**: Every retrieval in a memory-augmented agent re-encodes structured memory units (summaries, keywords, tags) into KV states, and that prefill dominates inference cost; existing training-free KV reuse methods were built for RAG-style raw passages and degrade on curated agentic memory. AgentKVShift observes that the per-memory KV reuse residual decomposes into a shared memory-level offset plus small token-wise fluctuations, estimates that offset from a small probe set, and corrects *every* reused token rather than leaving un-recomputed tokens stale. Across four models (3B-32B) and two long-horizon agentic memory benchmarks it nears full-recompute quality while refreshing only 10-30% of the cache (up to 5x less recompute than baselines need), giving 2-3.5x prefill speedup on a single A100 and composing with KV quantization.
+
+### Accurate and Efficient Long-Term Memory for LLM Agents
+- **arXiv**: 2607.16211 ([link](https://arxiv.org/abs/2607.16211))
+- **Date**: 2026-05-15
+- **Category**: Optimization
+- **Summary**: Attacks two coupled limitations of persistent agent memory — flat unstructured storage that loses the relational context needed for multi-hop and temporal reasoning, and reliance on expensive LLM-based classification that blocks latency-sensitive deployment — while noting such systems silently accumulate contradictions without validation. MOSAIC combines entity-typed graph storage over events, personas, and relationships; hash-accelerated dual-path retrieval that swaps LLM classification for locality-sensitive hashing; and active save-time conflict detection against existing graph neighbors that triggers updates or deletions. Reaches 89.35% on LoCoMo (+27.21 pp over the best baseline), best HaluMem extraction and QA scores, and detects 66% of injected factual conflicts versus 14% for the best baseline at 0.58 s average search latency.
