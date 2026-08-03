@@ -1,3 +1,22 @@
 {
-  "seen": []
+  "seen": [
+    {
+      "venue": "USENIX Security 2026",
+      "title": "HijackKV: New Threat in Position-Independent KV Cache Reuse",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/zhang-yichi",
+      "arxiv": "2607.19957"
+    },
+    {
+      "venue": "USENIX Security 2026",
+      "title": "When Memory Becomes a Vulnerability: Towards Multi-turn Jailbreak Attacks against Text-to-Image Generation Systems",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/zhao-shiqian",
+      "arxiv": "2504.20376"
+    },
+    {
+      "venue": "USENIX Security 2026",
+      "title": "FragFuse: Bypassing Access Control of Large Language Model Agents via Memory-Based Query Fragmentation and Fusion",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/technical-sessions",
+      "arxiv": "2606.15609"
+    }
+  ]
 }

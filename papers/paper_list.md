@@ -108,6 +108,7 @@ Format per entry:
 - **Summary**: Data-centric survey of privacy leakage across LLM agent surfaces — issued queries, intermediate results, written memory, and inter-agent messages — organized by data source rather than attack type. Argues information-flow control alone can't stop compositional/cross-session inference leakage and flags the lack of benchmarks that evaluate agents across multiple data surfaces (including memory) under a unified privacy policy.
 
 ### FragFuse: Bypassing Access Control of Large Language Model Agents via Memory-Based Query Fragmentation and Fusion
+- **Venue**: USENIX Security 2026
 - **arXiv**: 2606.15609 ([link](https://arxiv.org/abs/2606.15609))
 - **Date**: 2026-06-14
 - **Category**: Security
@@ -418,6 +419,22 @@ Format per entry:
 - **Date**: 2026-03-24 (revised 2026-03-30)
 - **Category**: Security
 - **Summary**: Privacy leakage in LLM agents is usually studied one component at a time — memory module, retrieval pipeline, or tool-mediated artifact — which makes it impossible to compare how private internal dependence becomes externally recoverable across heterogeneous pipelines. CIPL (Channel Inversion for Privacy Leakage) is a channel-oriented measurement interface representing a target through its sensitive source, selection, assembly, execution, observation, and extraction stages under one protocol. Memory turns out to be a near-saturated high-risk special case, while retrieval-mediated targets leak frequently but incompletely and tool-mediated targets depend heavily on the exposed observation surface — leakage is governed by channel conditions rather than by any universally dominant attack recipe.
+
+### HijackKV: New Threat in Position-Independent KV Cache Reuse
+- **Venue**: USENIX Security 2026
+- **arXiv**: 2607.19957 ([link](https://arxiv.org/abs/2607.19957))
+- **Link**: https://www.usenix.org/conference/usenixsecurity26/presentation/zhang-yichi
+- **Date**: 2026-08-12 (USENIX Security '26 symposium)
+- **Category**: Security
+- **Summary**: Position-independent KV cache reuse lets a serving system reuse the cached KV of any identical text chunk regardless of where it appears, but that cached KV still encodes the context in which it was originally computed — so a chunk that looks benign can carry an attacker-controlled prefix into a later victim query. HijackKV optimizes such a prefix so the KV computed for a common benign chunk encodes the attacker's goal while the chunk's text stays unchanged (preserving future cache hits), hijacking behavior with no attacker text in the victim's input. Reports ~94% single-attempt success, survives realistic conditions (10% hit rate, 50% recomputation), persists across multi-turn interactions, and transfers across models in black-box settings — making the reused KV cache a persistent poisoned-memory substrate rather than a purely performance-layer concern.
+
+### When Memory Becomes a Vulnerability: Towards Multi-turn Jailbreak Attacks against Text-to-Image Generation Systems
+- **Venue**: USENIX Security 2026
+- **arXiv**: 2504.20376 ([link](https://arxiv.org/abs/2504.20376))
+- **Link**: https://www.usenix.org/conference/usenixsecurity26/presentation/zhao-shiqian
+- **Date**: 2026-08-12 (USENIX Security '26 symposium)
+- **Category**: Security
+- **Summary**: Modern text-to-image systems (e.g. DALL-E 3) keep a memory of prior turns so multi-turn requests generate faithfully, and this paper shows that mechanism is itself an attack surface. Inception plants malicious intent at the start of a session's memory and reaches it through segmentation (decomposing a prohibited prompt along sentence structure into individually filter-passing turns) and recursion (re-applying the decomposition to sub-prompts that still trip filters), so the harmful semantics are assembled from memory rather than present in any single prompt. Achieves a 20.0 percentage-point attack-success-rate margin over prior methods on a purpose-built platform and on commercial systems — the same fragmentation-across-memory-writes pattern seen in agent access-control bypasses, here against a deployed multimodal generation service.
 
 ## Optimization
 

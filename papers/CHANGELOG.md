@@ -4,6 +4,70 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-03 [Conference scan]
+
+2 new conference papers added (both Security), plus one venue backfill.
+
+**USENIX Security 2026** — the Cycle 2 acceptances have now landed in the
+technical-sessions program (~230+ papers, up from the 50 Cycle 1 papers that
+were all this edition showed in the 07-13 and 07-20 scans). The dedicated
+`cycle2-accepted-papers` URL is still a 404, so the program page is the
+authoritative list. Direct WebFetch again returned HTTP 403; retrieved via the
+`r.jina.ai` reader proxy. Each addition was verified against its official USENIX
+presentation page.
+
+- **HijackKV: New Threat in Position-Independent KV Cache Reuse** — USENIX
+  Security 2026 (arXiv 2607.19957) — Security. Poisons a reused position-
+  independent KV cache so a benign-looking chunk carries an attacker-controlled
+  prefix into later victim queries; ~94% single-attempt success, persists across
+  multi-turn interactions and transfers black-box.
+- **When Memory Becomes a Vulnerability: Towards Multi-turn Jailbreak Attacks
+  against Text-to-Image Generation Systems** — USENIX Security 2026 (arXiv
+  2504.20376) — Security. "Inception" plants intent in the session memory of a
+  T2I system and assembles prohibited semantics across turns via segmentation
+  and recursion, so no single prompt trips the filter; +20.0pp ASR over prior
+  work on commercial systems.
+
+**Venue backfill (not a new entry):** *FragFuse: Bypassing Access Control of
+Large Language Model Agents via Memory-Based Query Fragmentation and Fusion* was
+already tracked from its arXiv preprint (2606.15609) and appears in the USENIX
+Security '26 program. Added a `**Venue**` line to the existing entry and
+recorded it in `conf_seen.json` so future conference scans skip it.
+
+**IEEE S&P 2026 (Oakland)** — accepted-papers.html fetched directly (252 papers).
+Unchanged from prior scans; no agent-memory papers. IEEE S&P 2027 Cycle 1
+notifications are not due until March 2027, so there is no 2027 list to scan yet.
+USENIX Security '27 pages do not exist yet (404).
+
+**Scope note on the two additions.** Both sit just outside the usual
+"LLM-agent memory store" framing and were judged in-scope deliberately:
+HijackKV attacks a serving-layer KV cache, but that cache is a persistent
+cross-session memory substrate and the tracker already covers KV-cache-as-memory
+on both sides (*When Latent Agents Lie: KV-Cache Integrity in Multi-Agent LLM
+Collaboration*, *MemDecay*, *AgentKVShift*); excluding it would leave the
+tracker covering KV-cache efficiency but not KV-cache poisoning. Inception
+targets a T2I service rather than an LLM agent, but the vulnerability *is* the
+system's multi-turn memory mechanism, and the fragment-across-memory-writes
+pattern is the same one FragFuse uses against agent access control.
+
+**Reviewed and excluded (USENIX Security 2026, Cycle 2 additions):**
+- RAG-corpus security — *Confundo* (robust RAG poison), *BadGraph* (GraphRAG
+  structural knowledge isolation), *Securing Retrieval-Augmented Code Generation
+  via Contextual Knowledge Injection*. Static retrieval corpus, not an agent's
+  persistent memory — same boundary that keeps PoisonedRAG/AgentPoison out.
+- Prompt-injection work with no memory component — *MUZZLE* (agentic web-agent
+  red-teaming), *AttriGuard* (IPI defense via tool-invocation attribution),
+  *Overcoming the Retrieval Barrier*, *When AIOps Become "AI Oops"*.
+- *Context Contamination in LLM Analysis of Network Security Logs* — single-
+  context contamination, no persistent memory store.
+- *Autonomy Comes with Costs* (resource-abuse DoS in LLM agents) — agent
+  security, not memory.
+- *Attacks on Approximate Caches in Text-to-Image Diffusion Models* — inference
+  cache, no cross-session memory semantics.
+- OS/hardware "memory" keyword collisions: *Download More RAM*, *Memclave*,
+  *KernelRCA*, *SoK: On the Fragility of Memory Error Exploit Mitigations*,
+  *Fence2Pwn*, *DMGuard*.
+
 ## 2026-08-03 (scheduled scan)
 
 15 new papers (12 Security, 3 Optimization). Still no new arXiv announcement
