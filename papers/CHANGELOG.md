@@ -4,6 +4,114 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-03 (scheduled scan)
+
+15 new papers (12 Security, 3 Optimization). Still no new arXiv announcement
+batch: 2026-07-30 remains the newest submission date, the highest ID visible on
+`cs.CR/recent` is 2607.28551, and nothing in the 2608 range exists yet. As on
+2026-08-02, this run is therefore a backfill — but a targeted one. The previous
+run added zero Security papers, so this run swept the memory-security literature
+specifically (poisoning, injection, privacy leakage, membership inference,
+provenance/lineage defenses) and found a substantial unrecorded backlog. Every
+entry below was verified individually against its arXiv abstract page.
+
+Known remaining backlog (identified, verified as unrecorded, deliberately
+deferred to keep this run bounded — **not** a claim of full coverage): on the
+Optimization side 2606.30005, 2606.22844, 2606.08151, 2606.06090, 2606.04536,
+2606.03463, 2605.20833, 2605.12260 and others surfaced by the
+"memory compression LLM agent" sweep. Future runs should continue this backfill.
+
+Checked and deliberately skipped: MIRROR (2606.26793, memory-guided MCTS
+red-teaming for agentic RAG — the "memory" is the attacker's search memory, not
+agent memory as the asset), Inference Cost Attacks for Retrieval-Augmented LLMs
+(2606.02643, RAG-level not agent-memory), Agent-Native Immune System (2606.28270,
+broad agent-safety architecture, memory not central), Cyber-Capable AI Agents
+(2607.25379) and Rethinking Penetration Testing for AI-Enabled Systems
+(2607.14006, both agent security but not memory), CACHE-UK (2607.28292, model
+editing for quantized LLMs rather than agent memory).
+
+**Security:**
+
+- **MemVenom: Triggered Poisoning of Multimodal Memories in Web Agents**
+  (2606.10742) — submitted 2026-06-09. Black-box trigger-conditioned retrieval
+  attack plus post-retrieval induction via adversarial perturbation and stealthy
+  OCR injection against graph-structured multimodal memory; up to 99.15% success
+  on GPT-5-family web agents, transferring across architectures and scales.
+- **SMSR: Certified Defence Against Runtime Memory Poisoning in Persistent LLM
+  Agent Systems** (2606.12703) — submitted 2026-06-10. Names Multi-Session
+  Memory Poisoning and gives the first certified bound for it: HMAC-SHA256 write
+  provenance plus randomised memory ablation with verdict-based voting. Unsigned
+  attack success 93-100% to 0%; end-to-end query-only attack 65.3% to 5.3%.
+- **When Does Belief-Based Agent Memory Help? Reliability-Conditional Updating
+  and Provenance-Capped Poisoning Defense** (2606.22030) — submitted 2026-06-20,
+  revised 2026-07-16. Bayesian belief updating alone barely beats last-write-wins
+  because benchmarks lack conflicting evidence; reliability-conditioned and
+  provenance-capped updating is what turns it into a poisoning defense.
+- **Manufactured Confidence: How Memory Consolidation Turns Hearsay into
+  Confident Facts** (2606.29279) — submitted 2026-06-28. Memory products rewrite
+  hedged remarks into confident dated assertions the agent then obeys, with no
+  attacker needed; the agent responds to phrasing confidence rather than source,
+  and one redundant source is the constructive fix.
+- **Membrane: A Self-Evolving Contrastive Safety Memory for LLM Agent Defense**
+  (2606.05743) — submitted 2026-06-04. Contrastive Safety Memory cells pair
+  block-conditions with permit-conditions for superficially similar benign
+  requests; best F1 on all six jailbreak attacks with benign refusal at 7-14%
+  versus prior guards' 28-85%, stable under memory poisoning.
+- **Hijacking Agent Memory: Stealthy Trojan Attacks Through Conversational
+  Interaction** (2605.29960) — submitted 2026-05-28. MemPoison defeats the
+  selective extraction and rewriting stages prior attacks ignore, via semantic
+  relational bridging, entity masquerading, and joint embedding optimization;
+  ASR up to 0.95, with evaluated defenses shown fundamentally limited.
+- **MRMMIA: Membership Inference Attacks on Memory in Chat Agents** (2605.27825)
+  — submitted 2026-05-27. Extends MIA from training corpora and retrieval
+  databases to agent memory, using multiple recall probes to extract a membership
+  signal across black-, gray-, and white-box settings.
+- **The Misattribution Gap: When Memory Poisoning Looks Like Model Failure in
+  Agentic AI Systems** (2605.22842) — submitted 2026-05-12. Formalizes Semantic
+  Norm Drift and the Trust Laundering Chain; four safety classifiers produced
+  zero detections across 510 checkpoints. Counterfactual Composition Testing hits
+  87.5% attribution accuracy; releases the SND Corpus.
+- **OEP: Poisoning Self-Evolving LLM Agents via Locally Correct but
+  Non-Transferable Experiences** (2605.18930) — submitted 2026-05-18.
+  Low-privilege black-box attack seeding clean, plausible edge-cases that bias
+  reflection into over-generalized high-priority rules; >50% ASR on GPT-4o agents
+  and survives LLM auditing defense.
+- **MemLineage: Lineage-Guided Enforcement for LLM Agent Memory** (2605.14421) —
+  submitted 2026-05-14. Chain-of-custody rather than filtering: Merkle log over
+  Ed25519-signed entries, a weighted derivation DAG, and a sensitive-action gate
+  that refuses dispatches descending from an external ancestor. Only configuration
+  reaching zero ASR on all three workloads at sub-millisecond overhead.
+- **ShadowMerge: A Novel Poisoning Attack on Graph-Based Agent Memory via
+  Relation-Channel Conflicts** (2605.09033) — submitted 2026-05-09, revised
+  2026-05-15. Poisoned relation shares the query-activated anchor and
+  canonicalized relation channel with benign evidence while carrying a conflicting
+  value; 93.8% ASR on Mem0 (+50.3 points), responsibly disclosed to vendors.
+- **Observable Channels, Not Just Storage: Evaluating Privacy Leakage in LLM
+  Agent Pipelines** (2603.22751) — submitted 2026-03-24, revised 2026-03-30.
+  CIPL gives one channel-oriented protocol spanning memory-, retrieval-, and
+  tool-mediated targets; memory is a near-saturated high-risk special case while
+  leakage overall is governed by channel conditions, not a dominant attack recipe.
+
+**Optimization:**
+
+- **Supersede: Diagnosing and Training the Memory-Update Gap in LLM Agents**
+  (2606.27472) — submitted 2026-06-25. Bounded self-maintained memory drops
+  gpt-5.4 from 92% to 77% on LongMemEval's knowledge-update subset; the released
+  RL environment nearly doubles held-out performance for Qwen2.5-3B under GRPO,
+  showing the maintenance gap is trainable, not just measurable.
+- **Organize then Retrieve: Hierarchical Memory Navigation for Efficient Agents**
+  (2606.11680) — submitted 2026-06-10. HORMA builds a file-system-like hierarchy
+  linking summaries to raw trajectories and navigates it with a lightweight
+  RL-trained retriever; matches or beats baselines on ALFWorld, LoCoMo, and
+  LongMemEval using at most 22.17% of baseline tokens on long conversations.
+- **Rethinking How to Remember: Beyond Atomic Facts in Lifelong LLM Agent
+  Memory** (2605.19952) — submitted 2026-05-19. TriMem keeps raw segments,
+  atomic facts, and synthesized profiles coexisting at three granularities and
+  refines its extraction prompts with TextGrad, evolving without parameter
+  updates; beats strong baselines on LoCoMo and PerLTQA.
+
+---
+
 ## 2026-08-02 (scheduled scan)
 
 11 new papers (0 Security, 11 Optimization). No new announcement batch since the

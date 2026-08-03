@@ -347,6 +347,78 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Self-hosted agents continuously rewrite their own memory and configuration files, so an adversary issuing ordinary OS system calls can compromise the agent by corrupting its own state rather than by injecting prompts. The paper formalizes these self-state attacks over four dimensions (Target, Mechanism, Granularity, Temporal), instantiates 43 concrete operations against real agent state files, and finds that access-control prevention plus workload-conditioned detection plus periodic backups mitigates most of them — while a residual surface remains structurally indistinguishable from legitimate agent writes at the OS level, arguing OS-level defense alone cannot close the gap.
 
+### MemVenom: Triggered Poisoning of Multimodal Memories in Web Agents
+- **arXiv**: 2606.10742 ([link](https://arxiv.org/abs/2606.10742))
+- **Date**: 2026-06-09
+- **Category**: Security
+- **Summary**: Identifies multimodal memory poisoning as an overlooked attack surface in web agents whose graph-structured external memory stores coordinated text-image evidence. MemVenom is a black-box two-stage attack: a trigger-conditioned retrieval attack that guarantees high-probability recall of the malicious memory, then post-retrieval attack induction using adversarial perturbations and stealthy OCR injection to override the user's original objective — persistent, reusable, and goal-agnostic without touching model parameters. Reaches up to 99.15% end-to-end success on GPT-5-family web agents with minimal benign-performance impact, transferring across architectures and model scales.
+
+### SMSR: Certified Defence Against Runtime Memory Poisoning in Persistent LLM Agent Systems
+- **arXiv**: 2606.12703 ([link](https://arxiv.org/abs/2606.12703))
+- **Date**: 2026-06-10
+- **Category**: Security
+- **Summary**: Names Multi-Session Memory Poisoning (MSMP) — an adversary using only normal channels injects memories that steer responses for *future* users — and shows static-corpus defences (RobustRAG, ReliabilityRAG) assume a fixed knowledge base while heuristic filters fall to fluent enterprise-style text. SMSR pairs HMAC-SHA256 write-time provenance with query-time randomised memory ablation and verdict-based majority voting, proving no provenance-free retrieval-time filter can certify against adaptive injection and deriving a hypergeometric certificate; it also formalizes the Consistent Minority Effect, where a consistent adversarial answer wins string-based voting as a numerical minority. Across 15 enterprise scenarios (3,150 trials) provenance cuts unsigned attack success from 93-100% to 0%, and an end-to-end query-only attack drops from 65.3% to 5.3%.
+
+### When Does Belief-Based Agent Memory Help? Reliability-Conditional Updating and Provenance-Capped Poisoning Defense
+- **arXiv**: 2606.22030 ([link](https://arxiv.org/abs/2606.22030))
+- **Date**: 2026-06-20 (revised 2026-07-16)
+- **Category**: Security
+- **Summary**: Nous represents entity-attribute pairs as categorical probability distributions updated by Bayesian inference, but the central finding is negative: belief updating alone barely beats naive last-write-wins because existing conversational memory benchmarks rarely contain contradictory or differently reliable evidence. Adding reliability-conditioned updating and provenance-capped belief updating turns probabilistic memory into a poisoning defense, and the benefit shows up specifically under conflicting, differently trustworthy evidence rather than in standard recall. Also documents a sizable evaluation discrepancy between token-F1 and LLM-as-judge scoring.
+
+### Manufactured Confidence: How Memory Consolidation Turns Hearsay into Confident Facts
+- **arXiv**: 2606.29279 ([link](https://arxiv.org/abs/2606.29279))
+- **Date**: 2026-06-28
+- **Category**: Security
+- **Summary**: Memory products (mem0, LangMem) rewrite conversation into stored "facts", and that rewriting manufactures confidence — a casual hedged remark becomes a confident dated assertion the agent then obeys, granting every above-clearance request, with no attacker required. Isolating the trigger shows the agent responds not to source (attributed, unattributed, and forged "system of record" claims all grant alike) but to phrasing confidence, with the evidential register least discounted ("reportedly" obeyed like a flat assertion on most models). Obvious fixes fail — a passive "unverified" tag is ignored and an active distrust instruction escalates even correct memory — while the constructive finding is that a single load-bearing memory is the hazard and one redundant source restores correct decisions.
+
+### Membrane: A Self-Evolving Contrastive Safety Memory for LLM Agent Defense
+- **arXiv**: 2606.05743 ([link](https://arxiv.org/abs/2606.05743))
+- **Date**: 2026-06-04
+- **Category**: Security
+- **Summary**: Fine-tuned safety classifiers cannot track evolving jailbreaks while adaptive memory-based guardrails over-refuse benign queries resembling stored attacks; Membrane's Contrastive Safety Memory stores cells that pair the conditions for blocking a harmful query with those for permitting a superficially similar benign one, indexed by attack strategy so one cell generalizes across topical variants. It evolves without retraining by distilling each harmful interaction and its benign counterpart into a new contrastive cell. Highest F1 on all six jailbreak attacks across HarmBench and AgentHarm, with benign refusal held to 7-14% against prior guards' 28-85%, 87-88% F1 under cross-attack transfer, and stability under memory poisoning.
+
+### Hijacking Agent Memory: Stealthy Trojan Attacks Through Conversational Interaction
+- **arXiv**: 2605.29960 ([link](https://arxiv.org/abs/2605.29960))
+- **Date**: 2026-05-28
+- **Category**: Security
+- **Summary**: Prior memory poisoning assumes injected content is stored verbatim, ignoring the selective extraction and rewriting stages of modern memory pipelines that make those methods ineffective in realistic settings. MemPoison injects triggerable backdoors through ordinary dialogue using a semantic relational bridge that binds trigger and payload so they are extracted together, entity masquerading that shapes triggers to mimic named entities and survive rewriting, and joint embedding optimization that clusters trigger-injected text tightly while keeping it isolated from benign embeddings. Attack success up to 0.95 across agent domains and memory mechanisms; mechanistic analysis traces it to embedding-space anisotropy and attention shifts, and evaluated defenses show fundamental limitations.
+
+### MRMMIA: Membership Inference Attacks on Memory in Chat Agents
+- **arXiv**: 2605.27825 ([link](https://arxiv.org/abs/2605.27825))
+- **Date**: 2026-05-27
+- **Category**: Security
+- **Summary**: Membership inference has been studied against training corpora and retrieval databases but not against agent memory, even though that memory holds sensitive user-agent interactions, retrieved facts, and stated preferences. Multi-Recall Memory MIA issues multiple recall probes to the agent to extract a membership signal for a candidate memory unit, unified across black-box, gray-box, and white-box access. Consistently outperforms baselines and supplies an initial evaluation framework for membership leakage in chat-agent memory systems.
+
+### The Misattribution Gap: When Memory Poisoning Looks Like Model Failure in Agentic AI Systems
+- **arXiv**: 2605.22842 ([link](https://arxiv.org/abs/2605.22842))
+- **Date**: 2026-05-12
+- **Category**: Security
+- **Summary**: Formalizes Semantic Norm Drift as a third path to agent misconduct distinct from emergent misalignment and collusion: a policy-formatted document enters a shared vector store through a normal upload and later reappears as trusted system context after provenance is lost through a Trust Laundering Chain, so memory-layer attacks look exactly like model failure and defenders apply the wrong remediation. Across 64 documented failures attribution systems consistently blamed the model, four safety classifiers (one trained on memory poisoning) produced zero detections across 510 checkpoints, and agents explicitly cited the injected document as normative authority in 59 of 65 valid cases — with no trigger, model access, or repeated interaction needed. Counterfactual Composition Testing identifies the causal entry at 87.5% accuracy with zero false positives, Memory-Persistent Information-Flow Control blocks 97% of attacks at the cross-session boundary, and the SND Corpus is released as an adversarial memory benchmark with temporal persistence.
+
+### OEP: Poisoning Self-Evolving LLM Agents via Locally Correct but Non-Transferable Experiences
+- **arXiv**: 2605.18930 ([link](https://arxiv.org/abs/2605.18930))
+- **Date**: 2026-05-18
+- **Category**: Security
+- **Summary**: Existing agentic memory attacks need privileged access or explicit malicious content and are caught by advanced safety filters; OEP instead asks whether an adversary can induce the agent to generate experiences that look locally correct and semantically plausible yet generalize harmfully during reflection. Obsessive Experience Poisoning is a low-privilege black-box attack that constructs clean edge-cases combining locally correct solutions, non-transferable methods, and severe but plausible hypothetical consequences, biasing reflection toward risk-averse rule formation so consolidation distills localized experience into over-generalized high-priority rules. Above 50% ASR with GPT-4o agents across three domains, outperforming existing attacks under LLM auditing defense.
+
+### MemLineage: Lineage-Guided Enforcement for LLM Agent Memory
+- **arXiv**: 2605.14421 ([link](https://arxiv.org/abs/2605.14421))
+- **Date**: 2026-05-14
+- **Category**: Security
+- **Summary**: Treats untrusted content re-entering later sessions as an instruction as a chain-of-custody problem rather than a filtering problem, attaching cryptographic provenance and LLM-mediated derivation lineage to every memory entry. Six modules built around an RFC-6962 Merkle log over per-principal Ed25519-signed entries: a weighted derivation DAG records which retrieved entries influenced each new memory, a max-of-strong-edges propagation rule makes Untrusted-Path Persistence hold, and a sensitive-action gate refuses dispatches whose active justification descends from an external ancestor while still permitting benign recall. The only configuration driving all three memory-poisoning workloads to zero ASR at sub-millisecond per-operation overhead, with an AgentDojo bridge reducing strict ASR to zero on all six banking pairs where no-defense and signature-only baselines fail.
+
+### ShadowMerge: A Novel Poisoning Attack on Graph-Based Agent Memory via Relation-Channel Conflicts
+- **arXiv**: 2605.09033 ([link](https://arxiv.org/abs/2605.09033))
+- **Date**: 2026-05-09 (revised 2026-05-15)
+- **Category**: Security
+- **Summary**: Existing agent-memory poisoning targets flat textual records and fails against graph memory, where malicious relations are typically not extracted, not merged into the target anchor neighborhood, or not retrieved for the victim query. ShadowMerge exploits relation-channel conflicts — a poisoned relation shares the query-activated anchor and canonicalized relation channel with benign evidence while carrying a conflicting value — and the AIR pipeline converts that conflict into an ordinary interaction the graph-memory system will extract, merge, and retrieve. 93.8% average ASR on Mem0 across PubMedQA, WebShop, and ToolEmu (+50.3 absolute points over the best baseline) with negligible impact on unrelated benign tasks; input-side defenses are shown insufficient and the findings were responsibly disclosed to graph-memory vendors.
+
+### Observable Channels, Not Just Storage: Evaluating Privacy Leakage in LLM Agent Pipelines
+- **arXiv**: 2603.22751 ([link](https://arxiv.org/abs/2603.22751))
+- **Date**: 2026-03-24 (revised 2026-03-30)
+- **Category**: Security
+- **Summary**: Privacy leakage in LLM agents is usually studied one component at a time — memory module, retrieval pipeline, or tool-mediated artifact — which makes it impossible to compare how private internal dependence becomes externally recoverable across heterogeneous pipelines. CIPL (Channel Inversion for Privacy Leakage) is a channel-oriented measurement interface representing a target through its sensitive source, selection, assembly, execution, observation, and extraction stages under one protocol. Memory turns out to be a near-saturated high-risk special case, while retrieval-mediated targets leak frequently but incompletely and tool-mediated targets depend heavily on the exposed observation surface — leakage is governed by channel conditions rather than by any universally dominant attack recipe.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -877,3 +949,21 @@ Format per entry:
 - **Date**: 2026-05-15
 - **Category**: Optimization
 - **Summary**: Attacks two coupled limitations of persistent agent memory — flat unstructured storage that loses the relational context needed for multi-hop and temporal reasoning, and reliance on expensive LLM-based classification that blocks latency-sensitive deployment — while noting such systems silently accumulate contradictions without validation. MOSAIC combines entity-typed graph storage over events, personas, and relationships; hash-accelerated dual-path retrieval that swaps LLM classification for locality-sensitive hashing; and active save-time conflict detection against existing graph neighbors that triggers updates or deletions. Reaches 89.35% on LoCoMo (+27.21 pp over the best baseline), best HaluMem extraction and QA scores, and detects 66% of injected factual conflicts versus 14% for the best baseline at 0.58 s average search latency.
+
+### Supersede: Diagnosing and Training the Memory-Update Gap in LLM Agents
+- **arXiv**: 2606.27472 ([link](https://arxiv.org/abs/2606.27472))
+- **Date**: 2026-06-25
+- **Category**: Optimization
+- **Summary**: Isolates memory *maintenance* — using current fact values while discarding superseded ones as users relocate, prices shift, and plans change — as a distinct failure mode separate from comprehension. On LongMemEval's knowledge-update subset, replacing full context with bounded self-maintained memory drops gpt-5.4 from 92% to 77%, a gap that persists across model scales and is not recovered by proportionally expanding memory as conversation length grows 24x. Supersede is an open RL environment (verifiers/prime-rl) rewarding use of current values and penalizing outdated ones; GRPO fine-tuning of Qwen2.5-3B nearly doubles held-out performance (9.0% to 16.7%), showing the gap is trainable rather than merely measurable.
+
+### Organize then Retrieve: Hierarchical Memory Navigation for Efficient Agents
+- **arXiv**: 2606.11680 ([link](https://arxiv.org/abs/2606.11680))
+- **Date**: 2026-06-10
+- **Category**: Optimization
+- **Summary**: Existing working-memory mechanisms rely on lossy compression or similarity-based retrieval and miss the temporal structure and causal dependencies multi-step agentic tasks need. HORMA organizes experience into a file-system-like hierarchy linking summarized entities to their raw trajectories, splitting working memory into structured construction — which iteratively refines the structure by distinguishing failures caused by missing information from those caused by misleading or overloaded context — and navigation-based retrieval by a lightweight RL-trained agent that traverses the hierarchy to select minimal sufficient context, cutting latency on the critical path. Across ALFWorld, LoCoMo, and LongMemEval it improves task performance under constrained context budgets while using at most 22.17% of baseline tokens on long conversations.
+
+### Rethinking How to Remember: Beyond Atomic Facts in Lifelong LLM Agent Memory
+- **arXiv**: 2605.19952 ([link](https://arxiv.org/abs/2605.19952))
+- **Date**: 2026-05-19
+- **Category**: Optimization
+- **Summary**: The dominant extracted-fact paradigm compresses raw dialogue into atomic facts via handcrafted static prompts, discarding fine-grained detail, failing at deep reasoning over scattered isolated facts, and unable to hold extraction granularity constant across dialogue styles. TriMem keeps three coexisting granularities at once — raw dialogue segments anchored by source identifiers for storage fidelity, atomic facts for efficient retrieval, and synthesized profiles aggregating dispersed facts for deep reasoning — and applies TextGrad-based prompt optimization to refine extraction and profiling prompts from response-quality feedback, achieving lifelong evolution with no parameter updates. Consistently beats strong memory baselines on LoCoMo and PerLTQA across multiple backbones.
