@@ -4,6 +4,102 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-04 (scheduled scan)
+
+8 new papers (3 Security, 5 Optimization).
+
+**A new arXiv announcement batch finally landed.** The 08-02 and 08-03 runs were
+both pure backfills because 2026-07-30 was still the newest submission date and
+nothing above 2607.28551 existed. That is no longer true: `cs.CR/recent`,
+`cs.CL/recent`, `cs.AI/recent`, `cs.LG/recent` and `cs.MA/recent` now cover
+announcements through Mon 2026-08-03, exposing the 2026-07-31 submission batch up
+to 2607.29600. Five of the eight additions come from that batch and are genuinely
+fresh rather than backfill. Note `arxiv.org/list/<cat>/2026-08` still returns "no
+updates for this time period" and no 2608 ID exists yet.
+
+Retrieval note: `export.arxiv.org/api/query` returned HTTP 429/503 for most of
+this run after the first two calls, so category `/recent?show=250` listing pages
+were used as the primary sweep instead. Every entry below was still verified
+individually against its arXiv abstract page.
+
+**Security:**
+
+- **Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for
+  Persistent Memory** (2607.29167) — submitted 2026-07-31. Names memory
+  provenance laundering: LLM-based consolidation rewrites an untrusted
+  observation as apparent user history, keeping the action trigger while erasing
+  the low-trust source that should cap its authority. Vulnerable consolidated
+  memories reach 1.000 ASR; the PPMF middleware gates tool calls on
+  action-risk-versus-memory-authority and blocks every evaluated unauthorized
+  high-risk action.
+- **Visual Inception: Compromising Long-term Planning in Agentic Recommenders via
+  Multimodal Memory Poisoning** (2604.16966) — submitted 2026-04-18. Triggers in
+  user-uploaded lifestyle photos sit dormant in an agentic recommender's
+  long-term memory and hijack the reasoning chain when retrieved during later
+  planning, with no prompt injection; ~85% Goal-Hit Rate, reduced to ~10% by the
+  proposed CognitiveGuard dual-process defense.
+- **MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience
+  Retrieval** (2512.16962) — submitted 2025-12-18. Poisons remembered
+  *successful procedures* rather than facts, exploiting agents' semantic
+  imitation heuristic; validated on MetaGPT DataInterpreter with GPT-4o, where a
+  few grafted records dominate retrieved experiences on benign workloads and
+  cause cross-session behavioral drift.
+
+**Optimization:**
+
+- **Zero-Mem: Zero-Token Memory Operations for LLM Agents** (2607.29377) —
+  submitted 2026-07-31. No step outside final QA invokes an LLM or consumes LLM
+  tokens; an entity-context graph plus a temporal hierarchy over preserved raw
+  traces are weighed per query, cutting memory-operation time cost 57.6% versus
+  the fastest baseline at equal reader and context budget.
+- **Beyond Retrieval: Analytic Memory for Multimodal Agents** (2607.29440) —
+  submitted 2026-07-31. Formulates analytic memory (filtering, aggregation,
+  ranking, temporal comparison over accumulated observations) as complementary
+  to retrieval memory; AdaMM discovers recurring field structures without an
+  application-defined schema, +11.3% on MemEye and +7.3% on MemGallery.
+- **TransMem: Transforming Hidden States into Memory for Large Language Models**
+  (2607.29032) — submitted 2026-07-31. Inference-time parametric memory turning
+  sparse historical hidden states of a frozen backbone into reusable
+  representations via a gating network, trained by evidence-conditioned
+  self-distillation; MemoryAgentBench average accuracy 29.54% to 40.00%.
+- **HAM-VLN: Harnessing Hierarchical Agentic Memory for Zero-Shot
+  Vision-and-Language Navigation** (2607.29600) — submitted 2026-07-31. Writes
+  the memory inside the same model call that picks the next action, so
+  maintenance costs no extra LLM calls; bounded verbatim window plus
+  relevance/recency/salience retrieval over a depth-grounded world graph cuts
+  context length by more than 65% while improving success rate.
+- **Know It, Act on It: Investigating Memory Utilization in LLM Personalization**
+  (2607.29433) — submitted 2026-07-31. Paired Know/Act tests over 1,000
+  preferences, 16 systems and five memory architectures separate "failed to
+  remember" from "remembered but failed to use"; agents routinely pass recall and
+  fail the paired behavioral scenario, worst for health and therapy preferences.
+
+**Checked and deliberately skipped:**
+
+- *Co-Evolving Graph and Text Memory for Training-Free Multi-Hop QA* (2607.23278)
+  — synchronized graph-text *working* memory within a reasoning chain, no
+  persistent cross-session store; same boundary that keeps graph-RAG systems out.
+- *When Unlearning Fails: Reliable Data Deletion under Post-Training in Agent
+  Networks* (2607.28829) — deletion of training trajectories and model-side
+  influence in federated agent networks, not an agent memory store; same
+  boundary as the CACHE-UK exclusion on 08-03.
+- *Memory Decoder at Scale* (2607.27919), *Understanding Is Done Early ...
+  Unbounded-Context Memory* (2607.28263), *Recall Before You Rank* (2607.27692) —
+  LLM-level parametric/long-context memory with no agent-memory framing. TransMem
+  was included by contrast because it is evaluated on agent memory benchmarks
+  (LoCoMo, MemoryAgentBench) and framed for long-context LLM agents.
+- *ViSAGE* (2607.28678) — self-correcting memory for long-form video
+  understanding, not an agent's persistent memory.
+- Agent-security work with no memory component: *Piggybacking on Perception*
+  (2607.28165), *Agent Harness Distillation* (2607.28147), *Early Detection of
+  Distributed Backdoors in Multi-Agent LLM Systems* (2607.24893).
+- Keyword collision: *Dimension Reduction for Quantum Adaptive Agents*
+  (2607.19156) — quantum memory dimension, nothing to do with LLM agents.
+
+Known remaining backlog carried over from 08-03 and still unrecorded (not a
+claim of full coverage): 2606.30005, 2606.22844, 2606.08151, 2606.06090,
+2606.04536, 2606.03463, 2605.20833, 2605.12260.
+
 ## 2026-08-03 [Conference scan]
 
 2 new conference papers added (both Security), plus one venue backfill.

@@ -436,6 +436,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Modern text-to-image systems (e.g. DALL-E 3) keep a memory of prior turns so multi-turn requests generate faithfully, and this paper shows that mechanism is itself an attack surface. Inception plants malicious intent at the start of a session's memory and reaches it through segmentation (decomposing a prohibited prompt along sentence structure into individually filter-passing turns) and recursion (re-applying the decomposition to sub-prompts that still trip filters), so the harmful semantics are assembled from memory rather than present in any single prompt. Achieves a 20.0 percentage-point attack-success-rate margin over prior methods on a purpose-built platform and on commercial systems — the same fragmentation-across-memory-writes pattern seen in agent access-control bypasses, here against a deployed multimodal generation service.
 
+### Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory
+- **arXiv**: 2607.29167 ([link](https://arxiv.org/abs/2607.29167))
+- **Date**: 2026-07-31
+- **Category**: Security
+- **Summary**: Names *memory provenance laundering*: during LLM-based memory consolidation an untrusted external observation gets rewritten as apparent user history or workflow support, which preserves the action trigger while erasing the low-trust source that should have capped its authority — so prompt filters, content sanitizers, and tool guards all pass it. Formalizes source-authority non-amplification across lossy consolidation and instantiates it as PPMF (Provenance-Preserving Memory Firewall), a middleware that keeps platform-maintained provenance and authorizes tool calls by matching action risk to the authority of the action-relevant memories. Vulnerable consolidated memories reach up to 1.000 ASR; with provenance, confirmation, and risk labels intact, no evaluated unauthorized high-risk action clears the gate while benign and low-risk memory use still executes.
+
+### Visual Inception: Compromising Long-term Planning in Agentic Recommenders via Multimodal Memory Poisoning
+- **arXiv**: 2604.16966 ([link](https://arxiv.org/abs/2604.16966))
+- **Date**: 2026-04-18
+- **Category**: Security
+- **Summary**: Agentic recommender systems maintain long-term user profiles and plan autonomously, and Visual Inception turns that long-term memory into the attack surface: triggers embedded in ordinary user-uploaded images (e.g. lifestyle photos) act as sleeper agents that do nothing on ingestion but hijack the agent's reasoning chain toward adversary-defined goals (promoting high-margin products) when the poisoned memory is later retrieved during planning — with no prompt injection anywhere. Reports ~85% Goal-Hit Rate on a mock e-commerce agent; the proposed CognitiveGuard dual-process defense (diffusion-based perceptual sanitizer plus counterfactual consistency verifier over memory-driven plans) cuts it to ~10% at a configurable 1.5-6.5s latency cost.
+
+### MemoryGraft: Persistent Compromise of LLM Agents via Poisoned Experience Retrieval
+- **arXiv**: 2512.16962 ([link](https://arxiv.org/abs/2512.16962))
+- **Date**: 2025-12-18
+- **Category**: Security
+- **Summary**: Attacks the trust boundary between an agent's reasoning core and its own past rather than its factual knowledge: MemoryGraft supplies benign-looking ingestion-level artifacts that induce the agent to persist a handful of malicious *successful-procedure* templates alongside genuine experiences, exploiting the semantic imitation heuristic by which agents replicate patterns from retrieved successful tasks. Union retrieval over lexical and embedding similarity reliably surfaces the grafted memories on semantically similar later tasks, producing persistent cross-session behavioral drift; validated on MetaGPT's DataInterpreter with GPT-4o, where few poisoned records account for a large fraction of retrieved experiences on benign workloads — turning experience-based self-improvement into a durable compromise vector.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -984,3 +1002,33 @@ Format per entry:
 - **Date**: 2026-05-19
 - **Category**: Optimization
 - **Summary**: The dominant extracted-fact paradigm compresses raw dialogue into atomic facts via handcrafted static prompts, discarding fine-grained detail, failing at deep reasoning over scattered isolated facts, and unable to hold extraction granularity constant across dialogue styles. TriMem keeps three coexisting granularities at once — raw dialogue segments anchored by source identifiers for storage fidelity, atomic facts for efficient retrieval, and synthesized profiles aggregating dispersed facts for deep reasoning — and applies TextGrad-based prompt optimization to refine extraction and profiling prompts from response-quality feedback, achieving lifelong evolution with no parameter updates. Consistently beats strong memory baselines on LoCoMo and PerLTQA across multiple backbones.
+
+### Zero-Mem: Zero-Token Memory Operations for LLM Agents
+- **arXiv**: 2607.29377 ([link](https://arxiv.org/abs/2607.29377))
+- **Date**: 2026-07-31
+- **Category**: Optimization
+- **Summary**: Asks whether structured memory access needs generation at all: in Zero-Mem no step outside final question answering invokes an LLM or consumes LLM tokens (encoder compute accounted separately), so the recurring token and latency cost of generating intermediate records and mediating their retrieval disappears — and, because original interaction traces stay the source of record, so does the detail loss from omission and merging. Traces are organized in two complementary views, an entity-context graph for cross-interaction connections and a temporal hierarchy for conversational locality and session state, weighed per query and traversed structurally, with deterministic calibration discarding conflicting evidence. Competitive on long-memory and long-context QA benchmarks while cutting memory-operation time cost 57.6% versus the fastest baseline at equal reader and context budget.
+
+### Beyond Retrieval: Analytic Memory for Multimodal Agents
+- **arXiv**: 2607.29440 ([link](https://arxiv.org/abs/2607.29440))
+- **Date**: 2026-07-31
+- **Category**: Optimization
+- **Summary**: Long-term multimodal memory is treated almost entirely as retrieval — summaries and indexes returning query-relevant records at various granularities — which cannot answer queries that require *computing* over observations accumulated across interactions. Formulates *analytic memory* as the complementary abstraction, organizing recurring multimodal observations into queryable structures supporting filtering, aggregation, ranking, and temporal comparison, and presents AdaMM, which needs no application-defined schema: it extracts provenance-linked attribute-value observations from dialogue, images, and contextual metadata, discovers recurring field structures, and materializes them, then routes each decomposed query operation to retrieval or analytic tools via a memory-aware planner. Improves by up to 11.3% and 7.3% on the MemEye and MemGallery long-term multimodal memory benchmarks.
+
+### TransMem: Transforming Hidden States into Memory for Large Language Models
+- **arXiv**: 2607.29032 ([link](https://arxiv.org/abs/2607.29032))
+- **Date**: 2026-07-31
+- **Category**: Optimization
+- **Summary**: Useful information already encoded in previously computed representations goes unused when an agent reasons over a long interaction history, so TransMem adds a lightweight inference-time parametric memory module that turns *sparse* historical hidden states from a frozen backbone into reusable memory representations, applied to current hidden states through a gating network without re-encoding the preceding context. Evidence-conditioned self-distillation trains transferable memory utilization rather than task knowledge, matching a memory-augmented student over full context to an evidence-only teacher on the same frozen backbone. Gains of 11.58-29.25 F1 on LoCoMo and 10.20-13.03 F1 on HotpotQA, and MemoryAgentBench average accuracy from 29.54% to 40.00%, establishing sparse hidden states as an efficient memory substrate.
+
+### HAM-VLN: Harnessing Hierarchical Agentic Memory for Zero-Shot Vision-and-Language Navigation
+- **arXiv**: 2607.29600 ([link](https://arxiv.org/abs/2607.29600))
+- **Date**: 2026-07-31
+- **Category**: Optimization
+- **Summary**: Training-free VLN agents that query a multimodal LLM per step hit a growing memory and reasoning bottleneck as image streams or dense maps accumulate over a long horizon. HAM-VLN makes the memory decision-coupled and agent-authored: within the same model call that selects the next action, the agent also writes semantic and reflective records (room type, objects, navigation progress, failure notes) into a persistent depth-grounded world graph, so memory maintenance costs no extra LLM calls. Recent waypoints stay verbatim in a bounded window while older history re-enters only via retrieval scored on relevance, recency, and salience plus one-hop topological expansion — cutting context length by more than 65% while improving navigation (61.0% SR on VLN-CE R2R, 52.7% on RxR, 79.7% on HM3D-v2 ObjectNav, no training).
+
+### Know It, Act on It: Investigating Memory Utilization in LLM Personalization
+- **arXiv**: 2607.29433 ([link](https://arxiv.org/abs/2607.29433))
+- **Date**: 2026-07-31
+- **Category**: Optimization
+- **Summary**: Separates two failure modes that memory benchmarks conflate — an agent not remembering a user preference versus remembering it but not acting on it — using a decoupled paradigm that administers paired *Know* and *Act* tests on the same preference. Across 16 systems, five memory architectures, and 1,000 preferences embedded at three expression strengths, agents frequently pass the recall test yet fail to reflect the same preference in the paired behavioral scenario; memory architectures shrink the gap but utilization stays weakest for health and therapy preferences, where failing to act carries the highest stakes. Implies retrieval-quality metrics overstate what agent memory actually delivers downstream.
