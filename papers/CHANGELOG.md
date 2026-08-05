@@ -4,6 +4,164 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-05 (scheduled scan)
+
+26 new papers (6 Security, 20 Optimization) — the largest single run so far.
+
+**The whole 2608 announcement batch was missed until now.** As of the 08-04 run
+no 2608 ID existed and `arxiv.org/list/<cat>/2026-08` still reported "no updates
+for this time period". That has now flipped: announcements cover submissions
+through 2026-08-03 and IDs run up to at least 2608.02553, exposing three
+submission days (2026-08-01/02/03) plus a set of cross-listed older submissions
+that entered the August batch (2608.00007-2608.00303 range). Retrieval used
+`arxiv.org/search/` with `order=-announced_date_first` after
+`export.arxiv.org/api/query` returned HTTP 429 on the first two calls; every
+entry below was verified individually against its arXiv abstract page.
+
+**Security:**
+
+- **When Memory Becomes Authority: Benchmarking Authority Collapse at the Memory
+  Consolidation Boundary** (2608.01679) — submitted 2026-08-03. Treats
+  consolidation as an implicit authorization boundary and names *authority
+  collapse* (claim preserved, source constraints erased). AuthMem-Bench varies
+  only source authority; collapse appears in 48/49 configurations, collapsed
+  memories give a 50.3% mean unauthorized-action rate, and persisted authority
+  labels take it from 16.9% to 0.0%.
+- **Salami Attack: Stealthy Collusive Memory Poisoning against OpenClaw**
+  (2608.01637) — submitted 2026-08-03. MemCollusion slices an adversarial
+  objective into individually innocuous memory fragments harmful only in
+  combination; on OpenClaw across 48 scenarios it reaches 81.3% Memory Save Rate
+  and 75.0% ASR, surviving benign dilution and memory-level defenses.
+- **Benign Alone, Harmful Together: Exploiting Experience Composition in
+  Self-Evolving LLM Agents** (2608.01759) — submitted 2026-08-03. EvoBreak needs
+  no direct memory access and writes no malicious record: it observes what the
+  victim distills, acquires the missing complementary experiences through benign
+  tasks, then activates them jointly. Establishes benign experience composition
+  as a persistent attack surface.
+- **MNC: Scope-Bound Semantic Declassification for Private LLM-Agent
+  Communication** (2608.01719) — submitted 2026-08-03. Typed declassification
+  protocol binding each disclosure to recipient, purpose, forwarding, lifetime,
+  logging, and *memory* scopes with a reference monitor; blocks unauthorized
+  forwarding, logging, durable storage, and post-expiration retrieval that a
+  text-only declassifier permits.
+- **MAPLE-Guard: Memory-Aware Link Enforcement Against Memory-Link Poisoning in
+  Multi-Agent Systems** (2608.00426) — submitted 2026-08-01. Gates the memory
+  lifecycle at write, retrieval, promotion, and cross-agent reuse so a single
+  poisoned write cannot propagate to agents that never saw the attack; ASR 38.2%
+  to 0.9% on LongMemEval and 34.7% to 0.2% on AppWorld.
+- **Adversarial Attacks in Multi-Agent LLM Pipelines: Unveiling Structural
+  Vulnerabilities in Agentic AI Architectures** (2608.00718) — submitted
+  2026-08-01. Missing inter-agent boundary verification yields content
+  injection, impersonation, plan deviation, and memory poisoning; across
+  GPT-5-mini, Claude Sonnet 4.5, and Kimi K2.5 attack success tracks pipeline
+  structure rather than model capability.
+
+**Optimization:**
+
+- **LiveMem: Maintaining Memory State Continuity in Long-Running LLM Inference**
+  (2608.02515) — submitted 2026-08-03. Fixed-capacity intrinsic memory state
+  whose lifetime is independent of the active context, with a bounded KV window
+  on the main attention path; answers LongMemEval questions after the supporting
+  evidence has left the context.
+- **RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in
+  Self-Evolving Agent Memory via Reduced-Order Utility States** (2608.02508) —
+  submitted 2026-08-03. Fixed-dimensional per-task utility state instead of a
+  growing trajectory-indexed one; Cold-Q ratio -80.0%, feedback density ~6x,
+  maintained memory -84.4%, LLM calls -21.1%.
+- **MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents**
+  (2608.02113) — submitted 2026-08-03. Names the Memory-Action Gap (retrieved
+  but not decision-guiding) and arbitrates salience across five functional
+  Memory Banks; +20.9/+25.4 points over the strongest baseline at 500/750-token
+  budgets on ALFWorld.
+- **MemSIF: From Structured Interactions to Dual-Track Fact Memory for LLM
+  Agents** (2608.01742) — submitted 2026-08-03. Topical Segments plus Event
+  Trajectories against temporal-structural misalignment; CoreFact/ActiveFact
+  dual track against delayed utility manifestation. Best Total ACC in all
+  settings on LoCoMo and LongMemEval-S.
+- **CoEvo-Mem: Co-Evolving Retrieval Policy and Memory Bank for LLM Agents**
+  (2608.01739) — submitted 2026-08-03. Closes the retrieval-memory feedback loop
+  with a residual router corrected online and alternating updates to tame
+  non-stationarity; SOTA across seven benchmarks.
+- **PGMem: Tightly Coupled Persona-Memory Graph for Lifelong Personalized
+  Agents** (2608.01708) — submitted 2026-08-03. Typed provenance and evidence
+  edges keep each persona signal traceable to supporting or revising events;
+  retrieval ranks by evidential validity.
+- **When Memory Updates but Behavior Does Not: Repairing Implicit Stale
+  Dependencies in Personalized Agent Responses** (2608.01619) — submitted
+  2026-08-03. StateAuditor audits from stored state to draft rather than the
+  reverse, verifying provenance and chronology; strict VTA .736 vs .686 on
+  STALE's full protocol.
+- **FedWorld: Scope-Aware Federation of Agent World Models** (2608.01561) —
+  submitted 2026-08-03. Shares structured abstract transition rules with
+  server-side scope inference so majority-supported rules cannot overwrite a
+  minority client's correct knowledge; less negative transfer on tau-bench and
+  ALFWorld.
+- **V-Mem: Modality-Routed Retrieval for Long-Term Multimodal Agentic Memory**
+  (2608.01543) — submitted 2026-08-02. Routes by query and target-evidence
+  modality and searches with an LLM-generated anchor, addressing the modality and
+  similarity-relevance gaps; 0.82 vs 0.56 on Mem-Gallery.
+- **Long-Horizon Embodied Decision-Making via Multimodal Memory Compression**
+  (2608.01456) — submitted 2026-08-02. DunphyBench for preference-aligned
+  embodied decisions plus MeMento, a preference-conditioned compressor into a
+  fixed token set; +7.18% accuracy at -85.38% memory usage.
+- **Stop When Memory Suffices: Evidence-Conditioned Progressive Execution for
+  LLM Agents** (2608.01285) — submitted 2026-08-02. Router-Mem's single-token
+  sufficiency router decides early termination after a cheap shared retrieval
+  prefix; -27.3%/-25.5% inference time on AMA-Bench and BEAM.
+- **Learning What to Remember and What to Internalize in LLM Self-Evolution via
+  Adaptive Memory-Parameter Coordination** (2608.01234) — submitted 2026-08-02.
+  COVE routes each task and knowledge type to harness-based or parameter-based
+  learning instead of accumulating experience indiscriminately.
+- **PATH-Bench: Path-Dependent Evaluation of Lifelong Agents** (2608.01149) —
+  submitted 2026-08-02. Controlled-history task sequences show later experience
+  reshapes earlier gains; Selective Experience Use filters interference,
+  reducing forgetting and improving forward transfer.
+- **TrajWiki: Source-Grounded Memory Trajectories for Long-Horizon Dialogue
+  Agents** (2608.00967) — submitted 2026-08-02. Immutable snapshots plus
+  claim-level ADD/REVISE/DEPRECATE, with a persistent Memory Wiki layer cutting
+  fragmentation and retrieval cost; gains on LoCoMo and MedMT.
+- **PMMC: Prospective Multimodal Memory Compilation for Long-Term LVLM Agents**
+  (2608.00962) — submitted 2026-08-02. Questioner/Planner/Doubter compile
+  verified question-conditioned memory programs at consolidation time, shifting
+  work off the query path and cutting query-time tokens and latency.
+- **CrystalMem: Elastic Memory for Self-Evolving LLM Agents via Knowledge
+  Crystallization** (2608.00303) — submitted 2026-07-31. Identifies *memory
+  hysteresis* (capability does not recover when a squeezed byte budget is
+  restored) and proves a residual-deficit floor for keep-or-drop policies;
+  four-state fidelity demotion with verified recrystallization leads by +4.6 pp
+  at equal budgets.
+- **Shared Organizational Memory for Enterprise Coding Agents: System Design and
+  Deployment Snapshot** (2608.00122) — submitted 2026-07-31. Production
+  deployment making capture platform-level: task-adjacent experience collected
+  with contributor approval, curated into reusable QA memories, security- and
+  privacy-gated at ingestion. Effects still under evaluation.
+- **Memory Reward Inflation in Self-Improving LLM Agents** (2608.00017) —
+  submitted 2026-06-29. The *Echo Gap*: LLM-assessed episode scores inflate
+  incorrect episodes so the agent reuses its most confident mistakes, and the
+  error compounds through memory because a confirming judge's errors stay
+  correlated. Formalizes the Error-Independence Assumption; LUCID reaches 56.9%
+  on BIRD.
+- **AgentMemBench: A Systematic Benchmark for Evaluating Long-Term Memory
+  Management Strategies in Conversational AI Agents** (2608.00009) — submitted
+  2026-06-16. Five strategies under identical conditions across three datasets:
+  external KV store dominates every quality axis and is the only one that
+  survives long-range recall on LoCoMo, at ~17x the token footprint of
+  windowing.
+- **Reproducing LightMem: Naive RAG Is Just as Good for Memory Management**
+  (2607.29104) — submitted 2026-07-31. Retriever choice moves accuracy from
+  58.1% to 75.5% over a fixed LightMem store, Naive RAG generally wins at
+  matched retrieval depth, and oracle evaluation shows construction drops
+  answer-relevant information — a negative result for constructed memory.
+
+Skipped as off-topic despite keyword matches: 2608.00028 (control-theoretic
+width/memory/delay accounting for swarms — "memory" is internal-model
+dimension), 2608.02391 (GPU memory in ES post-training), 2608.00007
+(MemoryForge — persona memory synthesis, no security or efficiency angle),
+2608.00215 (bandit personalization layer, not a memory system), 2608.00033
+(hallucination-detection toolkit), 2607.28678 (long-form video understanding).
+
+---
+
 ## 2026-08-04 (scheduled scan)
 
 8 new papers (3 Security, 5 Optimization).

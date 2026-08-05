@@ -454,6 +454,42 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Attacks the trust boundary between an agent's reasoning core and its own past rather than its factual knowledge: MemoryGraft supplies benign-looking ingestion-level artifacts that induce the agent to persist a handful of malicious *successful-procedure* templates alongside genuine experiences, exploiting the semantic imitation heuristic by which agents replicate patterns from retrieved successful tasks. Union retrieval over lexical and embedding similarity reliably surfaces the grafted memories on semantically similar later tasks, producing persistent cross-session behavioral drift; validated on MetaGPT's DataInterpreter with GPT-4o, where few poisoned records account for a large fraction of retrieved experiences on benign workloads — turning experience-based self-improvement into a durable compromise vector.
 
+### When Memory Becomes Authority: Benchmarking Authority Collapse at the Memory Consolidation Boundary
+- **arXiv**: 2608.01679 ([link](https://arxiv.org/abs/2608.01679))
+- **Date**: 2026-08-03
+- **Category**: Security
+- **Summary**: Argues memory consolidation is an implicit *authorization* boundary — it decides whether a stored item is later consumed as a user fact, an attested observation, or a standing instruction — and names *authority collapse*, where consolidation keeps the claim but erases the source constraints that limited its authorized use. AuthMem-Bench holds the focal claim and downstream task fixed while varying only source authority, measuring write-time collapse, downstream authorization errors, and automatic authority preservation. Collapse appears in 48 of 49 configurations across seven consolidators and seven backbones; collapsed memories without authority metadata yield a 50.3% mean unauthorized-action rate, while automatically predicted and persisted authority labels drive it from 16.9% to 0.0% with benign task success essentially unchanged.
+
+### Salami Attack: Stealthy Collusive Memory Poisoning against OpenClaw
+- **arXiv**: 2608.01637 ([link](https://arxiv.org/abs/2608.01637))
+- **Date**: 2026-08-03
+- **Category**: Security
+- **Summary**: Existing memory poisoning relies on individually malicious records; MemCollusion instead applies salami tactics — slicing an adversarial objective into individually innocuous fragments that are harmful only in combination — via four design constraints, five theory-informed strategies, and a fine-tuned generator. Evaluation uses MoltLab, a controlled reproduction of a social platform where crafted content must first be observed and distilled into persistent memory before it can affect a *separate* session. On OpenClaw with two backbones across 48 scenarios it reaches 81.3% mean Memory Save Rate and 75.0% Attack Success Rate, surviving both benign memory dilution and memory-level defenses.
+
+### Benign Alone, Harmful Together: Exploiting Experience Composition in Self-Evolving LLM Agents
+- **arXiv**: 2608.01759 ([link](https://arxiv.org/abs/2608.01759))
+- **Date**: 2026-08-03
+- **Category**: Security
+- **Summary**: Targets the experience-distillation loop of self-evolving agents: EvoBreak needs no direct memory access and plants no explicitly malicious record, instead issuing individually benign attack-stage tasks, observing which experiences the victim distills, adaptively acquiring the complementary ones still missing, and finally reformulating a query that activates them jointly to cross the safety boundary. Supported by BreakGym, a structure-first synthesis pipeline generating decomposable safety-sensitive targets with diverse dependency structures, and trained with rejection-sampling SFT plus Hint-guided GRPO. Beats existing attacks across frameworks, victim backbones, pre-evolution domains, and safety benchmarks while keeping each step benign — establishing benign experience *composition* as a persistent attack surface.
+
+### MNC: Scope-Bound Semantic Declassification for Private LLM-Agent Communication
+- **arXiv**: 2608.01719 ([link](https://arxiv.org/abs/2608.01719))
+- **Date**: 2026-08-03
+- **Category**: Security
+- **Summary**: Multi-agent systems leak protected state through internal messages, tool arguments, logs, and persistent memory even when public outputs look innocuous, and prompts, redaction, or source-level access control constrain surface content without specifying what a legitimately informed agent may disclose or how that disclosure may be reused. Minimum-Necessary Communication is a typed semantic-declassification protocol that picks a task-sufficient disclosure from an application-authored candidate family and binds it to explicit recipient, purpose, forwarding, lifetime, logging, and *memory* scopes, enforced by a reference monitor with a history-aware extension for inference risk accumulated over repeated disclosures. Under identical receipt text, MNC preserves authorized delivery while blocking unauthorized forwarding, logging, durable storage, and post-expiration retrieval that a text-only declassifier permits.
+
+### MAPLE-Guard: Memory-Aware Link Enforcement Against Memory-Link Poisoning in Multi-Agent Systems
+- **arXiv**: 2608.00426 ([link](https://arxiv.org/abs/2608.00426))
+- **Date**: 2026-08-01
+- **Category**: Security
+- **Summary**: Persistent private and shared memories give attackers a durable channel in multi-agent systems: one poisoned write can be retrieved repeatedly, promoted into shared memory, and reused by agents that never saw the original attack, all without any malicious message crossing a visible communication edge at the moment of harm. MAPLE-Guard monitors the whole memory lifecycle and gates write, retrieval, promotion, and cross-agent reuse, quarantining risky memories, filtering unsafe retrievals, and blocking poisoned private memories before they enter shared memory. Cuts ASR from 38.2% to 0.9% on LongMemEval and 34.7% to 0.2% on AppWorld, while raising multi-agent defense success rate to 74.3% and 99.8% respectively — covering a gap left by prompt-level and topology-level defenses.
+
+### Adversarial Attacks in Multi-Agent LLM Pipelines: Unveiling Structural Vulnerabilities in Agentic AI Architectures
+- **arXiv**: 2608.00718 ([link](https://arxiv.org/abs/2608.00718))
+- **Date**: 2026-08-01
+- **Category**: Security
+- **Summary**: Attributes multi-agent pipeline compromise to a missing boundary-verification step between agents, so adversarial content accepted once propagates as trusted input downstream — yielding content injection, agent impersonation, plan deviation, and memory poisoning as distinct attack surfaces. Uses production traces from GAIA and SWE-Bench to show the vulnerabilities arise in standard deployments rather than contrived setups. Across GPT-5-mini, Claude Sonnet 4.5, and Kimi K2.5, attack success tracks pipeline *structure* rather than model capability, arguing the exposure (memory poisoning included) is architectural rather than a per-model robustness problem.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1032,3 +1068,123 @@ Format per entry:
 - **Date**: 2026-07-31
 - **Category**: Optimization
 - **Summary**: Separates two failure modes that memory benchmarks conflate — an agent not remembering a user preference versus remembering it but not acting on it — using a decoupled paradigm that administers paired *Know* and *Act* tests on the same preference. Across 16 systems, five memory architectures, and 1,000 preferences embedded at three expression strengths, agents frequently pass the recall test yet fail to reflect the same preference in the paired behavioral scenario; memory architectures shrink the gap but utilization stays weakest for health and therapy preferences, where failing to act carries the highest stakes. Implies retrieval-quality metrics overstate what agent memory actually delivers downstream.
+
+### LiveMem: Maintaining Memory State Continuity in Long-Running LLM Inference
+- **arXiv**: 2608.02515 ([link](https://arxiv.org/abs/2608.02515))
+- **Date**: 2026-08-03
+- **Category**: Optimization
+- **Summary**: Formulates *state continuity under context turnover* as the capability missing from context retention, summarization, and retrieval: carrying computation forward through a fixed-capacity memory state whose lifetime is independent of the active context. LiveMem augments a pretrained full-attention LLM with such an intrinsic memory state covering the whole lifecycle while the main attention path keeps only a bounded KV window, combining context turnover with state maintenance, memory-oriented post-training, and state-aware serving so the state stays load-bearing after its originating tokens are released. On LongMemEval it answers questions from the memory state alone after the supporting evidence has left the context, with evidence-distance analysis confirming information persists beyond the active window.
+
+### RoMeRL: Balancing Feedback Coverage and the Memory-Reward Trap in Self-Evolving Agent Memory via Reduced-Order Utility States
+- **arXiv**: 2608.02508 ([link](https://arxiv.org/abs/2608.02508))
+- **Date**: 2026-08-03
+- **Category**: Optimization
+- **Summary**: Learning-based memory for self-evolving agents suffers two coupled problems: trajectory-indexed utilities grow with interaction history so limited feedback disperses over an expanding state space, and trajectory-level rewards assigned jointly to co-retrieved memories give irrelevant experiences misleading utility updates (the memory-reward trap). RoMeRL replaces the growing utility space with a fixed-dimensional per-task memory state factorized by outcome polarity and memory dynamics, admitting new experience through a bounded set of semantic coordinates whose contents are updated or replaced, with theory on increased per-coordinate feedback and steady-state occupancy of erroneous coordinates. On ALFWorld and LifelongAgentBench it cuts the Cold-Q ratio 80.0%, raises feedback density ~6x, shrinks maintained memory 84.4%, and reduces LLM calls 21.1% while improving task performance.
+
+### MemArbiter: Decision-Time Memory Arbitration for Long-Horizon LLM Agents
+- **arXiv**: 2608.02113 ([link](https://arxiv.org/abs/2608.02113))
+- **Date**: 2026-08-03
+- **Category**: Optimization
+- **Summary**: Names the *Memory-Action Gap*, a post-access failure where action-relevant information is successfully retrieved yet still fails to guide the current decision because it is poorly formed, organized, prioritized, or presented — a dimension orthogonal to the accessibility that most memory systems optimize. MemArbiter decomposes interaction histories into atomic items, sorts them into five functional Memory Banks, and controls salience dynamically via bank-level demand, item-level relevance, focal-ambient representations, and a temporal presentation gate. Under unified per-step token budgets on ALFWorld with an open-weight action model it reaches 82.8% and 92.5% success at 500- and 750-token budgets (+20.9 and +25.4 points over the strongest baseline) while improving post-failure recovery and reducing repeated failed actions.
+
+### MemSIF: From Structured Interactions to Dual-Track Fact Memory for LLM Agents
+- **arXiv**: 2608.01742 ([link](https://arxiv.org/abs/2608.01742))
+- **Date**: 2026-08-03
+- **Category**: Optimization
+- **Summary**: Traces recurring long-term memory failures to two misalignments: Temporal-Structural Misalignment (temporal proximity does not track topical or event relatedness) and Delayed Utility Manifestation (write-time salience does not predict future query utility). MemSIF answers the first with Structured Interaction Memory — Topical Segments preserving local coherence plus Event Trajectories maintaining cross-time continuity — and the second with Dual-Track Fact Memory, where CoreFact consolidates stable schema-guided information at write time while ActiveFact forms facts on demand and only promotes those backed by multiple historical sources and recurring query demand. Highest Total ACC in all settings on LoCoMo and LongMemEval-S across five backbones, beating the strongest baseline by 2.29-8.79% and 2.87-6.15%.
+
+### CoEvo-Mem: Co-Evolving Retrieval Policy and Memory Bank for LLM Agents
+- **arXiv**: 2608.01739 ([link](https://arxiv.org/abs/2608.01739))
+- **Date**: 2026-08-03
+- **Category**: Optimization
+- **Summary**: Prior work optimizes either memory access (query refinement, adaptive retrieval policies) or memory evolution (structural update), missing the feedback loop where retrieval decides which memories receive usage signals while the updated memory bank reshapes future retrieval. CoEvo-Mem closes the loop: a frozen LLM emits route-specific query rewrites and a routing prior corrected online by a lightweight residual router, and the retrieved context becomes the coupling interface — task outcomes credit routing decisions while trajectory-conditioned feedback updates memory values and graph relations. Alternating router and memory-bank updates tame the coupling-induced non-stationarity, giving state-of-the-art results across seven benchmarks.
+
+### PGMem: Tightly Coupled Persona-Memory Graph for Lifelong Personalized Agents
+- **arXiv**: 2608.01708 ([link](https://arxiv.org/abs/2608.01708))
+- **Date**: 2026-08-03
+- **Category**: Optimization
+- **Summary**: Existing memory systems organize past events well but keep personas as flat profiles detached from the events that justify them, producing a memory-persona validity gap and a persona-aware retrieval gap as user preferences evolve. PGMem is a heterogeneous persona-memory graph linking event and persona nodes through typed provenance and evidence edges so each persona signal stays traceable to the events supporting or revising it, with retrieval expanding from query-relevant seeds and ranking signals by evidential validity. Outperforms summary-based, persona-aware, graph-structured, and agentic memory baselines on three benchmarks with small-LM backbones, with gains that grow as context grows.
+
+### When Memory Updates but Behavior Does Not: Repairing Implicit Stale Dependencies in Personalized Agent Responses
+- **arXiv**: 2608.01619 ([link](https://arxiv.org/abs/2608.01619))
+- **Date**: 2026-08-03
+- **Category**: Optimization
+- **Summary**: Targets STALE's implicit policy adaptation gap, where a memory-augmented agent knows a stored user state is outdated yet still plans around the old value, and identifies draft-anchored verification as a structural cause — it checks what a response *says*, but in open-ended responses the stale dependency is unsaid. StateAuditor audits in the opposite direction, from stored state to draft: an LLM proposes candidate old-to-new transitions from timestamped evidence while deterministic code pins each quotation to one entry and confirms the new evidence really is newer, so only provenance- and chronology-verified transitions trigger repair. Strict single-query VTA rises to .736 from .686 (+5.0 points, 95% CI [+2.9, +7.2]) on STALE's 400-scenario 50-session protocol, reproduced by the benchmark's own third-family judge, with a matched-control ablation attributing the gain to the transition machinery rather than added context or calls.
+
+### FedWorld: Scope-Aware Federation of Agent World Models
+- **arXiv**: 2608.01561 ([link](https://arxiv.org/abs/2608.01561))
+- **Date**: 2026-08-03
+- **Category**: Optimization
+- **Summary**: Agent memory-sharing schemes pool trajectories, memories, or rules without checking whether they remain valid for each recipient, so a rule supported by most clients can overwrite correct knowledge held by a minority client whose policy, environment, or exception conditions differ. FedWorld exchanges structured abstract transition rules instead: clients normalize private transitions into rules, the server aligns related rules to collect supporting and contradicting evidence across clients, and that evidence classifies each rule as shared, cluster-specific, private, or unresolved, with target clients accepting federated updates only for uncovered cases of compatible inferred scope and ambiguous rules withheld. On tau-bench and ALFWorld it reduces negative transfer under conflicting dynamics while retaining useful cross-client transfer, giving fewer state regressions, repeated actions, and excess steps.
+
+### V-Mem: Modality-Routed Retrieval for Long-Term Multimodal Agentic Memory
+- **arXiv**: 2608.01543 ([link](https://arxiv.org/abs/2608.01543))
+- **Date**: 2026-08-02
+- **Category**: Optimization
+- **Summary**: Blames multimodal memory failure on the similarity-search assumption that a query lies near the evidence answering it, broken by two gaps: the modality gap (a query sits closer to same-modality content even in a trained joint embedding space) and the similarity-relevance gap (the most similar content is not the answering evidence, worst when a query carries both text and image). V-Mem routes retrieval by the modality of the query and of the target evidence, both inferred from the query alone, organizing conversation into rounds and returning target-modality content from the matched round so no cross-modality comparison is needed, and searching with an LLM-generated anchor — a hypothetical caption, or query text plus keywords extracted from the query image — that sits closer to the evidence than the query. Scores 0.82 LLM-judge on Mem-Gallery versus 0.56 for the runner-up (0.87 on image-carrying questions, no baseline above 0.47) and 0.69 versus 0.58 on LoCoMo.
+
+### Long-Horizon Embodied Decision-Making via Multimodal Memory Compression
+- **arXiv**: 2608.01456 ([link](https://arxiv.org/abs/2608.01456))
+- **Date**: 2026-08-02
+- **Category**: Optimization
+- **Summary**: Introduces DunphyBench for long-horizon human-centered embodied decision-making, where an agent navigates multiple housing environments and must accumulate evidence, infer implicit user preferences, and compare candidates under partial observation rather than execute a procedural plan. Diagnosis of state-of-the-art VLM-driven agents identifies memory management as a bottleneck — raw multimodal history injects noise that degrades decision quality — motivating MeMento, a preference-conditioned multimodal memory compressor that distills decision-relevant history into a fixed set of memory tokens. Improves accuracy by 7.18% while reducing memory usage 85.38% versus the strongest baseline.
+
+### Stop When Memory Suffices: Evidence-Conditioned Progressive Execution for LLM Agents
+- **arXiv**: 2608.01285 ([link](https://arxiv.org/abs/2608.01285))
+- **Date**: 2026-08-02
+- **Category**: Optimization
+- **Summary**: Frames the standing trade-off in long-term memory as compress-and-structure (low online cost, may drop temporal, causal, or cross-step dependencies) versus deep research over broader trajectories (better coverage, substantial latency and inference cost). Router-Mem runs a shared low-cost retrieval prefix, then a lightweight sufficiency router — trained with evidence-level supervision and rationale-conditioned representation distillation — makes a single-token call at inference time on whether the context supports early termination, expanding memory blocks for deeper analysis and aggregation only when evidence is insufficient. Scores 55.17% and 38.77% on AMA-Bench and BEAM while cutting average inference time 27.3% and 25.5% against full memory execution.
+
+### Learning What to Remember and What to Internalize in LLM Self-Evolution via Adaptive Memory-Parameter Coordination
+- **arXiv**: 2608.01234 ([link](https://arxiv.org/abs/2608.01234))
+- **Date**: 2026-08-02
+- **Category**: Optimization
+- **Summary**: Sets harness-based self-evolution (externalizing feedback into editable memories or skills for fast adaptation) against parameter-based self-evolution (internalizing experience into weights for deeper capability), arguing either alone forces a flexibility-versus-performance trade-off as tool interfaces, APIs, and requirements drift post-deployment. COVE coordinates both channels through task-aware routing, stage-aware scheduling, and knowledge optimization, treating self-evolution as matching task and knowledge type to the right learning mechanism rather than indiscriminately accumulating experience. Outperforms single-channel strategies across multiple task categories under changing environments.
+
+### PATH-Bench: Path-Dependent Evaluation of Lifelong Agents
+- **arXiv**: 2608.01149 ([link](https://arxiv.org/abs/2608.01149))
+- **Date**: 2026-08-02
+- **Category**: Optimization
+- **Summary**: Existing benchmarks rarely account for how the *path* of accumulated experience shapes what a lifelong agent transfers and retains, even though such agents adapt through external learning states holding retrievable memories and reusable skills. PATH-Bench gauges directed task relationships via multi-model in-context learning and builds task sequences with controlled histories; across eight agents on code generation and tool use, experience utility depends on both representation and task structure, and later experience can reshape gains acquired earlier in the path. The proposed Selective Experience Use regulates how accumulated experience influences new tasks, admitting beneficial items while filtering interference, reducing forgetting and improving forward transfer.
+
+### TrajWiki: Source-Grounded Memory Trajectories for Long-Horizon Dialogue Agents
+- **arXiv**: 2608.00967 ([link](https://arxiv.org/abs/2608.00967))
+- **Date**: 2026-08-02
+- **Category**: Optimization
+- **Summary**: Memory stored as isolated records or overwritable states loses how information originated, evolved, conflicted, or became obsolete, so TrajWiki represents each memory as a source-grounded evolution trajectory built from immutable episodic snapshots plus claim-level ADD, REVISE, and DEPRECATE operations. To curb the fragmentation and retrieval cost this implies, a persistent Memory Wiki layer incrementally compiles dialogue history into interlinked wiki pages over salient entities, events, quantities, topics, and conflicts, and queries route hierarchically from pages to trajectories to snapshots and source messages. Improves long-horizon dialogue on LoCoMo and MedMT across open- and closed-source backbones while making memory evolution and retrieval failures diagnosable.
+
+### PMMC: Prospective Multimodal Memory Compilation for Long-Term LVLM Agents
+- **arXiv**: 2608.00962 ([link](https://arxiv.org/abs/2608.00962))
+- **Date**: 2026-08-02
+- **Category**: Optimization
+- **Summary**: Shifts part of memory reasoning from query time to consolidation time for LVLM agents, whose memories otherwise reduce visual experience to text summaries or lean on static retrieve-then-reason pipelines that are slow at query time and brittle for image-text binding, temporal updates, and visual detail. A Questioner predicts future question candidates, a Planner compiles question-conditioned multimodal memory programs, and a Doubter verifies that the planned evidence path can actually support the predicted answer, with verified question-program pairs forming a structured question bank for cheap query-time routing and evidence retrieval. Improves answer quality and visual evidence recall on multimodal long-term memory benchmarks while reducing query-time token and latency cost.
+
+### CrystalMem: Elastic Memory for Self-Evolving LLM Agents via Knowledge Crystallization
+- **arXiv**: 2608.00303 ([link](https://arxiv.org/abs/2608.00303))
+- **Date**: 2026-07-31
+- **Category**: Optimization
+- **Summary**: Memory is usually provisioned as if its byte budget only grows, but cloud quotas move with load and cost — and capability does not follow the budget back up: after a squeeze-and-recover cycle the agent settles below its pre-squeeze level, a *memory hysteresis* the paper attributes to deletion and one-way compression discarding the material needed for rebuilding, with a proof that any keep-or-drop policy carries a residual-deficit floor. CrystalMem is an elastic sidecar demoting entries across four fidelity states under a crystallization-energy schedule, ordering demotions by advantage-weighted influence with dependency coupling and recovering capability through verified recrystallization under explicit compute and byte caps. Across seven environments, seventeen methods, and six backbones — including multi-tenant serving and a physical edge-cloud deployment — it achieves the highest restored capability everywhere, matching the strongest budgeted baseline at full provision from a 50% byte budget and leading by +4.6 pp at equal budgets.
+
+### Shared Organizational Memory for Enterprise Coding Agents: System Design and Deployment Snapshot
+- **arXiv**: 2608.00122 ([link](https://arxiv.org/abs/2608.00122))
+- **Date**: 2026-07-31
+- **Category**: Optimization
+- **Summary**: Reports a production deployment where capture becomes a platform-level part of coding work rather than something agents must recognize and record explicitly, addressing enterprise knowledge that sits outside public training data and formal docs (internal DSLs, proprietary platforms, local conventions, recent fixes, tacit workflows) and is otherwise rediscovered repeatedly. The system collects task-adjacent experience with contributor approval, curates it into reusable question-answer memories, gates obvious security and privacy risks at ingestion, and retrieves memories for later agents. A short paper describing the deployed lifecycle and an operational snapshot; effects on retrieval and coding tasks remain under evaluation.
+
+### Memory Reward Inflation in Self-Improving LLM Agents
+- **arXiv**: 2608.00017 ([link](https://arxiv.org/abs/2608.00017))
+- **Date**: 2026-06-29
+- **Category**: Optimization
+- **Summary**: Views weight-free self-improvement through a reward lens — each stored episode's score is a proxy reward for an implicit non-parametric policy, and each retrieval is a policy-improvement step whose reliability depends on how that score was produced — then shows that with no ground truth at deployment the LLM-assessed score creates an *Echo Gap*: incorrect episodes get inflated rewards, so the agent preferentially reuses the mistakes it is most confident in, and the error compounds through memory instead of averaging out because a confirming judge's errors stay correlated with the original self-grading bias. Formalizes the Error-Independence Assumption as a necessary condition for correcting inflation, with a closed-form recoverable payoff, and shows inflation compounds under plain similarity retrieval as well as score-ranked retrieval. The answer-free de-inflation algorithm LUCID raises BIRD text-to-SQL execution accuracy to 56.9% against 54.0% for a Memento-style self-graded agent and 52.4% memory-less.
+
+### AgentMemBench: A Systematic Benchmark for Evaluating Long-Term Memory Management Strategies in Conversational AI Agents
+- **arXiv**: 2608.00009 ([link](https://arxiv.org/abs/2608.00009))
+- **Date**: 2026-06-16
+- **Category**: Optimization
+- **Summary**: Compares five memory management strategies — in-context windowing, external key-value store, graph-based episodic memory, compression-based summarization, and web-augmented memory — under identical conditions on LoCoMo, MultiDoc2Dial, and MSC, scoring Recall@k, MRR, nDCG@k, Answer F1, LLM-judge faithfulness, memory footprint, and latency over 491 annotated question turns with deterministic decoding. The external KV store dominates every quality axis (macro Recall@5 0.792) and long-range recall is decisive: on LoCoMo, where the gold turn sits many sessions back, windowing, web-augmented memory, graph memory, and summarization retrieve almost nothing (Recall@5 <= 0.005) while EKV reaches 0.573 — but at ~5,100 versus ~300 tokens of footprint, an explicit accuracy-efficiency trade-off. Also runs MemGPT/Letta and HippoRAG through the same harness and releases all artifacts.
+
+### Reproducing LightMem: Naive RAG Is Just as Good for Memory Management
+- **arXiv**: 2607.29104 ([link](https://arxiv.org/abs/2607.29104))
+- **Date**: 2026-07-31
+- **Category**: Optimization
+- **Summary**: Reproduces LightMem, a lightweight memory-management method reporting strong effectiveness at low construction cost, and tests the two things its original evaluation left open: sensitivity to retriever choice and whether memory construction discards answer-relevant information. The main configuration trend replicates, but retriever choice dominates — swapping only the retriever over a fixed LightMem store moves answer accuracy from 58.1% to 75.5% — and Naive RAG over raw user turns generally wins at matched retrieval depths, with LightMem ahead mainly under tight answering-token budgets; oracle evaluation confirms construction removes some answer-relevant information. Positions constructed memory as a context-efficiency trade-off rather than a general improvement over raw-turn retrieval, a useful negative result for the compression-oriented literature.
