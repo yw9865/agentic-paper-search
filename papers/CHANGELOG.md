@@ -4,6 +4,91 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-06 (scheduled scan)
+
+10 new papers (5 Security, 5 Optimization).
+
+Announcements now extend the 2608 batch to submissions through 2026-08-04, with
+IDs up to at least 2608.04009 — the previous run reached only 2608.02553, so the
+new ground is roughly 2608.026xx-2608.040xx. `export.arxiv.org/api/query`
+returned HTTP 429 on four of six calls again; `arxiv.org/search/` with
+`order=-announced_date_first` carried the sweep, and every entry below was
+verified individually against its arXiv abstract page.
+
+**Security:**
+
+- **MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against
+  Audited LLM Agents** (2608.03844) — submitted 2026-08-04. Query-only poisoning
+  under the two conditions that break prior attacks: a large benign memory pool
+  and active input auditing. Probing-based placement plus compact factual-cloak
+  payloads reach 90.7% ASR while pushing audit detection from a peak of 83.3%
+  down to at most 7.4%.
+- **When Agents Learn to Be You: Benchmarking Privacy Leakage, Impersonation
+  Risk, and Defenses in Persona Skills** (2608.03700) — submitted 2026-08-04.
+  AntiSkillBench: 7,500 traces over 50 behavioral profiles, three distillation
+  approaches. Leakage from distilled interaction history reaches past explicit
+  personal details into mannerisms and psychological traits; defenses are
+  inconsistent across risk scenarios.
+- **SkillJack: Persistent Skill Backdoors in Self-Evolving Agents** (2608.03509)
+  — submitted 2026-08-04. Attacks the experience-to-skill pipeline rather than
+  runtime context, so the agent itself launders poison into durable skills.
+  Safety detection drops 98.5% -> 11.4% between poisoned trajectory and
+  extracted skill on SkillX, and 80% of attacks survive deleting the source
+  records.
+- **DP-MemView: A Memory Interface for Attribute-Level Transcript Privacy in
+  Long-Term LLM Agents** (2608.03130) — submitted 2026-08-04. Names *adaptive
+  transcript privacy* — cumulative attribute disclosure across many
+  memory-conditioned responses — and answers it with DP selection over public
+  conditioning views plus per-attribute ledgers, proving pure DP for the whole
+  adaptive transcript.
+- **MutMem: Cryptographically Authorized Mutation in Persistent Agent Memory**
+  (2608.02843) — submitted 2026-08-03. Signed, no-fork weight transitions with
+  Ed25519 verification separate authorized adaptation from tampering. 91.8% on
+  LongMemEval, 4.865 ms median transition latency, 0/100 injected poisons in
+  attacked top-5 disclosures. Establishes integrity and traceability, explicitly
+  not content truth.
+
+**Optimization:**
+
+- **LeanMem: Simple and Efficient Long-Term Memory for LLM Agents** (2608.03463)
+  — submitted 2026-08-04. Routes content by compressibility, temporal dynamics,
+  and fidelity need into profile / event / record memory, updating only the
+  evolving event memories. Up to +15.1 points over the strongest baseline on
+  LoCoMo and LongMemEval-S at lowest or near-lowest construction cost, inference
+  tokens, and latency.
+- **TARL: Transaction-Aware Reliable Ledgers for Executable Memory Management in
+  Long-Term Agents** (2608.03699) — submitted 2026-08-04. Replaces the binary
+  Write/Hold update decision with five executable actions over accepted,
+  pending, and rejected ledgers, trained by comparing the memory states
+  alternative operations would produce. Ships the TARL-Mem benchmark.
+- **Verifiable Memory: Learning Unified Memory Management with Local and Global
+  Verifiers for Large Language Model Agents** (2608.03137) — submitted
+  2026-08-04. VerMem puts long-term memory, active context, and episodic history
+  under one policy with seven atomic operations, trained by SFT plus three-stage
+  RL under training-time-only local and global verifiers. Strongest gains under
+  tight token budgets.
+- **PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in
+  Personal Agents** (2608.04003) — submitted 2026-08-04. Separates retaining
+  experience from improving through it over 26 scenarios and 204 ordered
+  episodes, seven base models and four frameworks. Improvement is real but
+  uneven across memory, procedural reuse, information gathering, and update.
+- **MemArena: An Ego-Centric Benchmark for On-Device Agentic Personal Memory
+  Assistants at Scale** (2608.02613) — submitted 2026-05-20, announced in the
+  2608 batch. 50 agents over 15 days, 10.3M+ dialog tokens. Memory-backend
+  choice beats reader-model scaling for content accuracy, edge search latency
+  costs only milliseconds, and permission-based access control fails
+  universally.
+
+Deliberately skipped as keyword collisions or not memory-focused: 2608.02391
+(cooperative coevolution — GPU memory during post-training), 2608.03555
+(processing-near-memory KV-cache hardware), 2608.01651 (Bole — kernel-level
+transient state memory), 2608.02683 (S^3 multi-stage agent defense — memory is
+one of three stages, no memory-specific analysis), 2608.02698 (steganalysis of
+covert agent collusion — no memory component), 2608.03420 (experience memory for
+two-player game play — fits neither the security nor the efficiency bucket).
+
+---
+
 ## 2026-08-05 (scheduled scan)
 
 26 new papers (6 Security, 20 Optimization) — the largest single run so far.

@@ -490,6 +490,36 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Attributes multi-agent pipeline compromise to a missing boundary-verification step between agents, so adversarial content accepted once propagates as trusted input downstream — yielding content injection, agent impersonation, plan deviation, and memory poisoning as distinct attack surfaces. Uses production traces from GAIA and SWE-Bench to show the vulnerabilities arise in standard deployments rather than contrived setups. Across GPT-5-mini, Claude Sonnet 4.5, and Kimi K2.5, attack success tracks pipeline *structure* rather than model capability, arguing the exposure (memory poisoning included) is architectural rather than a per-model robustness problem.
 
+### MAFIA: Query-Only Memory Attacks via Probing and Factual Injection against Audited LLM Agents
+- **arXiv**: 2608.03844 ([link](https://arxiv.org/abs/2608.03844))
+- **Date**: 2026-08-04
+- **Category**: Security
+- **Summary**: Existing query-only memory poisoning attacks assume a small memory pool and no input auditing; MAFIA targets the harder realistic setting where a large benign pool makes injected records uncompetitive at retrieval time and a semantic auditor screens writes. It combines a placement strategy — memory probing, budget allocation, and scheduling — to make injections retrieval-competitive, with compact "factual cloak" payloads that keep high semantic similarity to legitimate content while preserving the malicious effect. Reports up to 90.7% attack success rate while cutting audit detection from a peak of 83.3% down to at most 7.4%.
+
+### When Agents Learn to Be You: Benchmarking Privacy Leakage, Impersonation Risk, and Defenses in Persona Skills
+- **arXiv**: 2608.03700 ([link](https://arxiv.org/abs/2608.03700))
+- **Date**: 2026-08-04
+- **Category**: Security
+- **Summary**: Persona skills distill a user's accumulated interaction history into a portable, reusable artifact — which turns personal memory into something that can be copied and replayed elsewhere. AntiSkillBench evaluates that exposure with 7,500 dialogue traces over 50 behavioral profiles, measuring information disclosure and identity mimicry across three distillation approaches plus preventive and protective defenses. Finds leakage extends past explicit personal details into communication mannerisms and psychological traits, and that current defenses are inconsistent and poorly adaptable across risk scenarios.
+
+### SkillJack: Persistent Skill Backdoors in Self-Evolving Agents
+- **arXiv**: 2608.03509 ([link](https://arxiv.org/abs/2608.03509))
+- **Date**: 2026-08-04
+- **Category**: Security
+- **Summary**: Prior memory and retrieval poisoning only affects an agent when the poisoned record is actually retrieved into context; SkillJack instead attacks the experience-to-skill pipeline so the agent itself converts poisoned experience into a durable behavioral artifact. Three mechanisms drive it: sanitization whitewashing (malicious intent obscured during skill extraction), cross-layer promotion (transient experience becomes persistent capability), and persistence isolation (the skill survives deletion of its source records). On SkillX safety detection falls from 98.5% on poisoned trajectories to 11.4% on the extracted skills, implanted skills reach 56.2% and 89.2% success on SkillX and Anything2Skill, and 80% of skill-mediated attacks persist after the original poisoned records are removed.
+
+### DP-MemView: A Memory Interface for Attribute-Level Transcript Privacy in Long-Term LLM Agents
+- **arXiv**: 2608.03130 ([link](https://arxiv.org/abs/2608.03130))
+- **Date**: 2026-08-04
+- **Category**: Security
+- **Summary**: Formalizes *adaptive transcript privacy*: even when a protected attribute is never stated outright, repeated memory-conditioned responses cumulatively reveal it over a long-running session. DP-MemView is a differentially private interface that privately selects public response-conditioning *views* and exposes only those to the response LLM, charging each selection to every protected attribute whose memory group intersects the read set, with per-attribute ledgers blocking any selection past its cap and returning a fixed generic view instead. Proves pure DP for the whole adaptive transcript under an explicit interface contract, extends to stores differing across multiple protected groups, and bounds how far the transcript can shift an adversary's prior odds; both online and preallocated modes keep transcript distinguishability near chance while preserving personalization.
+
+### MutMem: Cryptographically Authorized Mutation in Persistent Agent Memory
+- **arXiv**: 2608.02843 ([link](https://arxiv.org/abs/2608.02843))
+- **Date**: 2026-08-03
+- **Category**: Security
+- **Summary**: Persistent memory has to adapt as later outcomes revise earlier evidence, but mutable retrieval weights create an attribution problem — a reviewer cannot tell authorized adaptation from database tampering. MutMem commits each nontrivial weight change as a housekeeper-authorized transition binding a terminal provenance node, signer epoch, quantized old and new weights, a no-fork predecessor, and two domain-separated SHA-256 commitments, with Ed25519 verification in both the database writer and a portable verifier; poison-likely content is retained under signed revisable labels that recall consumes as trust evidence. Scores 91.8% on LongMemEval and 74.12% on LoCoMo at 4.865 ms median signed-transition latency, with 0/100 injected poisons surfacing in attacked top-5 disclosures under a PoisonedRAG adaptation. The paper is explicit that this establishes integrity, authorization, and traceability — not content truth.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1188,3 +1218,33 @@ Format per entry:
 - **Date**: 2026-07-31
 - **Category**: Optimization
 - **Summary**: Reproduces LightMem, a lightweight memory-management method reporting strong effectiveness at low construction cost, and tests the two things its original evaluation left open: sensitivity to retriever choice and whether memory construction discards answer-relevant information. The main configuration trend replicates, but retriever choice dominates — swapping only the retriever over a fixed LightMem store moves answer accuracy from 58.1% to 75.5% — and Naive RAG over raw user turns generally wins at matched retrieval depths, with LightMem ahead mainly under tight answering-token budgets; oracle evaluation confirms construction removes some answer-relevant information. Positions constructed memory as a context-efficiency trade-off rather than a general improvement over raw-turn retrieval, a useful negative result for the compression-oriented literature.
+
+### LeanMem: Simple and Efficient Long-Term Memory for LLM Agents
+- **arXiv**: 2608.03463 ([link](https://arxiv.org/abs/2608.03463))
+- **Date**: 2026-08-04
+- **Category**: Optimization
+- **Summary**: Argues the standard failure of memory systems is running heterogeneous dialogue content through one uniform summarize-and-retrieve pipeline, which either burns tokens or irreversibly destroys fine-grained evidence — content should instead be routed by its compressibility, temporal dynamics, and fidelity requirements. LeanMem filters low-value content, then stores what remains as compact profile memory, temporally structured event memory, or source-grounded record memory, and during maintenance only updates the dynamically evolving event memories rather than reconsolidating stable profiles and immutable records; at inference it picks memory types and allocates retrieval budget per query. On LoCoMo and LongMemEval-S with GPT-4.1-mini and Qwen3-8B it beats the strongest memory baseline in every setting by up to 15.1 points, at the lowest or near-lowest construction cost, inference tokens, and latency.
+
+### TARL: Transaction-Aware Reliable Ledgers for Executable Memory Management in Long-Term Agents
+- **arXiv**: 2608.03699 ([link](https://arxiv.org/abs/2608.03699))
+- **Date**: 2026-08-04
+- **Category**: Optimization
+- **Summary**: Most memory systems collapse updating into a binary Write/Hold decision, which cannot separate adding new information, ignoring it, revising an outdated belief, rejecting it as unreliable, or deferring it for verification — choices that share a label but leave fundamentally different memory states, and a single update error then distorts retrieval and reasoning indefinitely. TARL maps each statement to one of five executable actions, identifying the affected memory, resolving its temporal scope, comparing source reliability, and updating accepted, pending, and rejected ledgers; it is trained by comparing the memory states alternative operations would produce. Introduces TARL-Mem with fine-grained action labels and next-state targets, and across in-domain, cross-source, temporal, counterfactual, and sequential evaluations improves action prediction and state recovery while reducing memory pollution, preserving conflicting evidence, and limiting cumulative corruption.
+
+### Verifiable Memory: Learning Unified Memory Management with Local and Global Verifiers for Large Language Model Agents
+- **arXiv**: 2608.03137 ([link](https://arxiv.org/abs/2608.03137))
+- **Date**: 2026-08-04
+- **Category**: Optimization
+- **Summary**: VerMem places long-term memory, the bounded active context, and episodic history under one learned policy exposing seven atomic operations — add, revise, soft-delete, retrieve, filter, summarize, and restore episodic fragments — rather than treating retention, context control, and evidence recovery as separate mechanisms. Training combines supervised fine-tuning with three-stage reinforcement learning under a local verifier scoring individual memory transitions and a global verifier scoring evidence coherence; both are training-time only, so inference carries no verifier cost. Consistently outperforms comparable memory baselines across five benchmarks and two LLM backbones, with the gap widening under tight token budgets.
+
+### PAST-Bench: Benchmarking the Foundations of Recursive Self-Improvement in Personal Agents
+- **arXiv**: 2608.04003 ([link](https://arxiv.org/abs/2608.04003))
+- **Date**: 2026-08-04
+- **Category**: Optimization
+- **Summary**: Separates merely *retaining* experience from actually *improving* through it, evaluating personal agents over ordered task sequences across 26 scenarios and 204 episodes spanning memory, procedural reuse, information gathering, and update. Covers seven base models and four agent frameworks and finds improvement is real but uneven across those capabilities, with Hermes+ — a modified framework the authors build — raising gains from prior experience while remaining variable by model and task type. Useful as a measurement counterpart to the long-horizon memory-management systems tracked here, since it isolates which capability actually carries cross-session transfer.
+
+### MemArena: An Ego-Centric Benchmark for On-Device Agentic Personal Memory Assistants at Scale
+- **arXiv**: 2608.02613 ([link](https://arxiv.org/abs/2608.02613))
+- **Date**: 2026-05-20 (announced in the 2026-08 batch)
+- **Category**: Optimization
+- **Summary**: A single-world conversational benchmark for edge-deployed personal memory assistants, built with the MASim agent simulator over 50 agents and 15 days, totalling more than 10.3M dialog-text tokens plus roughly 24.1K text-only ego-observed tokens per agent per day. Finds memory-backend choice matters more for content accuracy than scaling the reader model — the Memobase-to-MemSearch improvement clearly exceeds what reader size buys — and that search latency stays workable on edge devices, adding only milliseconds across most configurations. Also reports a security-relevant negative result: permission-based access control fails universally across the configurations tested. Code, simulator, and dataset are promised for release.
