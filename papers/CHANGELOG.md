@@ -4,6 +4,72 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-07 (scheduled scan)
+
+12 new papers (1 Security, 11 Optimization).
+
+Announcements advanced the 2608 batch to roughly 2608.051xx (submissions through
+2026-08-05); the previous run stopped near 2608.040xx, so the new ground is
+about 2608.040xx-2608.051xx. `export.arxiv.org/api/query` again returned HTTP 429
+on most calls after the first two — `arxiv.org/search/` with
+`order=-announced_date_first` carried the sweep, and every entry below was
+verified individually against its arXiv abstract page.
+
+**Security:**
+
+- **SafeCommit: Certifying When Memory-Grounded Agents May Safely Act**
+  (2608.04289) — certification layer between deciding and acting that admits a
+  commit only if it is safe across a calibrated set of plausible latent worlds
+  built from memory, provenance, and policy, with a bound of alpha on unsafe
+  certified commits.
+
+**Optimization:**
+
+- **Hierarchical Graph Memory for LLM Agents with Path-level Localization and
+  Rewrite** (2608.05095) — HiGram replaces flat graph memory with a coarse-to-fine
+  hierarchy and path-level localized rewriting, targeting conflict repair.
+- **Mimir: A Neuro-Symbolic Memory System with Dynamic Grounding for Embodied
+  Agents in Interactive Environments** (2608.04933) — separates world memory from
+  task memory and re-grounds both before each action; 86.0% on EB-Habitat
+  long-horizon.
+- **MemoryCPT: An End-to-End Agent Memory Framework for Cost-Performance
+  Trade-off** (2608.04843) — end-to-end trainable construction plus GRPO-trained
+  cost-aware summarization, with a Quality per Cost metric.
+- **ContextWeave: A Real-World Workflow Benchmark** (2608.04830) — longitudinal
+  benchmark over reconstructed multi-month office workflows measuring whether
+  recall improves execution, not just retrieval.
+- **Caching for the Future: Scrub Jay Episodic Memory Principles for Agent Memory
+  Systems** (2608.04746) — per-memory type-conditioned temporal decay plus a
+  Temporal Generalization Test; honest about where the gains reverse.
+- **When Memory Lies: An Empirical Study of Spatial Memory Staleness in VLM
+  Agents** (2608.04574) — unaudited stale spatial memory doubles failure rate, and
+  even oracle staleness labels do not fix the visual case.
+- **FocusMem: Factorizing Content, Readout, and Trust in Latent GUI Memory**
+  (2608.04530) — factorizes latent GUI memory into role-aware content,
+  state-conditioned readout, and a trust gate, training memory with the policy
+  frozen.
+- **EA-Graph: Artifact-Anchored Verification Memory for Coding Agents under
+  Upstream Drift** (2608.04278) — anchors verification claims to the artifact
+  content that established them, marking them unprovable when that content drifts.
+- **FinPerMA: A Theory-Informed, Event-Grounded Personalized-Memory Benchmark for
+  LLM Agents** (2608.04095) — summary-based memory loses the preference signal, so
+  plain retrieval can beat purpose-built memory; gap widens after market events.
+- **OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents**
+  (2608.05013) — jointly handles goal drift, state loss, and context overflow;
+  same harness ports across five backends from three families.
+- **Towards Improving Sequential Decision-Making in LLM Agents via Experience
+  Memory** (2608.03420) — game-based testbed with rule-derived ground truth,
+  adding experience memory that addresses sequential credit assignment.
+
+Skipped as keyword collisions or off-topic despite matching on "memory":
+2608.04443 (MCHA hardware memory hierarchy), 2608.03555 (processing-near-memory
+KV-cache serving), 2608.04458 (agentic-workflow datacenter characterization),
+2608.02391 (memory-efficient post-training), 2608.05111 (episodic exploration in
+RL). Also skipped 2608.05144 (Argus) — a general-purpose long-horizon agentic
+runtime where memory is incidental rather than the contribution.
+
+---
+
 ## 2026-08-06 (scheduled scan)
 
 10 new papers (5 Security, 5 Optimization).

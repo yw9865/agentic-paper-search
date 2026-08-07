@@ -520,6 +520,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Persistent memory has to adapt as later outcomes revise earlier evidence, but mutable retrieval weights create an attribution problem — a reviewer cannot tell authorized adaptation from database tampering. MutMem commits each nontrivial weight change as a housekeeper-authorized transition binding a terminal provenance node, signer epoch, quantized old and new weights, a no-fork predecessor, and two domain-separated SHA-256 commitments, with Ed25519 verification in both the database writer and a portable verifier; poison-likely content is retained under signed revisable labels that recall consumes as trust evidence. Scores 91.8% on LongMemEval and 74.12% on LoCoMo at 4.865 ms median signed-transition latency, with 0/100 injected poisons surfacing in attacked top-5 disclosures under a PoisonedRAG adaptation. The paper is explicit that this establishes integrity, authorization, and traceability — not content truth.
 
+### SafeCommit: Certifying When Memory-Grounded Agents May Safely Act
+- **arXiv**: 2608.04289 ([link](https://arxiv.org/abs/2608.04289))
+- **Date**: 2026-08-04
+- **Category**: Security
+- **Summary**: Attacks the moment *after* retrieval that most memory-integrity work leaves open — an agent with plausible but unverified memory still commits an irreversible external action. SafeCommit is a certification layer between deciding and acting that builds a calibrated set of plausible latent worlds from memory, observations, tool outputs, provenance, and policy constraints, and permits the commit only when it is certified safe across *every* retained world; otherwise it issues a low-side-effect probe aimed at the offending worlds or falls back conservatively. Proves the probability of an unsafe certified commit is at most a target level alpha under calibration, separates calibration error from world-model representation error so imperfect modeling is accounted for rather than assumed away, and ships a simulator for the resulting safety-utility trade-off.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1248,3 +1254,69 @@ Format per entry:
 - **Date**: 2026-05-20 (announced in the 2026-08 batch)
 - **Category**: Optimization
 - **Summary**: A single-world conversational benchmark for edge-deployed personal memory assistants, built with the MASim agent simulator over 50 agents and 15 days, totalling more than 10.3M dialog-text tokens plus roughly 24.1K text-only ego-observed tokens per agent per day. Finds memory-backend choice matters more for content accuracy than scaling the reader model — the Memobase-to-MemSearch improvement clearly exceeds what reader size buys — and that search latency stays workable on edge devices, adding only milliseconds across most configurations. Also reports a security-relevant negative result: permission-based access control fails universally across the configurations tested. Code, simulator, and dataset are promised for release.
+
+### Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite
+- **arXiv**: 2608.05095 ([link](https://arxiv.org/abs/2608.05095))
+- **Date**: 2026-08-05
+- **Category**: Optimization
+- **Summary**: Graph memory improved multi-hop retrieval but stayed flat, so accumulated history injects noise into evidence retrieval and every revision has to be applied unit by unit. HiGram organizes memory coarse-to-fine as upper nodes over memory units, and localizes edits at *path* level via MicroGraph — identifying the relevant subgraph and its evidence before modifying anything — then rewrites the unit's internal relations and its inter-unit links together rather than separately. Improves both answer accuracy and computational efficiency on conversational QA and conflict-aware memory benchmarks, with the largest gains on dynamic, static, and conditional conflicts that require repairing the dependency structure, not just the fact.
+
+### Mimir: A Neuro-Symbolic Memory System with Dynamic Grounding for Embodied Agents in Interactive Environments
+- **arXiv**: 2608.04933 ([link](https://arxiv.org/abs/2608.04933))
+- **Date**: 2026-08-05
+- **Category**: Optimization
+- **Summary**: Under partial observability a flat history technically contains past observations but offers no interface for deciding *which* world facts support the currently active goal. Mimir splits world memory (object locations, object states, perceptual evidence) from task memory (ordered goal agenda, progress, hand state, failures, execution constraints) and re-grounds them before each action, binding the active goal to recalled world candidates, filling missing source locations, and attaching evidence prior to planning. Gains up to 42.5% on EB-ALFRED and 23.0% average on EB-Habitat across backbones, +8.5% average success over the best prior agent and memory systems at matched backbone, and 86.0% on the EB-Habitat long-horizon subset.
+
+### MemoryCPT: An End-to-End Agent Memory Framework for Cost-Performance Trade-off
+- **arXiv**: 2608.04843 ([link](https://arxiv.org/abs/2608.04843))
+- **Date**: 2026-08-05
+- **Category**: Optimization
+- **Summary**: Memory pipelines built from hand-crafted heuristics and repeated LLM calls pay twice — redundant context downstream and high construction cost upstream — so MemoryCPT makes the whole pipeline, offline construction through online query-conditioned context generation, end-to-end trainable. Query-agnostic Distillation compresses a modular memory-construction pipeline into a compact model using explicit reasoning traces, while Query-aware Retrieval and Summarization couples reciprocal rank fusion with a LoRA summarizer trained by GRPO under a cost-aware reward. Introduces Quality per Cost (QPC) to measure answer quality per unit inference cost, and improves the cost-performance trade-off over evaluated baselines on LoCoMo and LongMemEval.
+
+### ContextWeave: A Real-World Workflow Benchmark
+- **arXiv**: 2608.04830 ([link](https://arxiv.org/abs/2608.04830))
+- **Date**: 2026-08-05
+- **Category**: Optimization
+- **Summary**: Existing memory evaluations mostly reduce memory to retrieval or QA; ContextWeave instead asks whether recalled experience improves *downstream execution*, reconstructing privacy-preserved multi-month workflows of 14 participants into 1,005 executable tasks (568 core) with instructions, containerized environments, trajectories, and task-specific rubrics, scored on workspace quality and alignment with participant-specific preferences plus diagnostics for relevance, continuity, solvability, and robustness to misleading recall. Across six memory components under a fixed model the strongest configuration lifts Workspace Score 68.08 to 78.20 and Preference Score 41.50 to 70.60, and recall helps all five base models tested though unevenly. The central finding cuts against compression: actionable, experience-rich memory sustains workflow continuation and cuts redundant exploration better than compact summaries, while being more susceptible to misleading recall.
+
+### Caching for the Future: Scrub Jay Episodic Memory Principles for Agent Memory Systems
+- **arXiv**: 2608.04746 ([link](https://arxiv.org/abs/2608.04746))
+- **Date**: 2026-08-05
+- **Category**: Optimization
+- **Summary**: Stored memories differ enormously in how long they stay valid, yet architectures treat all of them as equally persistent and steadily contaminate retrieved context with stale facts. ScrubJay-MEM operationalizes the western scrub jay's type-conditioned temporal decay as an auto-classified per-memory perishability coefficient: each memory is a jointly-bound What-Where-When tuple with perishability and a utility horizon, retrieved by query-adaptive scoring and revised retroactively at O(1) LLM calls per update. Introduces the Temporal Generalization Test with held-out retention intervals and a Generalization Gap metric, where it is the only retrieval-based system with substantially positive GenGap (+0.108) and improves EventQA-64k F1 by +2.66 over Mem0; an ablation collapses GenGap 5.7x, and the authors scope the result honestly — gains narrow under stronger backbones and reverse on fact-consolidation tasks.
+
+### When Memory Lies: An Empirical Study of Spatial Memory Staleness in VLM Agents
+- **arXiv**: 2608.04574 ([link](https://arxiv.org/abs/2608.04574))
+- **Date**: 2026-08-05
+- **Category**: Optimization
+- **Summary**: Measures what happens when persistent spatial memory decays out of sync with a changing environment, pairing staleness detection with navigation in a dynamic FrozenLake across six models (three proprietary, three open-weight) over text and image inputs — 1,800 detection runs and 12,000 navigation episodes. Models reliable at flagging stale *text* entries vary wildly on the identical grid rendered visually (F1 0.067-0.887), agents on unaudited stale memory fail twice as often as agents with no memory at all, and filtering rescues text mode but even oracle stale labels do not consistently help in the visual setting. A pointed negative result for memory freshness policies: detecting staleness is not the bottleneck, acting correctly on memory-observation conflict is.
+
+### FocusMem: Factorizing Content, Readout, and Trust in Latent GUI Memory
+- **arXiv**: 2608.04530 ([link](https://arxiv.org/abs/2608.04530))
+- **Date**: 2026-08-05
+- **Category**: Optimization
+- **Summary**: GUI agents must hold reusable prior experience and current task progress at once, which fixed latent memory conflates. FocusMem factorizes the problem three ways: a role-aware content basis pushes episodic memory toward reusable experience and working memory toward task progress, a state-conditioned readout renders a decision-specific view of the same stored evidence rather than replaying it verbatim, and a lightweight trust gate suppresses memory blocks irrelevant to the current step. The GUI policy stays frozen while only memory components train, giving consistent gains over fixed-memory baselines across five benchmarks, with ablations showing semantic and functional supervision retain complementary information and the state-conditioned readout is what holds up in complex contexts.
+
+### EA-Graph: Artifact-Anchored Verification Memory for Coding Agents under Upstream Drift
+- **arXiv**: 2608.04278 ([link](https://arxiv.org/abs/2608.04278))
+- **Date**: 2026-08-04
+- **Category**: Optimization
+- **Summary**: Cross-session coding notes preserve conclusions but not the program state that justified them, so when upstream code drifts the repository may still compile while prior verification claims have quietly become invalid. EA-Graph represents artifacts at sub-path granularity, resolves aliases to leaf definitions, anchors each claim to the exact content used to establish it, and keeps evidence strength separate from freshness — marking claims *unprovable* rather than presumed valid when the anchoring content is gone. Evaluated over 42 sessions under value drift, logic drift, and withheld upstream content; the authors restrict themselves to a bounded claim, that artifact-anchored memory improved the smaller model's provability judgments in this testbed, without asserting efficiency or repair-quality gains.
+
+### FinPerMA: A Theory-Informed, Event-Grounded Personalized-Memory Benchmark for LLM Agents
+- **arXiv**: 2608.04095 ([link](https://arxiv.org/abs/2608.04095))
+- **Date**: 2026-08-04
+- **Category**: Optimization
+- **Summary**: Tests whether agents can maintain and *update* an individualized user model over long horizons in a high-stakes domain, grounding frozen longitudinal investor trajectories in theory-informed rules so the correct preference state at each point is derivable rather than judged. Across seven frontier models and several memory configurations no full-context setup exceeds roughly 0.47 overall accuracy or roughly 39% on multiple choice. The diagnostic result matters for memory design: summary-based memory routinely discards the preference signal personalization depends on, so plain retrieval can beat purpose-built memory architectures — and the gap widens right after material market events, exactly when updating matters most.
+
+### OneDayAgent: Towards a Long-Horizon Harness for Autonomous Agents
+- **arXiv**: 2608.05013 ([link](https://arxiv.org/abs/2608.05013))
+- **Date**: 2026-08-04
+- **Category**: Optimization
+- **Summary**: Treats goal drift, state loss, and context overflow as one joint problem rather than three separately patched failure modes, decomposing open-ended everyday requests into bounded subtasks, sustaining execution memory under context constraints across many steps and heterogeneous tools, and validating final deliverables. Reaches 0.821 on 104 AgentIF-OneDay tasks with a GLM-5.2 backend. The portability claim is the notable part for memory-management work: the same harness runs across five backends from three model families without model-specific tuning.
+
+### Towards Improving Sequential Decision-Making in LLM Agents via Experience Memory
+- **arXiv**: 2608.03420 ([link](https://arxiv.org/abs/2608.03420))
+- **Date**: 2026-08-04
+- **Category**: Optimization
+- **Summary**: Uses fully-observable two-player zero-sum games as a memory testbed where ground truth comes from the rules rather than a judge model, so both outcomes and per-move optimality are checkable. Finds LLMs across model tiers play tic-tac-toe and Connect Four suboptimally and lose to MCTS, and that obfuscations preserving the game tree while rewriting its surface form barely change performance — so the gap is not mainly memorized-strategy recall. Adds an agentic experience memory targeting the credit-assignment problem specific to sequential settings, showing post-game reflection and rule extraction produce measurable weight-free improvement on tic-tac-toe.
