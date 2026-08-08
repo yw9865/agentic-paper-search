@@ -1320,3 +1320,45 @@ Format per entry:
 - **Date**: 2026-08-04
 - **Category**: Optimization
 - **Summary**: Uses fully-observable two-player zero-sum games as a memory testbed where ground truth comes from the rules rather than a judge model, so both outcomes and per-move optimality are checkable. Finds LLMs across model tiers play tic-tac-toe and Connect Four suboptimally and lose to MCTS, and that obfuscations preserving the game tree while rewriting its surface form barely change performance — so the gap is not mainly memorized-strategy recall. Adds an agentic experience memory targeting the credit-assignment problem specific to sequential settings, showing post-game reflection and rule extraction produce measurable weight-free improvement on tic-tac-toe.
+
+### DREAM: LLM-based Dynamic Role-playing via Event-Aware Memory Graph
+- **arXiv**: 2608.05170 ([link](https://arxiv.org/abs/2608.05170))
+- **Date**: 2026-08-05 (announced; submitted 2026-05-27)
+- **Category**: Optimization
+- **Summary**: Replaces static persona descriptions with an Event-aware Memory Graph that organizes a character's experiences into temporally ordered, causally linked events, structured by the ABC (Activating event-Belief-Consequence) model so enduring traits and event-driven behavioral change are represented separately. Relevant as a long-horizon memory-organization strategy: causal-temporal structure over the memory store, rather than flat recall, is what sustains consistency across an extended narrative. Ships a benchmark measuring temporal consistency and causal coherence.
+
+### Argus: A General-Purpose Agentic Runtime for Long-Horizon Reasoning
+- **arXiv**: 2608.05144 ([link](https://arxiv.org/abs/2608.05144))
+- **Date**: 2026-08-05
+- **Category**: Optimization
+- **Summary**: A fixed-weight, self-evolving runtime whose durable project state admits memories, skills, procedures, verifiers, routing decisions, and rejected routes only after role-owned review and task-native verification — an admission-gate approach to keeping long-horizon memory clean rather than filtering at read time. The memory-efficiency claim is the notable one: after verification-gated self-evolution, mature SWE-Bench waves use 21% fewer solve-input tokens and 15% less active workflow time per task than startup waves, alongside ~78% on SWE-Bench Pro at 1.41x aggregate tokens versus a direct-copilot baseline.
+
+### EvoHarness-RL: Learning Self-Evolving Runtime Harness for Long-Horizon LLM Agents
+- **arXiv**: 2608.05446 ([link](https://arxiv.org/abs/2608.05446))
+- **Date**: 2026-08-05
+- **Category**: Optimization
+- **Summary**: Exposes Belief, Progress, and Experience as policy-facing harness state and learns the policy that writes and updates it, so what to remember becomes a trained decision rather than a fixed scaffold. Reports 96.9% success on ALFWorld with Qwen3-8B and two effects that matter for memory management: harness annealing, where recurring harness-use patterns get internalized into the model policy, and harness evolution, where progress updates and experience consolidation compact the state into a task-adaptive substrate. The authors argue coordination policy, not raw memory capacity, is the binding constraint.
+
+### Causal Episodic Memory for Feedback-Driven Agent Repair
+- **arXiv**: 2608.05906 ([link](https://arxiv.org/abs/2608.05906))
+- **Date**: 2026-08-06
+- **Category**: Optimization
+- **Summary**: MERIT is a training-free agent keeping an online dual-polarity memory of oracle-verified corrections and observed unsuccessful directions, retrievable only from earlier finalized episodes, with a deterministic failure-type classifier conditioning a hybrid lexical-dense retriever. Improves Text-to-SQL repair accuracy from 66.34% to 69.79% on Spider and 47.35% to 48.44% on BIRD without parameter updates. Notable for its negative results: MERIT is not reliably separated from untyped dynamic retrieval, negative memory contributes only modestly, and Reflexion-style memory scores higher on BIRD at substantially higher inference cost — a useful calibration on when causal cross-query memory actually pays.
+
+### Activity Frames: Deterministic Screen-Activity Compilation for Agent Memory and Replay
+- **arXiv**: 2608.05784 ([link](https://arxiv.org/abs/2608.05784))
+- **Date**: 2026-08-06
+- **Category**: Optimization
+- **Summary**: A model-free pipeline compiling passively recorded screen activity into typed activity frames (application context, site, timestamps, input metrics, raw-data references), so behavioral memory for computer-use agents is produced without inference. Reduces a day of raw capture to a prompt-ready context block 86x smaller in 68 ms over 128,756 frames across 51 days, and agents querying the compiled output reach 98.4% accuracy against an independent oracle, outperforming LLM summaries of the same source. Also defines cost-model parameters (Routine Overhead Ratio 60-343x, routine recurrence 9.0% in-sample / 7.7% out-of-sample).
+
+### StreamArena: Toward Continuous, Interactive, and Long-Horizon Agentic Streaming Video Understanding
+- **arXiv**: 2608.05703 ([link](https://arxiv.org/abs/2608.05703))
+- **Date**: 2026-08-06
+- **Category**: Optimization
+- **Summary**: Benchmarks multimodal agents on 243 full-length videos (88.8 min average) with 3,646 open-ended QA pairs covering real-time understanding, historical recall, proactive engagement, and tool use. The memory findings are the relevant part: the paper isolates a three-way tradeoff where keeping only recent frames loses earlier events, transcribing past visual observations to text sacrifices fidelity, and repeated visual-memory compression degrades detail. Its StreamMind system uses a two-tier architecture with independently scheduled frontend workers and cuts response latency via persistent state reuse.
+
+### FinEvo-Bench: A Longitudinal Benchmark for Self-Evolving Agents in Professional Financial Workflows
+- **arXiv**: 2608.06144 ([link](https://arxiv.org/abs/2608.06144))
+- **Date**: 2026-08-06
+- **Category**: Optimization
+- **Summary**: 120 real-case tasks over 20 business scenes in six financial domains, structured so six related cases share institution-provided procedures — letting the benchmark measure whether experience from one task transfers to later ones rather than scoring tasks independently. Across four self-evolving scaffolds on Qwen3.7-Max, evolving conditions gain 9.33-19.37 points and cut compliance issues by 0.12-0.44 per task. The result worth noting for memory design: skill-focused evolution outperformed both memory-only and combined approaches, and rubric feedback beat reference-answer feedback.

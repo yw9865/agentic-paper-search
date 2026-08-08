@@ -4,6 +4,64 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-08 (scheduled scan)
+
+7 new papers (0 Security, 7 Optimization).
+
+Announcements advanced the 2608 batch to roughly 2608.063xx (submissions through
+2026-08-06); the previous run stopped near 2608.051xx, so the new ground is about
+2608.051xx-2608.063xx. `export.arxiv.org/api/query` returned two results and then
+HTTP 429 on every subsequent call for the rest of the run — `arxiv.org/search/`
+with `order=-announced_date_first` carried the sweep, as in the 2026-08-07 run.
+Every entry below was verified individually against its arXiv abstract page.
+
+**Security:** none. Dedicated sweeps for memory poisoning, memory injection,
+privacy leakage, and backdoor/exfiltration terms returned nothing new in the
+2608.05xxx-2608.06xxx range; all August security hits (MAFIA 2608.03844,
+SkillJack 2608.03509, MutMem 2608.02843, Salami Attack 2608.01637,
+MAPLE-Guard 2608.00426, DP-MemView 2608.03130) were already recorded.
+Skipped as keyword collisions: Hardware Keystores for AI Agent Signing Workflows
+(2608.06130) — cryptographic key storage, not agent memory.
+
+**Optimization:**
+
+- **DREAM: LLM-based Dynamic Role-playing via Event-Aware Memory Graph**
+  (2608.05170) — organizes character experience into a temporally ordered,
+  causally linked event graph structured by the ABC model; announced 2026-08-05
+  though submitted 2026-05-27.
+- **Argus: A General-Purpose Agentic Runtime for Long-Horizon Reasoning**
+  (2608.05144) — admits memories, skills, and procedures into durable state only
+  after role-owned review; mature waves use 21% fewer solve-input tokens than
+  startup waves.
+- **EvoHarness-RL: Learning Self-Evolving Runtime Harness for Long-Horizon LLM
+  Agents** (2608.05446) — learns the policy that writes Belief/Progress/Experience
+  harness state; reports harness annealing and experience consolidation into a
+  compact task-adaptive substrate.
+- **Causal Episodic Memory for Feedback-Driven Agent Repair** (2608.05906) —
+  MERIT, a training-free dual-polarity memory of verified corrections and failed
+  directions for Text-to-SQL repair, with candid negative results on when it does
+  not beat untyped retrieval.
+- **Activity Frames: Deterministic Screen-Activity Compilation for Agent Memory
+  and Replay** (2608.05784) — model-free compilation of screen capture into typed
+  frames, 86x smaller context in 68 ms, 98.4% query accuracy against an oracle.
+- **StreamArena: Toward Continuous, Interactive, and Long-Horizon Agentic
+  Streaming Video Understanding** (2608.05703) — isolates the recency /
+  transcription-fidelity / repeated-compression tradeoff in multimodal agent
+  memory over hour-scale video.
+- **FinEvo-Bench: A Longitudinal Benchmark for Self-Evolving Agents in
+  Professional Financial Workflows** (2608.06144) — measures cross-task experience
+  transfer; skill-focused evolution outperformed memory-only and combined
+  approaches.
+
+Also reviewed and skipped as off-topic or not memory-centric: HarnessOpt-Bench
+(2608.06301, memory only one of several harness components), ECHO (2608.06110,
+health-assistant application), MASS (2608.06257), ChainClaw (2608.05790),
+PLoRA (2608.05483), MCHA (2608.04443), Architectural Implications of Agentic AI
+Workflows (2608.04458) — the last three being hardware/system memory, not agent
+memory.
+
+---
+
 ## 2026-08-07 (scheduled scan)
 
 12 new papers (1 Security, 11 Optimization).
