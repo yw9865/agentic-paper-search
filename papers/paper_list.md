@@ -1362,3 +1362,15 @@ Format per entry:
 - **Date**: 2026-08-06
 - **Category**: Optimization
 - **Summary**: 120 real-case tasks over 20 business scenes in six financial domains, structured so six related cases share institution-provided procedures — letting the benchmark measure whether experience from one task transfers to later ones rather than scoring tasks independently. Across four self-evolving scaffolds on Qwen3.7-Max, evolving conditions gain 9.33-19.37 points and cut compliance issues by 0.12-0.44 per task. The result worth noting for memory design: skill-focused evolution outperformed both memory-only and combined approaches, and rubric feedback beat reference-answer feedback.
+
+### Comparative Approaches to Agent Retrieval over Large Skill Libraries
+- **arXiv**: 2608.06196 ([link](https://arxiv.org/abs/2608.06196))
+- **Date**: 2026-08-06
+- **Category**: Optimization
+- **Summary**: Compares two retrieval designs for selecting which of 690 procedural skills an agent should load: a hybrid lexical + embedding ranker versus a typed knowledge graph encoding workflow dependencies and data-flow relations. Over 117 realistic queries the hybrid ranker hits top-5 73.5% of the time, while substituting the graph's connected neighbors as additional ranked results costs 11.2 points — 98.6% of typed edges link skills the ranker already co-ranks, so structure adds no reach. Also reports that author-written test queries inflate retrieval scores by up to 44 points, a warning for how agent-memory retrieval benchmarks are built.
+
+### Learning Globally Reusable Skills for Coding Agents
+- **arXiv**: 2608.06153 ([link](https://arxiv.org/abs/2608.06153))
+- **Date**: 2026-08-06
+- **Category**: Optimization
+- **Summary**: GSE treats skill evolution as a global rather than local update problem: a Skill Relation Graph co-evolves inter-skill relationships to keep the skill bank consistent, cluster-based consolidation abstracts reusable capabilities out of local updates, and replay-driven verification blocks overfitted edits and behavioral regressions. On bug-revealing test generation and false-positive bug-report filtering with OpenHands and mini-SWE-agent, it improves precision by 6.1-96.4% and recall by 13.1-180.0% over prior evolution techniques, plus 61.4% F1 on an internal industrial agent. Relevant as a consolidation/forgetting policy for procedural agent memory.

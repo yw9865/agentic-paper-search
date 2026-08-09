@@ -4,6 +4,46 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-09 (scheduled scan)
+
+2 new papers (0 Security, 2 Optimization).
+
+The announcement frontier did not advance: the newest arXiv IDs visible today are
+still 2026-08-06 submissions (max seen 2608.06370), the same batch the 2026-08-07
+announcement carried. 2026-08-08 was a Saturday and 2026-08-09 is a Sunday, so no
+new listing has been posted since the previous run. This run therefore re-swept the
+2608.061xx-2608.063xx tail that the 2026-08-08 run stopped short of, and found two
+procedural-memory papers it had not recorded. `export.arxiv.org/api/query` again
+returned one result before HTTP 429 for the rest of the run; `arxiv.org/search/`
+with `order=-announced_date_first` carried the sweep. Both entries below were
+verified individually against their arXiv abstract pages.
+
+**Security:** none. Dedicated sweeps for memory poisoning, memory injection, and
+privacy leakage returned nothing past 2608.03844 (MAFIA), 2608.03700, 2608.03509
+(SkillJack), 2608.03130 (DP-MemView), 2608.02843 (MutMem), 2608.01637 (Salami
+Attack) and 2608.00426 (MAPLE-Guard) — all already recorded.
+
+**Optimization:**
+
+- **Comparative Approaches to Agent Retrieval over Large Skill Libraries**
+  (2608.06196) — hybrid lexical+embedding ranker vs. typed knowledge graph over a
+  690-skill library; the graph's neighbors cost 11.2 points because 98.6% of its
+  typed edges link skills the ranker already co-ranks.
+- **Learning Globally Reusable Skills for Coding Agents** (2608.06153) — GSE
+  co-evolves a Skill Relation Graph, consolidates clusters into reusable
+  capabilities, and uses replay-driven verification to block overfitted skill
+  edits; a consolidation policy for procedural agent memory.
+
+Reviewed and skipped from the same tail as out of scope: HarnessOpt-Bench
+(2608.06301) — benchmarks LLMs as harness optimizers generally, memory is only one
+listed harness component; ECHO (2608.06110) — deployed clinical assistant whose
+temporal knowledge graph is a system component, not an agent-memory contribution;
+MASS (2608.06257) — cs.CV world model whose "recurrent memory" is model state, a
+keyword collision; CIPO (2608.06128) — evidence-use RL for search agents, not
+memory.
+
+---
+
 ## 2026-08-08 (scheduled scan)
 
 7 new papers (0 Security, 7 Optimization).
