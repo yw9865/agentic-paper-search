@@ -4,6 +4,50 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-10 [Conference scan]
+
+No new conference papers found.
+
+Both venues fetched successfully; neither list has changed materially since the
+08-03 scan.
+
+- **USENIX Security 2026** — technical-sessions program (Cycle 1 + Cycle 2,
+  ~230 papers). Direct WebFetch again returned HTTP 403; retrieved via the
+  `r.jina.ai` reader proxy. The dedicated `cycle2-accepted-papers` URL is still
+  a 404, so the program page remains the authoritative list. Every title
+  matching memory/agent/LLM/RAG/retrieval/cache/KV/multi-turn/skill was
+  reviewed. The three on-topic papers (HijackKV, *When Memory Becomes a
+  Vulnerability*, FragFuse) are all already in `conf_seen.json` from 08-03.
+- **IEEE S&P 2026 (Oakland)** — accepted-papers.html fetched directly (~253
+  papers across both cycles). Unchanged; no agent-memory papers.
+- **Next editions** — USENIX Security '27 pages still 404 (Cycle 1 notification
+  not until Dec 2026); IEEE S&P 2027 site is up but every section is TBA with no
+  accepted-papers list. Nothing to scan for either.
+
+**New candidate reviewed and excluded this run:**
+- *"Do Not Mention This to the User": Detecting and Understanding Malicious
+  Agent Skills in the Wild* — USENIX Security 2026 (arXiv 2602.06547). A
+  registry-scale malware study: 98,380 third-party coding-agent skills scanned,
+  157 confirmed malicious. This is supply-chain security for skill *packages*
+  (credential exfiltration, agent hijacking via shadow features), not the
+  retrieval/compression/poisoning of an agent's learned skill memory that the
+  tracker's skill-library entries (SkillZip, SkillMemo, *Comparative Approaches
+  to Agent Retrieval over Large Skill Libraries*) cover. Excluded.
+
+**Previously-excluded classes re-confirmed, unchanged:** RAG-corpus security at
+both venues (USENIX *Confundo*, *BadGraph*, *Five Queries Are Enough*,
+*Overcoming the Retrieval Barrier*, *Securing Retrieval-Augmented Code
+Generation*; IEEE *GraphRAG under Fire*, *Who Taught the Lie?*) targets a static
+retrieval corpus rather than a persistent agent memory store; hardware/OS memory
+and memory-forensics hits (*Battering RAM*, *GHost in the SHELL*, *Heap
+Localization*, *Download More RAM*, *Recovering and Rehosting Mobile Local LLM
+Conversations and Contexts via Memory Forensics*) are keyword collisions; and
+web/tool-agent security (*MUZZLE*, *AttriGuard*, *WebCloak*, *Dark Patterns on
+LLM-Based Web Agents*, *Towards Automating Data Access Permissions in AI
+Agents*) is agent security but not memory.
+
+Nothing added to `paper_list.md` or `conf_seen.json`; no email sent.
+
 ## 2026-08-10 (scheduled scan)
 
 3 new papers (1 Security, 2 Optimization).
