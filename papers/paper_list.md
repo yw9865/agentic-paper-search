@@ -526,6 +526,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Attacks the moment *after* retrieval that most memory-integrity work leaves open — an agent with plausible but unverified memory still commits an irreversible external action. SafeCommit is a certification layer between deciding and acting that builds a calibrated set of plausible latent worlds from memory, observations, tool outputs, provenance, and policy constraints, and permits the commit only when it is certified safe across *every* retained world; otherwise it issues a low-side-effect probe aimed at the offending worlds or falls back conservatively. Proves the probability of an unsafe certified commit is at most a target level alpha under calibration, separates calibration error from world-model representation error so imperfect modeling is accounted for rather than assumed away, and ships a simulator for the resulting safety-utility trade-off.
 
+### When Experience Becomes Instruction: Trajectory Poisoning in Self-Evolving Agent Skill Systems
+- **arXiv**: 2608.05563 ([link](https://arxiv.org/abs/2608.05563))
+- **Date**: 2026-08-06
+- **Category**: Security
+- **Summary**: Targets the promotion step where self-evolving agents convert accumulated trajectories into persistent skills, treating evidence promotion itself as the security boundary. PoisonedEvolution assumes a weak attacker who can read target skills and submit bounded evidence but cannot touch the private data pool or edit the skill repository, and must clear three hurdles — Inclusion, Evolution Attribution, and Realization — with Attribution the hard one, since malicious behavior has to look causally useful, recurrent, and generalizable before the evolver will promote it. Succeeds in 546/600 trials (91.0% SER) across six LLM-based evolvers at only 10% attacker support, with vulnerability varying by evolver architecture.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1374,3 +1380,15 @@ Format per entry:
 - **Date**: 2026-08-06
 - **Category**: Optimization
 - **Summary**: GSE treats skill evolution as a global rather than local update problem: a Skill Relation Graph co-evolves inter-skill relationships to keep the skill bank consistent, cluster-based consolidation abstracts reusable capabilities out of local updates, and replay-driven verification blocks overfitted edits and behavioral regressions. On bug-revealing test generation and false-positive bug-report filtering with OpenHands and mini-SWE-agent, it improves precision by 6.1-96.4% and recall by 13.1-180.0% over prior evolution techniques, plus 61.4% F1 on an internal industrial agent. Relevant as a consolidation/forgetting policy for procedural agent memory.
+
+### SkillZip: Contract-Preserving Graph Compression for Scalable Agent Skill Libraries
+- **arXiv**: 2608.05604 ([link](https://arxiv.org/abs/2608.05604))
+- **Date**: 2026-08-06
+- **Category**: Optimization
+- **Summary**: Compresses a growing procedural-memory store so it still fits a bounded context window: SkillZip runs contract-preserving compression over section-level graphs, folding recurring routine components into reversible macros while keeping boundary signatures, dependency structure, and verifier reachability intact, then expands macros selectively at inference so the agent sees compact but dependency-complete context. ReZip extends it to absorb new skills and refine existing macros from execution feedback. Reports 3.46x compression at 99.2% dependency preservation and 98.7% verifier reachability, up to +12.2 points over baselines, holding across skill libraries from 200 to 100,000 items.
+
+### SkillMemo: Expert-guided Skill Memory Framework for Compositional Embodied Manipulation
+- **arXiv**: 2608.05970 ([link](https://arxiv.org/abs/2608.05970))
+- **Date**: 2026-08-06
+- **Category**: Optimization
+- **Summary**: Adds a retrieval-based skill memory to embodied visuomotor agents to fix weak compositional generalization out of distribution. A Mixture-of-Experts trajectory-segmentation module implicitly partitions demonstrations into skill primitives, which are stored in a skill-level episodic memory bank as compact retrievable key-value pairs; at inference the most relevant primitives are retrieved and fused with the model's current gating distribution as a contextual prior over action prediction. Reports state-of-the-art results in simulation and on real manipulation hardware, outperforming pi-0.5 and generalizing to unseen task compositions — a memory-retrieval design point for long-horizon embodied agents.

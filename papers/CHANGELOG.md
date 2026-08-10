@@ -4,6 +4,52 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-10 (scheduled scan)
+
+3 new papers (1 Security, 2 Optimization).
+
+The announcement frontier still has not advanced past the 2026-08-07 listing
+(cs.AI, cs.CL, cs.CR, cs.LG and cs.MA `/new` all report "Friday, 7 August 2026"),
+covering 2026-08-06 submissions. 2026-08-08/09 were the weekend and the
+2026-08-10 announcement had not posted at scan time. Rather than re-sweep the
+2608.062xx-2608.063xx tail the previous run already covered, this run swept the
+lower part of the same batch (2608.055xx-2608.059xx) via the per-category `/new`
+listings, which surfaced three on-topic papers no prior run had recorded.
+`export.arxiv.org/api/query` returned two results before HTTP 429 for the rest of
+the run; `arxiv.org/search/` and the `/new` listings carried the sweep. All three
+entries were verified individually against their arXiv abstract pages.
+
+**Security:**
+
+- **When Experience Becomes Instruction: Trajectory Poisoning in Self-Evolving
+  Agent Skill Systems** (2608.05563) — PoisonedEvolution poisons the promotion
+  step that turns agent trajectories into persistent skills, under a weak
+  attacker who can only read target skills and submit bounded evidence. 91.0%
+  success (546/600 trials) across six LLM-based evolvers at 10% attacker
+  support; names evidence promotion as the security boundary.
+
+**Optimization:**
+
+- **SkillZip: Contract-Preserving Graph Compression for Scalable Agent Skill
+  Libraries** (2608.05604) — reversible macro compression over section-level
+  skill graphs, 3.46x reduction at 99.2% dependency preservation and 98.7%
+  verifier reachability, scaling from 200 to 100,000 skills.
+- **SkillMemo: Expert-guided Skill Memory Framework for Compositional Embodied
+  Manipulation** (2608.05970) — MoE trajectory segmentation into skill
+  primitives stored as a retrievable key-value episodic memory bank, fused with
+  the policy's gating distribution at inference; beats pi-0.5 in simulation and
+  on real hardware.
+
+Checked and deliberately skipped as off-topic or memory-incidental:
+2608.06301 (HarnessOpt-Bench — harness optimization, memory only one component),
+2608.06110 (ECHO — health assistant, memory is a system component not the
+contribution), 2608.02683 (S^3 — memory is one workflow stage among several),
+2608.00033 (SIRIN — hallucination detection, neither memory security nor
+efficiency), 2608.05783 (machine unlearning), plus the usual keyword collisions
+(2608.05483, 2608.04443, 2608.04458, 2608.05863, 2608.03555 — all hardware/DRAM).
+
+---
+
 ## 2026-08-09 (scheduled scan)
 
 2 new papers (0 Security, 2 Optimization).
