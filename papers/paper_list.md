@@ -1392,3 +1392,27 @@ Format per entry:
 - **Date**: 2026-08-06
 - **Category**: Optimization
 - **Summary**: Adds a retrieval-based skill memory to embodied visuomotor agents to fix weak compositional generalization out of distribution. A Mixture-of-Experts trajectory-segmentation module implicitly partitions demonstrations into skill primitives, which are stored in a skill-level episodic memory bank as compact retrievable key-value pairs; at inference the most relevant primitives are retrieved and fused with the model's current gating distribution as a contextual prior over action prediction. Reports state-of-the-art results in simulation and on real manipulation hardware, outperforming pi-0.5 and generalizing to unseen task compositions — a memory-retrieval design point for long-horizon embodied agents.
+
+### Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory
+- **arXiv**: 2608.07169 ([link](https://arxiv.org/abs/2608.07169))
+- **Date**: 2026-08-07
+- **Category**: Optimization
+- **Summary**: Transfers a large teacher agent's memory to small student agents instead of retraining them, using three complementary memory levels: workflow memory for task-level strategies, subtask memory for concrete intermediate-granularity behavioral examples, and function memory for tool-calling conventions and common errors. Student models of 4-8B parameters gain 3.4-27.2 points on tool-use benchmarks, making this a cost-reduction route for agent deployment where the memory store, not the weights, carries the capability.
+
+### MemOPD: On-Policy Distillation through Memory State Alignment for Long-Horizon Agents
+- **arXiv**: 2608.07068 ([link](https://arxiv.org/abs/2608.07068))
+- **Date**: 2026-08-07
+- **Category**: Optimization
+- **Summary**: Identifies a failure mode specific to memory-compressed long-horizon agents: when compression rewrites the interaction history, the teacher scores student actions under a state the student never saw at rollout time, breaking the on-policy guarantee that distillation supervision depends on. MemOPD records each model invocation's inputs and sampled outputs and restores original token positions and causal visibility so the teacher evaluates the true rollout state, combining on-policy distillation with PPO for up to 416.2% F1 over PPO and 1.63x faster actor computation during training.
+
+### Explicit, Not Longer: What Makes Epistemic Stance Survive Memory Compression
+- **arXiv**: 2608.06953 ([link](https://arxiv.org/abs/2608.06953))
+- **Date**: 2026-08-07
+- **Category**: Optimization
+- **Summary**: Studies what survives when agent memory is compressed, focusing on epistemic qualifiers (hedges, confidence markers) that determine whether a stored claim is later treated as certain. Formatting stance as a labelled field rather than a bracketed aside raises retention by roughly 15 points across two models, replicated pre-registered on Claude Haiku at +15.6; visual distinctness matters more than added length, and the best explicit form is model-dependent. Covers 60 claims across seven registers with hand-labelled verification (kappa=0.75) and reports nine withdrawn claims.
+
+### ViSAGE: Constructing Self-Correcting Memories for Long-Form Video Understanding
+- **arXiv**: 2607.28678 ([link](https://arxiv.org/abs/2607.28678))
+- **Date**: 2026-07-29
+- **Category**: Optimization
+- **Summary**: A multimodal agentic memory framework for long-horizon video, targeting two standard memory failures: compression that drops fine-grained entity information, and similarity-based retrieval that returns mismatched evidence. ViSAGE binds entity identity across modalities over long temporal ranges, applies bidirectional refinement to retroactively correct stored records, and uses multi-agent cross-verification under an identity-evidence alignment constraint, gaining 5.9% accuracy over the strongest baseline while letting the agent abstain when evidence is insufficient. Accepted at ACM MM 2026.

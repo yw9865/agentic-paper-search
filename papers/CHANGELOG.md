@@ -4,6 +4,29 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-11
+
+4 new papers (0 Security, 4 Optimization).
+
+**Optimization**
+- Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory — 2608.07169
+- MemOPD: On-Policy Distillation through Memory State Alignment for Long-Horizon Agents — 2608.07068
+- Explicit, Not Longer: What Makes Epistemic Stance Survive Memory Compression — 2608.06953
+- ViSAGE: Constructing Self-Correcting Memories for Long-Form Video Understanding — 2607.28678
+
+**Reviewed and excluded:**
+- *Width, Memory, and Delay: A Resource Accounting for the Limits of Flat
+  Multi-Agent Systems* (2608.00028) — keyword collision. "Memory" here is
+  per-agent internal state dimension in a control-theoretic swarm model, not an
+  LLM agent memory system.
+- *Learning Suffers More Than the Policy Class Under Partial Observability*
+  (2608.07228) — RL theory, surfaced only by the "agent memory" query.
+
+No new security papers this run; the memory-poisoning and memory-exfiltration
+searches returned nothing outside `seen_ids.json`.
+
+---
+
 ## 2026-08-10 [Conference scan]
 
 No new conference papers found.
