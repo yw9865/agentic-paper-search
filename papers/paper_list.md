@@ -532,6 +532,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Targets the promotion step where self-evolving agents convert accumulated trajectories into persistent skills, treating evidence promotion itself as the security boundary. PoisonedEvolution assumes a weak attacker who can read target skills and submit bounded evidence but cannot touch the private data pool or edit the skill repository, and must clear three hurdles — Inclusion, Evolution Attribution, and Realization — with Attribution the hard one, since malicious behavior has to look causally useful, recurrent, and generalizable before the evolver will promote it. Succeeds in 546/600 trials (91.0% SER) across six LLM-based evolvers at only 10% attacker support, with vulnerability varying by evolver architecture.
 
+### HarnessSafe: Evaluating Safety Across Persistent Carriers in Agent Harnesses
+- **arXiv**: 2608.06984 ([link](https://arxiv.org/abs/2608.06984))
+- **Date**: 2026-08-07
+- **Category**: Security
+- **Summary**: Generalizes memory poisoning to the full set of stateful surfaces a modern harness exposes — memory, skills, tools, and four other persistent carriers — on the premise that attacker-influenced content crossing a system boundary in one task can steer execution of a benign request later. HarnessSafe supplies 328 executable cases across seven carrier types on mainstream harnesses and scores them under a Persistent-Risk Lifecycle that tracks how far an attack advances through the layers, rather than a single success rate. Finds containment quality depends jointly on carrier type and the specific harness-model pairing, so per-carrier evaluation is needed instead of one aggregate number.
+
+### SynChain: Inducing Computer-Use Agent Systems to Construct Their Own Attack Chains
+- **arXiv**: 2608.06862 ([link](https://arxiv.org/abs/2608.06862))
+- **Date**: 2026-08-07
+- **Category**: Security
+- **Summary**: A self-propagating threat for computer-use agents in which the agent is induced to synthesize its own poisoned artifacts, hiding malicious influence inside the structural redundancies of benign-looking outputs so it survives state updates and vetting. Compromise then spreads through the agent's own persistent state, with dormant payloads reactivating in later workflows as trusted context and requiring no further external malicious input — an internal-propagation variant of adversarial persistence across sessions.
+
+### Compositional Threat Analysis of Latent Compromise in LLM Agent Systems: The Order 66 Scenario
+- **arXiv**: 2608.08131 ([link](https://arxiv.org/abs/2608.08131))
+- **Date**: 2026-08-08
+- **Category**: Security
+- **Summary**: Argues that the dangerous unit is not any single vulnerability but the composition of three: a deployed artifact or shared memory carrying a dormant destructive rule, a later email/document/update/peer message that activates it, and a harness granting operational and recovery authority. Enumerates three distribution pathways and five enabling factors (dormancy, activation, authority, target accessibility, failed recovery), shows checkpoint scanning and prompt filtering cannot close every route, and proposes capability mediation, state provenance verification, propagation isolation, and protected recovery. Notes no fully documented instance of the complete chain to date, though individual components appear in published work and real incidents.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1416,3 +1434,45 @@ Format per entry:
 - **Date**: 2026-07-29
 - **Category**: Optimization
 - **Summary**: A multimodal agentic memory framework for long-horizon video, targeting two standard memory failures: compression that drops fine-grained entity information, and similarity-based retrieval that returns mismatched evidence. ViSAGE binds entity identity across modalities over long temporal ranges, applies bidirectional refinement to retroactively correct stored records, and uses multi-agent cross-verification under an identity-evidence alignment constraint, gaining 5.9% accuracy over the strongest baseline while letting the agent abstain when evidence is insufficient. Accepted at ACM MM 2026.
+
+### PsychoAgent: An Affect-Sensitive Cognitive Architecture for Conflict-Aware Memory in LLM Agents
+- **arXiv**: 2608.07438 ([link](https://arxiv.org/abs/2608.07438))
+- **Date**: 2026-08-07
+- **Category**: Optimization
+- **Summary**: Challenges the assumption that topical similarity is the right retrieval signal for agent memory, keeping factual and affective memory in separate stores under a conflict-aware controller that first filters affective entries by semantic relevance and then reranks by emotional importance, so emotionally significant material can enter the context window without displacing on-topic evidence. Across three conflict scenarios the full system retrieves more conflict-critical content than ablations, though a five-evaluator study found the overall quality gain was not statistically significant; extended traces demonstrate persistent affect, offline memory recombination, and selective reweighting.
+
+### Coupling Planning with Episodic Memory in LLM Agents for Software Issue Resolution
+- **arXiv**: 2608.06811 ([link](https://arxiv.org/abs/2608.06811))
+- **Date**: 2026-08-07
+- **Category**: Optimization
+- **Summary**: PMCoder couples a hierarchical phase planner and episodic memory bidirectionally rather than bolting retrieval onto a planner: the current phase conditions what gets retrieved, and memory statistics act as a stuck-detector that triggers replanning. Verification is grounded in actual execution results instead of the agent's self-reported claims. Resolves roughly 25 more SWE-bench Verified cases (+5.0pp) than a harness-matched baseline with consistent gains across backbones, and shows the coupling beats either component alone by cutting repeated failed attempts and context-window exhaustion.
+
+### Controlled Memory Interference in Continual LLM Agents
+- **arXiv**: 2608.07622 ([link](https://arxiv.org/abs/2608.07622))
+- **Date**: 2026-08-07
+- **Category**: Optimization
+- **Summary**: Isolates *which* accumulated memories hurt, not just how many: under the CMI framework, scaling memory volume alone has minimal effect, while relationship-specific interference between related entries sharply suppresses plasticity (the ability to absorb new information) without buying commensurate stability. Separates retrieval regimes and finds memory poisoning tracks authority signals more than recency alone, arguing that interference structure — not store size — is the variable to manage for dependable long-horizon agents.
+
+### CommitKV: Lifecycle-Aware KV Cache Compression via Commit Transitions for Multi-Turn Agents
+- **arXiv**: 2608.07855 ([link](https://arxiv.org/abs/2608.07855))
+- **Date**: 2026-08-08
+- **Category**: Optimization
+- **Summary**: Attacks the core error in attention-based KV eviction for multi-turn ReAct agents — low attention now does not mean future irrelevance, so temporarily dormant tool context gets discarded before it is needed again. CommitKV partitions completed agent events into token pages and measures the consequence of deleting each page before versus after a tool-call commit absorbs its observation, using the paired difference to tell dormant pages from genuinely retired ones, then applies a greedy joint retirement test at compression checkpoints under a cache budget. Reports better memory efficiency, inference speed, and accuracy than competing KV compression methods.
+
+### SodaMem: Evidence-Grounded Temporal Graph Memory for LLM Agents
+- **arXiv**: 2608.08055 ([link](https://arxiv.org/abs/2608.08055))
+- **Date**: 2026-08-08
+- **Category**: Optimization
+- **Summary**: Targets the gap between recording what was said and knowing what is currently true, which flat RAG memory handles poorly for currency, provenance, and ordered temporal reasoning. SodaMem extracts typed FactEvents with mandatory provenance spans, persists mention time, occurrence time, and validity linked by SUPERSEDES/CONTRADICTS/UPDATES edges under hybrid lexical-dense indexing, and answers through a planner-reader loop that assembles citable evidence before composing. Reports 92.8% accuracy (464/500, best of N=3) at low API cost, placing it near the accuracy frontier for its price point; code released.
+
+### SuperLocalMemory 4.0: The Governed Memory Operating System for AI Agents
+- **arXiv**: 2608.08253 ([link](https://arxiv.org/abs/2608.08253))
+- **Date**: 2026-08-08
+- **Category**: Optimization
+- **Summary**: A local-first memory OS that fuses semantic, lexical, temporal, and associative retrieval with a governance plane — role-based access control, GDPR-oriented export and verified erasure, audit trails, and an EU AI Act deployment checklist. Version 4.0 adds generation-fenced admission, a policy registry, and verifiable memory transactions with per-projection apply/verify/compensate/erase owners. Across eleven fault-injection and mechanism scenarios repeated 200 times each, a governed write costs about 3.5 ms median against 1.8 ms ungoverned, quantifying the price of compliance machinery; the authors are explicit these are scoped component measurements, not end-to-end benchmarks.
+
+### Muscle Memory for Agents: Compile not Merely Retrieve
+- **arXiv**: 2608.08995 ([link](https://arxiv.org/abs/2608.08995))
+- **Date**: 2026-08-10
+- **Category**: Optimization
+- **Summary**: Proposes replacing inference-time retrieval with compilation for the recurring slice of agent memory: a Harvest-Analyze-Augment-Evaluate pipeline mines conversational history for repeated user intent and emits purpose-built specialist agents with trigger matching, so a pattern the user keeps re-specifying becomes executable code instead of a retrieved exemplar. Across 90 scenarios and five personas, the augmented assistant reaches an 88.9% win rate when specialists fire, at +2.05 personalization and only -0.28 accuracy on a 1-4 scale — a retrieval-cost elimination argument for the stable, high-frequency part of a memory store.

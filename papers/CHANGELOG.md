@@ -4,6 +4,34 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-12
+
+10 new papers (3 Security, 7 Optimization).
+
+**Security**
+- HarnessSafe: Evaluating Safety Across Persistent Carriers in Agent Harnesses — 2608.06984
+- SynChain: Inducing Computer-Use Agent Systems to Construct Their Own Attack Chains — 2608.06862
+- Compositional Threat Analysis of Latent Compromise in LLM Agent Systems: The Order 66 Scenario — 2608.08131
+
+**Optimization**
+- PsychoAgent: An Affect-Sensitive Cognitive Architecture for Conflict-Aware Memory in LLM Agents — 2608.07438
+- Coupling Planning with Episodic Memory in LLM Agents for Software Issue Resolution — 2608.06811
+- Controlled Memory Interference in Continual LLM Agents — 2608.07622
+- CommitKV: Lifecycle-Aware KV Cache Compression via Commit Transitions for Multi-Turn Agents — 2608.07855
+- SodaMem: Evidence-Grounded Temporal Graph Memory for LLM Agents — 2608.08055
+- SuperLocalMemory 4.0: The Governed Memory Operating System for AI Agents — 2608.08253
+- Muscle Memory for Agents: Compile not Merely Retrieve — 2608.08995
+
+**Reviewed and excluded:**
+- *SHE: Trajectory-driven Safety Harness Evolution for LLM Agents* (2608.09885) — Safety Memory is one of four harness artifacts, but the contribution is safety-harness evolution rather than agent memory.
+- *Toward Metacognitive One-Shot Indirect Prompt Injection* (2608.08795) — the "strategy memory" is attacker-side offline distillation; the attack surface is prompt injection, not the victim agent's memory.
+- *Mobility, Memory, and Network Structure in Agent-Based Models of Convention Tipping* (2608.07810) — classical ABM, not LLM agents.
+- *Cooperative Coevolution for Resource-Constrained Agentic LLM Post-Training* (2608.02391) — GPU memory during post-training, keyword collision.
+
+**Note:** arXiv API returned HTTP 429 on several follow-up queries mid-run; coverage came from two successful broad API sweeps plus a cs.CR-scoped sweep and web search. Frontier reached 2608.09885 (submitted 2026-08-10).
+
+---
+
 ## 2026-08-11
 
 4 new papers (0 Security, 4 Optimization).
