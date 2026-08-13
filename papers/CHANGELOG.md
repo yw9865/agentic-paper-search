@@ -4,6 +4,38 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-13
+
+12 new papers (4 Security, 8 Optimization).
+
+**Security**
+- Persistent Semantic Entities in Tool-Augmented LLM Systems — 2608.07952
+- Mitigating Over-Personalization in LLMs via Structured Memory — 2608.08300
+- MAP-Graph: Provenance-Aware Shared Memory for Multi-Agent Workflows — 2608.10509
+- From Faulty Memories to Corrected Actions: Dependency-Guided Rollback Repair for Memory-Augmented Agents — 2608.10502
+
+**Optimization**
+- From Test-Time Scaling to Reusable Memory: Measuring Crystallization in Text-to-SQL — 2608.07213
+- TEPA: Revoking Stale Memories for Conflict-Robust Language Agents — 2608.07429 (v2 2026-08-10)
+- LatticeMind: A Conflict-Aware Memory Primitive for Multi-Agent Systems — 2608.08236
+- TRACE-Memory: Public-Conditioned Retrieval and Utility-Aware Evidence Admission for Personalized Generation — 2608.08446
+- MESA: Task-Adaptive Multi-Structure Evidence Selection for Long-Horizon Agent Memory — 2608.10108
+- Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory — 2608.10676
+- SkillLens: Visual Skill Cards for Retrieval-Augmented GUI Action Prediction and On-Policy Distillation — 2608.10775
+- EvoMem: Memory-Augmented Evolution for Code Optimization — 2608.10795
+
+**Reviewed and excluded:**
+- *Stealing Reasoning Traces from Proprietary LLM APIs* (2608.09867) — real cross-session/cross-user leakage of encrypted reasoning blocks with PII and credential extraction, but the vulnerable state is a provider API artifact, not an agent memory store.
+- *Context Is Not Authority: Structured Runtime Governance for Financial Market Agents* (2608.09025) — shares the authority-collapse framing already tracked here, but governs action authorization at runtime; memory is not the subject.
+- *Agentic Router: An Execution-Grounded Continual Learning Approach With Memory* (2608.09184) — contribution is utility/risk-aware action reranking for CLI agents; pattern memory is a secondary adaptation path.
+- *Memoir: Learning, Verifying, and Evolving False-Positive Memories for SAST Tools* (2608.09181) — memory for a static-analysis tool, not for an LLM agent.
+- *Decomposition-Induced Context-Memory Conflict* (2608.10627) — "memory" is model parametric knowledge in fact-checking pipelines.
+- *EvoMem*-adjacent keyword collisions skipped without fetch: DistillCache (2608.08878), ZeroLock (2608.07974), Velosiraptor (2608.07966), Gradient Under Microscope (2608.08961), MemSpec (2608.10362), Batch Size or Negatives (2608.11061) — GPU/OS memory efficiency, unrelated to agent memory.
+
+**Note:** this run backfilled 2026-08-07 to 08-09 candidates (2608.07213, 2608.07429, 2608.07952, 2608.08236, 2608.08300, 2608.08446) that the 08-12 run missed when the arXiv API returned HTTP 429 mid-sweep. Frontier reached 2608.11066 (submitted 2026-08-11); a date-ranged query for 2026-08-12 onward returned zero indexed submissions.
+
+---
+
 ## 2026-08-12
 
 10 new papers (3 Security, 7 Optimization).

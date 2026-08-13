@@ -550,6 +550,30 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Argues that the dangerous unit is not any single vulnerability but the composition of three: a deployed artifact or shared memory carrying a dormant destructive rule, a later email/document/update/peer message that activates it, and a harness granting operational and recovery authority. Enumerates three distribution pathways and five enabling factors (dormancy, activation, authority, target accessibility, failed recovery), shows checkpoint scanning and prompt filtering cannot close every route, and proposes capability mediation, state provenance verification, propagation isolation, and protected recovery. Notes no fully documented instance of the complete chain to date, though individual components appear in published work and real incidents.
 
+### Persistent Semantic Entities in Tool-Augmented LLM Systems
+- **arXiv**: 2608.07952 ([link](https://arxiv.org/abs/2608.07952))
+- **Date**: 2026-08-08
+- **Category**: Security
+- **Summary**: Names and measures a cross-session persistence primitive — Persistent Semantic Entities, latent constructs that survive via name binding, event triggering, and propagation across tool/session boundaries — and finds universal susceptibility (20-100%) across 24 models spanning 11 families from 1.5B to 1T parameters. The key asymmetry: factual injection decays in a model-dependent way, but preference contamination persists undecayed on every model tested, making it both durable and hard to detect. Context-isolated verification cuts susceptibility by 20-79% (median 36.5%) without needing oracle references.
+
+### Mitigating Over-Personalization in LLMs via Structured Memory
+- **arXiv**: 2608.08300 ([link](https://arxiv.org/abs/2608.08300))
+- **Date**: 2026-08-08
+- **Category**: Security
+- **Summary**: Isolates two failure modes of memory-augmented conversational agents that are leakage problems rather than accuracy problems: cross-domain leakage, where memories written in one life domain steer responses in an unrelated one, and memory-induced sycophancy, where stored user beliefs push the model toward agreement over truthfulness. Rather than retraining, the fix is purely in how stored memory is presented at inference — domain-partitioned rather than flat — cutting leakage by 8.8% on average across seven models on PersistBench while holding response quality.
+
+### MAP-Graph: Provenance-Aware Shared Memory for Multi-Agent Workflows
+- **arXiv**: 2608.10509 ([link](https://arxiv.org/abs/2608.10509))
+- **Date**: 2026-08-11
+- **Category**: Security
+- **Summary**: Targets the derivation problem in shared multi-agent memory: because restrictions do not flow through summarization, a derived memory can silently launder private, poisoned, untrusted, or revoked sources into an agent that was never permitted to read them. MAP-Graph models agents, sources, memories, claims, and actions as a typed execution graph, and — unlike prior work that conflates the two — keeps hard authorization separate from graded trust: ancestry tracing drops permission-ineligible records outright, surviving memories rank by semantic similarity times multiplicative path trust, and a risk-sensitive gate matches evidence strength to action risk while retaining lineage for audit. Reports 94.96% task success and 90.22% in clean settings over 2,700 synthetic tasks per method across three domains.
+
+### From Faulty Memories to Corrected Actions: Dependency-Guided Rollback Repair for Memory-Augmented Agents
+- **arXiv**: 2608.10502 ([link](https://arxiv.org/abs/2608.10502))
+- **Date**: 2026-08-11
+- **Category**: Security
+- **Summary**: Addresses what happens after poisoning is detected — deleting the offending record leaves the agent's answer and downstream state already corrupted. The method builds a memory-to-action dependency map to determine exactly which computations consumed the faulty record, preserves unaffected work, and replays only the necessary steps, recovering both the answer and system state instead of restarting. Reports 85.3% recovery against 77.3% for the best competing recovery baseline on 150 controlled cases plus 50 stress tests, while keeping benign memory intact at low overhead.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1476,3 +1500,51 @@ Format per entry:
 - **Date**: 2026-08-10
 - **Category**: Optimization
 - **Summary**: Proposes replacing inference-time retrieval with compilation for the recurring slice of agent memory: a Harvest-Analyze-Augment-Evaluate pipeline mines conversational history for repeated user intent and emits purpose-built specialist agents with trigger matching, so a pattern the user keeps re-specifying becomes executable code instead of a retrieved exemplar. Across 90 scenarios and five personas, the augmented assistant reaches an 88.9% win rate when specialists fire, at +2.05 personalization and only -0.28 accuracy on a 1-4 scale — a retrieval-cost elimination argument for the stable, high-frequency part of a memory store.
+
+### From Test-Time Scaling to Reusable Memory: Measuring Crystallization in Text-to-SQL
+- **arXiv**: 2608.07213 ([link](https://arxiv.org/abs/2608.07213))
+- **Date**: 2026-08-07
+- **Category**: Optimization
+- **Summary**: Formulates the crystallization problem — whether test-time repair effort retained as memory genuinely transfers to novel questions or merely replays solutions to recurring ones — and answers it with an ablation that varies one memory component at a time against a fixed solver. On BIRD, storing verified corrected queries buys 4.34 points of first-attempt accuracy on held-out examples, capturing 44.4% of the headroom that on-demand repair provides. The negative results are the useful part: database-specific content drives nearly all the gain, while more elaborate retrieval schemes and richer memory formats yield diminishing returns.
+
+### TEPA: Revoking Stale Memories for Conflict-Robust Language Agents
+- **arXiv**: 2608.07429 ([link](https://arxiv.org/abs/2608.07429))
+- **Date**: 2026-08-07 (v2 2026-08-10)
+- **Category**: Optimization
+- **Summary**: Argues lifecycle revocation belongs in the core memory API, not as a cleanup pass: TEPA stores observations as keyed precedents with explicit validity, so fresh conflicting evidence under the same key invalidates the prior entry rather than accumulating beside it. Under complete-reversal drift across 50 seeds, append-only and last-write-wins both score 0.210 and no-memory scores 0.309 — memory actively hurts — while TEPA reaches 0.950; the pattern replicates under real file-backed executable drift and preference-update streams. Remaining bottlenecks are multi-hop reasoning and extended context.
+
+### LatticeMind: A Conflict-Aware Memory Primitive for Multi-Agent Systems
+- **arXiv**: 2608.08236 ([link](https://arxiv.org/abs/2608.08236))
+- **Date**: 2026-08-08
+- **Category**: Optimization
+- **Summary**: Observes that majority voting and debate pick a winning claim but persist no record of why it won or how a later update supersedes it, leaving multi-agent systems with no durable basis for trusting one of two incompatible claims. LatticeMind resolves contradictions at write time, tracking explicit item status and running cheap symbolic conflict checks first, escalating to LLM reconciliation only for semantic disagreements symbolic methods cannot settle. Reaches 0.97 accuracy against 0.61 for the strongest baseline on ConflictBank (p<1e-6), with 12-14 point drops from removing either the checker or the reconciler; planning results are mixed, winning three of four tasks but losing to deliberative methods on iterative search.
+
+### TRACE-Memory: Public-Conditioned Retrieval and Utility-Aware Evidence Admission for Personalized Generation
+- **arXiv**: 2608.08446 ([link](https://arxiv.org/abs/2608.08446))
+- **Date**: 2026-08-09
+- **Category**: Optimization
+- **Summary**: Rejects the default of always injecting user history, holding that personal memory earns context space only when it adds value over a public-only baseline. Two stages: query for user-specific information absent from both the request and public context to form a candidate pool, then admit traceable evidence units by incremental utility — including admitting nothing at all. Trained by structured initialization plus progressive RL refinement, it beats random and lexical memory use across 4,500 tasks drawn from Goodreads, Amazon Reviews, and Reddit.
+
+### MESA: Task-Adaptive Multi-Structure Evidence Selection for Long-Horizon Agent Memory
+- **arXiv**: 2608.10108 ([link](https://arxiv.org/abs/2608.10108))
+- **Date**: 2026-08-10
+- **Category**: Optimization
+- **Summary**: Treats the choice of memory structure as a per-query decision rather than an architecture commitment: instead of running all structures or routing to a single one, MESA selects and fuses a query-adaptive subset from a library of specialized structures, learning the selection policy from end-to-end feedback under an explore-exploit balance. On AMA-Bench it beats the strongest baseline by 8.5% while spending 41% fewer evidence tokens than the all-structure alternative, making it an accuracy gain and a context-cost reduction at once.
+
+### Self-Correcting Long-Horizon Search Agents via Tree-Structured Memory
+- **arXiv**: 2608.10676 ([link](https://arxiv.org/abs/2608.10676))
+- **Date**: 2026-08-11
+- **Category**: Optimization
+- **Summary**: ReTree replaces the full execution trajectory — which grows without bound and carries accumulated noise — with an evidence tree whose nodes hold summaries, source-linked evidence, and revision histories. When a contradiction surfaces, it traces back to the node that introduced the claim, swaps the outdated evidence, regenerates the affected summaries, prunes the dependent branches, and resumes the search rather than restarting. Gains up to 25.6 points of accuracy while holding maximum per-step reasoning context 1.27-1.51x smaller than the full-trajectory baseline.
+
+### SkillLens: Visual Skill Cards for Retrieval-Augmented GUI Action Prediction and On-Policy Distillation
+- **arXiv**: 2608.10775 ([link](https://arxiv.org/abs/2608.10775))
+- **Date**: 2026-08-11
+- **Category**: Optimization
+- **Summary**: Identifies a missing memory type for computer-using agents — visual procedural memory that lets an agent recognize which workflow is active and confirm it is making progress — and supplies it as Visual Skill Cards binding reusable procedures to applicability cues, visual evidence, and verification signals, built from interaction experience and retrieved at inference. CardDistill then folds that retrieved evidence into a smaller model so runtime retrieval can be dropped entirely, the cost-reduction half of the contribution. Gains +11.6 and +2.9 points on Multimodal-Mind2Web and WebLINX-BrowserGym, with distilled students adding +12.0 and +3.2.
+
+### EvoMem: Memory-Augmented Evolution for Code Optimization
+- **arXiv**: 2608.10795 ([link](https://arxiv.org/abs/2608.10795))
+- **Date**: 2026-08-11
+- **Category**: Optimization
+- **Summary**: Adds cross-run persistent memory to LLM-driven evolutionary program search, which otherwise discards everything learned when a run ends: successful mutation strategies are extracted after each run into structured, task-aware advice, then retrieved to guide mutations in later runs. Evaluated on geometric optimization, multi-hop question answering, and GPU kernel optimization among others, improving either the target metric or search speed in most settings — the authors are explicit about variability across tasks — as evidence that memory reuse cuts redundant exploration in agentic search.
