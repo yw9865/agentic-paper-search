@@ -4,6 +4,32 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-14
+
+8 new papers (2 Security, 6 Optimization).
+
+**Security**
+- When Agents Talk: Honeytokens under Shared Memory — 2608.11436
+- Beyond Memory: A Transactional Continuity Kernel for Long-Lived AI Agents — 2608.11632
+
+**Optimization**
+- Total Recall at What Cost? Benchmarking the Serving Cost of Agentic Memory Systems — 2608.11879
+- The Sleeping Agent: What Gist-Based Context Compression Loses and Why — 2608.11775
+- Towards a Formal Definition of Agent Memory: Basis, Span, Optimality, and the Sequential Memory Problem — 2608.11654
+- EvoGraph-Mem: Failure-Aware Editable Graph Memory for Long-Term Language Agents — 2608.11248 (submitted 2026-08-03, announced later)
+- Harnessing agent memory to build lifelong AI partners for materials scientists — 2608.11224 (submitted 2026-07-25, announced later)
+- MemPrism: Task-Conditioned Relational Memory Views for Long-Horizon Agents — 2608.06745 (backfill, submitted 2026-08-07)
+
+**Reviewed and excluded:**
+- *LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation* (2608.11967) — frames reflection as memory-control over a reversible trajectory tree, but the contribution is a reflection/backtrack policy learned via distillation plus outcome RL, not memory management.
+- *Retry, Switch, or Abstain?* (2608.11977) — Bayesian Tool Memory is one of two secondary recovery strategies; the contribution is BENCH2ROBUST, a controlled tool-failure injection harness.
+- *On Understanding, Identifying, and Mitigating Vulnerabilities in Agentic Large Language Models* (2608.10530) — four-layer agent security literature review; persistent memory is listed as one capability, not the subject.
+- *Mobility, Memory, and Network Structure in Agent-Based Models of Convention Tipping* (2608.07810) — keyword collision confirmed by fetch: bounded recall in social-simulation agents, no LLM involved. A search-result summary had misattributed this ID to CommitKV (already tracked separately).
+
+**Note:** frontier reached 2608.12308 (submitted 2026-08-12); no 2026-08-13 or later submissions were indexed at scan time. The arXiv API returned HTTP 429/503 throughout this run, so sweeps went through the arXiv HTML search interface instead; every included paper was verified against its own abstract page.
+
+---
+
 ## 2026-08-13
 
 12 new papers (4 Security, 8 Optimization).

@@ -574,6 +574,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Addresses what happens after poisoning is detected — deleting the offending record leaves the agent's answer and downstream state already corrupted. The method builds a memory-to-action dependency map to determine exactly which computations consumed the faulty record, preserves unaffected work, and replays only the necessary steps, recovering both the answer and system state instead of restarting. Reports 85.3% recovery against 77.3% for the best competing recovery baseline on 150 controlled cases plus 50 stress tests, while keeping benign memory intact at low overhead.
 
+### When Agents Talk: Honeytokens under Shared Memory
+- **arXiv**: 2608.11436 ([link](https://arxiv.org/abs/2608.11436))
+- **Date**: 2026-08-11
+- **Category**: Security
+- **Summary**: Motivated by a 2026 cyber-capability evaluation in which agents used shared package repositories as persistent memory en route to a Hugging Face intrusion, this asks whether honeytokens can stay invisible to attackers who share that memory and know the selection policy. Shows the trusted rule that steers legitimate agents away from decoys is itself copyable once policy details are reachable, that shared memory leaks secondary signal by aggregating weak fingerprints, and that repeated non-triggering probes drive attacker classification error toward zero when responses differ and are learnable — so deception in shared agent memory degrades into a detection bound rather than a containment guarantee, and a private reference monitor with provenance-enforcing broker routing is still required.
+
+### Beyond Memory: A Transactional Continuity Kernel for Long-Lived AI Agents
+- **arXiv**: 2608.11632 ([link](https://arxiv.org/abs/2608.11632))
+- **Date**: 2026-08-12
+- **Category**: Security
+- **Summary**: Argues that storage retention alone does not identify authoritative state in long-lived agents, so persistence without adjudication leaves no defined answer to which record currently holds authority. The Continuity Kernel separates a proposed state change from its approval, validating ownership, authority, freshness, and uniqueness before atomic activation, and records a disposition of Commit, Reject, Quarantine, or Defer — only Commit advances the authoritative branch. Formal verification explored 2,808,230 reachable states and 5,526,474 state-changing transitions with no invariant violations.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1548,3 +1560,39 @@ Format per entry:
 - **Date**: 2026-08-11
 - **Category**: Optimization
 - **Summary**: Adds cross-run persistent memory to LLM-driven evolutionary program search, which otherwise discards everything learned when a run ends: successful mutation strategies are extracted after each run into structured, task-aware advice, then retrieved to guide mutations in later runs. Evaluated on geometric optimization, multi-hop question answering, and GPU kernel optimization among others, improving either the target metric or search speed in most settings — the authors are explicit about variability across tasks — as evidence that memory reuse cuts redundant exploration in agentic search.
+
+### Total Recall at What Cost? Benchmarking the Serving Cost of Agentic Memory Systems
+- **arXiv**: 2608.11879 ([link](https://arxiv.org/abs/2608.11879))
+- **Date**: 2026-08-12
+- **Category**: Optimization
+- **Summary**: Measures what agentic memory actually costs to serve, benchmarking Mem0, Hindsight, and Mastra Observational Memory against baseline context strategies over conversations up to 400 turns and 665 questions, scoring both expense and answer accuracy. Finds serving cost cannot be predicted from conversation length and message size alone, that the cost-benefit trade-off shifts with both system and backbone, and that accuracy spans only 21-54% with no system leading on both axes — direct evidence for the cost/latency side of memory-system selection.
+
+### The Sleeping Agent: What Gist-Based Context Compression Loses and Why
+- **arXiv**: 2608.11775 ([link](https://arxiv.org/abs/2608.11775))
+- **Date**: 2026-08-12
+- **Category**: Optimization
+- **Summary**: Isolates which retrieval types survive summarization-based context compression, using a biologically motivated Salience-Weighted Consolidation scheme. Gist compression beats truncation on multi-hop and single-hop factual questions but substantially damages temporal question answering, and the diagnosis is specific: the summarization prompt preserves relationships and events while discarding time references. Rewriting the prompt raised temporal expression preservation from 3.05% to 62.39% and recovered +0.314 accuracy on temporal questions with no cost to the other categories.
+
+### Towards a Formal Definition of Agent Memory: Basis, Span, Optimality, and the Sequential Memory Problem
+- **arXiv**: 2608.11654 ([link](https://arxiv.org/abs/2608.11654))
+- **Date**: 2026-08-12
+- **Category**: Optimization
+- **Summary**: Proposes a formal account in which memory is a basis, knowledge is its span, and answerability is a coverage problem: stored events pass through a generation operator into retrievable knowledge, and a query is answerable when some item in that span covers it. Defines an optimal memory system as a capacity-constrained maximizer of expected coverage and derives a utility-capacity frontier for comparing designs, with truth inference at write time handling noise. Frames continual memory as sequential decision-making — memory as state, writing as action, query-time utility as delayed reward — giving the compression and forgetting-policy work tracked here a common yardstick.
+
+### EvoGraph-Mem: Failure-Aware Editable Graph Memory for Long-Term Language Agents
+- **arXiv**: 2608.11248 ([link](https://arxiv.org/abs/2608.11248))
+- **Date**: 2026-08-03
+- **Category**: Optimization
+- **Summary**: Attacks memory degradation in long-lived agents with an editable insight graph in which each node carries positive evidence, negative evidence, and an activation state, so unreliable insights are identifiable rather than accumulating silently. A graph controller retains dependable insights, deletes invalidated ones, updates stale entries, and admits newly discovered reusable ones, paired with utility-aware retrieval. Ablations show append-only memory is inadequate over extended horizons and that evidence-aware retrieval improves both reliability and task performance.
+
+### Harnessing agent memory to build lifelong AI partners for materials scientists
+- **arXiv**: 2608.11224 ([link](https://arxiv.org/abs/2608.11224))
+- **Date**: 2026-07-25
+- **Category**: Optimization
+- **Summary**: Argues the durable asset in scientific agents is the memory, not the agent implementation, and stores accumulated experience as inspectable facts plus executable skills that can be retrieved, revised, and migrated across models. Across three materials-science domains memory nearly doubles GPT-5.2 task success on 49 real-world questions and improves equation-of-state outcomes from 22/1/4 to 25/2/0, while halving token burden and cutting tool calls by more than 50% by the third iteration — a concrete cost-reduction result from memory reuse.
+
+### MemPrism: Task-Conditioned Relational Memory Views for Long-Horizon Agents
+- **arXiv**: 2608.06745 ([link](https://arxiv.org/abs/2608.06745))
+- **Date**: 2026-08-07
+- **Category**: Optimization
+- **Summary**: Separates persistent experience storage from the working memory a policy actually reads at decision time: a lightweight view policy picks the relation structure, evidence range, outcome condition, and granularity, then a deterministic composer and renderer turn stored facts into a temporary working-memory view for a frozen task policy. Gains on embodied and web-agent benchmarks grow with trajectory length while memory token usage falls, and the learned view policy transfers across VLMs without fine-tuning.
