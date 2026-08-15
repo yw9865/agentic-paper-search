@@ -586,6 +586,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Argues that storage retention alone does not identify authoritative state in long-lived agents, so persistence without adjudication leaves no defined answer to which record currently holds authority. The Continuity Kernel separates a proposed state change from its approval, validating ownership, authority, freshness, and uniqueness before atomic activation, and records a disposition of Commit, Reject, Quarantine, or Defer — only Commit advances the authoritative branch. Formal verification explored 2,808,230 reachable states and 5,526,474 state-changing transitions with no invariant violations.
 
+### Governed Persistent Memory: Source-Bound State Semantics and Fail-Closed Release for Long-Horizon Agents
+- **arXiv**: 2608.12476 ([link](https://arxiv.org/abs/2608.12476))
+- **Date**: 2026-08-12
+- **Category**: Security
+- **Summary**: Treats persistent agent memory as governed state rather than retrieved text, using an auditable bitemporal state-transition model in which every record is admitted only under a binding to its source and released only when the governing contract is satisfied — otherwise the read fails closed instead of returning unvalidated content. Evaluated on a 3,600-case benchmark where the governed configuration resolved 2,400/2,400 clusters against 600/2,400 for an ungoverned local Qwen2.5-7B. The authors are explicit that these are bounded contract and implementation results, not open-world model accuracy, which is the right way to read the gap.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1596,3 +1602,45 @@ Format per entry:
 - **Date**: 2026-08-07
 - **Category**: Optimization
 - **Summary**: Separates persistent experience storage from the working memory a policy actually reads at decision time: a lightweight view policy picks the relation structure, evidence range, outcome condition, and granularity, then a deterministic composer and renderer turn stored facts into a temporary working-memory view for a frozen task policy. Gains on embodied and web-agent benchmarks grow with trajectory length while memory token usage falls, and the learned view policy transfers across VLMs without fine-tuning.
+
+### RippleMem: From Isolated Retrieval to Associative Recollection for Long-Term Agent Memory
+- **arXiv**: 2608.13334 ([link](https://arxiv.org/abs/2608.13334))
+- **Date**: 2026-08-13
+- **Category**: Optimization
+- **Summary**: Replaces single-step retrieval with adaptive associative recollection: past interactions are stored as cue-rich episodic units in an event-centric graph, and a query first locates anchors via hybrid cues, then ripples outward along semantic and structural associations to gather evidence that isolated top-k retrieval would leave scattered. Improves LLM-as-a-Judge accuracy by 3.95% on LoCoMo and up to 11.87% on LongMemEval-S while cutting graph-construction overhead roughly 30-fold — a rare case of accuracy and build cost moving the same direction.
+
+### LycheeMemory V2: Efficient Long-Term Memory for LLM Agents via Semantic Segment-Level Consolidation
+- **arXiv**: 2608.12990 ([link](https://arxiv.org/abs/2608.12990))
+- **Date**: 2026-08-13
+- **Category**: Optimization
+- **Summary**: Attacks the cost of eager consolidation, where an LLM is invoked after every interaction to extract and update memory, by batching exchanges into semantically bounded segments and encoding each finalized segment into context-independent typed records. Semantic boundary detection preserves coherent event-level and temporal evidence that fixed-window batching would cut across. With GPT-4.1-Mini it reaches 89.22% on LoCoMo and 92.20% on LongMemEval-S while reducing construction tokens by 86.0% and 75.9% versus A-Mem, without pushing the cost to query time.
+
+### When Your Agent Opens the Chat App: Agent-Controlled Search over Raw Chat Logs Rivals Structured Memory
+- **arXiv**: 2608.12888 ([link](https://arxiv.org/abs/2608.12888))
+- **Date**: 2026-08-13
+- **Category**: Optimization
+- **Summary**: A negative result for the structured-memory premise: ReFind leaves the conversation archive unmodified, indexes it lexically at turn granularity, and lets the agent drive search with four chat-native controls — session-aware ranking, contextual expansion, temporal filtering, and inspected-session skipping. Across QA, event-ordering, and synthesis benchmarks it averages 58.2 accuracy against 53.2 for HippoRAG 2 and other graph/tree systems, with no LLM-based indexing pass at all. Suggests much of the credit given to elaborate memory structures is recoverable from agent-controlled search over raw logs.
+
+### ERSkill: Evolving for Skill-Guided Adaptive Memory Retrieval
+- **arXiv**: 2608.12720 ([link](https://arxiv.org/abs/2608.12720))
+- **Date**: 2026-08-13
+- **Category**: Optimization
+- **Summary**: Makes the retrieval mechanism itself an evolvable component instead of a fixed policy, representing retrieval behaviors as executable skills over structured interaction history and training a router to assign each query the skill whose evidence-construction strategy fits it. Skills and router co-evolve, with an experience trie recording explored paths and a double-frontier mechanism bounding expansion. Reports 28-31% average gains across F1, BLEU-1, and LLM-judge metrics on Qwen3-Next-80B-A3B-Instruct and GPT-5.4-nano.
+
+### EgoCITE: Context-Augmented Indexing and Time-Aware Retrieval for Long-Horizon Egocentric Memory
+- **arXiv**: 2608.12627 ([link](https://arxiv.org/abs/2608.12627))
+- **Date**: 2026-08-12
+- **Category**: Optimization
+- **Summary**: Targets two specific failures in egocentric memory — indices built from context-poor captions, and retrieval that ignores the temporal intent of a query. EgoScheme rewrites fragmented captions and speech transcripts into self-contained atomic indices using local multimodal context, EgoIndex builds multi-view indices at several granularities across modalities, and EgoRetrv combines semantic search with temporal relevance scoring. Gains of 4.4-14.2% over baselines at one thirty-sixth the cost of long-context LLM approaches.
+
+### LLMs Are Not Good Strategists, Yet Memory-Enhanced Agency Boosts Reasoning
+- **arXiv**: 2608.12626 ([link](https://arxiv.org/abs/2608.12626))
+- **Date**: 2026-08-12
+- **Category**: Optimization
+- **Summary**: Diagnoses long-horizon reasoning failure as drift in intermediate objectives, then treats memory as policy: EpicStar maintains a bank of successful past episodes alongside short-term context and uses a dynamic gate to decide, per step, whether to reuse a stored successful action or reason afresh. On StarCraft II it raises win rates across difficulty levels and opponent types while using an order of magnitude fewer tokens than baselines — the token reduction, not just the win rate, is what makes this relevant here.
+
+### ε-MemEvo: Adaptive Cross-Task Memory Transfer for LLM Program Evolution
+- **arXiv**: 2608.12522 ([link](https://arxiv.org/abs/2608.12522))
+- **Date**: 2026-08-12
+- **Category**: Optimization
+- **Summary**: Carries knowledge across optimization tasks by storing task-agnostic tactic memories — short natural-language descriptions of algorithmic approaches that worked — rather than whole programs, so the stored unit is portable across problem domains. An adaptive injection gate decides whether a retrieved tactic applies and at what strength, and ablations show this gating is load-bearing: naive memory injection can fail catastrophically where adaptive selection does not. Averages 8.7% improvement on GPT-5 across eight benchmarks with 9.4% better early convergence at under 1% overhead.

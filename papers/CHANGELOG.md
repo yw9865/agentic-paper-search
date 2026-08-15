@@ -4,6 +4,29 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-15
+
+8 new papers (1 Security, 7 Optimization).
+
+**Security**
+- Governed Persistent Memory: Source-Bound State Semantics and Fail-Closed Release for Long-Horizon Agents — 2608.12476
+
+**Optimization**
+- RippleMem: From Isolated Retrieval to Associative Recollection for Long-Term Agent Memory — 2608.13334
+- LycheeMemory V2: Efficient Long-Term Memory for LLM Agents via Semantic Segment-Level Consolidation — 2608.12990
+- When Your Agent Opens the Chat App: Agent-Controlled Search over Raw Chat Logs Rivals Structured Memory — 2608.12888
+- ERSkill: Evolving for Skill-Guided Adaptive Memory Retrieval — 2608.12720
+- EgoCITE: Context-Augmented Indexing and Time-Aware Retrieval for Long-Horizon Egocentric Memory — 2608.12627
+- LLMs Are Not Good Strategists, Yet Memory-Enhanced Agency Boosts Reasoning — 2608.12626
+- ε-MemEvo: Adaptive Cross-Task Memory Transfer for LLM Program Evolution — 2608.12522
+
+**Reviewed and excluded:**
+- *AQuA: Recursively Self-Improving Quantitative Trading Research Agents* (2608.12841) — retains validated evidence across research iterations, but the paper explicitly states its two systems share no agents, memories, or research state; the contribution is recursive self-improvement in quant research, not a memory architecture.
+- *Interpreting Language Model Hidden States at Scale* (2608.10260) — OmniLens can detect multi-hop memory injection as one application, but the contribution is a general activation-lens toolkit, not agent-memory security.
+- *Retry, Switch, or Abstain?* (2608.11977) — re-surfaced in this run's search; already excluded on 2026-08-14 for the same reason (Bayesian Tool Memory is secondary to the BENCH2ROBUST failure-injection harness).
+
+---
+
 ## 2026-08-14
 
 8 new papers (2 Security, 6 Optimization).
