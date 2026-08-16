@@ -4,6 +4,35 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-16
+
+8 new papers (2 Security, 6 Optimization).
+
+arXiv's search index and listings top out at 13 Aug submissions today (16 Aug is a
+Sunday; the 14 Aug announcement batch was the newest available), so this run's yield
+is 12-13 Aug papers the 2026-08-15 run did not surface, plus two older submissions
+newly announced on 12 Aug.
+
+**Security**
+- Practice Makes Unsafe: Skill Misevolution in Self-Improving LLM Agents — 2608.12851
+- AI Guardrail Survival under Single-Cycle Agentic Self-Summarization — 2608.11392
+
+**Optimization**
+- Beyond Retrieval: Query-Conditioned Reuse of Long-Horizon Agent Trajectories — 2608.12847
+- Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence — 2608.12743
+- MindMemOS: A Portable and Self-Evolving Memory Operating Layer for AI Agents — 2608.12428
+- FluctlightDB: A Memory Model of Data for AI Agents — 2608.12365
+- MaSRead: Content-Addressed Reading of Replicated Latent Stores — 2608.11218
+- Enhancing Virtual Agents through SLMs and Edge-Computing: An Exploratory Evaluation of Think and Memory Processes — 2608.13420
+
+**Reviewed and excluded:**
+- *Beyond Handcrafted Security: Towards Self-Evolving Defense for LLM Agents* (2608.12977) — self-evolving runtime defense for agents, but the harness-level formulation covers interventions generally; memory is not the object of defense.
+- *TIEM: Temporal Integration of Hypergraph Evidence and Skill Memory for Event-Driven Financial Forecasting* (2608.13024) — has a case-based skill memory, but the contribution is a contamination-resistant financial forecasting pipeline and its FinPURE benchmark.
+- *AQuA: Recursively Self-Improving Quantitative Trading Research Agents* (2608.12841) — re-surfaced this run; already excluded on 2026-08-15 for the same reason.
+- *Retry, Switch, or Abstain?* (2608.11977) — re-surfaced again; already excluded on 2026-08-14.
+
+---
+
 ## 2026-08-15
 
 8 new papers (1 Security, 7 Optimization).

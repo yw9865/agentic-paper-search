@@ -592,6 +592,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Treats persistent agent memory as governed state rather than retrieved text, using an auditable bitemporal state-transition model in which every record is admitted only under a binding to its source and released only when the governing contract is satisfied — otherwise the read fails closed instead of returning unvalidated content. Evaluated on a 3,600-case benchmark where the governed configuration resolved 2,400/2,400 clusters against 600/2,400 for an ungoverned local Qwen2.5-7B. The authors are explicit that these are bounded contract and implementation results, not open-world model accuracy, which is the right way to read the gap.
 
+### Practice Makes Unsafe: Skill Misevolution in Self-Improving LLM Agents
+- **arXiv**: 2608.12851 ([link](https://arxiv.org/abs/2608.12851))
+- **Date**: 2026-08-13
+- **Category**: Security
+- **Summary**: Self-improving agents distill successful trajectories into persistent cross-task skills, so a single unsafe success can survive as reusable policy long after its triggering input is gone — the paper's contribution is making that carryover measurable rather than merely asserted. SkillMisevo-Gym versions skill state across agent frameworks and SkillMisevo-Bench traces malicious exposure through to later benign carryover tasks under nine lifecycle metrics, separating authoring risk from retrieval and execution risk. Across 25 agent-method configurations all evolved configurations authored unsafe artifacts but only fifteen produced fresh-session harm, which is the gap the SafeEvolve repair-and-govern wrapper targets.
+
+### AI Guardrail Survival under Single-Cycle Agentic Self-Summarization
+- **arXiv**: 2608.11392 ([link](https://arxiv.org/abs/2608.11392))
+- **Date**: 2026-08-11 (v2 2026-08-13)
+- **Category**: Security
+- **Summary**: Asks what happens to a standing safety rule during a single context-compaction cycle, and finds that a presence check is not a safety check: when compaction does not drop a rule outright it often leaves a degraded residue that reads like a rule but does not fire like one. On behavioral replay the residue lets the model perform the prohibited action far more often than an intact rule (all-case gaps of +34 and +57 points under two replay models), so audits that verify only textual presence give false assurance. Directly relevant to memory-consolidation security, since the loss is silent at runtime and detectable only against retained external ground truth such as a constraint registry.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1644,3 +1656,39 @@ Format per entry:
 - **Date**: 2026-08-12
 - **Category**: Optimization
 - **Summary**: Carries knowledge across optimization tasks by storing task-agnostic tactic memories — short natural-language descriptions of algorithmic approaches that worked — rather than whole programs, so the stored unit is portable across problem domains. An adaptive injection gate decides whether a retrieved tactic applies and at what strength, and ablations show this gating is load-bearing: naive memory injection can fail catastrophically where adaptive selection does not. Averages 8.7% improvement on GPT-5 across eight benchmarks with 9.4% better early convergence at under 1% overhead.
+
+### Beyond Retrieval: Query-Conditioned Reuse of Long-Horizon Agent Trajectories
+- **arXiv**: 2608.12847 ([link](https://arxiv.org/abs/2608.12847))
+- **Date**: 2026-08-13
+- **Category**: Optimization
+- **Summary**: Targets the step after retrieval that trajectory-memory work usually leaves implicit: once a past trajectory is found, how should it be adapted when circumstances have changed. Query-Conditioned Reuse stores a target-bound note recording a reusable procedure, the bindings to recover, applicability conditions, and verification requirements, instead of replaying the raw trajectory. Across WebArena, WorkArena, and AppWorld (2,391 target instances) it reaches 62.3% average success, 10.7 points above direct full-trajectory injection, while consuming 48.9% fewer online tokens — and the gap widens as trajectories lengthen or source and target bindings diverge.
+
+### Spatial Memory Agent: Experience-Grounded Procedure Memory for Spatial Intelligence
+- **arXiv**: 2608.12743 ([link](https://arxiv.org/abs/2608.12743))
+- **Date**: 2026-08-13
+- **Category**: Optimization
+- **Summary**: Pursues parameter-update-free self-evolution for frozen VLM agents by converting verified spatial experience into compact transferable lessons through verifier-guided reflection, avoiding both post-training and external depth/3D tools at inference time. Each lesson carries a Transfer Reliability Score initialized uniformly and recalibrated from later retrieval outcomes, so retrieval ranks by combined similarity and accumulated transfer evidence rather than similarity alone. Achieves the highest macro average in every base-model block across five spatial benchmarks and four base VLMs.
+
+### MindMemOS: A Portable and Self-Evolving Memory Operating Layer for AI Agents
+- **arXiv**: 2608.12428 ([link](https://arxiv.org/abs/2608.12428))
+- **Date**: 2026-08-12
+- **Category**: Optimization
+- **Summary**: Proposes a portable memory operating layer in which the organization of memory itself evolves rather than staying static, pairing MindMemEvolve (context-specific optimization of memory structure) with MindSkillEvolve (turning agent actions into reusable, improving skills). Its "dreaming" maintenance pass consolidates accumulated memories by merging redundant records, which is the forgetting/consolidation angle relevant here. Reports 94.03% on LOCOMO and 70.63% on PersonaMem, with skill evolution adding 9.2 points on spreadsheet tasks.
+
+### FluctlightDB: A Memory Model of Data for AI Agents
+- **arXiv**: 2608.12365 ([link](https://arxiv.org/abs/2608.12365))
+- **Date**: 2026-07-10 (announced 2026-08-12)
+- **Category**: Optimization
+- **Summary**: Argues long-term agent memory is a distinct data model rather than a retrieval index, with explicit write semantics (encoding, separation, consolidation, provenance) and cue-driven read semantics that activate across a linked memory graph, implemented as an embedded engine exposing just `experience()` and `activate()`. Reports 99.0% recall on an internally reproduced LoCoMo run and 97.4% (487/500) end-to-end QA on LongMemEval-S, plus competitive BEIR SciFact results. The authors position it as a missing data-stack layer alongside Mem0 and Zep rather than a modeling contribution, which is the honest framing.
+
+### MaSRead: Content-Addressed Reading of Replicated Latent Stores
+- **arXiv**: 2608.11218 ([link](https://arxiv.org/abs/2608.11218))
+- **Date**: 2026-07-21 (announced 2026-08-12)
+- **Category**: Optimization
+- **Summary**: Handles the retrieval side of agents that exchange computed state as KV-cache fragments rather than text, where fragments merge via CRDTs into order-independent stores but colocation does not confer addressability — colocated fragments interfere at query time. MaSRead routes queries through opaque keyed tag sets derived from fragment words, decodes selected fragments under hard attention masking, and walks lexical connectivity graphs for multi-hop queries. Materialized decoding cost scales with fragment length rather than total store size, which is the efficiency claim; the authors note lexical routing can miss disconnected evidence.
+
+### Enhancing Virtual Agents through SLMs and Edge-Computing: An Exploratory Evaluation of Think and Memory Processes
+- **arXiv**: 2608.13420 ([link](https://arxiv.org/abs/2608.13420))
+- **Date**: 2026-08-13
+- **Category**: Optimization
+- **Summary**: Pushes the Think and Memory components of a Cognitive Embodied Agent Architecture onto small language models running at the edge, prototyping a virtual-agent gateway on NVIDIA Jetson Orin NX with Qwen2.5 models at several sizes. Evaluation measures routing accuracy, memory-read performance, and latency, which is the cost/latency angle relevant here. Exploratory rather than conclusive, but it is one of the few datapoints on what agent memory operations cost when the model is small and local.
