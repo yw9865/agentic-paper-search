@@ -604,6 +604,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Asks what happens to a standing safety rule during a single context-compaction cycle, and finds that a presence check is not a safety check: when compaction does not drop a rule outright it often leaves a degraded residue that reads like a rule but does not fire like one. On behavioral replay the residue lets the model perform the prohibited action far more often than an intact rule (all-case gaps of +34 and +57 points under two replay models), so audits that verify only textual presence give false assurance. Directly relevant to memory-consolidation security, since the loss is silent at runtime and detectable only against retained external ground truth such as a constraint registry.
 
+### SynChain: Inducing Computer-Use Agent Systems to Construct Their Own Attack Chains
+- **arXiv**: 2608.06862 ([link](https://arxiv.org/abs/2608.06862))
+- **Date**: 2026-08-07
+- **Category**: Security
+- **Summary**: Attacks the case existing defenses do not cover — compromise that propagates through an agent's own persistent state rather than arriving from a fresh external input. Persistence-aware directed SFT induces computer-use agents to synthesize their own poisoned-but-benign-looking skills and memory entries, hiding malicious influence in the structural redundancy of those artifacts so it survives internal state updates and passes standard vetting. Evaluated on OpenClaw, Codex, and Claude Code over the CUAChain dataset (30 benign task chains, three attack objectives) under four defense settings, with dormant payloads reactivating in later workflows as trusted context.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1692,3 +1698,21 @@ Format per entry:
 - **Date**: 2026-08-13
 - **Category**: Optimization
 - **Summary**: Pushes the Think and Memory components of a Cognitive Embodied Agent Architecture onto small language models running at the edge, prototyping a virtual-agent gateway on NVIDIA Jetson Orin NX with Qwen2.5 models at several sizes. Evaluation measures routing accuracy, memory-read performance, and latency, which is the cost/latency angle relevant here. Exploratory rather than conclusive, but it is one of the few datapoints on what agent memory operations cost when the model is small and local.
+
+### OpRAG: A Resource-Deterministic Runtime for GPU-Backed Multi-Stage RAG Workflows
+- **arXiv**: 2608.08340 ([link](https://arxiv.org/abs/2608.08340))
+- **Date**: 2026-08-08
+- **Category**: Optimization
+- **Summary**: Locates the cost of agentic RAG in the orchestration layer rather than the model: decoding keeps the GPU busy, but embedding, retrieval, memory access, context construction, and index updates stall around it. OpRAG models each of those stages — memory access included — as an operator with deterministic execution semantics, then applies zero-copy handoff, persistent workers, bounded queues, CPU tokenizer prefetch, batched GPU embedding, and overlapped retrieval/generation. Reports 16-20% gains over competing systems and 17-18% faster execution than framework baselines on Llama3-8B and Mistral-7B at full recall.
+
+### SDAM: Structure-Difference-Aware Memory Evolution for Complex Text-to-SQL
+- **arXiv**: 2608.12338 ([link](https://arxiv.org/abs/2608.12338))
+- **Date**: 2026-06-03 (announced 2026-08-12)
+- **Category**: Optimization
+- **Summary**: Argues that memory in text-to-SQL agents is under-designed — it discards historical experience and stores entries with weak structural and schema grounding, so retrieval returns semantically close but structurally wrong precedents. SDAM identifies likely errors through a structure-difference-aware reasoning tree, extracts rules via contradiction-aware reflection, and binds memory to database schemas through a schema-grounded evolution mechanism. Gains are modest (+2.0 BIRD-dev, +0.4 Spider-test), so the value here is the memory-evolution design rather than the headline numbers.
+
+### memorywire: A Vendor-Neutral Wire Format for Agent Memory Operations
+- **arXiv**: 2606.01138 ([link](https://arxiv.org/abs/2606.01138))
+- **Date**: 2026-05-31 (v4 2026-08-12)
+- **Category**: Optimization
+- **Summary**: Targets fragmentation across agent-memory frameworks with a JSON-Schema 2020-12 wire format covering five operations (remember, recall, forget, merge, expire) over four memory types (semantic, episodic, procedural, emotional), plus a reference implementation with five backend adapters. Reports recall@5 = 1.000 on gold-ID queries and clean conformance across 80 cells. The authors are upfront that the components (Reciprocal Rank Fusion, consolidation workflows) are established and the contribution is the vendor-neutral packaging, positioned to interoperate with MCP rather than compete with it.

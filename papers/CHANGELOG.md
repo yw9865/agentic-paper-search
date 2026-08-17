@@ -4,6 +4,34 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-17
+
+4 new papers (1 Security, 3 Optimization).
+
+arXiv's index still tops out at 13 Aug submissions (17 Aug is a Monday; the 14 Aug
+announcement batch remains the newest available), so for the second run in a row there
+is no fresh daily stream to scan. This run's yield is therefore 7-12 Aug material the
+preceding runs did not surface, including two older submissions newly announced or
+revised on 12 Aug.
+
+**Security**
+- SynChain: Inducing Computer-Use Agent Systems to Construct Their Own Attack Chains — 2608.06862
+
+**Optimization**
+- OpRAG: A Resource-Deterministic Runtime for GPU-Backed Multi-Stage RAG Workflows — 2608.08340
+- SDAM: Structure-Difference-Aware Memory Evolution for Complex Text-to-SQL — 2608.12338
+- memorywire: A Vendor-Neutral Wire Format for Agent Memory Operations — 2606.01138
+
+**Reviewed and excluded:**
+- *The Horizon Gap: Planning, Memory, Execution, Training, and Evaluation for Long-Horizon LLM Agents* (2608.06663) — surveys 1,547 papers with memory as one of six lifecycle phases; the contribution is a general long-horizon agent survey, not a memory one.
+- *On Understanding, Identifying, and Mitigating Vulnerabilities in Agentic Large Language Models* (2608.10530) — four-layer vulnerability taxonomy over 85 papers; persistent memory appears only as a listed agent capability, not as a vulnerability category.
+- *Consolidator: Learning Persistent Routed Memory Across Context Boundaries* (2608.11701) — short-term to long-term consolidation, but at the sequence-model level on a synthetic modulo-10 task with a 29.95M model; no agent. Same reason StreamTTT (2608.13416), StreamFlow (2608.10949), and the Mamba hierarchical-memory work (2608.02347) are out.
+- *SPECTRA: Pushing the KV Cache Beyond the 2-Bit Cliff via Spectral Transform Coding* (2608.07915) — generic KV-cache quantization with no agent or memory-system framing, unlike CommitKV (2608.07855) which is scoped to multi-turn agents.
+- *TELLME: Test-Enhanced Learning for Language Model Enrichment* (2608.11788) — "long-term memory retention" here means retention after domain-adaptation training, not an agent memory store.
+- *AQuA* (2608.12841) and *Retry, Switch, or Abstain?* (2608.11977) — re-surfaced yet again; already excluded on 2026-08-15 and 2026-08-14 respectively.
+
+---
+
 ## 2026-08-16
 
 8 new papers (2 Security, 6 Optimization).
