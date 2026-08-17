@@ -610,6 +610,13 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Attacks the case existing defenses do not cover — compromise that propagates through an agent's own persistent state rather than arriving from a fresh external input. Persistence-aware directed SFT induces computer-use agents to synthesize their own poisoned-but-benign-looking skills and memory entries, hiding malicious influence in the structural redundancy of those artifacts so it survives internal state updates and passes standard vetting. Evaluated on OpenClaw, Codex, and Claude Code over the CUAChain dataset (30 benign task chains, three attack objectives) under four defense settings, with dormant payloads reactivating in later workflows as trusted context.
 
+### Recovering and Rehosting Mobile Local LLM Conversations and Contexts via Memory Forensics
+- **Venue**: IEEE S&P 2026
+- **Link**: https://ieeexplore.ieee.org/document/11573549/
+- **Date**: 2026-05-18 (IEEE S&P 2026, San Francisco)
+- **Category**: Security
+- **Summary**: ORISA recovers deleted conversations from on-device LLM apps by reconstructing token sequences and session-level attention state from the batch tokens and KV-cache tensors left in process memory, then rehosts the session so it can recall context the original session had already dropped. Across 60 configurations (10 Android LLM apps, 3 model architectures) it recovers 100% of tokens and KV-cache tensors inside the active context window plus substantial out-of-window context, showing that deletion at the application layer does not erase conversational memory and that rehosted sessions retain more than the originals. Framed as forensics, but the exposed surface is the agent's conversational memory and KV cache.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models

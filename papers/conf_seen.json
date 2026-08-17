@@ -17,6 +17,12 @@
       "title": "FragFuse: Bypassing Access Control of Large Language Model Agents via Memory-Based Query Fragmentation and Fusion",
       "url": "https://www.usenix.org/conference/usenixsecurity26/technical-sessions",
       "arxiv": "2606.15609"
+    },
+    {
+      "venue": "IEEE S&P 2026",
+      "title": "Recovering and Rehosting Mobile Local LLM Conversations and Contexts via Memory Forensics",
+      "url": "https://ieeexplore.ieee.org/document/11573549/",
+      "arxiv": ""
     }
   ]
 }

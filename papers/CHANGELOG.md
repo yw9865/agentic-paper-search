@@ -4,6 +4,29 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-17 [Conference scan]
+
+1 new paper (1 Security, 0 Optimization).
+
+Venues checked: USENIX Security '26 technical sessions (direct WebFetch returned HTTP 403 as
+usual; read via the r.jina.ai proxy) and IEEE S&P 2026 accepted papers (cycle 1 + cycle 2,
+direct fetch OK). No USENIX Security '27 or S&P 2027 acceptance lists exist yet — USENIX '27
+cycle 1 submissions are not due until 2026-08-25.
+
+**Security**
+- Recovering and Rehosting Mobile Local LLM Conversations and Contexts via Memory Forensics — IEEE S&P 2026
+
+USENIX Security '26 surfaced no new on-topic papers: its three agent-memory papers (HijackKV,
+"When Memory Becomes a Vulnerability", FragFuse) are already recorded in conf_seen.json.
+
+Borderline candidates considered and excluded as RAG knowledge-base security rather than agent
+memory, consistent with what the daily scan has tracked to date: BadGraph (USENIX Sec '26),
+Confundo (USENIX Sec '26), "Overcoming the Retrieval Barrier" (USENIX Sec '26), "GraphRAG under
+Fire" (S&P 2026), "Who Taught the Lie?" (S&P 2026). Also excluded: "Towards Automating Data
+Access Permissions in AI Agents" (S&P 2026) — agent permission prediction, not memory.
+
+---
+
 ## 2026-08-17
 
 4 new papers (1 Security, 3 Optimization).
