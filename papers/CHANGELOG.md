@@ -4,6 +4,43 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-18
+
+10 new papers (0 Security, 10 Optimization).
+
+All ten sit in the 2026-08-11 to 2026-08-14 submission window and were missed by prior runs
+because `export.arxiv.org/api` rate-limited (HTTP 429/503) partway through this scan; the
+`arxiv.org/search` UI was used as the fallback listing source and surfaced a batch of IDs
+(2608.14xxx, 2608.136xx) the API queries never returned.
+
+**Optimization**
+- Handover of In-Context Learning State Across Session Boundaries — 2608.14528
+- Demystifying Agent Skills: Why They Work-Until They Don't — 2608.14036
+- When Personal Memory Has No Single Answer: Evaluating LLM Agents under Irreducible Conflict — 2608.13921
+- MemoryLake on MemoryArena: A Matched Study of Agent Memory Backends — 2608.13883
+- Ontology-Grounded Project Memory for Coding Agents — 2608.13662
+- Evaluating Agentic Learning Harness Capabilities Without Labels via the Scaling Hypothesis — 2608.13608
+- MobileMem: Learning from a Year of Mobile Experiences — 2608.13606
+- TIEM: Temporal Integration of Hypergraph Evidence and Skill Memory for Event-Driven Financial Forecasting — 2608.13024
+- GeoForge: Non-Parametric Self-Evolving Agents for Earth-Observation Reasoning — 2608.10494
+- Persistent Recursive Worlds Enable Autonomous Software Evolution — 2608.10450
+
+**Security**: none. Dedicated sweeps on memory poisoning and on memory privacy/leakage returned
+only IDs already in `seen_ids.json`; nothing new was announced in the window.
+
+Candidates considered and excluded:
+- Agentao: A Governed Local-First Runtime for Tool-Using LLM Agents (2608.13574) — general agent
+  runtime governance; memory is one subsystem among many rather than the subject.
+- Toward Metacognitive One-Shot Indirect Prompt Injection / SAVOR (2608.08795) — the persistent
+  "strategy memory" is the attacker's, not the victim agent's, so it is prompt-injection work
+  rather than agent-memory security.
+- DreamFly (2608.12308) — "causal memory" is a neural latent temporal encoding, not a stored and
+  retrieved agent memory.
+- AQuA (2608.12841), On Understanding, Identifying, and Mitigating Vulnerabilities in Agentic LLMs
+  (2608.10530) — off-topic or too broad to be agent-memory papers.
+
+---
+
 ## 2026-08-17 [Conference scan]
 
 1 new paper (1 Security, 0 Optimization).

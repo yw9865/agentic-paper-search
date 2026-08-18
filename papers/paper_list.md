@@ -1723,3 +1723,63 @@ Format per entry:
 - **Date**: 2026-05-31 (v4 2026-08-12)
 - **Category**: Optimization
 - **Summary**: Targets fragmentation across agent-memory frameworks with a JSON-Schema 2020-12 wire format covering five operations (remember, recall, forget, merge, expire) over four memory types (semantic, episodic, procedural, emotional), plus a reference implementation with five backend adapters. Reports recall@5 = 1.000 on gold-ID queries and clean conformance across 80 cells. The authors are upfront that the components (Reciprocal Rank Fusion, consolidation workflows) are established and the contribution is the vendor-neutral packaging, positioned to interoperate with MCP rather than compete with it.
+
+### Handover of In-Context Learning State Across Session Boundaries
+- **arXiv**: 2608.14528 ([link](https://arxiv.org/abs/2608.14528))
+- **Date**: 2026-08-14
+- **Category**: Optimization
+- **Summary**: Treats the practical problem of "context is full, continue elsewhere" as a formal question: what is the minimum record a session must hand off so the continuation behaves as if it had the original history. Characterizes the coarsest deterministic sufficient handover under exogeneity, and proposes a three-part record (exact stored decisions, task-justified statistics, retained raw observations). Shows Gaussian linear regression admits finite-dimensional handover while nonparametric settings give upper and lower bounds relating memory size to squared prediction error — a rare theoretical treatment of how memory budget trades against downstream quality.
+
+### When Personal Memory Has No Single Answer: Evaluating LLM Agents under Irreducible Conflict
+- **arXiv**: 2608.13921 ([link](https://arxiv.org/abs/2608.13921))
+- **Date**: 2026-08-14
+- **Category**: Optimization
+- **Summary**: Argues personal-memory benchmarks wrongly assume every question has one right answer, hiding whether an agent notices that its stored memories genuinely conflict. TANGLE contributes 541 instances over 40 personas across three conflict types (Context-Partitioned, Behavior-Oscillation, Source-Contradiction) and scores five dimensions including conflict perception and confidence calibration. The pipeline track is the finding that matters for memory design: extraction systems drop the conflict-bearing detail needed to reason about the conflict at all, so the failure originates at consolidation time, not answer time.
+
+### MemoryLake on MemoryArena: A Matched Study of Agent Memory Backends
+- **arXiv**: 2608.13883 ([link](https://arxiv.org/abs/2608.13883))
+- **Date**: 2026-08-14
+- **Category**: Optimization
+- **Summary**: Runs a matched comparison of a structured multi-track backend (MemoryLake) against Mem0, text-embedding-3-small vector RAG, and long-context baselines on MemoryArena, which tests interdependent multi-session task completion rather than recall. MemoryLake leads on mathematics, physics, and progressive retrieval, averaging 20.5% versus 13.6% for the best comparator on equal-weight domain averaging. Notably honest about limits: every system scores zero on travel planning, sample sizes are modest, confidence intervals overlap, and no significance tests are reported — so read it as evidence that backend choice is workload-dependent, not as a SOTA claim.
+
+### Ontology-Grounded Project Memory for Coding Agents
+- **arXiv**: 2608.13662 ([link](https://arxiv.org/abs/2608.13662))
+- **Date**: 2026-08-13
+- **Category**: Optimization
+- **Summary**: MOOSEDev stores architectural decisions, lessons, constraints, and rationales as typed knowledge-graph records with lifecycle status, provenance, and supersession links, exposed to coding agents over MCP and queried by a neurosymbolic engine that treats the symbolic layer as primary. On a neutral 835-record corpus it returns essentially the full expected answer set (0.98-1.00) on supersession, set-completeness, and negation questions where a production vector-memory tool's top-k retrieval surfaces only 6-27%. Relevance recall and token cost are roughly equivalent, so the gain is specifically on the query classes top-k retrieval structurally cannot serve.
+
+### Demystifying Agent Skills: Why They Work-Until They Don't
+- **arXiv**: 2608.14036 ([link](https://arxiv.org/abs/2608.14036))
+- **Date**: 2026-08-14
+- **Category**: Optimization
+- **Summary**: Controlled study over 8,135 trial records on when a procedural-memory (skill) library actually helps, finding that skills work mainly by turning noisy trajectories into procedural anchors that stabilize execution — 65.7% of the measured effect. The result relevant to memory-store design is the retrieval curve: precision collapses from 29.6% at a five-skill pool to 3.3% at 100, so naively growing the store degrades the system. Also characterizes the failure modes (brittle assumptions, incompatible contexts) that make a stored skill actively harmful.
+
+### Evaluating Agentic Learning Harness Capabilities Without Labels via the Scaling Hypothesis
+- **arXiv**: 2608.13608 ([link](https://arxiv.org/abs/2608.13608))
+- **Date**: 2026-08-11
+- **Category**: Optimization
+- **Summary**: Addresses a practical blocker for memory/retrieval-based continual learning harnesses in security settings: labeled benchmarks are scarce, stale, and unrepresentative, so practitioners cannot tell whether a harness helps. Proposes scoring a harness by how much a smaller student converges toward a stronger teacher given sparsely sampled corrections, and validates that teacher-relative lift correlates with lift against a held-out gold standard. Also shows LLM-as-a-judge between similarly powered models yields no usable signal, which rules out the obvious cheaper alternative.
+
+### MobileMem: Learning from a Year of Mobile Experiences
+- **arXiv**: 2608.13606 ([link](https://arxiv.org/abs/2608.13606))
+- **Date**: 2026-08-11
+- **Category**: Optimization
+- **Summary**: Builds an on-device memory resource from a year of real mobile usage, using a knowledge-grounded synthesis pipeline to turn application sessions into coherent, temporally consistent long-horizon trajectories. Ships text and visual formats covering multi-hop reasoning, temporal analysis, knowledge modification, and preference recognition. The framing is the contribution: it pushes evaluation past memory-as-fact-retrieval toward continuous personal learning from accumulated experience, at a time horizon most benchmarks do not reach.
+
+### TIEM: Temporal Integration of Hypergraph Evidence and Skill Memory for Event-Driven Financial Forecasting
+- **arXiv**: 2608.13024 ([link](https://arxiv.org/abs/2608.13024))
+- **Date**: 2026-08-13 (v2 2026-08-14)
+- **Category**: Optimization
+- **Summary**: Identifies an "Evidence Chasm" in memory-augmented forecasting agents, where training-data contamination and temporal leakage inflate reported accuracy above true predictive ability. TIEM responds with timestamp-gated retrieval over an Event-Evidence Hypergraph plus a Case-based Skill Memory of source-tagged temporal skills, fused at reasoning time. The transferable idea beyond finance is treating timestamps as a first-class retrieval gate on the memory store, plus a Name-Date Probe that measures per-model leakage instead of assuming a training cutoff.
+
+### GeoForge: Non-Parametric Self-Evolving Agents for Earth-Observation Reasoning
+- **arXiv**: 2608.10494 ([link](https://arxiv.org/abs/2608.10494))
+- **Date**: 2026-08-11
+- **Category**: Optimization
+- **Summary**: Training-free self-evolution that converts completed trajectories into a structured non-parametric execution state, split across three complementary memories: Workflow Graph Memory for global operation order, Action-Level Experiences for local corrections, and an Adapted Skill SOP preserving procedural and data constraints. Retrieval is task-conditioned and applied after the operation space is narrowed by sensing context, and a safety-gated distillation pass converts grounded trajectories into reusable knowledge after each task. The execute-distill-reuse loop improves planning with no backbone updates.
+
+### Persistent Recursive Worlds Enable Autonomous Software Evolution
+- **arXiv**: 2608.10450 ([link](https://arxiv.org/abs/2608.10450))
+- **Date**: 2026-08-11 (v2 2026-08-12)
+- **Category**: Optimization
+- **Summary**: Takes the opposite position from most long-horizon memory work: instead of persistent sessions, memories, or shared context, EvoX Genesis makes the *project* persistent and lets agents stay finite-lived, with each local world situated by an accepted version and repository path and only accepted consequences advancing the version history. Evidence is substantial — a Rust C compiler at ~250k tracked lines built over 120+ hours across 1,000+ archived agent episodes for US$44, passing the full c-testsuite, plus continued development across repeated agent replacement. Worth tracking as the strongest current argument that long-horizon continuity can live in the artifact rather than in agent memory.
