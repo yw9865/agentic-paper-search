@@ -4,6 +4,41 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-19
+
+11 new papers (2 Security, 9 Optimization).
+
+Almost all land in the 2026-08-15 to 2026-08-17 submission window; arXiv had not yet
+announced the 2026-08-18 batch at scan time, so the next run should re-check IDs above
+2608.169xx. `export.arxiv.org/api` again returned HTTP 429 and then timed out on two
+category-scoped queries; the successful queries plus `arxiv.org/abs` verification pages
+carried the scan.
+
+**Security**
+- Proof-of-Execution Memory: Defending LLM Agents Against Forged-Reasoning Attacks by Verifying What Actually Happened — 2608.16032
+- What to Remember, What to Reveal: Privacy-Aware Memory for Conversational Agents — 2608.16551
+
+**Optimization**
+- MELD: A Protocol for Merging Knowledge Across Distributed Agentic Memories — 2608.16357
+- QUMem: Personalized Memory for Query-Conditioned User-State Inference in LLM Agents — 2608.16168
+- HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory — 2608.16114
+- FTA-Mem: Fact-Time-Affect Anchored Memory for Low-Density Long-Term Dialogue — 2608.16303
+- HyMem: Hierarchical Context Management for Long-Horizon Agents via Information Isolation — 2608.15703
+- Mental Model Management: An Operator-Based Framework for LLM Memory — 2608.15451
+- Harness the Memory: A Holistic Evaluation of Memory Substrates in Memory Agents — 2608.15008
+- LENS: In-Context Search via Latent Evidence Exploration over Dynamic Raw Documents — 2608.16185
+- Don't Drop the BATON: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-aware Memory — 2608.16889
+
+Judgment calls: LENS (2608.16185) and BATON (2608.16889) are borderline — neither is a
+persistent-memory system in the usual sense. LENS is kept on the precedent of 2608.12888
+(agent-controlled raw search as an alternative to structured memory); BATON is kept because
+its subtask-solution bank and transition handoff are doing agent-memory work, and it is
+benchmarked on RoboMemArena. Excluded as keyword collisions or out-of-scope: Proteus
+(2608.16844, long-context model architecture), GaussMemory (2608.14986, 3D scene
+representation), EgoMonth (2608.13113, video benchmark).
+
+---
+
 ## 2026-08-18
 
 10 new papers (0 Security, 10 Optimization).

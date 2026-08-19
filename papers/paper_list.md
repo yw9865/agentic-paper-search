@@ -617,6 +617,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: ORISA recovers deleted conversations from on-device LLM apps by reconstructing token sequences and session-level attention state from the batch tokens and KV-cache tensors left in process memory, then rehosts the session so it can recall context the original session had already dropped. Across 60 configurations (10 Android LLM apps, 3 model architectures) it recovers 100% of tokens and KV-cache tensors inside the active context window plus substantial out-of-window context, showing that deletion at the application layer does not erase conversational memory and that rehosted sessions retain more than the originals. Framed as forensics, but the exposed surface is the agent's conversational memory and KV cache.
 
+### Proof-of-Execution Memory: Defending LLM Agents Against Forged-Reasoning Attacks by Verifying What Actually Happened
+- **arXiv**: 2608.16032 ([link](https://arxiv.org/abs/2608.16032))
+- **Date**: 2026-08-17
+- **Category**: Security
+- **Summary**: Breaks the SENTINEL defense against FARMA (memory entries falsely claiming a safety step was already completed, causing the agent to skip it) by simply asking an LLM to reword the forgery — 98-100% attack success on GPT-4o. The proposed replacement, PoEM, moves the trust anchor out of the text: a tamper-evident HMAC-chained ledger kept separate from ordinary memory, writable only by the trusted action layer, so an entry cannot exist for a step that never ran regardless of phrasing. Reported to cut attack success to 0% while avoiding SENTINEL's 33-50% false blocking of legitimate operations.
+
+### What to Remember, What to Reveal: Privacy-Aware Memory for Conversational Agents
+- **arXiv**: 2608.16551 ([link](https://arxiv.org/abs/2608.16551))
+- **Date**: 2026-08-17
+- **Category**: Security
+- **Summary**: Attacks the default assumption that long-term agent memory must store raw user values to be useful. SP-Mem decouples memory utility from exact private-value exposure by detecting sensitive spans at write time, keeping sanitized and private stores separate, and releasing the private value only when the task requires it and the user consents. Ships a privacy-aware benchmark scoring response quality, privacy behavior, and cost together, and reports retained personalization at lower unnecessary PII exposure across several LLM agents.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1783,3 +1795,57 @@ Format per entry:
 - **Date**: 2026-08-11 (v2 2026-08-12)
 - **Category**: Optimization
 - **Summary**: Takes the opposite position from most long-horizon memory work: instead of persistent sessions, memories, or shared context, EvoX Genesis makes the *project* persistent and lets agents stay finite-lived, with each local world situated by an accepted version and repository path and only accepted consequences advancing the version history. Evidence is substantial — a Rust C compiler at ~250k tracked lines built over 120+ hours across 1,000+ archived agent episodes for US$44, passing the full c-testsuite, plus continued development across repeated agent replacement. Worth tracking as the strongest current argument that long-horizon continuity can live in the artifact rather than in agent memory.
+
+### MELD: A Protocol for Merging Knowledge Across Distributed Agentic Memories
+- **arXiv**: 2608.16357 ([link](https://arxiv.org/abs/2608.16357))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: Addresses the case where agents can already share transport and tools but cannot reconcile what they each believe. MELD is a coherence layer over federated agent memories: each incoming claim resolves to insert, merge, relate, conflict, or reject using claim-key identity scope, embedding similarity, and NLI, with all state mutation flowing through authenticated auditable patches and a per-claim status CRDT over pub/sub, so there is no central coordinator and partitions self-heal. On HotpotQA, distributed merging matches centralized recall at roughly 11% less live storage (0.968 AUC merge classifier), with better partition recovery than last-writer-wins.
+
+### QUMem: Personalized Memory for Query-Conditioned User-State Inference in LLM Agents
+- **arXiv**: 2608.16168 ([link](https://arxiv.org/abs/2608.16168))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: Names three concrete failure modes in personalization memory — rigid segmentation that splits related dialogue, storing heterogeneous information as one undifferentiated unit, and flat top-k retrieval that misses preference patterns. QUMem segments history by semantic continuity and then decomposes each segment into independently retrievable factual, preference, and transferable-insight memories that keep temporal position and source evidence; at inference three sequential agents identify the information need, plan a multi-query retrieval, and infer a temporally valid user state. Reports state of the art on PersonaMem and KnowU-Bench.
+
+### HyperSkill: Self-Evolving LLM Agents via Hypergraph-Structured Skill Memory
+- **arXiv**: 2608.16114 ([link](https://arxiv.org/abs/2608.16114))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: Argues existing procedural memory discards the compositional relationship between subtasks and the skills that solve them. HyperSkill stores both as node types in a hypergraph whose hyperedges are task trajectories, retrieves along both the subtask and trajectory paths while ranking skills by co-occurrence, and runs periodic structure-informed maintenance that prunes underperforming nodes and consolidates redundant skills via quality-weighted propagation. Gains of up to +11.51 on GAIA and +11.18 on WebWalkerQA against ten memory baselines.
+
+### FTA-Mem: Fact-Time-Affect Anchored Memory for Low-Density Long-Term Dialogue
+- **arXiv**: 2608.16303 ([link](https://arxiv.org/abs/2608.16303))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: Targets a regime most long-term memory work ignores: emotional-support dialogue, where turns are incomplete, evidence is scattered across many turns, and the user state itself drifts. FTA-Mem uses boundary-preserving window segmentation to recover coherent situation fragments, then encodes each memory unit along factual content, temporal grounding, and affective context. Evaluated on ES-MemEval and LoCoMo, with the paper's own granularity ablation arguing situation-level units strike the better balance between evidence preservation and construction cost.
+
+### HyMem: Hierarchical Context Management for Long-Horizon Agents via Information Isolation
+- **arXiv**: 2608.15703 ([link](https://arxiv.org/abs/2608.15703))
+- **Date**: 2026-08-16
+- **Category**: Optimization
+- **Summary**: Diagnoses long-horizon degradation as execution traces and intermediate outputs crowding out high-level planning state, and blames existing compression/retrieval for treating context as one flat layer. HyMem splits context into functional layers, routing complex subtasks into an isolated reasoning module so their byproducts never enter the persistent planning context, while a memory component carries task progress across refreshes as structured summaries. Reports 66.7% and 61.3% average Pass@1 on GAIA and Browsecomp-plus with DeepSeek-V4, +6.1 and +4.7 points over the strongest baseline.
+
+### Mental Model Management: An Operator-Based Framework for LLM Memory
+- **arXiv**: 2608.15451 ([link](https://arxiv.org/abs/2608.15451))
+- **Date**: 2026-08-16
+- **Category**: Optimization
+- **Summary**: Proposes treating memory as a compact evolving conceptual model rather than a store of retrievable text passages, maintained by an explicit operator set: knowledge extraction, model retrieval, chunk addition and update, representation reorganization, inconsistency detection, and knowledge derivation. Position-and-framework paper with Evolution Strategies as the worked case study rather than a benchmarked system, but relevant as an explicit consolidation/reorganization account of what memory maintenance should do.
+
+### Harness the Memory: A Holistic Evaluation of Memory Substrates in Memory Agents
+- **arXiv**: 2608.15008 ([link](https://arxiv.org/abs/2608.15008))
+- **Date**: 2026-08-15
+- **Category**: Optimization
+- **Summary**: Controlled comparison of seven memory substrate families (retrieval-based through learned) across three model variants, four datasets spanning QA and sequential decision-making, and 26 performance and efficiency metrics. The headline finding is that no substrate dominates: broad retrieval helps long-context factual QA but excessive retrieval actively hurts sequential decision-making by diverting attention from action-relevant information, which the authors read as an argument for dynamic routing over a single fixed memory design.
+
+### LENS: In-Context Search via Latent Evidence Exploration over Dynamic Raw Documents
+- **arXiv**: 2608.16185 ([link](https://arxiv.org/abs/2608.16185))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: Removes the index-construction step entirely for agents querying document collections that change faster than an index can be rebuilt. LENS maintains a query-conditioned belief over candidate units and explores raw documents under a fixed budget via lexical matching, local analysis, and exploratory moves, with an LLM scoring relevance and progressively concentrating on promising regions. Reaches 62.4% exact match with evidence retrieved in 84.8% of cases, and on unindexed Wikipedia matches a baseline (43.3% vs 42.7%) while grounding answers far more often (84.0% vs 70.7%) — a companion data point to the "raw search rivals structured memory" line of results.
+
+### Don't Drop the BATON: Long-Horizon Robot Manipulation via Agentic Subtask Exploration and Transition-aware Memory
+- **arXiv**: 2608.16889 ([link](https://arxiv.org/abs/2608.16889))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: Applies agent-memory structure to embodied long-horizon tasks: treating each subtask as an independent exploration unit and banking its solution in memory drops exploration cost from exponential (T^K) to linear (T*K) in the number of stages, with successful subtask solutions later composed into full trajectories. The transition-aware part is where the memory does real work — a verifier agent gates invocation transitions and a handoff mechanism restores entry state between subtasks, addressing the compounding-error failure mode. Reports ~11.6% task-success and 14.9% cumulative-success gains on RoboMemArena with no parameter updates.
