@@ -629,6 +629,30 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Attacks the default assumption that long-term agent memory must store raw user values to be useful. SP-Mem decouples memory utility from exact private-value exposure by detecting sensitive spans at write time, keeping sanitized and private stores separate, and releasing the private value only when the task requires it and the user consents. Ships a privacy-aware benchmark scoring response quality, privacy behavior, and cost together, and reports retained personalization at lower unnecessary PII exposure across several LLM agents.
 
+### GraphWake: Group Polarization via Memory-Mediated Polarization Cascade in LLM-Agent Communities
+- **arXiv**: 2608.17665 ([link](https://arxiv.org/abs/2608.17665))
+- **Date**: 2026-08-18
+- **Category**: Security
+- **Summary**: Turns agent memory from a poisoning target into a propagation medium: the Memory-Mediated Polarization Cascade first exposes target agents to stance-reinforcing arguments their memory retains, then triggers retrieval and reproduction with stance-neutral discussion cues, after which untreated agents amplify what they hear. GraphWake implements this with stance-support argumentation knowledge graphs, axiom-oriented triple selection to distill arguments into forms that survive retention, and stance-neutral memory cueing to start the spread. Notable because the attacker never has to touch the second-hop agents' memory directly — the community does the work, and it reproduces across multiple discussion contexts and memory systems.
+
+### Authorization Before Context: A Model-Neutral Audience Boundary Against Cross-Audience Memory Leakage in Agentic Systems
+- **arXiv**: 2608.17148 ([link](https://arxiv.org/abs/2608.17148))
+- **Date**: 2026-08-17
+- **Category**: Security
+- **Summary**: Targets the leak where a fact a personal agent learned in one conversation later shows up in a prompt assembled for a different audience. The rule is anti-monotone and enforced at the memory-to-context boundary rather than in the model: each item carries the audience present when it was written, the current viewer set comes from channel metadata (defaulting to public when ambiguous), and an item is admitted only if every current viewer already belonged to its recorded audience. On a synthetic Contextual-Integrity suite no forbidden fact entered the assembled context where baselines admitted them; the authors themselves flag the evidence as preliminary and synthetic.
+
+### Auditing Self-Evolution in Financial Agents: Capability Gains, Security Drift, and Execution-Interface Mismatch
+- **arXiv**: 2608.17684 ([link](https://arxiv.org/abs/2608.17684))
+- **Date**: 2026-08-18
+- **Category**: Security
+- **Summary**: Measures what self-evolving memory buys and what it costs by auditing SkillOpt, Agent Workflow Memory, and ReasoningBank in simulated e-banking with sealed evaluation endpoints and independent state replay. On Qwen 3.7 Flash, SkillOpt lifts benign utility 0.741 to 0.837 but exposure to injected content rises 0.820 to 0.943, and although conditional attack success after exposure *falls* (0.605 to 0.562), overall ASR still rises 0.496 to 0.530 with unauthorized financial state changes reaching 0.685 — accumulated memory widens attack-surface contact faster than it hardens behavior. ReasoningBank is the counterexample (utility 0.859 with no aggregate ASR increase), and an AWM artifact-executor mismatch shows how easily such audits are confounded by harness details rather than memory design.
+
+### Agent libOS: A Runtime Substrate for Capability-Controlled Self-Evolving LLM Agents
+- **arXiv**: 2606.03895 ([link](https://arxiv.org/abs/2606.03895))
+- **Date**: 2026-06-02 (v3 2026-08-18, substantially expanded)
+- **Category**: Security
+- **Summary**: Treats the memory, skills, tools, and child processes an agent accumulates across deployments as capabilities that must be granted rather than inherited, and puts three separate planes under the agent: an operation plane gating actions on process identity, task-level authority ceilings, typed capabilities, policy, budget, and human approval; an information-flow plane labeling data with provenance and confining sensitive exports to approved channels; and a durable-evidence plane recording decisions and resource use without conferring privilege. Relevant as the systems-level counterpart to per-attack memory defenses — it assumes accumulated state is untrusted by construction. Reports 33 deterministic tasks passing across 12 production model configurations while preserving the stated guarantees.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1849,3 +1873,51 @@ Format per entry:
 - **Date**: 2026-08-17
 - **Category**: Optimization
 - **Summary**: Applies agent-memory structure to embodied long-horizon tasks: treating each subtask as an independent exploration unit and banking its solution in memory drops exploration cost from exponential (T^K) to linear (T*K) in the number of stages, with successful subtask solutions later composed into full trajectories. The transition-aware part is where the memory does real work — a verifier agent gates invocation transitions and a handoff mechanism restores entry state between subtasks, addressing the compounding-error failure mode. Reports ~11.6% task-success and 14.9% cumulative-success gains on RoboMemArena with no parameter updates.
+
+### CABLE: Extending the Reach of Memory Retrieval via Complementary Antecedent-Based Linking and Expansion
+- **arXiv**: 2608.17911 ([link](https://arxiv.org/abs/2608.17911))
+- **Date**: 2026-08-18
+- **Category**: Optimization
+- **Summary**: Starts from the observation that preserving long-term history does not guarantee later contexts can recover the relevant evidence through a bounded retrieval interface — similarity-based retrieval systematically misses earlier experiences and plans that are semantically distant from the current query. CABLE builds links designed to be *complementary* rather than duplicative: for each new memory it generates targeted queries, retrieves prior memories, discards the semantically obvious candidates a normal retriever would already surface, verifies the rest, and adds only those to a sparse graph used at query time to expand results. Gains are largest exactly where flat retrieval is weakest — evidence distributed across multiple memories or sessions.
+
+### D²ACCI: A Dual-Loop Diagnostic Protocol for Evidence-Preserving Agent Memory
+- **arXiv**: 2608.17756 ([link](https://arxiv.org/abs/2608.17756))
+- **Date**: 2026-08-18
+- **Category**: Optimization
+- **Summary**: Addresses why multi-stage memory pipelines (ingestion, retrieval, filtering, generation) are hard to improve: an end-to-end score says a change helped or hurt but not which stage broke. The dual-loop protocol pairs an inner iteration loop with an outer diagnostic gate that promotes, feature-flags, or rejects a memory intervention based on paired evidence, and introduces DCR to measure how localizable a failure actually is. Implemented in MemStack it reports 93.59% on LoCoMo, 90.93% on LongMemEval, and 57.20% on PersonaMem-V2, with diagnostic traces reaching 98-100% DCR@3 against 0% for results-only logs — an argument that memory-system evaluation needs stage-level observability, not just leaderboard numbers.
+
+### On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification
+- **arXiv**: 2608.18066 ([link](https://arxiv.org/abs/2608.18066))
+- **Date**: 2026-08-18
+- **Category**: Optimization
+- **Summary**: Re-evaluates memory-based self-improving agents across multiple runs and randomized task sequences and finds the reported gains are far less stable than single-run numbers suggest: complex multi-step environments produce noisy evaluations that the self-improvement loop then amplifies, and performance is highly sensitive to task order, meaning prior results leaned on implicit favorable curricula. Manual inspection of agent memory traces the residual failures to task and environment underspecification; adding rubrics and environment feedback narrows but does not close the gap. A useful corrective for the memory-consolidation literature — write-back loops inherit and magnify whatever noise the evaluator has.
+
+### Explicit State Elicitation Is Not Enough: A Controlled Audit of Memory-Policy Classification
+- **arXiv**: 2608.17247 ([link](https://arxiv.org/abs/2608.17247))
+- **Date**: 2026-08-18
+- **Category**: Optimization
+- **Summary**: Audits the routing decision at the heart of memory maintenance — whether a retrieved user memory should be used, ignored, updated, or queried — and asks whether forcing the model to state the memory's state explicitly improves that policy. Initial synthetic-dataset gains dissolve under diagnosis: the model was keying on lexical patterns, and on a matched counterfactual test set exposing the four state definitions helps while an isolated explicit state-output field does not significantly improve policy accuracy. Also shows example-level metrics overstate consistency relative to family-level evaluation, so reported memory-policy accuracy in this setting is easy to inflate.
+
+### Memory Is Communication: The Frontier Between Remembering and Signaling
+- **arXiv**: 2608.17053 ([link](https://arxiv.org/abs/2608.17053))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: Frames memory and inter-agent communication as competing draws on one bounded information budget and proposes a remembering-signaling frontier describing the efficient trade-offs between memory rate and communication rate at a fixed task-performance target. The core hypothesis is that an agent needs less peer communication the more loss reduction it extracts from its own history. Position/early-stage work — preliminary referential-game experiments show repeated targets correlate with shorter successful messages while hidden cyclic predictability does not — but relevant as a budget-allocation framing for multi-agent memory sizing.
+
+### Agent-Native Telemetry: Verifiable State-Delta Evidence for Autonomous Operations
+- **arXiv**: 2608.16178 ([link](https://arxiv.org/abs/2608.16178))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: Argues operational logs are verbose because they were designed for humans to read, and replaces prose telemetry with state deltas an agent consumes directly: the Agent Telemetry Protocol and State-Delta Evidence Ledger record facts as Transitions, Observations, Relations, and State Checkpoints under cryptographic signing and hash-chaining. Reports 96.4% smaller payloads than OpenTelemetry JSON and 88.8% fewer LLM context tokens, while detecting adversarial storage mutations and resisting prompt injection. Telemetry-framed rather than memory-framed, but it is durable agent-consumed state with both a context-cost and a tamper-evidence result — a close cousin of the ledger-based memory-integrity work already tracked here.
+
+### Ontology-Grounded Project Memory for Coding Agents
+- **arXiv**: 2608.13662 ([link](https://arxiv.org/abs/2608.13662))
+- **Date**: 2026-08-13
+- **Category**: Optimization
+- **Summary**: Replaces vector memory with a knowledge graph for the specific memory a coding agent needs — architectural decisions, lessons, constraints, and rationales — carrying lifecycle status, provenance, and supersession, exposed over MCP and queried through the MOOSE neurosymbolic engine. On 835 typed records MOOSEDev hits 0.98-1.00 recall on supersession, set-completeness, and negation queries where a production vector baseline manages only 6-27%, at comparable relevance recall and token cost. The result isolates *which* query classes embedding retrieval structurally cannot serve rather than claiming a general win.
+
+### LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation
+- **arXiv**: 2608.11967 ([link](https://arxiv.org/abs/2608.11967))
+- **Date**: 2026-08-12
+- **Category**: Optimization
+- **Summary**: Identifies a credit-assignment mismatch in agent reflection: the decision to reflect is made locally within the current branch, but its value is only visible in the final trajectory outcome. LoongReflect recasts reflection as a memory-control policy over a reversible trajectory tree with explicit reflect and backtrack actions, trained by a fast distillation channel from a privileged teacher alongside a slower outcome-based optimization channel so local decisions align with eventual success. Beats outcome-only RL and self-distillation on RAG and math reasoning benchmarks; relevant as an explicit learned policy over what to keep, revisit, and discard.

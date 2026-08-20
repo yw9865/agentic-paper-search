@@ -4,6 +4,40 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-20
+
+12 new papers (4 Security, 8 Optimization).
+
+The 2026-08-18 batch the previous run flagged as not-yet-announced is now visible, and
+it supplies most of this run: 2608.176xx-2608.180xx. Four additions fall outside the
+3-day window but were genuinely missed rather than filtered — 2608.16178 and 2608.17053
+(2026-08-17), 2608.13662 (2026-08-13), 2608.11967 (2026-08-12) — plus one substantially
+expanded v3 (2606.03895, v1 2026-06-02, v3 2026-08-18, 21KB to 54KB).
+
+Security:
+- GraphWake: Group Polarization via Memory-Mediated Polarization Cascade in LLM-Agent Communities (2608.17665)
+- Authorization Before Context: A Model-Neutral Audience Boundary Against Cross-Audience Memory Leakage in Agentic Systems (2608.17148)
+- Auditing Self-Evolution in Financial Agents: Capability Gains, Security Drift, and Execution-Interface Mismatch (2608.17684)
+- Agent libOS: A Runtime Substrate for Capability-Controlled Self-Evolving LLM Agents (2606.03895, v3)
+
+Optimization:
+- CABLE: Extending the Reach of Memory Retrieval via Complementary Antecedent-Based Linking and Expansion (2608.17911)
+- D²ACCI: A Dual-Loop Diagnostic Protocol for Evidence-Preserving Agent Memory (2608.17756)
+- On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification (2608.18066)
+- Explicit State Elicitation Is Not Enough: A Controlled Audit of Memory-Policy Classification (2608.17247)
+- Memory Is Communication: The Frontier Between Remembering and Signaling (2608.17053)
+- Agent-Native Telemetry: Verifiable State-Delta Evidence for Autonomous Operations (2608.16178)
+- Ontology-Grounded Project Memory for Coding Agents (2608.13662)
+- LoongReflect: Boosting Long-Horizon Reflection in Search Agents via Global Perspective Distillation (2608.11967)
+
+Skipped as off-topic or keyword collisions: 2608.17007 (SkillEffect — "memory-bounded"
+refers to process RAM limits on generated tool code, not agent memory), 2604.12616v2
+(MemJack — memory used as an attack *tool* for VLM jailbreaks, agent memory is not the
+target), 2608.16843 (embodied-agent security survey where memory is 1 of 12 attack
+surfaces and only noted as underexplored), 2608.16944 (KV-cache scheduling theory).
+
+---
+
 ## 2026-08-19
 
 11 new papers (2 Security, 9 Optimization).
