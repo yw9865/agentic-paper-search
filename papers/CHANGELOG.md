@@ -4,6 +4,47 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-21
+
+7 new papers (1 Security, 6 Optimization).
+
+Thin day at the front of the window: only the 2026-08-19 announcement batch was new
+(2608.186xx-2608.192xx), and most of it is off-topic. Four additions are catch-ups rather
+than fresh submissions — 2608.16630 (2026-08-17), 2608.14621 (AutoMem, submitted
+2026-07-14 but only announced in August, so it never surfaced in a July run), and
+2607.17619 (2026-07-20, ISSTA 2026, cs.CR-only listing which is why the agent-memory
+queries missed it). Nothing dated 2026-08-20 or 08-21 is announced yet.
+
+Security:
+- Insecure Coding Preferences in Long-Term Memory: Security Risks for LLM-based Code Generation (2607.17619)
+
+Optimization:
+- MemFuse: Multi-Source Memory Fusion from Fragmented Observations (2608.18704)
+- Towards Reversible Forgetting: Managing Obsolete Knowledge in Continual Enterprise AI Agents (2608.18177)
+- AutoMem: A Text-Gradient Recursive Self-Improvement Framework for Automated Memory Architectures Search (2608.14621)
+- rEDMRec: Distilling Large Language Model Reasoning into an Editable Experience Memory for Recommendation (2608.18952)
+- The Working Set of a Coding Agent: Coherence Debt in Repository-Scale Tasks (2608.16630)
+- Adaptive Memory and Reflection Multi-Agent System for Medical Question Answering (2608.19029)
+
+Skipped as off-topic or keyword collisions: 2608.19197 (SPADE — "environment memory" is
+generated RL training environments), 2608.19047 (Eureka — token compression via
+orchestration/memoization for math discovery, not a memory system), 2608.18677 (Sanyu
+Studio — art-history narrative agents), 2608.18638 (workshop report), 2608.18637 (PILOT —
+Memory Curator is 1 of 3 roles in an A/B-testing agent, evaluated on transaction metrics),
+2608.18423 (FM-Bench — long-horizon management benchmark; self-managed memory failure is a
+single incidental finding), 2608.16417 (D2-ScaleAgent — "working memory" is an evidence
+bank for multimodal doc RAG), 2608.16402 (policy algebra where memory is 1 of 9 constraint
+dimensions, same reason 2608.16843 was skipped), 2608.18104 (self-evolving agent survey,
+memory one component), 2608.15193 (Valhalla — scientific knowledge-base governance).
+
+Verification note: the arXiv search summarizer returned 2608.18013 as "Harness Continual
+Learning"; fetching that abstract page gave an unrelated condensed-matter paper on MoWS2
+optoelectronic synapses. The ID was bad, so nothing was recorded for it. arXiv's export API
+also returned HTTP 429 for the first query batch — the run switched to the arxiv.org search
+UI, which served the same coverage.
+
+---
+
 ## 2026-08-20
 
 12 new papers (4 Security, 8 Optimization).

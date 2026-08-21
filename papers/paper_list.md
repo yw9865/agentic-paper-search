@@ -653,6 +653,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Treats the memory, skills, tools, and child processes an agent accumulates across deployments as capabilities that must be granted rather than inherited, and puts three separate planes under the agent: an operation plane gating actions on process identity, task-level authority ceilings, typed capabilities, policy, budget, and human approval; an information-flow plane labeling data with provenance and confining sensitive exports to approved channels; and a durable-evidence plane recording decisions and resource use without conferring privilege. Relevant as the systems-level counterpart to per-attack memory defenses — it assumes accumulated state is untrusted by construction. Reports 33 deterministic tasks passing across 12 production model configurations while preserving the stated guarantees.
 
+### Insecure Coding Preferences in Long-Term Memory: Security Risks for LLM-based Code Generation
+- **arXiv**: 2607.17619 ([link](https://arxiv.org/abs/2607.17619))
+- **Date**: 2026-07-20
+- **Category**: Security
+- **Summary**: Studies a poisoning vector that needs no attacker at all: an ordinary user preference recorded in a coding assistant's long-term memory ("skip input validation", "use MD5") silently steers security-critical decisions in later sessions. Across four LLMs and five programming languages, stored insecure preferences raise vulnerability rates by 2.7-50.3 percentage points, and the model's warning rate lags the vulnerability increase by 5.4-14.0 points, so the user is not told. Memory-level safety filtering detects 100% of risky entries while prompt-side mitigations cut vulnerabilities only 19.7-33.6 points and cost up to 15.9 points of functional accuracy — evidence that the fix belongs at the memory write boundary. Accepted to ISSTA 2026.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1921,3 +1927,39 @@ Format per entry:
 - **Date**: 2026-08-12
 - **Category**: Optimization
 - **Summary**: Identifies a credit-assignment mismatch in agent reflection: the decision to reflect is made locally within the current branch, but its value is only visible in the final trajectory outcome. LoongReflect recasts reflection as a memory-control policy over a reversible trajectory tree with explicit reflect and backtrack actions, trained by a fast distillation channel from a privileged teacher alongside a slower outcome-based optimization channel so local decisions align with eventual success. Beats outcome-only RL and self-distillation on RAG and math reasoning benchmarks; relevant as an explicit learned policy over what to keep, revisit, and discard.
+
+### MemFuse: Multi-Source Memory Fusion from Fragmented Observations
+- **arXiv**: 2608.18704 ([link](https://arxiv.org/abs/2608.18704))
+- **Date**: 2026-08-19
+- **Category**: Optimization
+- **Summary**: Attacks an assumption baked into most agent-memory benchmarks — that history arrives as one clean textual stream — and instead models evidence scattered across applications, devices, users, and time. MemFuseBench synthesizes controllable scenarios into source-tagged observations, evidence-grounded questions, and adversarial distractors via a Scene-to-Sensor pipeline, isolating temporal reasoning, cross-source fusion, and noise robustness. MemFuse itself keeps source-level evidence in an event-layer atomic memory and clusters related events into a causal fusion graph, so retrieval can assemble fragments while staying traceable to the originating source; best overall across all three LLM settings, with the gain concentrated on cross-source questions.
+
+### Towards Reversible Forgetting: Managing Obsolete Knowledge in Continual Enterprise AI Agents
+- **arXiv**: 2608.18177 ([link](https://arxiv.org/abs/2608.18177))
+- **Date**: 2026-08-18
+- **Category**: Optimization
+- **Summary**: Argues continual learning has the objective backwards for deployed agents: in non-stationary settings where policies, tools, and market conditions shift, indiscriminate retention lets obsolete knowledge drive decisions and create negative transfer. Proposes reversible forgetting — active, dormant, and retired memory states plus a reactivation transition — instantiated as a Hysteretic Reversible Memory Controller that accumulates relevance evidence, uses asymmetric thresholds to stop state oscillation, tests reactivation in shadow mode, and gates retirement behind policy. Conceptual/position work, but it makes the distinction between temporary suppression and permanent erasure explicit, which most forgetting policies conflate.
+
+### AutoMem: A Text-Gradient Recursive Self-Improvement Framework for Automated Memory Architectures Search
+- **arXiv**: 2608.14621 ([link](https://arxiv.org/abs/2608.14621))
+- **Date**: 2026-07-14 (announced 2026-08)
+- **Category**: Optimization
+- **Summary**: Treats memory design as an architecture search problem over a factored space of 5 encoders, 5 stores, 6 retrievers, and 4 managers, first establishing that no single combination dominates — different tasks and backbones favor different modules by large margins. AutoMem searches that space with two text-gradient components: Experience-Guided Architecture Search proposing candidates from prior search trajectories and reflections, and Failure-Guided Module Diagnosis localizing failures to a specific module and converting them into targeted textual feedback. Beats the strongest human-designed baselines by 2.8 points on average across GAIA, WebWalkerQA, and xBench-DeepSearch, while cutting token cost 14.3% and outperforming much larger random searches within a few guided iterations.
+
+### rEDMRec: Distilling Large Language Model Reasoning into an Editable Experience Memory for Recommendation
+- **arXiv**: 2608.18952 ([link](https://arxiv.org/abs/2608.18952))
+- **Date**: 2026-08-19
+- **Category**: Optimization
+- **Summary**: Premised on the observation that reasoning need not be regenerated per call if it can be compressed once into structured memory, rEDMRec distills a teacher LLM's reasoning into four typed, editable experience channels (long-term preference, short-term context, item perception, counterfactual hard-negative comparisons). A memory controller maintains the bank through Add/Delete/Modify/Keep operations refined by K-agent debate, after which a lightweight student ranks candidates by retrieval alone with no further teacher calls. Up to 13.3% over the second-best baseline on ML-1M across three datasets and ten student backbones, with debate-based optimization cutting bank duplication by 7.4 points — an inference-cost-motivated case for editable experience memory.
+
+### The Working Set of a Coding Agent: Coherence Debt in Repository-Scale Tasks
+- **arXiv**: 2608.16630 ([link](https://arxiv.org/abs/2608.16630))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: Models repository-scale editing as reconstructing a coupled-fact graph where every edit needs facts drawn from either recent context or parametric memory, and names the shortfall coherence debt. Across seven models and five harnesses with information channels supplied and withheld, no model completes unseen-API tasks without both channels, and — the useful negative result — availability decides the outcome while distance does not: a supplied fact helps equally whether it sits near the edit or far away. Harnesses differ enormously in tokens consumed for identical output because of differing rebuild rates, agents fabricate rather than report missing facts, and on SWE-bench-style benchmarks where the model already knows the repo, read-based success predictors stop applying.
+
+### Adaptive Memory and Reflection Multi-Agent System for Medical Question Answering
+- **arXiv**: 2608.19029 ([link](https://arxiv.org/abs/2608.19029))
+- **Date**: 2026-08-19
+- **Category**: Optimization
+- **Summary**: Multi-agent medical QA framework in which specialized agents each hold dedicated memory and use reflection-based feedback to retrieve relevant prior cases and improve subsequent reasoning, routing questions through solo, collaborative, or escalated workflows under consensus and ethical-oversight modules. Competitive with baselines on MedQA and MedMCQA; the memory-relevant result is the ablation, which shows agent-specific memory, reflection, and external retrieval are complementary rather than redundant. Application-level rather than a memory-systems contribution, tracked for the per-agent memory partitioning result.
