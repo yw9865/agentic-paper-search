@@ -659,6 +659,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Studies a poisoning vector that needs no attacker at all: an ordinary user preference recorded in a coding assistant's long-term memory ("skip input validation", "use MD5") silently steers security-critical decisions in later sessions. Across four LLMs and five programming languages, stored insecure preferences raise vulnerability rates by 2.7-50.3 percentage points, and the model's warning rate lags the vulnerability increase by 5.4-14.0 points, so the user is not told. Memory-level safety filtering detects 100% of risky entries while prompt-side mitigations cut vulnerabilities only 19.7-33.6 points and cost up to 15.9 points of functional accuracy — evidence that the fix belongs at the memory write boundary. Accepted to ISSTA 2026.
 
+### Inadvertent Context Leakage in Language Models
+- **arXiv**: 2608.19857 ([link](https://arxiv.org/abs/2608.19857))
+- **Date**: 2026-08-20
+- **Category**: Security
+- **Summary**: Shows that merely holding sensitive user context (calendars, credentials, health and financial records) in an agent's window imprints recoverable correlations on ordinary benign outputs, so secrets leak even when the model correctly refuses direct extraction — and that an adversary can amplify the channel, using the model as a covert carrier. A black-box adaptive attack across eight proprietary models reconstructs 2-digit in-context secrets near-perfectly and 4-digit secrets at 82% exact match from responses to non-adversarial requests; a trained classifier infers semantic predicates about stored user memories (health conditions, financial events), and an RL-trained adversary extracts full SSNs from a production-style agent. The load-bearing finding for memory design: more capable models leak *more*, because stronger instruction-following raises sensitivity to in-context state — leakage as a byproduct of capability rather than a patchable bug.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -1963,3 +1969,45 @@ Format per entry:
 - **Date**: 2026-08-19
 - **Category**: Optimization
 - **Summary**: Multi-agent medical QA framework in which specialized agents each hold dedicated memory and use reflection-based feedback to retrieve relevant prior cases and improve subsequent reasoning, routing questions through solo, collaborative, or escalated workflows under consensus and ethical-oversight modules. Competitive with baselines on MedQA and MedMCQA; the memory-relevant result is the ablation, which shows agent-specific memory, reflection, and external retrieval are complementary rather than redundant. Application-level rather than a memory-systems contribution, tracked for the per-agent memory partitioning result.
+
+### Toward Reliable Context Compression for Long-Horizon Agents: An Empirical Study of Execution Instability
+- **arXiv**: 2608.06503 ([link](https://arxiv.org/abs/2608.06503))
+- **Date**: 2026-08-06
+- **Category**: Optimization
+- **Summary**: Preliminary study showing that recurrent context compression, the standard way to bound context growth in long-horizon agents, systematically weakens the influence of recent interactions — raising blocked actions, repeated exploration, and run-to-run instability. Proposes TRACE, which evaluates each individual compaction event via paired closed-loop continuations from the same environment state and uses the resulting summary preferences to optimize a natural-language compression prompt with all models frozen, improving task performance, multi-run reliability, and context-execution efficiency over compression baselines on AppWorld. Argues for boundary-local (per-compaction) evaluation instead of end-of-episode scoring. Catch-up entry: submitted 2026-08-06 but missed by prior runs.
+
+### Harness Continual Learning: Continual Adaptation Beyond Model Parameters
+- **arXiv**: 2608.19013 ([link](https://arxiv.org/abs/2608.19013))
+- **Date**: 2026-08-19
+- **Category**: Optimization
+- **Summary**: Reframes continual learning around the agent's harness — prompts, memories, tools, skills, routing rules — rather than model parameters, and names the failure mode harness-level forgetting: a harness update can break previously reliable behavior even with a frozen model. Instantiates HCL over four execution-facing components (Task Interface, Experience Memory, Capability Map, Adaptive Router) and separates update generation from state commitment via guarded harness evolution, where a Continual Optimizer proposes candidate harnesses from post-execution feedback and a Continual Evaluator commits only after checking current improvement, historical retention, and validity. Over 10% relative gains in multiple settings across textual reasoning, multimodal perception, and open-world interaction; retention sweeps make the stability-plasticity trade-off explicitly tunable. Relevant as the write-side counterpart to retrieval-focused memory work — the ID prior runs failed to resolve when a search summarizer returned a bad 2608.18013.
+
+### Remember, Verify, or Ask? Cross-Family Evaluation of Memory Commitment in LLM Agents
+- **arXiv**: 2608.19564 ([link](https://arxiv.org/abs/2608.19564))
+- **Date**: 2026-08-20
+- **Category**: Optimization
+- **Summary**: Targets the memory-clarification boundary — whether interaction-derived information should be persisted durably, used only in the current context, re-verified, or clarified with the user — via MCB (140 primary scenarios plus a 70-item contrast set, with non-author labeling at 97.1% agreement, kappa 0.962) scoring both stated action labels and structured tool-call selection. Across Claude and Qwen, models verify changing facts far more reliably than they ask users to resolve ambiguity (bare Qwen asks on 0/12 clarification items while verifying 12/18 freshness items); few-shot prompting lifts accuracy 0.557 to 0.771 yet clarification recall stays at 0.333, and a policy prompt cuts erroneous persistence 0.243 to 0.100. The methodological finding: label-tool agreement is only 57% (Claude) and 23% (Qwen), so memory write policies evaluated on stated decisions alone are measuring the wrong thing.
+
+### Beyond Memory Majority: Latent-Source Reasoning for Multi-Agent Memory Arbitration
+- **arXiv**: 2608.19701 ([link](https://arxiv.org/abs/2608.19701))
+- **Date**: 2026-08-20
+- **Category**: Optimization
+- **Summary**: Identifies Memory Correlation Bias in long-term multi-agent systems: retrieved memories are combined by voting or weighting as if independent, but memories inheriting a common upstream source or shared bias get counted repeatedly and manufacture false majorities. CAMA estimates the number of genuinely independent evidence sources by combining neural dependency inference with symbolic priors, then learns a sequential recovery policy that actively retrieves alternative evidence or traces upstream sources before deciding, trading retrieval cost against evidence sufficiency. Relevant to both axes — it is a retrieval-cost-aware arbitration mechanism, and correlated-source inflation is the same primitive a poisoner exploits when seeding many mutually reinforcing entries.
+
+### Can Agent Memory Systems Track Evolving State?
+- **arXiv**: 2608.19652 ([link](https://arxiv.org/abs/2608.19652))
+- **Date**: 2026-08-20
+- **Category**: Optimization
+- **Summary**: Argues existing memory benchmarks over-index on recall-shaped retrieval and defines state tracking instead: when facts, constraints, and decisions are revised over a long interaction, answers must reflect the current state rather than a superseded one. StateMemBench (234 multi-session scenarios, two conversation-length regimes) grades against a closed pool that separates current-state, superseded-state, and other failures by construction, and existing memory systems, retrieval baselines, and long-context baselines all struggle. StateMem, which explicitly tracks supersession and relational dependencies, improves current-state accuracy 1.8x over the strongest same-backbone baseline (0.205 to 0.363, DeepSeek-V4-Flash) and 1.6x over the strongest memory system (0.149 to 0.233, Qwen-3.5-9B); applied as a lightweight single-call wrapper it lifts six existing backends by +32 to +67 points, of which a length- and cost-matched control attributes +15 to +32 to state structure rather than added context.
+
+### ReCache: Efficient KV Cache Reuse and Compression for Tool-Augmented LLM Agents
+- **arXiv**: 2608.19662 ([link](https://arxiv.org/abs/2608.19662))
+- **Date**: 2026-08-20
+- **Category**: Optimization
+- **Summary**: Attacks a concrete waste in agentic serving: tool and skill schemas recur across requests in different combinations and orders, so standard prefix caching cannot reuse their KV states. Resource-wise attention removes cross-resource interactions and assigns resource-local positions to produce composition-invariant KV blocks, then resource visibility is restricted to contribution-selected layer/KV-head-group routes and pruned structurally and semantically down to invocation-critical fields. On a benchmark assembled from seven public tool- and skill-use datasets including resource-disjoint tests, resource-wise attention matches dense invocation quality (82.3% vs 82.4% Inv-F1) at a 3.655x time-to-first-token speedup, and the full framework cuts allocated KV-tensor memory 92.43% while accelerating attention 1.423x.
+
+### Break It Down, Pass It On: Cross-Task Skill Transfer in LLM Agents
+- **arXiv**: 2608.20274 ([link](https://arxiv.org/abs/2608.20274))
+- **Date**: 2026-08-20
+- **Category**: Optimization
+- **Summary**: Controlled study of how skill-memory induction granularity and format determine whether reuse helps or hurts, along the two axes existing methods differ on: task-level vs subtask-level induction, and text vs code skill format. Task-level skills mostly push performance *below* the agent's no-memory baseline while subtask-level skills raise it above on average, and text transfers better than code. Proposes a skill utility score combining specificity (how closely a skill matches real tasks) with abstractness (how evenly its relevance spreads); neither predicts success alone but their combination correlates consistently with transferred-skill task success, and it is computable from skills and task descriptions alone — a pre-execution diagnostic for pruning a skill memory before it degrades the agent.

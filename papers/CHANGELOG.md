@@ -4,6 +4,54 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-22
+
+8 new papers (1 Security, 7 Optimization).
+
+The 2026-08-20 batch the previous run flagged as not-yet-announced is now partly visible
+(2608.195xx-2608.197xx plus the first 2608.20xxx entries), and it supplies six of the eight
+additions. Two are catch-ups: 2608.19013 (Harness Continual Learning, 2026-08-19) is the
+paper the 08-21 run could not record because its search summarizer returned a bad ID
+(2608.18013, which resolves to an unrelated condensed-matter paper) — the real ID is
+confirmed here against the abstract page. 2608.06503 (2026-08-06) is a genuine two-week
+miss rather than a filtered paper.
+
+Security:
+- Inadvertent Context Leakage in Language Models (2608.19857)
+
+Optimization:
+- Beyond Memory Majority: Latent-Source Reasoning for Multi-Agent Memory Arbitration (2608.19701)
+- ReCache: Efficient KV Cache Reuse and Compression for Tool-Augmented LLM Agents (2608.19662)
+- Can Agent Memory Systems Track Evolving State? (2608.19652)
+- Remember, Verify, or Ask? Cross-Family Evaluation of Memory Commitment in LLM Agents (2608.19564)
+- Break It Down, Pass It On: Cross-Task Skill Transfer in LLM Agents (2608.20274)
+- Harness Continual Learning: Continual Adaptation Beyond Model Parameters (2608.19013)
+- Toward Reliable Context Compression for Long-Horizon Agents: An Empirical Study of Execution Instability (2608.06503)
+
+Skipped as off-topic or keyword collisions: 2608.20201 (The Third Restructuring of Software
+Form — position paper on Software 3.0 architecture; "generalized database for persistent
+state" is not an agent-memory contribution), 2608.19621 (LifeMem — a real agent memory
+architecture, but aimed at social-simulation fidelity and within-group heterogeneity, so it
+serves neither the security nor the optimization axis), 2608.19842 (SAPO — agentic RL policy
+optimization), 2608.19779 (quantum world-model alignment), 2608.19699 (bio-robot design
+multi-agent system), 2608.17774 / 2608.17592 / 2608.17584 (edge/DMPC/humanoid, "memory" in
+the hardware or LSTM sense).
+
+Verification note: every added ID was confirmed by fetching its arXiv abstract page. One
+discrepancy resolved: the arxiv.org search UI listed 2608.19564 as submitted 19 Aug 2026
+while its abstract page reads "[Submitted on 20 Aug 2026]"; the abstract page was taken as
+authoritative. arXiv's export API returned HTTP 429 after the first two queries, so the rest
+of the run used the arxiv.org search UI, which served equivalent coverage.
+
+Deferred, not added: several clearly on-topic papers surfaced well outside the window and
+were left for a future decision rather than backfilled here — 2607.02911 (CoACT,
+action-preserving observation compression for coding agents), 2606.28434 (SWE-MeM),
+2606.18406 (CoreMem), 2606.16285 (HiMPO), 2606.10616 (Learning What to Remember),
+2606.06448 (Agent Memory: Characterization and System Implications), 2601.01885 (Agentic
+Memory). None are in seen_ids.json.
+
+---
+
 ## 2026-08-21
 
 7 new papers (1 Security, 6 Optimization).
