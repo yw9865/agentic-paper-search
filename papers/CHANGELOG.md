@@ -4,6 +4,54 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-23
+
+5 new papers (1 Security, 4 Optimization).
+
+A weekend run with no fresh front edge: arXiv has announced nothing submitted after
+2026-08-20 (a date-range query for 2026-08-21 to 08-24 returns zero results, since 08-22/08-23
+fall on the weekend). All five additions therefore come from re-sweeping the 2026-08-20
+submission batch — which the 08-22 run saw only partly — plus one 08-17 catch-up. 2608.20202
+and 2608.19993 are genuine 08-20 misses that the previous run's queries never returned;
+2608.17153 (2026-08-17) was never surfaced by the agent-memory queries because it is
+cs.CL-only and frames itself as RAG safety rather than memory.
+
+Security:
+- Towards Safer RAG: Only Agents Capable of System 2 Thinking may Access Untrusted Documents (2608.17153)
+
+Optimization:
+- MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use (2608.20202)
+- Optimal Skill Selection for LLM Agents with Provable Bicriteria Guarantees (2608.19993)
+- StreamSoccer: Event-Driven Memory for Streaming Soccer Commentary (2608.19723)
+- Compress and Forget: bitsandbytes Quantization Amplifies Proactive Interference in LLMs (2608.18578)
+
+Judgment calls: StreamSoccer (2608.19723) is a video-commentary system, kept because its
+fixed-budget active memory plus historical consolidation and its flat per-minute RTF over
+match history are long-horizon memory-management results, on the precedent of EgoCITE
+(2608.12627) and PMMC (2608.00962). Compress and Forget (2608.18578) is a weight-quantization
+study rather than a memory system, kept because it quantifies a compression/retrieval
+trade-off in the updatable-context regime, on the precedent of 2608.06953 (epistemic stance
+under memory compression) and 2608.07622 (controlled memory interference). Safer RAG
+(2608.17153) concerns the retrieval-to-context boundary, not a persistent store, but that
+boundary is the memory write channel the poisoning literature already tracks.
+
+Skipped as off-topic or keyword collisions: 2608.18041 (Language Has Two Parameters —
+"semantic poisoning" is a speculative risk framing in a narrative-semantics position paper,
+no agent-memory system or evaluation), 2608.20317 (BrowseComp-Plus relocated onto ClimbMix —
+search-benchmark corpus construction), 2608.19758 (FlashPrefill V2 — generic block-sparse
+prefill kernel for long-context serving, not agent memory), 2608.19888 (lifelong expert pools
+— "O(log t) memory" is a streaming-statistics bound), 2608.15242 (LongRCA — failure
+attribution), 2608.19842 / 2608.19800 / 2608.17310 (GPU-memory-efficiency training work).
+Already-skipped IDs re-surfaced and left out again: 2608.19197 (SPADE), 2608.19047 (Eureka),
+2608.18637 (PILOT), 2604.12616 (MemJack), 2608.16843 (embodied-agent security survey).
+
+Verification note: every added ID was confirmed against its arXiv abstract page.
+`export.arxiv.org/api` returned HTTP 429 on all queries after the first two, so the sweep ran
+on the `arxiv.org/search/advanced` UI with explicit submitted-date ranges, which also
+confirmed the empty 08-21+ window.
+
+---
+
 ## 2026-08-22
 
 8 new papers (1 Security, 7 Optimization).

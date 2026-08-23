@@ -665,6 +665,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Shows that merely holding sensitive user context (calendars, credentials, health and financial records) in an agent's window imprints recoverable correlations on ordinary benign outputs, so secrets leak even when the model correctly refuses direct extraction — and that an adversary can amplify the channel, using the model as a covert carrier. A black-box adaptive attack across eight proprietary models reconstructs 2-digit in-context secrets near-perfectly and 4-digit secrets at 82% exact match from responses to non-adversarial requests; a trained classifier infers semantic predicates about stored user memories (health conditions, financial events), and an RL-trained adversary extracts full SSNs from a production-style agent. The load-bearing finding for memory design: more capable models leak *more*, because stronger instruction-following raises sensitivity to in-context state — leakage as a byproduct of capability rather than a patchable bug.
 
+### Towards Safer RAG: Only Agents Capable of System 2 Thinking may Access Untrusted Documents
+- **arXiv**: 2608.17153 ([link](https://arxiv.org/abs/2608.17153))
+- **Date**: 2026-08-17
+- **Category**: Security
+- **Summary**: Challenges the Cordon Principle — the design rule that untrusted retrieved documents must be kept away from agents entirely — by separating two distinct failure modes at the retrieval-to-context boundary: detecting that retrieved evidence is corrupted, and being influenced by it anyway. Introduces metrics for that detection-influence gap and finds reasoning-capable models substantially more robust to poisoned retrieved documents than standard instruction-tuned models, so access to untrusted corpora can be gated on deliberative capability rather than blanket isolation. Relevant as a defense-side counterpart to RAG/memory poisoning work: it argues the write channel can stay open for some models but not others.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2011,3 +2017,27 @@ Format per entry:
 - **Date**: 2026-08-20
 - **Category**: Optimization
 - **Summary**: Controlled study of how skill-memory induction granularity and format determine whether reuse helps or hurts, along the two axes existing methods differ on: task-level vs subtask-level induction, and text vs code skill format. Task-level skills mostly push performance *below* the agent's no-memory baseline while subtask-level skills raise it above on average, and text transfers better than code. Proposes a skill utility score combining specificity (how closely a skill matches real tasks) with abstractness (how evenly its relevance spreads); neither predicts success alone but their combination correlates consistently with transferred-skill task success, and it is computable from skills and task descriptions alone — a pre-execution diagnostic for pruning a skill memory before it degrades the agent.
+
+### MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use
+- **arXiv**: 2608.20202 ([link](https://arxiv.org/abs/2608.20202))
+- **Date**: 2026-08-20
+- **Category**: Optimization
+- **Summary**: Argues memory evaluation measures the wrong thing: benchmarks score extraction and retrieval accuracy, while the damaging case is a memory that is faithfully stored *and* semantically relevant yet still distorts the current task. MemTrapBench isolates two such memory-induced cognitive traps — Reasoning Fixation and Belief Distortion — and finds every evaluated memory strategy underperforms the no-memory setting across model families, the strongest still losing more than 10%. Proposes AdaptiveMem, an inference-time steering method that avoids the traps without giving up standard-benchmark performance.
+
+### Optimal Skill Selection for LLM Agents with Provable Bicriteria Guarantees
+- **arXiv**: 2608.19993 ([link](https://arxiv.org/abs/2608.19993))
+- **Date**: 2026-08-20
+- **Category**: Optimization
+- **Summary**: Casts loading reusable skills into a bounded context window as a constrained optimization — maximize a monotone submodular benefit minus a context penalty under a token budget — rather than the top-k similarity retrieval that skill routers actually use, which wastes budget on redundant or marginal entries. Best Prefix Selection (BPS) solves it in polynomial time with what the paper reports as the first bicriteria approximation guarantees for skill selection. On a controlled BigCodeBench variant it reaches 0.73 task success against 0.20-0.52 for baselines while spending 28% fewer tokens than the strongest alternative.
+
+### StreamSoccer: Event-Driven Memory for Streaming Soccer Commentary
+- **arXiv**: 2608.19723 ([link](https://arxiv.org/abs/2608.19723))
+- **Date**: 2026-08-20
+- **Category**: Optimization
+- **Summary**: Replaces frame- or token-indexed history with event memory as the intermediate representation for an unbounded live stream, explicitly modeling event lifecycles and pairing a fixed-budget active memory over the incoming stream with consolidation of older history. A single generator serves three temporal query modes (describe now, summarize recent play, recall earlier moments) and a scheduler decides when to speak or stay silent; CIDEr is 38.62/23.96/17.39 across the three horizons, first on two tracks. The load-bearing efficiency result for long-horizon memory: per-minute RTF p95 stays at 0.10-0.22 with no sustained growth as match history accumulates.
+
+### Compress and Forget: bitsandbytes Quantization Amplifies Proactive Interference in LLMs
+- **arXiv**: 2608.18578 ([link](https://arxiv.org/abs/2608.18578))
+- **Date**: 2026-08-19 (v2 2026-08-20)
+- **Category**: Optimization
+- **Summary**: Measures what weight quantization costs the memory workload specifically: retrieving a value that has been repeatedly overwritten, where accuracy degrades as prior overwrites accumulate (proactive interference). Across three instruction-tuned models at FP16/INT8/INT4-NF4 via bitsandbytes, INT4 significantly reduces high-interference accuracy in every model (one case 81.0% to 68.3%), INT8 imposes smaller penalties in two of three, and the effect is specific to semantically similar distractors and traceable to the quantized backbone rather than the output layer. Relevant because agent memory is exactly the "long, updatable, semantically dense context" regime where cheap quantization is normally assumed free.
