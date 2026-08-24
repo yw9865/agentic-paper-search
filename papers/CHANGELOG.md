@@ -4,6 +4,66 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-24
+
+10 new papers (2 Security, 8 Optimization).
+
+The front edge has still not moved: a control query (any cs paper, abstract term "the",
+submitted 2026-08-21 to 08-26) returns zero results, so arXiv has announced nothing submitted
+after 2026-08-20 — the same empty window the 08-23 run reported, now confirmed on a Monday
+rather than over the weekend. All ten additions are therefore back-fill from the 08-15 to
+08-20 batches, found by widening the query vocabulary rather than the date range: title-field
+"memory" over 08-13..08-21 (94 hits) and an abstract sweep pairing agent with
+long-horizon/context-compression/retrieval-augmented/forgetting (80 hits) surfaced entries the
+previous runs' agent-memory phrasing never returned. Nine of the ten are 08-15..08-20; the
+tenth (2605.29237) is a May paper whose v2 landed 2026-08-15.
+
+Security:
+- CompoSkill: Compositional Skill Chain Attacks from Individually Scanner-Passing LLM Agent Skills (2608.16246)
+- Evolving Skill-Structured Attack Memory Enhances LLM Jailbreaking (2605.29237)
+
+Optimization:
+- From Retrieved Context to Runtime Control: Adaptive Compression for Edge-based RAG (2608.19535)
+- LT-Mem: Volatility-Aware Spatio-Temporal Memory for Lifelong Scene Understanding (2608.19059)
+- MoNe: Modular Neural Memory for Efficient Long Context Inference (2608.17616)
+- ArborMem: Navigating Interaction States with Memory Forests (2608.17534)
+- Cross-Model Memory Transfer via Target-Side Reader Adaptation (2608.17050)
+- Cost Scales with Change, Not Corpus Size: Incrementally Maintaining an Evolving Semantic Substrate (2608.16621)
+- What Does Context Compression Cost an Agent? (2608.16370)
+- Remember Smarter: Visual History Compressor and Hyperbolic Experience Space for Robotic Memory (2608.15269)
+
+Judgment calls: CompoSkill (2608.16246) and MemoAttack (2605.29237) are both skill-store rather
+than episodic-memory papers, kept because installed skills are the persistent procedural memory
+the agent actually reads back — on the precedent of HyperSkill (2608.16114) and Optimal Skill
+Selection (2608.19993) on the optimization side, and because MemoAttack's lifecycle
+probation/retirement machinery is a forgetting policy in service of an attack. LT-Mem
+(2608.19059, cs.RO) and Remember Smarter (2608.15269, cs.RO) are embodied rather than LLM-agent
+systems, kept on the EgoCITE (2608.12627) / StreamSoccer (2608.19723) precedent because both
+turn on an explicit retention or compression policy under a fixed budget. MoNe (2608.17616) is
+an architectural memory module rather than an agent memory store, kept because its claim is
+squarely cost/latency (O(1) query, ~80% compute and peak-memory reduction at 128K) in the same
+regime as the KV-cache compression work already tracked, e.g. CommitKV (2608.07855).
+
+Skipped as off-topic or keyword collisions: 2608.17826 (Bounded-State Restoration —
+hierarchical KV-cache serving infrastructure, cs.DC, same class as the previously skipped
+FlashPrefill V2), 2608.17007 (SkillEffect — "memory-bounded" here means process RAM bounds at
+tool dispatch, not an agent memory store), 2608.16844 (Proteus — memory-capacity scheduling
+inside linear-attention architectures, a quality result with no efficiency claim), 2608.18009
+(MemTree3D — single-session 3D scene indexing for frame selection, no retention policy across
+sessions), 2608.15573 (velocity-aware selective memory for autonomous driving), 2608.14986
+(GaussMemory — 3D Gaussian scene representation), 2608.13923 (OpenBelief-Nav), 2608.18640
+(SAM2Dual — video object segmentation memory), 2608.13689 / 2608.13696 (OS and GPU memory
+systems), 2604.17810 (memory-centric *power* allocation). Already-skipped IDs re-surfaced and
+left out again: 2608.18637 (PILOT), 2608.17310 (Agentic ESOpt), 2608.15242 (LongRCA),
+2608.16843 (embodied-agent security survey), 2604.12616 (MemJack).
+
+Verification note: every added ID was confirmed against its arXiv abstract page (title, date,
+categories, abstract). `export.arxiv.org/api` again returned HTTP 429 after the first two
+queries, so the sweep ran on the `arxiv.org/search/advanced` UI with explicit submitted-date
+ranges.
+
+---
+
 ## 2026-08-23
 
 5 new papers (1 Security, 4 Optimization).

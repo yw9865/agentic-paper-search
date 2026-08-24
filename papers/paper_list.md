@@ -671,6 +671,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Challenges the Cordon Principle — the design rule that untrusted retrieved documents must be kept away from agents entirely — by separating two distinct failure modes at the retrieval-to-context boundary: detecting that retrieved evidence is corrupted, and being influenced by it anyway. Introduces metrics for that detection-influence gap and finds reasoning-capable models substantially more robust to poisoned retrieved documents than standard instruction-tuned models, so access to untrusted corpora can be gated on deliberative capability rather than blanket isolation. Relevant as a defense-side counterpart to RAG/memory poisoning work: it argues the write channel can stay open for some models but not others.
 
+### CompoSkill: Compositional Skill Chain Attacks from Individually Scanner-Passing LLM Agent Skills
+- **arXiv**: 2608.16246 ([link](https://arxiv.org/abs/2608.16246))
+- **Date**: 2026-08-17
+- **Category**: Security
+- **Summary**: Attacks the unit of persistent procedural memory that agent marketplaces actually ship — installed skills — by showing per-skill vetting is the wrong granularity: individually scanner-passing skills compose into harmful chains, at 83.3% chain-formation for a white-box attacker who knows the installed set and 80.6% for a black-box attacker working only from public marketplace listings. Benchmarked on 1,140 records drawn from professional workflows across multiple scenarios, with success falling once a chain needs more than three hops. Relevant as the composition-level analogue of memory poisoning: nothing written into the agent's skill store is individually malicious, so admission-time content filtering cannot see the threat.
+
+### Evolving Skill-Structured Attack Memory Enhances LLM Jailbreaking
+- **arXiv**: 2605.29237 ([link](https://arxiv.org/abs/2605.29237))
+- **Date**: 2026-05-28 (v2 2026-08-15)
+- **Category**: Security
+- **Summary**: Turns the agent-memory stack itself into the attacker: MemoAttack abstracts accumulated black-box jailbreak experience into skill-structured memory units (skill paired with template, evidence, and lifecycle state), evolves them through probation/promotion/retirement/reactivation/elimination, and selects among them with contextual Thompson sampling. Reaches 93.33-96.67% attack success on AdvBench across three targets, 10.00-12.00 points above the strongest baseline, while cutting mean expansion cost 20.2-51.6%; over a sequential 400-goal run the trailing expansion-attempt count falls from 19.74 to 10.92 as memory accumulates. Relevant because it makes adversarial persistence a memory-management result — the attack gets cheaper precisely through consolidation and retirement policy.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2041,3 +2053,51 @@ Format per entry:
 - **Date**: 2026-08-19 (v2 2026-08-20)
 - **Category**: Optimization
 - **Summary**: Measures what weight quantization costs the memory workload specifically: retrieving a value that has been repeatedly overwritten, where accuracy degrades as prior overwrites accumulate (proactive interference). Across three instruction-tuned models at FP16/INT8/INT4-NF4 via bitsandbytes, INT4 significantly reduces high-interference accuracy in every model (one case 81.0% to 68.3%), INT8 imposes smaller penalties in two of three, and the effect is specific to semantically similar distractors and traceable to the quantized backbone rather than the output layer. Relevant because agent memory is exactly the "long, updatable, semantically dense context" regime where cheap quantization is normally assumed free.
+
+### From Retrieved Context to Runtime Control: Adaptive Compression for Edge-based RAG
+- **arXiv**: 2608.19535 ([link](https://arxiv.org/abs/2608.19535))
+- **Date**: 2026-08-20
+- **Category**: Optimization
+- **Summary**: Profiles where retrieval-augmented generation actually spends its budget on an edge device (NVIDIA Jetson AGX Thor), finding generation dominates at roughly 90% of latency and 91% of GPU energy for medium-sized models, so compressing retrieved context is the lever that matters. Intermediate compression ratios cut GPU energy up to 53.2% and SoC energy up to 48.2% with negligible quality loss, and the paper argues the compression rate should be a runtime control driven by device telemetry and workload rather than a fixed hyperparameter. Relevant as cost/latency-side evidence that retrieval-memory budgets should be adaptive rather than statically tuned.
+
+### LT-Mem: Volatility-Aware Spatio-Temporal Memory for Lifelong Scene Understanding
+- **arXiv**: 2608.19059 ([link](https://arxiv.org/abs/2608.19059))
+- **Date**: 2026-08-19
+- **Category**: Optimization
+- **Summary**: Treats retention as a per-object policy problem across robot sessions: a SLAM backbone registers observations, a reasoning layer decides how each memory evolves via deterministic evidence scoring and volatility (how likely an object is to move or change), and a Tri-Memory structure (Live, Delta, Meta) keeps current state without discarding history. Released with LT-VQA, a multi-session recording plus temporal QA dataset, and reported to beat baselines on all metrics while consuming an order of magnitude fewer tokens. Relevant as an explicit forgetting/consolidation strategy where the retention decision is conditioned on volatility rather than recency.
+
+### MoNe: Modular Neural Memory for Efficient Long Context Inference
+- **arXiv**: 2608.17616 ([link](https://arxiv.org/abs/2608.17616))
+- **Date**: 2026-08-18
+- **Category**: Optimization
+- **Summary**: Bolts a lightweight fast-weight memory module onto a frozen pretrained Transformer, writing fixed-size context segments into it by test-time layer-localized gradient updates so that at query time keys and values are generated from the query tokens alone and the context is never re-read. This separates preprocessing from query cost — O(N) preprocessing, O(1) query, peak GPU memory independent of context length N — cutting compute and peak memory roughly 80% versus in-context learning at 128K tokens for 6.4% added parameters, and generalizing past the native window on RULER needle-in-a-haystack and word extraction. Relevant as the compression/retrieval-efficiency alternative to keeping long agent history in context.
+
+### ArborMem: Navigating Interaction States with Memory Forests
+- **arXiv**: 2608.17534 ([link](https://arxiv.org/abs/2608.17534))
+- **Date**: 2026-08-18
+- **Category**: Optimization
+- **Summary**: Argues long-running assistants get memory access wrong by asking "what is relevant?" before asking "which prior interaction state does this turn resume?", and represents the conversation as a navigable forest where each branch is a locally coherent trajectory that may be interrupted and later revisited. For each input ArborMem localizes the state, restores branch-local context, and augments it with reusable cross-branch evidence, avoiding conflation of semantically similar but structurally distinct threads. Beats the strongest baselines by 3.36-10.31 points on LongMemEval, LoCoMo and BEAM 100K plus 5.0 points on its new BranchMemEval diagnostic, with the margin widening under constrained read budgets and complete queries staying under half a second.
+
+### Cross-Model Memory Transfer via Target-Side Reader Adaptation
+- **arXiv**: 2608.17050 ([link](https://arxiv.org/abs/2608.17050))
+- **Date**: 2026-08-17 (v2 2026-08-19)
+- **Category**: Optimization
+- **Summary**: Asks whether an external memory table built for one backbone can be reused on another, isolating hashed memory as a middle ground between non-parametric retrieval and parametric adaptation and testing whether the frozen table or the target-side reader is the binding constraint. Finds learned memory content and correct addressing both matter but the transferred table only becomes useful through a reader aligned to the target model; a dual-layer four-branch reader reaches an average 38.8 on QA benchmarks, substantially closing the same-model/cross-model gap. Relevant because it makes a memory store a portable artifact rather than a per-model rebuild cost.
+
+### Cost Scales with Change, Not Corpus Size: Incrementally Maintaining an Evolving Semantic Substrate
+- **arXiv**: 2608.16621 ([link](https://arxiv.org/abs/2608.16621))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: Compiles corpus semantics once at ingestion into a compact queryable substrate and then maintains it incrementally instead of reconstructing meaning per query, using incremental low-rank updates rather than full SVD. Maintenance cost is shown to scale with the amount of change rather than corpus size — 33.7x cheaper per update and 23.8x cheaper overall on their test case, within floating-point tolerance of the rebuilt substrate — and a Procrustes alignment absorbs an embedding-model swap by re-embedding only about 10% of documents. Relevant to the write-side economics of a retrieval memory whose contents keep changing.
+
+### What Does Context Compression Cost an Agent? Interaction Costs Unrevealed by Task-Completion Metrics
+- **arXiv**: 2608.16370 ([link](https://arxiv.org/abs/2608.16370))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: Shows the standard way of evaluating context compression hides its actual price: under a controlled protocol across three models, two environments and varying compression severity, task completion stays statistically flat while retrieval calls climb sharply, because dropped state has to be reacquired. For GPT-5.5 at 5x compression, completion moves 80% to 85% (p = 1.0) while retrieval goes from 21.0 to 63.9 calls (p = .002). Relevant as a direct caution to the compression literature — completion-only benchmarks score a lossy memory policy as free when it is in fact paying in interaction cost.
+
+### Remember Smarter: Visual History Compressor and Hyperbolic Experience Space for Robotic Memory
+- **arXiv**: 2608.15269 ([link](https://arxiv.org/abs/2608.15269))
+- **Date**: 2026-08-15
+- **Category**: Optimization
+- **Summary**: Gives a vision-language-action policy both recent observations and past successful experience without growing the context window, via a visual branch that compresses multi-view patch histories with bidirectional spatial and causal temporal Mamba and an experience branch that stores successful states in hyperbolic space, asynchronously converting retrieved experience into geodesic prompt tokens so retrieval never blocks action inference. Integrated with pi0 it lifts LIBERO-Plus from 53.6% to 70.6%, with real-world gains on tasks designed to test memory retention and experience reuse. Relevant as a compression-plus-retrieval design for embodied long-horizon memory under a hard context budget.
