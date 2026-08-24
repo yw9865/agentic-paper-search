@@ -4,6 +4,38 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-24 [Conference scan]
+
+No new conference papers found.
+
+Venues checked: USENIX Security '26 — technical sessions (direct WebFetch returned HTTP 403 as
+usual; read via the r.jina.ai proxy) and the cycle 1 accepted-papers page (also via proxy). A
+`cycle2-accepted-papers` page still 404s; cycle 2 acceptances appear only in the merged
+technical-sessions program, which was read in full. IEEE S&P 2026 accepted papers (251 titles,
+cycles 1 + 2 in one undivided list, direct fetch OK).
+
+No 2027 acceptance lists exist yet: USENIX Security '27 cycle 1 submissions are due tomorrow
+(2026-08-25) with notifications not expected before February 2027, and S&P 2027 cycle 1 closed
+submissions on 2026-06-12 with no accepted list published.
+
+USENIX Security '26 surfaced no new on-topic papers — its three agent-memory papers (HijackKV,
+"When Memory Becomes a Vulnerability", FragFuse) are already in conf_seen.json. IEEE S&P 2026
+likewise: "Recovering and Rehosting Mobile Local LLM Conversations and Contexts via Memory
+Forensics" was added by the 2026-08-17 conference scan.
+
+Borderline candidates re-considered and again excluded as RAG knowledge-base security rather
+than agent memory: BadGraph, Confundo, "Five Queries Are Enough", "Overcoming the Retrieval
+Barrier" (all USENIX Sec '26), "GraphRAG under Fire" and "Who Taught the Lie?" (both S&P 2026).
+Also excluded again: "Towards Automating Data Access Permissions in AI Agents" (S&P 2026) —
+verified against its arXiv preprint (2511.17959) as ML-based prediction of user permission
+decisions for agent data access, with no memory component. Agent-adjacent but not memory:
+MUZZLE, AttriGuard, "When AIOps Become 'AI Oops'" (USENIX Sec '26), "Investigating the Impact
+of Dark Patterns on LLM-Based Web Agents", WebCloak (S&P 2026).
+
+Both venues reachable this week; nothing was skipped for fetch failure.
+
+---
+
 ## 2026-08-24
 
 10 new papers (2 Security, 8 Optimization).
