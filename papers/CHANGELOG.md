@@ -4,6 +4,42 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-08-25
+
+7 new papers (2 Security, 5 Optimization).
+
+**Security**
+- Utility Under Attack: Agent Memory Poisoning and the Limits of Content Screening and Provenance Ranking (2608.21230)
+- The Claws in Plain Sight: Unauthorized Context Disclosure through LLM Agent Tool Calls (2608.20658)
+
+**Optimization**
+- Weighted Memory Tree: Remembering What Matters for Long-Horizon LLM Agents (2608.20631)
+- ForeDreamer: A Self-Evolving Dual-Agent Memory Architecture for Future Event Prediction (2608.20920)
+- DreamBench-SWE: A Multi-Session Memory-Hygiene Benchmark for Software Agents (2608.20664)
+- Dual-Cache Latent Space Communication between Heterogeneous Language Models (2608.20617)
+- Token Optimization and Context Window Management in Multi-Agent AI Workflows (2608.17188)
+
+Note on the window: the arXiv API's submittedDate index tops out at 2026-08-21
+(2608.21xxx) at scan time, so nothing from 2026-08-24/25 is retrievable yet — the
+additions above are the 2026-08-20/21 tail that fell after the previous run's high-water
+mark (2608.20274). 2608.17188 is an older catch-up (2026-08-17) that no prior run had
+surfaced; included as clearly on-topic for the retrieval-cost side of agent memory.
+
+Skipped as previously-excluded classes or keyword collisions: 2608.20756 (Vis-Poison —
+poisoning a 30k-entry multimodal RAG knowledge base; static retrieval corpus, not a
+persistent agent memory store, same class as BadGraph/Confundo/GraphRAG under Fire),
+2608.21095 (Trustworthy RAG — an evaluation agent detecting knowledge poisoning in the same
+static-corpus setting), 2608.21126 (TraceGrant — contract-governed task-effect lifecycle
+against indirect prompt injection; its own abstract disclaims memory emphasis, the governed
+object is tool authority rather than a memory store), 2608.20338 (ConceptGuard — LLM
+concept-unlearning benchmark, parametric knowledge not agent memory), 2608.20707 (shopping
+simulation, memory-incidental), 2608.20201 (The Third Restructuring of Software Form —
+already skipped 2026-08-24), 2608.20421 (LLM misconceptions taxonomy, too broad).
+Re-surfaced and left out again: 2608.19197 (SPADE), 2608.19047 (Eureka), 2608.12841 (AQuA),
+2608.11977 (Retry, Switch, or Abstain?), 2608.16843 (embodied-agent security survey).
+
+---
+
 ## 2026-08-24 [Conference scan]
 
 No new conference papers found.

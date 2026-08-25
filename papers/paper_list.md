@@ -683,6 +683,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Turns the agent-memory stack itself into the attacker: MemoAttack abstracts accumulated black-box jailbreak experience into skill-structured memory units (skill paired with template, evidence, and lifecycle state), evolves them through probation/promotion/retirement/reactivation/elimination, and selects among them with contextual Thompson sampling. Reaches 93.33-96.67% attack success on AdvBench across three targets, 10.00-12.00 points above the strongest baseline, while cutting mean expansion cost 20.2-51.6%; over a sequential 400-goal run the trailing expansion-attempt count falls from 19.74 to 10.92 as memory accumulates. Relevant because it makes adversarial persistence a memory-management result — the attack gets cheaper precisely through consolidation and retirement policy.
 
+### Utility Under Attack: Agent Memory Poisoning and the Limits of Content Screening and Provenance Ranking
+- **arXiv**: 2608.21230 ([link](https://arxiv.org/abs/2608.21230))
+- **Date**: 2026-08-21
+- **Category**: Security
+- **Summary**: Measures the poisoning dose-response curve on a persistent agent memory store and finds it brutally steep — contaminating 1.2% of the corpus with false statements drops task accuracy from 0.850 to 0.300 — then shows the two defenses actually shipped for this do not engage. A content screener tuned for indirect prompt injection reaches 0.832 recall on injections but rejects 0 of 360 poisoned memories, because separating a false claim from a true one is a verification problem rather than a text-classification one; the shipped provenance weighting is statistically indistinguishable from no defense, and stronger weightings only work by excluding untrusted sources outright. Proposes retrieval-side occupancy constraints instead, and is relevant as direct evidence that admission-time filtering and source ranking are the wrong control points for memory poisoning.
+
+### The Claws in Plain Sight: Unauthorized Context Disclosure through LLM Agent Tool Calls
+- **arXiv**: 2608.20658 ([link](https://arxiv.org/abs/2608.20658))
+- **Date**: 2026-08-21
+- **Category**: Security
+- **Summary**: Identifies a leakage channel that sits between memory and action rather than in either: an agent legitimately holding user-profile attributes, conversation history, retrieved documents and prior tool outputs may still be unauthorized to transmit them, and the attack pressures the model into writing sensitive attributes into tool-call arguments under the cover of an adjacent legitimate task. Across six pressure levels and four privacy-policy configurations on DeepSeek and Claude (120 calls), disclosure runs 20.8% to 75.0%; stronger privacy instructions reduce but never reliably eliminate it, and the effect is not portable across models. Relevant because it locates the enforcement gap at the context-to-argument boundary, where read access has already been granted and no purpose check exists.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2101,3 +2113,33 @@ Format per entry:
 - **Date**: 2026-08-15
 - **Category**: Optimization
 - **Summary**: Gives a vision-language-action policy both recent observations and past successful experience without growing the context window, via a visual branch that compresses multi-view patch histories with bidirectional spatial and causal temporal Mamba and an experience branch that stores successful states in hyperbolic space, asynchronously converting retrieved experience into geodesic prompt tokens so retrieval never blocks action inference. Integrated with pi0 it lifts LIBERO-Plus from 53.6% to 70.6%, with real-world gains on tasks designed to test memory retention and experience reuse. Relevant as a compression-plus-retrieval design for embodied long-horizon memory under a hard context budget.
+
+### Weighted Memory Tree: Remembering What Matters for Long-Horizon LLM Agents
+- **arXiv**: 2608.20631 ([link](https://arxiv.org/abs/2608.20631))
+- **Date**: 2026-08-21
+- **Category**: Optimization
+- **Summary**: Organizes an agent's execution history as a task/subtask/action hierarchy and attaches a dynamic retention score to every element, updated by event-based writes and selection-based decay so low-utility content is suppressed rather than accumulated. On GAIA-Text across several backbones this gains roughly 10 accuracy points over linear memory while cutting token usage by about a third, and a corrupted-memory experiment shows the retention scoring also limits how far unreliable entries propagate. Relevant as a retention-policy result: the paper's claim is that selective maintenance, not exhaustive storage, is what makes long-horizon memory pay.
+
+### ForeDreamer: A Self-Evolving Dual-Agent Memory Architecture for Future Event Prediction
+- **arXiv**: 2608.20920 ([link](https://arxiv.org/abs/2608.20920))
+- **Date**: 2026-08-21
+- **Category**: Optimization
+- **Summary**: Splits agent memory along a lifetime boundary — question-scoped factual memory built from open-web evidence for the current forecast, versus experiential memory that persists across episodes — and assigns a dedicated subagent to convert raw search results into the factual store while the primary agent searches and predicts. Experiential memory then evolves along two tracks, one improving forecasting decisions and one improving how factual memory is constructed, closing the loop between what is remembered and how it is written. Evaluated on Prophet Arena and FutureX and accepted to EMNLP 2026 Findings; relevant as a concrete architecture for separating volatile evidence from durable experience.
+
+### DreamBench-SWE: A Multi-Session Memory-Hygiene Benchmark for Software Agents
+- **arXiv**: 2608.20664 ([link](https://arxiv.org/abs/2608.20664))
+- **Date**: 2026-08-21
+- **Category**: Optimization
+- **Summary**: Benchmarks whether a software agent actually carries forward what an earlier session established, using executable hidden oracles so a later task can only pass if the right facts survived the session boundary. The audit run separates conditions cleanly — no external memory 11.7%, verbatim event logging 45.6%, one hosted memory configuration 53.9% — while the initial run found no meaningful difference between two hybrid configurations. Notably careful about what it does not show: no ordering among memory-bearing approaches, no cross-product generality, and no claim that external memory always beats verbatim logging, which makes it useful as a measurement instrument for multi-session retention rather than a leaderboard.
+
+### Dual-Cache Latent Space Communication between Heterogeneous Language Models
+- **arXiv**: 2608.20617 ([link](https://arxiv.org/abs/2608.20617))
+- **Date**: 2026-08-20
+- **Category**: Optimization
+- **Summary**: Treats inter-agent knowledge sharing as a KV-cache translation problem rather than a text-passing one: XKV pools information from both models' caches via learned-query attention and builds a joint cross-layer memory by self-attention, handling models that differ in depth, KV-head count, head dimension and tokenizer while leaving both frozen. Gains 4.6 EM and 4.2 F1 over the prior best on ROPES with 76% fewer parameters, translating a cache in 5.8 ms versus 59.9 ms (10.3x), and running end-to-end 26% faster than LCF-X and 6.8x faster than communicating in text. Relevant as the cost/latency case for keeping multi-agent memory in latent form instead of serializing it back to tokens.
+
+### Token Optimization and Context Window Management in Multi-Agent AI Workflows
+- **arXiv**: 2608.17188 ([link](https://arxiv.org/abs/2608.17188))
+- **Date**: 2026-08-17
+- **Category**: Optimization
+- **Summary**: An engineering-layer account of what actually reduces token cost and latency in deployed multi-agent workflows, given as six patterns: context stratification, fetch-once/process-locally, schema-contracted prompts, token-aware fallback chains, semantic caching, and inter-agent communication compression — together cutting cold-load latency from 3.5-10.5 minutes to 61-116 seconds at an estimated 60-70% token reduction. A separate controlled study over 2,420 trials and 11 model configurations finds context composition is not monotone in relevance: adding low-relevance items alongside high-relevance ones improved accuracy by +0.077 over high-relevance-only. Relevant as a caution against retrieval policies that maximize precision, plus a reusable pattern set for the retrieval-cost side of agent memory.
