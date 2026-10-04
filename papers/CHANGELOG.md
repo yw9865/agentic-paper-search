@@ -4,6 +4,41 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-04
+
+14 new papers (5 Security, 9 Optimization).
+
+**Security**
+- Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems (2609.08258)
+- Transferable End-to-End Optimization for Indirect Long-Term Memory Poisoning in LLM Agents (2609.00523)
+- Understanding Stage-Wise Utility-Risk Trade-offs in LLM Agent Memory (2608.30177)
+- CIPL: A Channel-Aware Framework for Recoverable Privacy Leakage in LLM Agents (2609.21686)
+- BIO-MEMART: Biometric-Aware KV Cache Memory for Multi-User LLM Agents (2609.08566)
+
+**Optimization**
+- Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents (2610.02002)
+- MemFit: Efficient Long-Term Agentic Memory (2610.00872)
+- Heavy-Tailed Memory Traces in Long-Horizon Language Agents (2610.00010)
+- Remember by Asking: Retrieval-Induced Memory Evolution for LLM Agents (2609.34438)
+- The Epistemics of Agent Memory: Measuring, and Governing, the Consolidation Decision in Long-Horizon LLM Agents (2609.33013)
+- Memory Control Signals Emerge Before Action in Long Horizon Agents (2609.27286)
+- Retrieval-Driven Memory Reconsolidation for Long-Term LLM Agents (2609.16053)
+- Compact-Memory LLM Agents via Online Max-Member Clustering and Atom-Aware Packing (2609.04915)
+- The Compaction Cliff in Long-Running AI Agent Memory (2608.22752)
+
+Note on the window: this is the first run since 2026-08-25, so there is a ~40-day gap.
+This run is a partial catch-up, not a complete sweep of 2608.21xxx-2610.xxxxx. The arXiv
+API and arXiv search returned timeouts/HTTP 429 throughout, so candidates came from web
+search and each one was verified on its arXiv abs page. September papers from the gap are
+likely under-covered. The abs page for 2610.00010 lists v1 as 9 Jul 2026, which does not
+match its 2610 ID; the date is recorded as listed.
+
+Skipped: 2609.08599 (Graph-Based Personalized Memory survey — no efficiency or security
+focus), 2609.30854 (The KV Cache Is the New Memory Wall — inference serving, not agent
+memory), 2609.10266 (KVShareArena — general KV reuse, not agent memory).
+
+---
+
 ## 2026-08-25
 
 7 new papers (2 Security, 5 Optimization).

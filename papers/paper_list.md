@@ -695,6 +695,36 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Identifies a leakage channel that sits between memory and action rather than in either: an agent legitimately holding user-profile attributes, conversation history, retrieved documents and prior tool outputs may still be unauthorized to transmit them, and the attack pressures the model into writing sensitive attributes into tool-call arguments under the cover of an adjacent legitimate task. Across six pressure levels and four privacy-policy configurations on DeepSeek and Claude (120 calls), disclosure runs 20.8% to 75.0%; stronger privacy instructions reduce but never reliably eliminate it, and the effect is not portable across models. Relevant because it locates the enforcement gap at the context-to-argument boundary, where read access has already been granted and no purpose check exists.
 
+### Revoked but Still Authoritative: An Empirical Study of Revocation Enforcement in Agent-Memory Systems
+- **arXiv**: 2609.08258 ([link](https://arxiv.org/abs/2609.08258))
+- **Date**: 2026-09-08
+- **Category**: Security
+- **Summary**: Tests five agent-memory systems on whether they actually enforce revocation of outdated or withdrawn facts and finds that none do by default, so revoked memories keep being retrieved and acted on as authoritative. Proposes a filtering layer between the agent and the memory backend that blocks revoked or conflicting entries. Relevant as an access-control failure in the memory lifecycle itself, distinct from injection-time poisoning.
+
+### Transferable End-to-End Optimization for Indirect Long-Term Memory Poisoning in LLM Agents
+- **arXiv**: 2609.00523 ([link](https://arxiv.org/abs/2609.00523))
+- **Date**: 2026-09-01
+- **Category**: Security
+- **Summary**: PipePoison treats indirect long-term memory poisoning as a single end-to-end optimization over the whole write-store-retrieve pipeline rather than attacking isolated stages, and reports gains of about 19 points in attack effectiveness on seen agent/defense configurations and about 16 points on unseen ones. Relevant as evidence that stage-wise memory defenses can be bypassed by an attacker optimizing across the full memory pipeline.
+
+### Understanding Stage-Wise Utility-Risk Trade-offs in LLM Agent Memory
+- **arXiv**: 2608.30177 ([link](https://arxiv.org/abs/2608.30177))
+- **Date**: 2026-08-31
+- **Category**: Security
+- **Summary**: MemGauge evaluates how memory design choices at each stage trade utility against poisoning vulnerability, finding a threshold-like risk transition during writing, policy-dependent local decoupling during management, and coupled growth of utility and risk during retrieval. Relevant as a stage-by-stage map of where agent-memory design decisions open or close the poisoning surface.
+
+### CIPL: A Channel-Aware Framework for Recoverable Privacy Leakage in LLM Agents
+- **arXiv**: 2609.21686 ([link](https://arxiv.org/abs/2609.21686))
+- **Date**: 2026-09-18
+- **Category**: Security
+- **Summary**: A black-box evaluation framework that traces sensitive data through source, selection, assembly, execution, observation and extraction stages across memory-based, retrieval-mediated and tool-mediated targets, separating internal exposure from what an external observer can actually recover. Finds that storage labels alone do not determine recoverability. Relevant to agent-memory privacy because it measures leakage of stored memory by externally observable channel rather than by storage location.
+
+### BIO-MEMART: Biometric-Aware KV Cache Memory for Multi-User LLM Agents
+- **arXiv**: 2609.08566 ([link](https://arxiv.org/abs/2609.08566))
+- **Date**: 2026-09-08
+- **Category**: Security
+- **Summary**: Treats the KV cache as an external memory substrate for long-term agents shared across users, and gates access to it by attaching normalized biometric templates to memory blocks and filtering reuse by verified identity, reaching 95.71% (face) and 97.60% (palmprint) owner authentication while keeping cache-reuse efficiency. Relevant as an access-control mechanism against cross-user memory exposure in shared agent deployments.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2143,3 +2173,57 @@ Format per entry:
 - **Date**: 2026-08-17
 - **Category**: Optimization
 - **Summary**: An engineering-layer account of what actually reduces token cost and latency in deployed multi-agent workflows, given as six patterns: context stratification, fetch-once/process-locally, schema-contracted prompts, token-aware fallback chains, semantic caching, and inter-agent communication compression — together cutting cold-load latency from 3.5-10.5 minutes to 61-116 seconds at an estimated 60-70% token reduction. A separate controlled study over 2,420 trials and 11 model configurations finds context composition is not monotone in relevance: adding low-relevance items alongside high-relevance ones improved accuracy by +0.077 over high-relevance-only. Relevant as a caution against retrieval policies that maximize precision, plus a reusable pattern set for the retrieval-cost side of agent memory.
+
+### Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents
+- **arXiv**: 2610.02002 ([link](https://arxiv.org/abs/2610.02002))
+- **Date**: 2026-10-01
+- **Category**: Optimization
+- **Summary**: Instead of compressing documents at write time, Mem++ stores every organizational document whole with its date and author and defers extraction to read time, retrieving only documents dated up to the time a question asks about and fusing lexical and semantic rankings. Outperforms existing memory systems on organizational benchmarks. Relevant as a counterpoint to lossy write-time consolidation: cheap non-destructive writes plus temporally filtered retrieval.
+
+### MemFit: Efficient Long-Term Agentic Memory
+- **arXiv**: 2610.00872 ([link](https://arxiv.org/abs/2610.00872))
+- **Date**: 2026-10-01
+- **Category**: Optimization
+- **Summary**: Removes the LLM from the memory write path: each conversational turn is stored verbatim in an append-only store with near-instantaneous LLM-free insertion, indexed by segment summaries, and retrieved with an LLM-free multi-path strategy combining lexical and semantic signals with cross-encoder reranking over caption-augmented episodes (text and multimodal). Reports state-of-the-art results on three benchmarks with much lower memory-construction overhead. Relevant as a direct attack on the cost and latency of LLM-driven memory consolidation.
+
+### Heavy-Tailed Memory Traces in Long-Horizon Language Agents
+- **arXiv**: 2610.00010 ([link](https://arxiv.org/abs/2610.00010))
+- **Date**: 2026-07-09 (as listed on the abs page)
+- **Category**: Optimization
+- **Summary**: Shows that retrieval from an agent's external memory concentrates on a small core of frequently used states while rare states form a long tail, with the shape depending on policy type, and proposes the Core-Tail World Model (CTWM) memory controller that splits budget between core and tail states, yielding a 5.9% prompt-token reduction and 13.6% lower tail prediction error. Relevant as a retrieval-distribution signal usable for token-efficient memory budgeting.
+
+### Remember by Asking: Retrieval-Induced Memory Evolution for LLM Agents
+- **arXiv**: 2609.34438 ([link](https://arxiv.org/abs/2609.34438))
+- **Date**: 2026-09-28
+- **Category**: Optimization
+- **Summary**: RIME builds long-term memory by having the agent ask generic self-questions, retrieve focused dialogue evidence, and fold it with local context and prior memories into an evolving memory bank, rather than compressing interactions in a single pass. At inference, when the compressed memory is insufficient, it pulls back source dialogue context to recover omitted details without reprocessing full histories. Relevant as a compression scheme with a targeted recovery path for lossy memory.
+
+### The Epistemics of Agent Memory: Measuring, and Governing, the Consolidation Decision in Long-Horizon LLM Agents
+- **arXiv**: 2609.33013 ([link](https://arxiv.org/abs/2609.33013))
+- **Date**: 2026-09-26
+- **Category**: Optimization
+- **Summary**: A four-phase study of the consolidation decision — what to keep, compress, abstract into skills/rules, or forget — moving from measuring retention to learning when and at what abstraction level to promote experience under a token budget (reported +22.7% task success at 7x compression), then adding governance for poison-resistance and auditability. Also finds consolidation-quality metrics do not reliably predict transfer accuracy. Relevant as a budgeted consolidation/forgetting policy with security governance attached.
+
+### Memory Control Signals Emerge Before Action in Long Horizon Agents
+- **arXiv**: 2609.27286 ([link](https://arxiv.org/abs/2609.27286))
+- **Date**: 2026-09-23
+- **Category**: Optimization
+- **Summary**: Finds that agents' internal representations already encode compression and recall needs before they act, and uses this in PaMER, which combines state-guided compression with evidence retrieval to substantially cut context consumption while maintaining task performance across benchmarks. Relevant as a way to trigger memory compression and recall from internal signals instead of fixed heuristics.
+
+### Retrieval-Driven Memory Reconsolidation for Long-Term LLM Agents
+- **arXiv**: 2609.16053 ([link](https://arxiv.org/abs/2609.16053))
+- **Date**: 2026-09-13
+- **Category**: Optimization
+- **Summary**: REALM models long-term agent memory as a lifecycle: memories are organized into a cognitive graph and continually reorganized using retrieval feedback, inspired by reconsolidation in neuroscience, improving results on memory-intensive benchmarks. Relevant as a retrieval-feedback consolidation policy for long-horizon memory management.
+
+### Compact-Memory LLM Agents via Online Max-Member Clustering and Atom-Aware Packing
+- **arXiv**: 2609.04915 ([link](https://arxiv.org/abs/2609.04915))
+- **Date**: 2026-09-04
+- **Category**: Optimization
+- **Summary**: RSM-full combines cosine-gated max-member merging of memories with grouped, atom-aware context packing to keep long-horizon agent memory compact, reaching 83% of full-context quality at 32% of the token cost under a 4k budget on AMA-Bench and RealMem and outperforming comparable streaming-clustered baselines. Relevant as an online memory-compression method with explicit quality/token trade-offs.
+
+### The Compaction Cliff in Long-Running AI Agent Memory
+- **arXiv**: 2608.22752 ([link](https://arxiv.org/abs/2608.22752))
+- **Date**: 2026-08-24
+- **Category**: Optimization
+- **Summary**: Shows that repeated context compaction in long-running agents silently drops critical knowledge — only 10% of safety rules survive five compaction rounds — and proposes Knowledge Triage, three operators that classify knowledge types and route each through its own retention policy, substantially improving preservation and behavioral compliance across medical, retail and airline domains. Relevant as a type-aware forgetting policy for memory compaction.
