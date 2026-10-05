@@ -4,6 +4,39 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-05
+
+11 new papers (3 Security, 8 Optimization).
+
+**Security**
+- From Attack Success to Attack Severity: Counterfactual Memory Attacks on LLM Agents (2609.34132)
+- Audience-Bound Persistent Memory: Authorization Across the Memory Lifecycle (2609.36373)
+- EP-Mem: Elastic Privacy Memory for Social Relationship-Aware LLM Agents (2609.35233)
+
+**Optimization**
+- LAM: Efficient Lossy Agent Memory Framework With A Retrieval-Score Error Bound (2609.32256)
+- MemForest: Efficient Agent Memory Management via EventTree Partitioning and Progressive Merging (2609.08273)
+- Agentsensus: Consensus-Compressed Shared Memory for Multi-Agent Story Worlds (2609.32297)
+- Just-In-Time Agent Memory with Runtime Agentic Research (2609.34385)
+- Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents (2609.27334)
+- Memory Consolidation Flattens the Temporal Shape of User Facts (2609.36457)
+- Stashbird: Efficient Speaker-Indexed Memory for Conversational Agents (2609.34242)
+- Mnemon: Raw Records, Fast Judgments, Slow Thoughts (2609.36059)
+
+Note on the window: no new on-topic papers dated 2026-10-02 to 2026-10-05 surfaced, so this
+run continues the September catch-up noted on 2026-10-04 (all 11 papers are dated Sep 8-29).
+One arXiv API query succeeded before the API started returning HTTP 429, so coverage is still
+partial. Each paper was checked on its arXiv abs page.
+
+Considered but not added (verify later if needed): 2609.30813 (epistemic admission in shared
+memory; framed as information quality, not an adversarial threat), 2609.39765 (MemCodex),
+2609.38021, 2609.37443, 2609.32521 (MemAgent), 2609.29144, 2610.00238, 2609.27279,
+2609.25913 (not verified this run; retrieval/memory-architecture papers with unclear
+efficiency or security focus). Skipped as off-topic: 2610.02150, 2609.39344, 2609.37791,
+2609.36577, 2609.32453 (not about LLM agent memory).
+
+---
+
 ## 2026-10-04
 
 14 new papers (5 Security, 9 Optimization).

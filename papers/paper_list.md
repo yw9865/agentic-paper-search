@@ -725,6 +725,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Treats the KV cache as an external memory substrate for long-term agents shared across users, and gates access to it by attaching normalized biometric templates to memory blocks and filtering reuse by verified identity, reaching 95.71% (face) and 97.60% (palmprint) owner authentication while keeping cache-reuse efficiency. Relevant as an access-control mechanism against cross-user memory exposure in shared agent deployments.
 
+### From Attack Success to Attack Severity: Counterfactual Memory Attacks on LLM Agents
+- **arXiv**: 2609.34132 ([link](https://arxiv.org/abs/2609.34132))
+- **Date**: 2026-09-28
+- **Category**: Security
+- **Summary**: Argues that memory-poisoning attacks should be judged by downstream harm rather than attack success rate, introducing counterfactual memory regret as the metric and MemHarm, which optimizes over a predeclared class of sparse, grounded semantic memory edits. Severity-optimized edits cause substantially larger downstream losses than success-optimized ones. Relevant as a harm-centric threat model and evaluation method for agent-memory poisoning.
+
+### Audience-Bound Persistent Memory: Authorization Across the Memory Lifecycle
+- **arXiv**: 2609.36373 ([link](https://arxiv.org/abs/2609.36373))
+- **Date**: 2026-09-28
+- **Category**: Security
+- **Summary**: Records which audience was present when each memory was created, derives read permissions by set intersection, and excludes items the current viewers are not entitled to when assembling context, enforcing authorization across the whole memory lifecycle for agents that mix private and shared conversations. Relevant as an access-control design against cross-audience leakage of persistent agent memory.
+
+### EP-Mem: Elastic Privacy Memory for Social Relationship-Aware LLM Agents
+- **arXiv**: 2609.35233 ([link](https://arxiv.org/abs/2609.35233))
+- **Date**: 2026-09-28
+- **Category**: Security
+- **Summary**: A token-level memory architecture that enforces user-configurable disclosure policies across social roles in multi-party conversations, raising disclosure-permission accuracy from 22% to 68% on a new multi-party benchmark while preserving retrieval performance. Relevant to privacy leakage from agent memory when the same agent serves several people with different entitlements.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2227,3 +2245,51 @@ Format per entry:
 - **Date**: 2026-08-24
 - **Category**: Optimization
 - **Summary**: Shows that repeated context compaction in long-running agents silently drops critical knowledge — only 10% of safety rules survive five compaction rounds — and proposes Knowledge Triage, three operators that classify knowledge types and route each through its own retention policy, substantially improving preservation and behavioral compliance across medical, retail and airline domains. Relevant as a type-aware forgetting policy for memory compaction.
+
+### LAM: Efficient Lossy Agent Memory Framework With A Retrieval-Score Error Bound
+- **arXiv**: 2609.32256 ([link](https://arxiv.org/abs/2609.32256))
+- **Date**: 2026-09-26
+- **Category**: Optimization
+- **Summary**: Replaces LLM-based summarization with a deterministic deduplication rule that carries a substitution bound on retrieval-score perturbation, plus a memory manager that preserves cached prompt prefixes; removes 22.47% of observation tokens while retaining 99.984% of measured evidence. Relevant as a provably bounded, LLM-free memory-compression method.
+
+### MemForest: Efficient Agent Memory Management via EventTree Partitioning and Progressive Merging
+- **arXiv**: 2609.08273 ([link](https://arxiv.org/abs/2609.08273))
+- **Date**: 2026-09-08
+- **Category**: Optimization
+- **Summary**: Partitions agent history into event-centric units and progressively merges redundant nodes along maximum spanning trees, retaining 97.1% of original performance while compressing 50% of memory, with 1.89x-2.24x retrieval speedups in unimodal and multimodal settings. Relevant as a structured compression scheme trading little accuracy for smaller memory and faster retrieval.
+
+### Agentsensus: Consensus-Compressed Shared Memory for Multi-Agent Story Worlds
+- **arXiv**: 2609.32297 ([link](https://arxiv.org/abs/2609.32297))
+- **Date**: 2026-09-26
+- **Category**: Optimization
+- **Summary**: In multi-agent simulations, merges records of the same event observed by several agents into a single record owned by all witnesses, yielding 22-44% fewer memory entries than the closest baseline across four narrative settings. Relevant as deduplication-based compression of shared multi-agent memory.
+
+### Just-In-Time Agent Memory with Runtime Agentic Research
+- **arXiv**: 2609.34385 ([link](https://arxiv.org/abs/2609.34385))
+- **Date**: 2026-09-28
+- **Category**: Optimization
+- **Summary**: JAM keeps complete raw histories in a hierarchical page store with compact navigational summaries and defers memory construction to query time, where a trained Researcher iteratively retrieves and integrates evidence. Outperforms ahead-of-time memory systems while being substantially more efficient than prior trained agentic-memory approaches. Relevant as a lazy-construction strategy for long-horizon memory cost.
+
+### Just-in-Time Memory: Learning to Curate Task-Adaptive Memory for LLM Agents
+- **arXiv**: 2609.27334 ([link](https://arxiv.org/abs/2609.27334))
+- **Date**: 2026-09-23
+- **Category**: Optimization
+- **Summary**: JitMem moves memory curation from write time to read time, synthesizing task-adaptive summaries from raw trajectories when a query arrives and training the curator directly on task success; reports gains of 16.2, 16.3 and 3.9 points on three benchmarks, with even untrained curation beating learned write-time methods. Relevant as a long-horizon memory-management policy that avoids lossy upfront consolidation.
+
+### Memory Consolidation Flattens the Temporal Shape of User Facts
+- **arXiv**: 2609.36457 ([link](https://arxiv.org/abs/2609.36457))
+- **Date**: 2026-09-29
+- **Category**: Optimization
+- **Summary**: Introduces the LAPSE benchmark and shows that memory writers in systems such as mem0, Graphiti and Letta strip aspectual cues during consolidation (e.g. "I am driving" becomes "drives"), which misleads downstream readers about whether facts are still current. Relevant as a documented failure mode of consolidation strategies in long-term agent memory.
+
+### Stashbird: Efficient Speaker-Indexed Memory for Conversational Agents
+- **arXiv**: 2609.34242 ([link](https://arxiv.org/abs/2609.34242))
+- **Date**: 2026-09-28
+- **Category**: Optimization
+- **Summary**: Organizes conversational memory into episodic records, semantic relations and community summaries linked by explicit provenance with incremental updates, using 76.4x fewer ingestion prompt tokens than Graphiti and 8.1x fewer retrieval prompt tokens than a reproduced Hindsight baseline on LoCoMo at competitive accuracy. Relevant as a cost-efficient memory construction and retrieval design.
+
+### Mnemon: Raw Records, Fast Judgments, Slow Thoughts
+- **arXiv**: 2609.36059 ([link](https://arxiv.org/abs/2609.36059))
+- **Date**: 2026-09-28
+- **Category**: Optimization
+- **Summary**: Splits memory work into fast record judgments by a small decision model and slow search, answering and background consolidation by an LLM, reaching 91.7% on LoCoMo with minimal context while cost grows only 1.11x as history scales from 100K to 10M tokens. Relevant as a dual-process design for scalable, low-cost long-horizon memory.
