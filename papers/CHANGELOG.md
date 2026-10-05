@@ -4,6 +4,29 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-05 [Conference scan]
+
+No new conference papers found.
+
+First conference scan since 2026-08-24 (the weekly runs in between did not fire).
+
+Venues checked:
+- **USENIX Security '26**: technical-sessions program. The direct WebFetch was not tried
+  because it has returned 403 on every past run, so the page was read through the r.jina.ai
+  proxy. The program is final now that the conference is over. The only agent-memory papers
+  in it are HijackKV, "When Memory Becomes a Vulnerability" and FragFuse, and all three are
+  already in conf_seen.json. The RAG-corpus papers (BadGraph, Confundo, "Five Queries Are
+  Enough", "Overcoming the Retrieval Barrier") stay excluded, as in earlier scans.
+- **USENIX Security '27**: no accepted-papers list or program yet. The
+  `cycle1-accepted-papers` URL returns 404, and Cycle 2 submissions are due 2027-01-26.
+- **IEEE S&P 2027**: Cycle 1 notifications went out on 2026-09-11 according to the CFP,
+  but the official accepted-papers page is still an empty heading. Check it again next
+  week. Cycle 2 notifications are due 2027-03-05.
+- **IEEE S&P 2026**: not re-read in full this week. Its list was final at the 08-24 scan,
+  and the 2026 conference took place in May.
+
+---
+
 ## 2026-10-05
 
 11 new papers (3 Security, 8 Optimization).
