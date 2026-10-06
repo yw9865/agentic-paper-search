@@ -743,6 +743,48 @@ Format per entry:
 - **Category**: Security
 - **Summary**: A token-level memory architecture that enforces user-configurable disclosure policies across social roles in multi-party conversations, raising disclosure-permission accuracy from 22% to 68% on a new multi-party benchmark while preserving retrieval performance. Relevant to privacy leakage from agent memory when the same agent serves several people with different entitlements.
 
+### ZoneClaw: Mitigating Persistent Memory Attacks by Establishing Memory-Zoning in OpenClaw-Style Computer-Use Agents
+- **arXiv**: 2610.00450 ([link](https://arxiv.org/abs/2610.00450))
+- **Date**: 2026-09-30
+- **Category**: Security
+- **Summary**: Shows that computer-use agents with persistent workspace memory record attacker claims from external content and later act on them in unrelated tasks, and defends by partitioning memory into trust zones where externally sourced entries need explicit authorization before they can drive actions. Attack success falls from 372/480 to 6/480 while utility is preserved in 458/480 trials. Relevant as a provenance-based defense against persistent memory poisoning.
+
+### When Correct Memory Goes Wrong: Fuzzing Persistent Memory Use in LLM Agents
+- **arXiv**: 2609.38275 ([link](https://arxiv.org/abs/2609.38275))
+- **Date**: 2026-09-29
+- **Category**: Security
+- **Summary**: Introduces U-Fuzz, a fuzzing framework that mutates queries and memory states to uncover cases where correct stored memory is misused, identifying query-related and memory-state failure classes across diverse memory systems, including black-box API settings. Relevant as a systematic testing methodology for the reliability and attack surface of persistent agent memory.
+
+### VirusCascade: Hijacking Collaborative Reflection in LLM-Powered Recommender Agents
+- **arXiv**: 2609.38270 ([link](https://arxiv.org/abs/2609.38270))
+- **Date**: 2026-09-29
+- **Category**: Security
+- **Summary**: A targeted promotion attack that plants adversarial evidence which the agents' collaborative reflection rationalizes into memory and then propagates across the multi-agent network, exploiting reflective persistence and cross-agent propagation. Reaches mean E@20 of 0.384, +0.185 over the strongest baseline on four datasets. Relevant as a memory-poisoning attack that spreads through shared reflective memory.
+
+### Share-Borne AI Virus: Memory-Hopping Attacks Across LLM Agents
+- **arXiv**: 2609.35576 ([link](https://arxiv.org/abs/2609.35576))
+- **Date**: 2026-09-28
+- **Category**: Security
+- **Summary**: Shows that adversarial content entering one stateful assistant's persistent memory via a shared artifact can propagate to independent assistants through successive hand-offs, with chains of up to eight hops reaching 60-80% of agents in larger simulated environments. Relevant as a worm-like cross-agent persistence threat for agent memory.
+
+### When Malicious Instructions Persist: Persistent Memory Poisoning Attack on Harness-Based Agents
+- **arXiv**: 2609.13889 ([link](https://arxiv.org/abs/2609.13889))
+- **Date**: 2026-09-12
+- **Category**: Security
+- **Summary**: PMPA embeds harmful directives in legitimate-looking external sources so that harness-based agents write them into long-term memory without the attacker having framework access, achieving injection success of 73.7% (OpenClaw) and 66.9% (Claude Code) and cross-session attack success of 55.5% and 81.7%. A prompt-based defense gives limited protection once memory is corrupted. Relevant as a cross-session memory-poisoning attack on deployed agent harnesses.
+
+### InjecMEM: Memory Injection Attack on LLM Agent Memory Systems
+- **arXiv**: 2608.23471 ([link](https://arxiv.org/abs/2608.23471))
+- **Date**: 2026-08-24
+- **Category**: Security
+- **Summary**: A single-interaction memory injection attack, with no read or edit access to the memory store, that combines a retriever-agnostic topical anchor with an adversarial command optimized by gradient-based coordinate search to achieve topic-conditioned retrieval and targeted generation that survives memory drift without affecting non-target queries. Accepted at COLM 2026. Relevant as an optimized poisoning attack on agent memory systems.
+
+### Agent Memory Is a Surface for Endogenous Authorization Laundering
+- **arXiv**: 2609.01836 ([link](https://arxiv.org/abs/2609.01836))
+- **Date**: 2026-09-01
+- **Category**: Security
+- **Summary**: Identifies endogenous authorization laundering, where memory writers record spurious permissions whose provenance is lost, so executors later take unauthorized actions; on EAL-Bench, writers created false authority for up to 50.2% of unauthorized requests and executors acted on it in 98.6% of trials. Source-event-backed permissions and bounded event sourcing reduce this at some utility cost. Relevant as evidence that persistent memory is part of an agent's effective authorization policy.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2293,3 +2335,123 @@ Format per entry:
 - **Date**: 2026-09-28
 - **Category**: Optimization
 - **Summary**: Splits memory work into fast record judgments by a small decision model and slow search, answering and background consolidation by an LLM, reaching 91.7% on LoCoMo with minimal context while cost grows only 1.11x as history scales from 100K to 10M tokens. Relevant as a dual-process design for scalable, low-cost long-horizon memory.
+
+### Decoupling Memory from Context: Structured Memory for Token-Efficient Test-Time Continual Learning
+- **arXiv**: 2610.02687 ([link](https://arxiv.org/abs/2610.02687))
+- **Date**: 2026-10-02
+- **Category**: Optimization
+- **Summary**: GraphMemory accumulates, refines and links reusable strategies in a graph and retrieves only the relevant subgraph per query, keeping retrieved memory size constant as examples accumulate instead of appending to context. Matches baseline performance with roughly 81-85% fewer memory-construction tokens. Relevant as a token-efficient memory structure for continual-learning agents.
+
+### Continual Graph Memory for Mathematical Research Agents
+- **arXiv**: 2610.02945 ([link](https://arxiv.org/abs/2610.02945))
+- **Date**: 2026-10-02
+- **Category**: Optimization
+- **Summary**: Ansatz organizes facts, plans and counterexamples from long research trajectories into a unified graph with dependency-aware retrieval, an evidence-sensitive curator that distills lessons, and scoped recall to avoid uncritical reuse; it closes all ten First Proof Second Batch problems and several open problems. Relevant as a long-horizon memory management and consolidation design for research agents.
+
+### DyadMem: A Long-Term Memory Benchmark of How Agents Work with Users
+- **arXiv**: 2610.03020 ([link](https://arxiv.org/abs/2610.03020))
+- **Date**: 2026-10-02
+- **Category**: Optimization
+- **Summary**: A benchmark of 3,065 episodes, 50,961 sessions and 61,210 QA instances on relationship-specific user memory, with the URAM framework for user-conditioned agent memory. Across 20 models, performance drops sharply when agents must capture and retrieve details themselves, and frontier models show incomplete recall and unsafe deletion. Relevant for evaluating long-term memory management and forgetting behavior.
+
+### APDMem: Agent-Controlled Progressive Disclosure for Query-Adaptive Long-Term Memory
+- **arXiv**: 2610.02472 ([link](https://arxiv.org/abs/2610.02472))
+- **Date**: 2026-10-01
+- **Category**: Optimization
+- **Summary**: Organizes conversation history into four levels (thematic summaries, personalized facts, turn notes, raw messages) and lets a controller descend only as deep as each query needs, reaching strong LongMemEval results while accessing only 8% of conversations. Relevant as a cost-fidelity trade-off mechanism for long-term memory retrieval.
+
+### SEDIMA: Cross-Run Hierarchical Insight Memory for Evolutionary Search Agents
+- **arXiv**: 2610.02361 ([link](https://arxiv.org/abs/2610.02361))
+- **Date**: 2026-10-01
+- **Category**: Optimization
+- **Summary**: Distills raw traces of LLM-driven evolutionary search into natural-language insights, clusters them hierarchically by semantic similarity, and retrieves them in later runs, improving AlgoTune by 5.5% and ALE-Bench LITE by 6.6% and needing 32.3% fewer iterations on OpenEvolve. Relevant as cross-run memory consolidation that cuts redundant exploration cost.
+
+### Beyond Memory: Harnessing Long-Horizon Agents with Explicit Belief States
+- **arXiv**: 2610.01415 ([link](https://arxiv.org/abs/2610.01415))
+- **Date**: 2026-10-01
+- **Category**: Optimization
+- **Summary**: PoS maintains an explicit belief state of current world estimates and unresolved objectives, checks its consistency, and detects and recovers from "belief trapping", outperforming baselines on four benchmarks with three backbones. Relevant as a long-horizon context-management alternative to plain history retention and compression.
+
+### Madeleine: Learning Involuntary Recall for Conversational Memory from Simulated Lives
+- **arXiv**: 2610.01118 ([link](https://arxiv.org/abs/2610.01118))
+- **Date**: 2026-10-01
+- **Category**: Optimization
+- **Summary**: Trains an encoder offline on data from an LLM life simulator to surface contextually relevant memories without on-demand LLM reasoning; it matches HyperMem (52.9 on LoCoMo-Plus) with zero LLM calls and about 1/21 of the context tokens, and lifts HyperMem to 66.6 and T-Mem by 26.2 points when combined. Relevant as a low-cost learned retrieval method for conversational memory.
+
+### What Should an Agent Remember? Disentangling Retention from Retrieval in Bounded-Memory Evaluation
+- **arXiv**: 2610.00366 ([link](https://arxiv.org/abs/2610.00366))
+- **Date**: 2026-09-30
+- **Category**: Optimization
+- **Summary**: Separates retention (what to keep) from selection (what to surface) in a 300-episode bounded-memory benchmark, showing that most of a 68.7-point apparent gap comes from access differences and that all 319 failures under bounded recency come from eviction, not ranking. Recommends reporting retention and selection metrics separately. Relevant to evaluating forgetting and retention policies.
+
+### Persistent Context Graphs for Efficient Memory Compaction in LLM Agents
+- **arXiv**: 2609.40118 ([link](https://arxiv.org/abs/2609.40118))
+- **Date**: 2026-09-30
+- **Category**: Optimization
+- **Summary**: ReCAP stores attention-derived importance scores and dependency links in a lightweight persistent context graph and selects relevant history per request without extra model inference, cutting compaction and restoration latency by about 95% versus summarization and halving historical context on code benchmarks while improving accuracy by 19.8-41.2 points over full history. Relevant as an inference-free memory compaction method.
+
+### MemCodex: Self-Programming Hierarchical Memory for Language Agents
+- **arXiv**: 2609.39765 ([link](https://arxiv.org/abs/2609.39765))
+- **Date**: 2026-09-30
+- **Category**: Optimization
+- **Summary**: Evolves the programs governing construction, indexing, retrieval and routing of each layer of a hierarchical memory (summaries, relational knowledge, skills, latent memory) and traverses from general to specific until evidence suffices, giving 10.1% relative task-success gains, 3.4x fewer context tokens and 2.1x faster inference. Relevant as adaptive, cost-efficient memory organization.
+
+### RefCon: Iterative Refinement and Contrastive Memory Extraction for Context-Evolving Agent
+- **arXiv**: 2609.39143 ([link](https://arxiv.org/abs/2609.39143))
+- **Date**: 2026-09-30
+- **Category**: Optimization
+- **Summary**: Improves test-time memory extraction from long interactions by combining sequential self-refinement with parallel self-contrast, gaining 21.6% on ACE and 16.6% on ReMe (35.5% on ReasoningBank with the DivCon variant) while keeping efficiency favorable. Relevant as a memory construction and consolidation technique for self-evolving agents.
+
+### TAGGRAPH: Tag-Augmented Graphs for Graph Retrieval of Agent Persistent Histories
+- **arXiv**: 2609.38353 ([link](https://arxiv.org/abs/2609.38353))
+- **Date**: 2026-09-29
+- **Category**: Optimization
+- **Summary**: A controlled comparison of graph traversal, AdaptiveGraph, BM25 and OpenClaw retrieval over shared 5W-extracted conversational memories; on LongMemEval-S, BM25 (0.867 MRR) beats AdaptiveGraph (0.844), and extraction quality and vocabulary normalization drive many graph failures. Relevant as evidence on when graph retrieval pays off for agent memory.
+
+### When Should Agents Check External State? Budgeting Observations for Stored Intentions
+- **arXiv**: 2609.37125 ([link](https://arxiv.org/abs/2609.37125))
+- **Date**: 2026-09-29
+- **Category**: Optimization
+- **Summary**: BudgetPM learns when an agent should verify stored prospective-memory intentions under an observation budget, with static and sequential policies that keep 99.9-100% quality using 42-54% fewer observations and outperform adapted Mem0 and PMA. Relevant as cost reduction for maintaining agent memory consistency with the world.
+
+### Traverse: Learning When to Remember, Reset, and Redirect for Long-Horizon Web Search
+- **arXiv**: 2609.37082 ([link](https://arxiv.org/abs/2609.37082))
+- **Date**: 2026-09-29
+- **Category**: Optimization
+- **Summary**: Gives a search agent a Seal Memory tool for active context management across criterion-definition, search and verification phases, and fixes a training pathology ("Seal Collapse") by training only the post-management segment; the 35B model scores 72.83 on BrowseComp. Relevant as learned long-horizon context and memory management.
+
+### UpliftMem: Learning Set-Level Uplift for Agent Memory Retrieval
+- **arXiv**: 2609.36805 ([link](https://arxiv.org/abs/2609.36805))
+- **Date**: 2026-09-29
+- **Category**: Optimization
+- **Summary**: Scores memory sets by their execution uplift over a no-memory executor, choosing which alternatives to probe during training with an EVSI criterion and then using a shared scorer with no test-time probing; it beats baselines on ALFWorld, WebShop and BigCodeBench. Relevant as a feedback-efficient way to learn which memories to retrieve.
+
+### ReMem: Rethinking Perception and Memory in Long-Context Recommendation Agents
+- **arXiv**: 2609.37311 ([link](https://arxiv.org/abs/2609.37311))
+- **Date**: 2026-09-29
+- **Category**: Optimization
+- **Summary**: A recommendation agent that uses chunk-wise sequential memory updates to process arbitrarily long user histories with bounded context and linear inference cost, trained with a multi-memory GRPO variant, improving three tasks by 5.16% on average. Relevant as a bounded-context memory mechanism for long histories.
+
+### How Can Recommendation Feedback Evolve Agent Memory?
+- **arXiv**: 2609.37544 ([link](https://arxiv.org/abs/2609.37544))
+- **Date**: 2026-09-29
+- **Category**: Optimization
+- **Summary**: TIDE treats memory as a capacity-constrained population of experiences that undergo reinforcement, crossover, mutation or eviction based on credit from delayed recommendation feedback, gaining 7.75 points offline and improving live A/B metrics. Relevant as a capacity-bounded retention and forgetting policy for agent memory.
+
+### AMU: Admission and Memory Update for Personalized Conversations
+- **arXiv**: 2609.36976 ([link](https://arxiv.org/abs/2609.36976))
+- **Date**: 2026-09-29
+- **Category**: Optimization
+- **Summary**: Uses small language models to control memory writes at admission time, deciding whether new information is stored, merged with existing entries or discarded as transient, duplicate or outdated, yielding cleaner and more retrievable personalized memory. Relevant as a write-time admission and update policy for long-term memory.
+
+### EpiCon: Collective Agent Learning through Co-Evolving Multimodal Memory
+- **arXiv**: 2609.37923 ([link](https://arxiv.org/abs/2609.37923))
+- **Date**: 2026-09-29
+- **Category**: Optimization
+- **Summary**: A shared multimodal memory for multiple agents managed by two 2B models (a memory controller and a tree self-organizer) that consolidate lessons hierarchically, improving hosts by 1.7-4.9 points and cutting memory-operation time by 67-74% versus backbone-sized memory models. Relevant as efficient consolidation of shared multi-agent memory.
+
+### Zengram-Lite: An In-Browser Agentic-Memory Framework - Semantic Knowledge, Session Tracking, and Token-Budgeted Context
+- **arXiv**: 2610.00042 ([link](https://arxiv.org/abs/2610.00042))
+- **Date**: 2026-09-03
+- **Category**: Optimization
+- **Summary**: A roughly 2.95 MB WebAssembly memory framework with a knowledge tier (vector and full-text search, fact confidence and supersession), a session-tracking tier, and a context-assembly tier that builds a token-budgeted prompt with fingerprints for prompt reuse. Relevant as a lightweight, budget-aware memory runtime for client-side agents.

@@ -4,6 +4,53 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-06
+
+27 new papers (7 Security, 20 Optimization).
+
+**Security**
+- ZoneClaw: Mitigating Persistent Memory Attacks by Establishing Memory-Zoning in OpenClaw-Style Computer-Use Agents (2610.00450)
+- When Correct Memory Goes Wrong: Fuzzing Persistent Memory Use in LLM Agents (2609.38275)
+- VirusCascade: Hijacking Collaborative Reflection in LLM-Powered Recommender Agents (2609.38270)
+- Share-Borne AI Virus: Memory-Hopping Attacks Across LLM Agents (2609.35576)
+- When Malicious Instructions Persist: Persistent Memory Poisoning Attack on Harness-Based Agents (2609.13889)
+- InjecMEM: Memory Injection Attack on LLM Agent Memory Systems (2608.23471)
+- Agent Memory Is a Surface for Endogenous Authorization Laundering (2609.01836)
+
+**Optimization**
+- Decoupling Memory from Context: Structured Memory for Token-Efficient Test-Time Continual Learning (2610.02687)
+- Continual Graph Memory for Mathematical Research Agents (2610.02945)
+- DyadMem: A Long-Term Memory Benchmark of How Agents Work with Users (2610.03020)
+- APDMem: Agent-Controlled Progressive Disclosure for Query-Adaptive Long-Term Memory (2610.02472)
+- SEDIMA: Cross-Run Hierarchical Insight Memory for Evolutionary Search Agents (2610.02361)
+- Beyond Memory: Harnessing Long-Horizon Agents with Explicit Belief States (2610.01415)
+- Madeleine: Learning Involuntary Recall for Conversational Memory from Simulated Lives (2610.01118)
+- What Should an Agent Remember? Disentangling Retention from Retrieval in Bounded-Memory Evaluation (2610.00366)
+- Persistent Context Graphs for Efficient Memory Compaction in LLM Agents (2609.40118)
+- MemCodex: Self-Programming Hierarchical Memory for Language Agents (2609.39765)
+- RefCon: Iterative Refinement and Contrastive Memory Extraction for Context-Evolving Agent (2609.39143)
+- TAGGRAPH: Tag-Augmented Graphs for Graph Retrieval of Agent Persistent Histories (2609.38353)
+- When Should Agents Check External State? Budgeting Observations for Stored Intentions (2609.37125)
+- Traverse: Learning When to Remember, Reset, and Redirect for Long-Horizon Web Search (2609.37082)
+- UpliftMem: Learning Set-Level Uplift for Agent Memory Retrieval (2609.36805)
+- ReMem: Rethinking Perception and Memory in Long-Context Recommendation Agents (2609.37311)
+- How Can Recommendation Feedback Evolve Agent Memory? (2609.37544)
+- AMU: Admission and Memory Update for Personalized Conversations (2609.36976)
+- EpiCon: Collective Agent Learning through Co-Evolving Multimodal Memory (2609.37923)
+- Zengram-Lite: An In-Browser Agentic-Memory Framework (2610.00042)
+
+Note: the arXiv search showed a backlog of on-topic papers from 2026-08-25 to 2026-09-27
+that are still unrecorded, because the daily runs did not fire in that period. This run
+added the clearly relevant Security ones from that backlog (2609.13889, 2608.23471,
+2609.01836, 2609.35576). Optimization papers from the backlog were not swept, for example
+2609.36130, 2609.35540, 2609.33244, 2609.33226, 2609.32584, 2609.32049, 2609.23466,
+2609.05441, 2609.03201 and 2608.29606.
+
+Email notification failed: Gmail closed the connection during SMTP AUTH, twice. Check
+SMTP_USER and SMTP_APP_PASSWORD in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-05 [Conference scan]
 
 No new conference papers found.
