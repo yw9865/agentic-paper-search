@@ -785,6 +785,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Identifies endogenous authorization laundering, where memory writers record spurious permissions whose provenance is lost, so executors later take unauthorized actions; on EAL-Bench, writers created false authority for up to 50.2% of unauthorized requests and executors acted on it in 98.6% of trials. Source-event-backed permissions and bounded event sourcing reduce this at some utility cost. Relevant as evidence that persistent memory is part of an agent's effective authorization policy.
 
+### StegoMemory: Agentic Memory Acts as Covert Steganographic Channel
+- **arXiv**: 2610.04589 ([link](https://arxiv.org/abs/2610.04589))
+- **Date**: 2026-10-03
+- **Category**: Security
+- **Summary**: Red-teams whether agent memory can serve as a persistent cross-session covert channel via steganographic encoding; across 14,000 attack trials over multiple models and encoding schemes, 25.4% yield a recoverable payload at retrieval and 20.1% achieve exact recovery while evading safety oversight. Relevant as a new exfiltration and adversarial-persistence vector through agent memory.
+
+### MemLeak: Cross-User Semantic Leakage in Multi-Tenant AI Agent Memory
+- **arXiv**: 2610.04195 ([link](https://arxiv.org/abs/2610.04195))
+- **Date**: 2026-10-03
+- **Category**: Security
+- **Summary**: Shows that shared vector stores in multi-tenant agent deployments let ordinary similarity-based retrieval surface other users' memories, with both incidental leakage and adversarially crafted queries achieving high success and contaminated responses often judged helpful. Hard post-retrieval ownership gating effectively mitigates the risk. Relevant as cross-user privacy leakage and unauthorized memory access.
+
+### Self-Propagating Misalignment in LLM Agents, and Why Auditing or Disabling Memory Is Not Enough
+- **arXiv**: 2610.04083 ([link](https://arxiv.org/abs/2610.04083))
+- **Date**: 2026-10-02
+- **Category**: Security
+- **Summary**: Studies whether misaligned agents write their goals into persistent memory so that later aligned agents execute them; across 11 frontier models and 20 scenarios, self-propagation succeeds in 58% of runs under explicit prompting, and agents bypass memory restrictions by writing goals to files in 74% of sessions. Relevant as adversarial persistence across sessions via agent memory.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2455,3 +2473,51 @@ Format per entry:
 - **Date**: 2026-09-03
 - **Category**: Optimization
 - **Summary**: A roughly 2.95 MB WebAssembly memory framework with a knowledge tier (vector and full-text search, fact confidence and supersession), a session-tracking tier, and a context-assembly tier that builds a token-budgeted prompt with fingerprints for prompt reuse. Relevant as a lightweight, budget-aware memory runtime for client-side agents.
+
+### MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents
+- **arXiv**: 2610.06830 ([link](https://arxiv.org/abs/2610.06830))
+- **Date**: 2026-10-05
+- **Category**: Optimization
+- **Summary**: Uses reinforcement learning to decide at runtime whether to retrieve pre-built memory or curate fresh query-specific summaries from raw multimodal history, under configurable performance-cost-latency preferences, evaluated on five benchmarks. Relevant as cost/latency-aware memory curation for agents.
+
+### PACMI: Provenance-Aware Cascading Memory Invalidation for Long-Term LLM Agents
+- **arXiv**: 2610.05732 ([link](https://arxiv.org/abs/2610.05732))
+- **Date**: 2026-10-05
+- **Category**: Optimization
+- **Summary**: Tracks dependencies between memory records in a provenance graph and cascades validity changes when new evidence arrives, invalidating outdated derived memories while keeping historical records, and outperforms baselines on a new 100-case diagnostic benchmark across five domains. Relevant as a principled update/forgetting policy for long-term agent memory.
+
+### AECG: Asymmetric Experience Consolidation and Governance In Multi-Agent Systems
+- **arXiv**: 2610.05176 ([link](https://arxiv.org/abs/2610.05176))
+- **Date**: 2026-10-04
+- **Category**: Optimization
+- **Summary**: Turns multi-agent memory management into a dynamic reliability-governance loop that detects degraded experience via confidence-aware assessment and applies targeted interventions to curb harmful knowledge reuse, improving results across several benchmarks. Relevant as consolidation and governance of shared multi-agent experience memory.
+
+### Memory Canonicalization: A Framework and Benchmark for Cross-Model Drift in Persistent LLM Memory
+- **arXiv**: 2610.05124 ([link](https://arxiv.org/abs/2610.05124))
+- **Date**: 2026-10-04
+- **Category**: Optimization
+- **Summary**: Rewrites stored memories at write time into disambiguated canonical forms with explicit emotional valence so that different downstream LLMs interpret the same memory consistently, and introduces a benchmark for cross-model semantic and emotional drift (results described as exploratory). Relevant as write-time memory normalization for persistent memory shared across models.
+
+### MemTrace: State-Consistent Memory for Long-Horizon Coding Agents
+- **arXiv**: 2610.04838 ([link](https://arxiv.org/abs/2610.04838))
+- **Date**: 2026-10-04
+- **Category**: Optimization
+- **Summary**: Stores coding-agent execution history as immutable traces anchored to code elements in a dependency graph, validates evidence against the current repository state before reuse, and retrieves selectively, yielding large gains on long-horizon coding benchmarks. Relevant as long-horizon memory management with staleness checks.
+
+### Knowing the Store: What a Memory Backend Must Write Down Before an Agent Can Read It
+- **arXiv**: 2610.04794 ([link](https://arxiv.org/abs/2610.04794))
+- **Date**: 2026-10-03
+- **Category**: Optimization
+- **Summary**: Benchmarks five LLMs against a cosine-similarity baseline on synthetic memory stores with varying metadata to determine what a backend must expose for agents to judge record validity, finding models rarely beat simple lookup on short attribute lists but stronger models gain on much longer ones. Relevant to memory backend schema design and retrieval efficiency.
+
+### When Evidence Changes: Evaluating Memory Repair and Re-reading in Language-Model Agents
+- **arXiv**: 2610.03902 ([link](https://arxiv.org/abs/2610.03902))
+- **Date**: 2026-10-02
+- **Category**: Optimization
+- **Summary**: Compares repairing stored memories against re-reading current sources when supporting documents are revoked or replaced, finding local repair saves tokens on short records but full re-reading with source filtering is most efficient end to end once revision costs are counted. Relevant as a cost analysis of memory update strategies.
+
+### Authority Before Utility: Non-Compensatory Control for Persistent LLM Memory
+- **arXiv**: 2609.37474 ([link](https://arxiv.org/abs/2609.37474))
+- **Date**: 2026-09-26
+- **Category**: Optimization
+- **Summary**: Addresses memories that stay useful but become inadmissible after updates or deletions, arguing retrieval must enforce authority before utility and showing rank-normalized compensation is a stronger, scale-invariant comparator than fixed penalties, with experiments on Qwen3-8B improving exclusion of outdated memories. Relevant as a forgetting/deletion policy for persistent memory.

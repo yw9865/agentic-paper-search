@@ -4,6 +4,31 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-07
+
+11 new papers (3 Security, 8 Optimization).
+
+**Security**
+- StegoMemory: Agentic Memory Acts as Covert Steganographic Channel (2610.04589)
+- MemLeak: Cross-User Semantic Leakage in Multi-Tenant AI Agent Memory (2610.04195)
+- Self-Propagating Misalignment in LLM Agents, and Why Auditing or Disabling Memory Is Not Enough (2610.04083)
+
+**Optimization**
+- MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents (2610.06830)
+- PACMI: Provenance-Aware Cascading Memory Invalidation for Long-Term LLM Agents (2610.05732)
+- AECG: Asymmetric Experience Consolidation and Governance In Multi-Agent Systems (2610.05176)
+- Memory Canonicalization: A Framework and Benchmark for Cross-Model Drift in Persistent LLM Memory (2610.05124)
+- MemTrace: State-Consistent Memory for Long-Horizon Coding Agents (2610.04838)
+- Knowing the Store: What a Memory Backend Must Write Down Before an Agent Can Read It (2610.04794)
+- When Evidence Changes: Evaluating Memory Repair and Re-reading in Language-Model Agents (2610.03902)
+- Authority Before Utility: Non-Compensatory Control for Persistent LLM Memory (2609.37474)
+
+Email notification failed again: Gmail closed the connection during SMTP AUTH
+(same as 2026-10-06). SMTP_USER and SMTP_APP_PASSWORD in
+~/.config/agentic-paper-search/email.env likely need to be regenerated.
+
+---
+
 ## 2026-10-06
 
 27 new papers (7 Security, 20 Optimization).
