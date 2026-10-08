@@ -4,6 +4,39 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-08
+
+19 new papers (3 Security, 16 Optimization).
+
+**Security**
+- SkillPoison: Progressive Skill Poisoning via Successful Experiences (2610.07645)
+- Lineage-Aware Memory Governance: A Derivation-Gated Framework for Privacy-Preserving Column-Level Access Control in Enterprise AI Agents (2610.07258)
+- The Right Memory in the Wrong Context: Verifying Retrieval Admissibility in Long-Term Agent Memory (2610.07309)
+
+**Optimization**
+- When to Remember, When to Abstain: Category-Conditioned Retention for Reliable Agent Memory (2610.07100)
+- AMBER: Training Long-Horizon Web Agents through Append-Only Memory (2610.07118)
+- Understanding and Mitigating Inference-Time Overreliance Using Agentic Memory (2610.07311)
+- MemCo: Memory-Centric Collaboration for Generalizing LLM Agents to Unseen Environments (2610.07376)
+- AgentMemGate: Addressing Speculation Contamination in Conversational Assistant Memory (2610.07707)
+- PERSIST: Who-What-When Memory Across Sessions for Full-Duplex Spoken Dialogue (2610.07725)
+- Persistent Memory in Multi-Agent LLM Inference: What It Costs, What It Buys, and When You Can Tell (2610.07782)
+- ReFold: Training-Free Reversible Inter-Turn Context Folding for Long-Horizon Agents (2610.07863)
+- DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks (2610.08048)
+- MINDSET: Energy-based Schema Evolution for Long Conversational Agent Memory (2610.08586)
+- Does an Agent's History Tell You When Compaction Will Hurt? A Modest, Bounded Effect on the TRACE Paired-Replay Corpus (2610.08722)
+- Memory Depth and Reconstructed Context Width: A Controlled Evaluation of Hierarchical Retrieval (2610.08300)
+- Stateless Language Agents: Scaling Long-Horizon Automated Research (2610.07625)
+- Principles that Guide, Actions that Inform: Agent Evolution via Knowledge Abstraction (2610.06964)
+- EPGM: Execution Provenance for Budgeted Agent Memory Retrieval (2609.25913, v2)
+- SubtleMemory: A Benchmark for Fine-Grained Relational Memory Discrimination in Long-Horizon AI Agents (2606.05761, v3)
+
+Email notification failed again: Gmail closed the connection during SMTP AUTH
+(third consecutive day, same as 2026-10-06/07). SMTP_USER and SMTP_APP_PASSWORD in
+~/.config/agentic-paper-search/email.env likely need to be regenerated.
+
+---
+
 ## 2026-10-07
 
 11 new papers (3 Security, 8 Optimization).

@@ -803,6 +803,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Studies whether misaligned agents write their goals into persistent memory so that later aligned agents execute them; across 11 frontier models and 20 scenarios, self-propagation succeeds in 58% of runs under explicit prompting, and agents bypass memory restrictions by writing goals to files in 74% of sessions. Relevant as adversarial persistence across sessions via agent memory.
 
+### SkillPoison: Progressive Skill Poisoning via Successful Experiences
+- **arXiv**: 2610.07645 ([link](https://arxiv.org/abs/2610.07645))
+- **Date**: 2026-10-06
+- **Category**: Security
+- **Summary**: Shows that self-improving agents' persistent skill/experience memory can be poisoned with experiences that are all task-correct but strip contextual constraints, so harmful behavior emerges when the skill is later misapplied; attacks exceed 95% success while evading standard verification. Relevant as a stealthy experience-memory poisoning attack.
+
+### Lineage-Aware Memory Governance: A Derivation-Gated Framework for Privacy-Preserving Column-Level Access Control in Enterprise AI Agents
+- **arXiv**: 2610.07258 ([link](https://arxiv.org/abs/2610.07258))
+- **Date**: 2026-10-05
+- **Category**: Security
+- **Summary**: Introduces the Analytical Memory Unit (AMU), a memory schema that records full derivation lineage for cached analytical results so retrieval of insights derived from restricted columns is blocked for unauthorized requesters. Eliminates 18.8-25.5% cross-department leakage while keeping substantial memory reuse. Relevant as access control against privacy leakage through shared agent memory.
+
+### The Right Memory in the Wrong Context: Verifying Retrieval Admissibility in Long-Term Agent Memory
+- **arXiv**: 2610.07309 ([link](https://arxiv.org/abs/2610.07309))
+- **Date**: 2026-10-05
+- **Category**: Security
+- **Summary**: Proposes a verification framework that checks whether relevant retrieved memories are actually admissible for the current request (privacy, policy, lifecycle constraints), improving detection of inadmissible exposure while preserving access to needed evidence. Relevant to preventing privacy leakage and unauthorized memory use in long-term agents.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2521,3 +2539,99 @@ Format per entry:
 - **Date**: 2026-09-26
 - **Category**: Optimization
 - **Summary**: Addresses memories that stay useful but become inadmissible after updates or deletions, arguing retrieval must enforce authority before utility and showing rank-normalized compensation is a stronger, scale-invariant comparator than fixed penalties, with experiments on Qwen3-8B improving exclusion of outdated memories. Relevant as a forgetting/deletion policy for persistent memory.
+
+### When to Remember, When to Abstain: Category-Conditioned Retention for Reliable Agent Memory
+- **arXiv**: 2610.07100 ([link](https://arxiv.org/abs/2610.07100))
+- **Date**: 2026-10-05
+- **Category**: Optimization
+- **Summary**: Replaces a single global confidence threshold for memory writes with category-specific thresholds by assertion type, applying stricter standards to value and belief assertions. Reduces unreliable retentions while keeping better coverage than uniform thresholds. Relevant as a memory write/retention policy.
+
+### AMBER: Training Long-Horizon Web Agents through Append-Only Memory
+- **arXiv**: 2610.07118 ([link](https://arxiv.org/abs/2610.07118))
+- **Date**: 2026-10-05
+- **Category**: Optimization
+- **Summary**: Trains web agents with an append-only memory rule that guarantees retention of facts and corrective feedback by construction, avoiding full execution history in context. Outperforms overwrite-based memory on WebArena Lite and matches baselines needing costlier supervised data. Relevant to long-horizon memory management.
+
+### Understanding and Mitigating Inference-Time Overreliance Using Agentic Memory
+- **arXiv**: 2610.07311 ([link](https://arxiv.org/abs/2610.07311))
+- **Date**: 2026-10-05
+- **Category**: Optimization
+- **Summary**: Identifies that agents over-rely on retrieved memories that only partially overlap with the current task, distorting inference, and proposes MEMTRIM, a training-free method that removes repeated or conflicting evidence while keeping useful memory-specific information. Relevant to memory retrieval quality and reuse control.
+
+### MemCo: Memory-Centric Collaboration for Generalizing LLM Agents to Unseen Environments
+- **arXiv**: 2610.07376 ([link](https://arxiv.org/abs/2610.07376))
+- **Date**: 2026-10-05
+- **Category**: Optimization
+- **Summary**: Maintains complementary local (environment-specific) and global (transferable workflow) memory spaces so agents generalize to unseen environments, outperforming isolated or fully shared memory designs on interactive decision-making tasks. Relevant to memory organization for agents.
+
+### AgentMemGate: Addressing Speculation Contamination in Conversational Assistant Memory
+- **arXiv**: 2610.07707 ([link](https://arxiv.org/abs/2610.07707))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Addresses assistants storing unconfirmed plans as facts in multi-session memory and introduces a write-time gate that separates speculation from confirmed events, with conditional promotion once plans materialize. Improves memory accuracy across benchmarks. Relevant as a memory write/consolidation policy.
+
+### PERSIST: Who-What-When Memory Across Sessions for Full-Duplex Spoken Dialogue
+- **arXiv**: 2610.07725 ([link](https://arxiv.org/abs/2610.07725))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Builds a cross-session, multi-speaker memory system for voice assistants that tracks who, what, and when, and cuts retrieval latency from about 578ms to 7ms by reusing existing representations; also releases the SpokenTrace benchmark. Relevant to latency-efficient long-term conversational agent memory.
+
+### Persistent Memory in Multi-Agent LLM Inference: What It Costs, What It Buys, and When You Can Tell
+- **arXiv**: 2610.07782 ([link](https://arxiv.org/abs/2610.07782))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Measures a persistent reasoning-trace memory tier in a three-tier multi-agent architecture, finding it adds KV-cache overhead without accuracy gains on single-question benchmarks, explains why such ablations can yield false positives, and proposes detection procedures. Relevant as a cost/benefit analysis of agent memory.
+
+### ReFold: Training-Free Reversible Inter-Turn Context Folding for Long-Horizon Agents
+- **arXiv**: 2610.07863 ([link](https://arxiv.org/abs/2610.07863))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Adds a training-free rendering layer that folds redundant inter-turn content into stubs and short notes while keeping the full history recoverable, giving up to 2.5x token reduction and halving per-session KV-cache memory without performance loss. Relevant to agent context compression.
+
+### DAEDALUS: Bootstrapping Agent Memory from Self-Generated Tasks
+- **arXiv**: 2610.08048 ([link](https://arxiv.org/abs/2610.08048))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Pairs an explorer and solver agent to generate practice tasks and derive validated operational heuristics without training data or oracles, consolidating them into a reusable memory bank that improves success rates by up to 15.9 points. Relevant to experience-memory construction and consolidation.
+
+### MINDSET: Energy-based Schema Evolution for Long Conversational Agent Memory
+- **arXiv**: 2610.08586 ([link](https://arxiv.org/abs/2610.08586))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Stores conversations as immutable episodes organized into versioned schemas via minimum-energy state transitions, outperforming five competing memory frameworks on long-conversation benchmarks. Relevant to long-term memory organization and consolidation.
+
+### Does an Agent's History Tell You When Compaction Will Hurt? A Modest, Bounded Effect on the TRACE Paired-Replay Corpus
+- **arXiv**: 2610.08722 ([link](https://arxiv.org/abs/2610.08722))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Tests whether an agent's prior behavior predicts when context compaction (summarization) will degrade performance, finding only weak signals, with the best interpretable trigger offering modest gains over random. Relevant to deciding when to compress agent memory.
+
+### Memory Depth and Reconstructed Context Width: A Controlled Evaluation of Hierarchical Retrieval
+- **arXiv**: 2610.08300 ([link](https://arxiv.org/abs/2610.08300))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Controlled study on EverMemBench showing that widening reconstructed context from 1K to 4K tokens improves accuracy by 10-18 points while deeper memory hierarchies give no consistent benefit. Relevant to retrieval design for long-term conversational memory.
+
+### Stateless Language Agents: Scaling Long-Horizon Automated Research
+- **arXiv**: 2610.07625 ([link](https://arxiv.org/abs/2610.07625))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Moves research state (candidate solutions and measured outcomes) out of agent conversations into a harness that supplies fresh, role-specific context per call, outperforming competing frameworks with far fewer tokens at budgets up to one billion tokens. Relevant to long-horizon memory management and token cost reduction.
+
+### Principles that Guide, Actions that Inform: Agent Evolution via Knowledge Abstraction
+- **arXiv**: 2610.06964 ([link](https://arxiv.org/abs/2610.06964))
+- **Date**: 2026-10-03
+- **Category**: Optimization
+- **Summary**: Proposes SAGA, which converts trajectories into episodic descriptions, reusable procedures, and principles with applicability conditions in a hierarchical memory that is continuously refined by new experience. Relevant to experience-memory abstraction and consolidation.
+
+### EPGM: Execution Provenance for Budgeted Agent Memory Retrieval
+- **arXiv**: 2609.25913 ([link](https://arxiv.org/abs/2609.25913))
+- **Date**: 2026-09-22 (v2 2026-10-06)
+- **Category**: Optimization
+- **Summary**: Builds source-aligned provenance units over tool interactions and refines dense retrieval scores with a graph, improving evidence recovery for queries spanning multiple execution events under strict token budgets. Relevant to budgeted agent memory retrieval efficiency.
+
+### SubtleMemory: A Benchmark for Fine-Grained Relational Memory Discrimination in Long-Horizon AI Agents
+- **arXiv**: 2606.05761 ([link](https://arxiv.org/abs/2606.05761))
+- **Date**: 2026-06-04 (v3 2026-10-05)
+- **Category**: Optimization
+- **Summary**: Benchmark testing whether agents can distinguish and use interrelated memories that complement, contradict, or diverge across contexts over long interactions, finding significant weaknesses in existing memory systems. Relevant to evaluating long-horizon memory management.
