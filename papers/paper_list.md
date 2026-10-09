@@ -821,6 +821,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Proposes a verification framework that checks whether relevant retrieved memories are actually admissible for the current request (privacy, policy, lifecycle constraints), improving detection of inadmissible exposure while preserving access to needed evidence. Relevant to preventing privacy leakage and unauthorized memory use in long-term agents.
 
+### BMA: Backchain Memory Attacks Create Unauthorized Control Paths in LLM Agents
+- **arXiv**: 2609.32186 ([link](https://arxiv.org/abs/2609.32186))
+- **Date**: 2026-09-26
+- **Category**: Security
+- **Summary**: Grey-box attack that works backward from a protected target action to the memory that would trigger it and then to the low-trust evidence edit that would get consolidated into that memory, so the agent later acts on it during a clean task without the adversary ever writing to memory directly. Introduces the Path-CASR metric to certify memory-mediated success (18.8% vs. 13.4% for the strongest baseline) and shows provenance-bound authorization cuts it to 2.0% while keeping 92.1% legitimate-action success.
+
+### Defense-in-Depth for LLMs: Evaluating Memory Gates Against Activation-Induced and Memory-Induced Sycophancy
+- **arXiv**: 2610.07403 ([link](https://arxiv.org/abs/2610.07403))
+- **Date**: 2026-10-05
+- **Category**: Security
+- **Summary**: A 2x2 framework separating internal activation steering from external memory defenses (rewrite-all, a keep/rewrite/drop Router Gate, drop-all) against memory-induced sycophancy, evaluated on MemSyco-Bench across four open-weight models. Finds selective Router Gate filtering preserves far more accuracy than dropping memory, while inverse steering adds no statistically significant benefit — the external memory gate is the effective layer.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2635,3 +2647,45 @@ Format per entry:
 - **Date**: 2026-06-04 (v3 2026-10-05)
 - **Category**: Optimization
 - **Summary**: Benchmark testing whether agents can distinguish and use interrelated memories that complement, contradict, or diverge across contexts over long interactions, finding significant weaknesses in existing memory systems. Relevant to evaluating long-horizon memory management.
+
+### Stale, Misattributed, or Late: Where Personal Memory Fails Before Generation
+- **arXiv**: 2610.10265 ([link](https://arxiv.org/abs/2610.10265))
+- **Date**: 2026-10-07
+- **Category**: Optimization
+- **Summary**: Argues personal agent memory should be evaluated before generation, separating stored-state validity, identity resolution, abstention, and serving latency. Shows temporal validity is mainly a property of memory construction (without update resolution, 70.3% of prompts expose a superseded value), slot assignment of revisions is the harder problem, and prompt prefill dominates turn-level latency.
+
+### Relevance Is Not Sufficiency: What Actually Closes the Evidence Gap in Long-Term Memory QA
+- **arXiv**: 2610.09348 ([link](https://arxiv.org/abs/2610.09348))
+- **Date**: 2026-10-07
+- **Category**: Optimization
+- **Summary**: Reframes agent memory retrieval as building a jointly sufficient memory set rather than ranking individually relevant records. Budgeted Flat Reconstruction (BFR) uses Formal Concept Analysis to select a compact covering subset, then iteratively retrieves unseen records within a budget, raising LongMemEval-S judged accuracy from 72.4% to 82.2%.
+
+### Beyond Corrected Memory: Execution Consistency in Multi-Agent Systems
+- **arXiv**: 2610.08101 ([link](https://arxiv.org/abs/2610.08101))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Shows that identical shared-memory records in multi-agent systems can correspond to both compliant and violating executions (82.4% of opposite-label pairs indistinguishable without execution evidence), and proposes the CAVERT diagnosis and recovery framework. Argues agent-memory interfaces should retain execution evidence such as receipts and action dependencies.
+
+### Decide Before You Look: Learning Which Retrieved Memories Deserve Pixels
+- **arXiv**: 2610.07984 ([link](https://arxiv.org/abs/2610.07984))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: PixelTriage is a post-retrieval plug-in that predicts which retrieved image memories actually need full pixels versus text proxies in multimodal assistant memory. Uses only 11-23% of visual tokens without significant accuracy loss and answers up to 2.9x faster than opening all images.
+
+### DSV-Mem: Evaluating Multimodal Memory in Professional Workflows for MLLM Agents
+- **arXiv**: 2610.08102 ([link](https://arxiv.org/abs/2610.08102))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Benchmark of 1,000 questions testing whether multimodal agents track evolving professional artifacts across current, past, derived state, change history, and conflict/refusal. The best of 27 model and memory-method configurations scores below 45%; the number of governing updates, not context length, drives difficulty, and state-aware memory designs outperform generic memory management.
+
+### FOCUS: Training-Free Decision-Preserving Context Compression for LLM Agents
+- **arXiv**: 2609.37590 ([link](https://arxiv.org/abs/2609.37590))
+- **Date**: 2026-09-29
+- **Category**: Optimization
+- **Summary**: Test-time, training-free context compression for long-running agents that preserves the past interactions causally influencing future decisions, and works on closed-API models. Cuts peak context by up to 48% while improving task success by up to 8.9 points over uncompressed runs across tool-calling, QA, web, and dialogue benchmarks.
+
+### Memadapter: Counterfactual Adaptation Against Memory-induced Sycophancy
+- **arXiv**: 2610.05162 ([link](https://arxiv.org/abs/2610.05162))
+- **Date**: 2026-10-04
+- **Category**: Optimization
+- **Summary**: Argues that even accurate long-term memories can induce sycophancy and that the same memory deserves different weight in different contexts. MemAdapter calibrates each retrieved memory's influence via counterfactual induction, context-aware reflection, and evidence-based reasoning, improving memory reliability across three benchmarks.

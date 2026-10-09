@@ -4,6 +4,34 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-09
+
+9 new papers (2 Security, 7 Optimization).
+
+**Security**
+- BMA: Backchain Memory Attacks Create Unauthorized Control Paths in LLM Agents (2609.32186)
+- Defense-in-Depth for LLMs: Evaluating Memory Gates Against Activation-Induced and Memory-Induced Sycophancy (2610.07403)
+
+**Optimization**
+- Stale, Misattributed, or Late: Where Personal Memory Fails Before Generation (2610.10265)
+- Relevance Is Not Sufficiency: What Actually Closes the Evidence Gap in Long-Term Memory QA (2610.09348)
+- Beyond Corrected Memory: Execution Consistency in Multi-Agent Systems (2610.08101)
+- Decide Before You Look: Learning Which Retrieved Memories Deserve Pixels (2610.07984)
+- DSV-Mem: Evaluating Multimodal Memory in Professional Workflows for MLLM Agents (2610.08102)
+- FOCUS: Training-Free Decision-Preserving Context Compression for LLM Agents (2609.37590)
+- Memadapter: Counterfactual Adaptation Against Memory-induced Sycophancy (2610.05162)
+
+Note: 2609.32186 (BMA) and 2609.37590 (FOCUS) are from the 2026-08-25 to 2026-09-27
+backlog. Skipped as off-topic: 2610.07907 (Continuous Memory Machines, a recurrent
+architecture, not agent memory). The arXiv API returned HTTP 429 after two queries, so
+coverage is partial.
+
+Email notification failed again: Gmail closed the connection during SMTP AUTH
+(fourth consecutive day). SMTP_USER and SMTP_APP_PASSWORD in
+~/.config/agentic-paper-search/email.env likely need to be regenerated.
+
+---
+
 ## 2026-10-08
 
 19 new papers (3 Security, 16 Optimization).
