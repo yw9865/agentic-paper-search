@@ -833,6 +833,36 @@ Format per entry:
 - **Category**: Security
 - **Summary**: A 2x2 framework separating internal activation steering from external memory defenses (rewrite-all, a keep/rewrite/drop Router Gate, drop-all) against memory-induced sycophancy, evaluated on MemSyco-Bench across four open-weight models. Finds selective Router Gate filtering preserves far more accuracy than dropping memory, while inverse steering adds no statistically significant benefit — the external memory gate is the effective layer.
 
+### What to Admit and How to Present: Governing Persistent Memory in LLM Agents
+- **arXiv**: 2610.11188 ([link](https://arxiv.org/abs/2610.11188))
+- **Date**: 2026-10-08
+- **Category**: Security
+- **Summary**: Separates two governance decisions for persistent agent memory: admission (which recalled items enter the working context) and presentation (how they are phrased). Two retraining-free designs that turn adjudicated attributes into eligibility decisions reduce failure rates and cross-domain leakage on an external benchmark, at the cost of more personalization failures.
+
+### The Price of Safety: Benign-Case Utility and Token Overhead of Memory-Poisoning Defenses in LLM Agents
+- **arXiv**: 2609.22818 ([link](https://arxiv.org/abs/2609.22818))
+- **Date**: 2026-09-19
+- **Category**: Security
+- **Summary**: Evaluates memory-poisoning defenses on purely benign traffic rather than attack success alone. Three write-time defenses show no measurable utility loss, while a read-time reranker lowers accuracy slightly, wrongly quarantines many legitimate memories, and adds about 2.7% token overhead.
+
+### MemSentry: A Framework for Detecting Persistent Memory Poisoning in Agentic AI
+- **arXiv**: 2609.08747 ([link](https://arxiv.org/abs/2609.08747))
+- **Date**: 2026-09-08
+- **Category**: Security
+- **Summary**: A configuration-driven gate that scores each proposed long-term memory write on source trust, semantic risk, dependency-based attack reach, access risk, and security-posture change, returning Accept, Review, or Quarantine. Targets poisoning that suppresses alerts or escalates privileges without touching weights or prompts; SBERT+LR is the best semantic classifier (91.7%) on 1,000 generated scenarios.
+
+### CAPTURE: Disentangling Preference Drift from Memory Poisoning in Personalized LLM Agents
+- **arXiv**: 2609.02265 ([link](https://arxiv.org/abs/2609.02265))
+- **Date**: 2026-09-02
+- **Category**: Security
+- **Summary**: Distinguishes genuine user preference change from context shifts, ambiguity, and adversarial memory poisoning using a neural-ODE belief tracker, a multi-timescale memory ledger, clarification requests, and counterfactual auditing of cited memories. Limits fixed-policy poisoning to 11.5% while accepting 83.5% of real updates, though an adaptive attacker raises success to 24.7%.
+
+### AIM: A Privacy-Aware Interoperable Memory Framework for Multi-Agent Multi-User LLM Systems
+- **arXiv**: 2609.12320 ([link](https://arxiv.org/abs/2609.12320))
+- **Date**: 2026-09-11
+- **Category**: Security
+- **Summary**: A memory framework for multi-agent, multi-user LLM systems that classifies information as user-private or public and enforces index-level access control so only the owner can retrieve private memories. Introduces the MUMBench multi-user benchmark, reporting 96.0% visibility classification accuracy.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2689,3 +2719,75 @@ Format per entry:
 - **Date**: 2026-10-04
 - **Category**: Optimization
 - **Summary**: Argues that even accurate long-term memories can induce sycophancy and that the same memory deserves different weight in different contexts. MemAdapter calibrates each retrieved memory's influence via counterfactual induction, context-aware reflection, and evidence-based reasoning, improving memory reliability across three benchmarks.
+
+### Use and Disuse: Intent-Structured Experience Consolidation for Memory and Learning in LLM Agents
+- **arXiv**: 2610.12124 ([link](https://arxiv.org/abs/2610.12124))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: Hippocam, a layered memory system that organizes agent work into nested intents, keeps active context focused on the current goal, and compresses finished intents into key outcomes and state. Rarely used experiences are progressively consolidated into more abstract forms while originals are preserved for detail recovery.
+
+### Event-Centric Memory with Query-Aware Graph Augmentation for Long-Term Conversational Agents
+- **arXiv**: 2610.11920 ([link](https://arxiv.org/abs/2610.11920))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: QGMem segments dialogue history into event units merged into evolving state-tracking traces, then retrieves and reranks a compact working set arranged as a local graph fed to the LLM as a graph token alongside text. Reports gains across six long-term memory benchmarks.
+
+### MemTrial: Learning When to Trust Memory in LLM Portfolio Agents
+- **arXiv**: 2610.11732 ([link](https://arxiv.org/abs/2610.11732))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: Addresses experience misattribution in memory-augmented portfolio agents by comparing decision drafts with and without each retrieved experience under identical market conditions to estimate its contribution. A hierarchical Bayesian model acts on those estimates only once they predict unseen dates, otherwise falling back to a conservative baseline.
+
+### DeltaReplay: Task-Relative Memory Reuse for Mobile GUI Agents
+- **arXiv**: 2610.11707 ([link](https://arxiv.org/abs/2610.11707))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: Stores past trajectories as paths in a graph of app screens and actions and decides per step whether to follow a recorded action, adapt its parameters, or defer to the base agent. Improves task success by up to 10.3 points on AndroidWorld and 25.0 on SPA-Bench by reusing imperfectly matching memories safely.
+
+### From Retrieval to Reconstruction: Constructing Evolvable Cognitive Memory for Long-Term Dialogue
+- **arXiv**: 2610.11314 ([link](https://arxiv.org/abs/2610.11314))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: CogMem builds a Person-Event-Concept-Claim-Fact graph that incrementally converts dialogue into source-aware records, consolidates them, and retrieves via rule-based graph operators guided by LLM intent parsing. Strong results on LoCoMo and LongMemEval, especially for multi-hop, temporal, and knowledge-update questions.
+
+### REMORY: Learning Residual Memory for Context Compaction
+- **arXiv**: 2610.11287 ([link](https://arxiv.org/abs/2610.11287))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: Learns a small set of residual tokens appended after a context summary so a frozen LLM approximates its behavior with the full history, recovering details lost by summarization-based compaction. Improves source attribution on SummHay and reduces repeated tool calls and errors on long-horizon agent benchmarks.
+
+### MemoWM: How World Models Change What Agents Need to Remember
+- **arXiv**: 2610.10778 ([link](https://arxiv.org/abs/2610.10778))
+- **Date**: 2026-10-07
+- **Category**: Optimization
+- **Summary**: Frames what to remember as conditional on a world model that predicts and reconstructs omitted details, so only information whose downstream value exceeds the model's predictions is stored. Reaches 42.42% average accuracy across five agent-memory benchmarks while cutting per-experience storage by 53.9% versus MIRIX.
+
+### ExperienceIndex: Artifact-Grounded Memory
+- **arXiv**: 2610.10091 ([link](https://arxiv.org/abs/2610.10091))
+- **Date**: 2026-10-07
+- **Category**: Optimization
+- **Summary**: A lightweight middleware layer storing summaries of each document's role in past tasks and of document-pair relationships over shared corpora (legal cases, scientific papers). Helps agents find all relevant documents for new tasks, improving accuracy and reducing cost, with transfer across tasks and from stronger to weaker models.
+
+### HGP: An On-Device Personalized Agent Memory via Hybrid Graph Storage
+- **arXiv**: 2610.10071 ([link](https://arxiv.org/abs/2610.10071))
+- **Date**: 2026-10-07
+- **Category**: Optimization
+- **Summary**: Stores episodic, semantic, and procedural memories as graphs plus a working-memory state trajectory, with a lightweight classifier routing personalized memories to reduce large-model calls for on-device deployment. Reports an S-score of 35.58 on PAL-Set, about seven points above the strongest baseline.
+
+### Learning Situation-Conditioned Thinking Policies for Long-Term LLM Agents
+- **arXiv**: 2610.09590 ([link](https://arxiv.org/abs/2610.09590))
+- **Date**: 2026-10-07
+- **Category**: Optimization
+- **Summary**: Converts accumulated reasoning experience into a lightweight policy predicting what the agent should think about in its current situation, periodically consolidating recurring cross-episode patterns into new thinking knowledge instead of letting historical memory grow unbounded. Reports much lower per-query processing time at 30,000 historical situations.
+
+### Whose Memory Is It? Scope-Aware Commit Rules for Long-Term LLM Memory
+- **arXiv**: 2610.09008 ([link](https://arxiv.org/abs/2610.09008))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Shows that persistent memory often stores only final conclusions, letting speculative branches or other speakers' claims resurface later as facts. CASK is a commit rule that preserves the world, branch, or speaker scope of each statement so only shared facts enter long-term memory.
+
+### The Optimization Landscape of Learning Compacted Context Models
+- **arXiv**: 2610.05885 ([link](https://arxiv.org/abs/2610.05885))
+- **Date**: 2026-10-05
+- **Category**: Optimization
+- **Summary**: Studies why learning a compact set of KV vectors that mimics a full KV cache for a frozen model is hard, finding a brittle, flat loss landscape. A heavily simplified Perceiver-based architecture matches a full Perceiver for continuous context compaction in agents that accumulate observations, beating baselines across finance, legal, Gutenberg, and code tasks.

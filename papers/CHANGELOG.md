@@ -4,6 +4,45 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-10
+
+17 new papers (5 Security, 12 Optimization).
+
+**Security**
+- What to Admit and How to Present: Governing Persistent Memory in LLM Agents (2610.11188)
+- The Price of Safety: Benign-Case Utility and Token Overhead of Memory-Poisoning Defenses in LLM Agents (2609.22818)
+- MemSentry: A Framework for Detecting Persistent Memory Poisoning in Agentic AI (2609.08747)
+- CAPTURE: Disentangling Preference Drift from Memory Poisoning in Personalized LLM Agents (2609.02265)
+- AIM: A Privacy-Aware Interoperable Memory Framework for Multi-Agent Multi-User LLM Systems (2609.12320)
+
+**Optimization**
+- Use and Disuse: Intent-Structured Experience Consolidation for Memory and Learning in LLM Agents (2610.12124)
+- Event-Centric Memory with Query-Aware Graph Augmentation for Long-Term Conversational Agents (2610.11920)
+- MemTrial: Learning When to Trust Memory in LLM Portfolio Agents (2610.11732)
+- DeltaReplay: Task-Relative Memory Reuse for Mobile GUI Agents (2610.11707)
+- From Retrieval to Reconstruction: Constructing Evolvable Cognitive Memory for Long-Term Dialogue (2610.11314)
+- REMORY: Learning Residual Memory for Context Compaction (2610.11287)
+- MemoWM: How World Models Change What Agents Need to Remember (2610.10778)
+- ExperienceIndex: Artifact-Grounded Memory (2610.10091)
+- HGP: An On-Device Personalized Agent Memory via Hybrid Graph Storage (2610.10071)
+- Learning Situation-Conditioned Thinking Policies for Long-Term LLM Agents (2610.09590)
+- Whose Memory Is It? Scope-Aware Commit Rules for Long-Term LLM Memory (2610.09008)
+- The Optimization Landscape of Learning Compacted Context Models (2610.05885)
+
+Note: the four September Security papers (2609.22818, 2609.08747, 2609.02265,
+2609.12320) are backlog items surfaced by an arXiv abstract search. Skipped as
+off-topic or memory-peripheral: 2610.11794 (Memento 3, world-model rulebooks),
+2610.08951 (ASPIRE, general prompt-injection red-teaming), 2610.08699 (nanoMuse,
+memory only roadmap), 2610.07250 (D-OPCD, diffusion distillation), 2610.08630
+(in-parameter memory survey for LLMs, not agents). The arXiv export API returned
+HTTP 429 on the id_list query; verification used abstract pages instead.
+
+Email notification failed again: Gmail closed the connection during SMTP AUTH
+(fifth consecutive day). SMTP_USER and SMTP_APP_PASSWORD in
+~/.config/agentic-paper-search/email.env likely need to be regenerated.
+
+---
+
 ## 2026-10-09
 
 9 new papers (2 Security, 7 Optimization).
