@@ -4,6 +4,30 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-11
+
+6 new papers (0 Security, 6 Optimization).
+
+**Optimization**
+- Memory Type Varies: Empowering LLM Agents for Long-Term Memory with Diverse Strategies (2610.11573)
+- Gated Memory: Admission-Controlled Memory Formation for Conversational AI (2610.11270)
+- VideoEvolve: Co-Evolving Memory and Retrieval for Long Video Understanding (2610.10183)
+- Test-Time Adaptation of Reasoning Strategies with Bayesian Nonparametric Memory (2610.06516)
+- VideoTapestry: Query-Adaptive Memory Refinement for Multi-Agent Long-Video Understanding (2610.06672)
+- StateWise: Diagnosing and Repairing Persistent Operational State Before Agent Actions (2610.05241)
+
+Note: no new arXiv announcements since the previous run (weekend); these are
+earlier-October items missed by prior searches. Skipped as off-topic or
+memory-peripheral: 2610.01349 (PACE, general tool-call capability enforcement),
+2610.09470 (Reconsider, HCI study of companion memory use), 2610.11501 (MARI) and
+2610.06050 (MATE), non-agentic recommender memory, 2610.08378 (Lachesis, KV-cache
+serving infrastructure).
+
+Email notification failed again: Gmail closed the connection during SMTP AUTH
+(SMTPServerDisconnected); the app password likely needs regenerating.
+
+---
+
 ## 2026-10-10
 
 17 new papers (5 Security, 12 Optimization).

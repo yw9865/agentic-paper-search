@@ -2791,3 +2791,39 @@ Format per entry:
 - **Date**: 2026-10-05
 - **Category**: Optimization
 - **Summary**: Studies why learning a compact set of KV vectors that mimics a full KV cache for a frozen model is hard, finding a brittle, flat loss landscape. A heavily simplified Perceiver-based architecture matches a full Perceiver for continuous context compaction in agents that accumulate observations, beating baselines across finance, legal, Gutenberg, and code tasks.
+
+### Memory Type Varies: Empowering LLM Agents for Long-Term Memory with Diverse Strategies
+- **arXiv**: 2610.11573 ([link](https://arxiv.org/abs/2610.11573))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: Argues that a single retrieval strategy has a bounded expected precision over multi-type memory corpora, and introduces the TriMEM dataset with memory-type annotations. MemoType uses a learned router to classify memories and queries and apply type-specific retrieval, improving Recall@1 by up to 16.18% on three datasets.
+
+### Gated Memory: Admission-Controlled Memory Formation for Conversational AI
+- **arXiv**: 2610.11270 ([link](https://arxiv.org/abs/2610.11270))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: Targets the write stage of long-term conversational memory, adding an admission gate that judges each candidate fact against the full message before extraction, followed by enrichment that tags provenance, scope, time, and privacy constraints. Improves LLM-judge accuracy on LoCoMo-10 with retrieval and generation held fixed, showing memory formation quality matters.
+
+### VideoEvolve: Co-Evolving Memory and Retrieval for Long Video Understanding
+- **arXiv**: 2610.10183 ([link](https://arxiv.org/abs/2610.10183))
+- **Date**: 2026-10-07
+- **Category**: Optimization
+- **Summary**: Starts from a coarse low-frame-rate memory and trains a Memory Evolver (selective memory additions) and a Retrieval Evolver in alternating rounds of agentic RL, with feedback that identifies whether memory or retrieval is the bottleneck. Addresses the fixed-memory limitation of memory-based long-video agents.
+
+### Test-Time Adaptation of Reasoning Strategies with Bayesian Nonparametric Memory
+- **arXiv**: 2610.06516 ([link](https://arxiv.org/abs/2610.06516))
+- **Date**: 2026-10-05
+- **Category**: Optimization
+- **Summary**: Organizes a growing cheatsheet of reasoning behaviors with a hierarchical Dirichlet process mixture over behavior embeddings, retrieving via the posterior predictive and updating sufficient statistics online with new components for novel behaviors. The self-reorganizing memory beats existing memory modules on AIME'25, Omni-MATH, and PhysReason, including cold start.
+
+### VideoTapestry: Query-Adaptive Memory Refinement for Multi-Agent Long-Video Understanding
+- **arXiv**: 2610.06672 ([link](https://arxiv.org/abs/2610.06672))
+- **Date**: 2026-10-05
+- **Category**: Optimization
+- **Summary**: Training-free multi-agent framework that refines a prebuilt three-level video memory (narrative, event, relational evidence) coarse-to-fine per query, with one agent per level, then merges refinements into a query-adaptive memory. Improves over direct GPT-5.5 inference by 7-17% across LVBench, LongVideoBench, Video-MME, and EgoSchema.
+
+### StateWise: Diagnosing and Repairing Persistent Operational State Before Agent Actions
+- **arXiv**: 2610.05241 ([link](https://arxiv.org/abs/2610.05241))
+- **Date**: 2026-10-04
+- **Category**: Optimization
+- **Summary**: Addresses stale stored records that coding agents reuse across actions by identifying the most decision-relevant records, validating them, and repairing them with tracked history before replanning. Reaches 93.3% correctness versus 38.7% for the baseline on 150 corrupted-state cases, with no unsafe actions.
