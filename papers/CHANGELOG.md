@@ -4,6 +4,32 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-12
+
+4 new papers (1 Security, 3 Optimization).
+
+**Security**
+- Bounded Provisional Visibility: Controlling Poisoning Exposure in Continuously Ingested RAG Vector Stores (2610.05826)
+
+**Optimization**
+- SkillForge: Co-Evolving Skills and Agents via Dynamic Skill Lifecycles (2610.09832)
+- Towards In-Parameter Memory Augmentation for Large Language Models (2610.08630)
+- Test-Time Agent Evolution for Long-Horizon Legal Reasoning (2610.08138)
+
+Note: arXiv has posted nothing new since the 2026-10-09 listing (weekend), so these are
+earlier-October items that previous searches missed. The arXiv API returned HTTP 429
+partway through, so this run fell back to the listing and search pages. Skipped as
+peripheral or off-topic: 2610.09027 (VLM KV-cache backdoor persistence, not an agent
+memory store), 2610.08098 (CORSA, skill-router injection with no persistence),
+2610.11794 (Memento 3, world-model rulebook rather than memory mechanics),
+2610.11375 (shopping RAG personalization), 2610.07250 (D-OPCD, harness distillation
+into diffusion weights), 2610.12453 (Theory-of-Mind partner modeling).
+
+Email notification failed again: Gmail closed the connection during SMTP AUTH
+(SMTPServerDisconnected); the app password likely needs regenerating.
+
+---
+
 ## 2026-10-11
 
 6 new papers (0 Security, 6 Optimization).

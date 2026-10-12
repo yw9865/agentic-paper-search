@@ -863,6 +863,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: A memory framework for multi-agent, multi-user LLM systems that classifies information as user-private or public and enforces index-level access control so only the owner can retrieve private memories. Introduces the MUMBench multi-user benchmark, reporting 96.0% visibility classification accuracy.
 
+### Bounded Provisional Visibility: Controlling Poisoning Exposure in Continuously Ingested RAG Vector Stores
+- **arXiv**: 2610.05826 ([link](https://arxiv.org/abs/2610.05826))
+- **Date**: 2026-10-05
+- **Category**: Security
+- **Summary**: Targets the window in which newly ingested, not-yet-verified content in a continuously updated RAG vector store can already be retrieved, giving poisoning attacks an opening. Proposes a fail-closed protocol that makes new items visible only for a bounded time, hides them if verification misses the deadline, and contains poison by lineage. It bounds unvetted exposure by the visibility budget plus enforcement delay and sharply cuts poisoned retrievals under verifier backlog in exact-backend and Milvus experiments.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2827,3 +2833,21 @@ Format per entry:
 - **Date**: 2026-10-04
 - **Category**: Optimization
 - **Summary**: Addresses stale stored records that coding agents reuse across actions by identifying the most decision-relevant records, validating them, and repairing them with tracked history before replanning. Reaches 93.3% correctness versus 38.7% for the baseline on 150 corrupted-state cases, with no unsafe actions.
+
+### SkillForge: Co-Evolving Skills and Agents via Dynamic Skill Lifecycles
+- **arXiv**: 2610.09832 ([link](https://arxiv.org/abs/2610.09832))
+- **Date**: 2026-10-07
+- **Category**: Optimization
+- **Summary**: Treats an agent's skill library as memory and manages it with fitness-based lifecycle states (trial, active, stable, retired), retiring low-fitness skills before SFT and continuing selective retirement, stabilization, and LLM-guided mutation during RL. The forgetting/consolidation policy keeps the library compact while improving results by up to 7.8% relative on interactive agent benchmarks (NeurIPS 2026). Also releases the SkillFurnace dataset.
+
+### Towards In-Parameter Memory Augmentation for Large Language Models
+- **arXiv**: 2610.08630 ([link](https://arxiv.org/abs/2610.08630))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: Survey of in-parameter memory for LLMs and LLM-based agents. It covers storing post-deployment knowledge, user preferences, and interaction experience in parameters or adapters injected at inference time, as an alternative to spending context capacity on in-context memory. Methods are organized by placement (embedding, attention, FFN, hybrid) and acquisition time (offline vs. online), and open issues such as interference and safety are discussed.
+
+### Test-Time Agent Evolution for Long-Horizon Legal Reasoning
+- **arXiv**: 2610.08138 ([link](https://arxiv.org/abs/2610.08138))
+- **Date**: 2026-10-06
+- **Category**: Optimization
+- **Summary**: A training-free test-time adaptation method for multi-role legal agents. Its Test-Time Memory Evolution component retrieves past-case experience, adapts it to the current case, and consolidates it for later decisions, alongside Rubric-Aligned Collaboration for cross-role coordination. It reports consistent gains over reasoning and agent baselines on J1-EVAL and LegalWorld across five backbones at reasonable cost.
