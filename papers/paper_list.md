@@ -869,6 +869,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Targets the window in which newly ingested, not-yet-verified content in a continuously updated RAG vector store can already be retrieved, giving poisoning attacks an opening. Proposes a fail-closed protocol that makes new items visible only for a bounded time, hides them if verification misses the deadline, and contains poison by lineage. It bounds unvetted exposure by the visibility budget plus enforcement delay and sharply cuts poisoned retrievals under verifier backlog in exact-backend and Milvus experiments.
 
+### Forgetting is Not Always Bad: A Neuro-Inspired Memory Repair Mechanism for Poisoned LLM Agents
+- **arXiv**: 2610.13267 ([link](https://arxiv.org/abs/2610.13267))
+- **Date**: 2026-10-09
+- **Category**: Security
+- **Summary**: DREAM is a training-free, agent-intrinsic defense against memory poisoning. It perturbs memories to expose fragile malicious entries, diagnoses anomalies from activation patterns, and then suppresses poisoned memories while reinforcing benign ones. It cuts backdoor-poisoning attack success by over 95% with strong benign utility, is competitive against injection attacks, and is up to 2.13x faster with 37.7% fewer tokens than A-MemGuard.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2851,3 +2857,27 @@ Format per entry:
 - **Date**: 2026-10-06
 - **Category**: Optimization
 - **Summary**: A training-free test-time adaptation method for multi-role legal agents. Its Test-Time Memory Evolution component retrieves past-case experience, adapts it to the current case, and consolidates it for later decisions, alongside Rubric-Aligned Collaboration for cross-role coordination. It reports consistent gains over reasoning and agent baselines on J1-EVAL and LegalWorld across five backbones at reasonable cost.
+
+### Beyond the Final Embedding: Retrieving Memories from Token-Level Evidence
+- **arXiv**: 2610.13277 ([link](https://arxiv.org/abs/2610.13277))
+- **Date**: 2026-10-09
+- **Category**: Optimization
+- **Summary**: Improves long-term memory retrieval by matching individual query tokens to tokens in candidate memories, reusing the token representations the embedding model already computes, and combining these scores with whole-memory similarity. It needs no extra training; an optional low-rank query adapter can be trained while stored memory representations stay frozen. It reports retrieval gains on eight benchmarks that carry over to higher QA accuracy on long-term memory benchmarks.
+
+### Temporal Evidence Forests for Long-Horizon Multi-Party Conversational Memory
+- **arXiv**: 2610.12874 ([link](https://arxiv.org/abs/2610.12874))
+- **Date**: 2026-10-09
+- **Category**: Optimization
+- **Summary**: T-Mem is a long-term memory framework for multi-party conversations that uses temporal clustering to recover overlooked evidence. It models state transitions in a temporal evidence forest, compresses low-information spans, and serializes the forest for answer generation. It outperforms competing memory frameworks on two long-term multi-party memory benchmarks.
+
+### Recurrent Harness for Agentic Continual Learning
+- **arXiv**: 2610.12668 ([link](https://arxiv.org/abs/2610.12668))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: ReHarness adds backward revision to an agent's textual memory/reflection store under a strictly online streaming protocol: after each instance, the trajectory is used to revise the reflections retrieved for it. This corrects overgeneralized or outdated experience under distribution shift. It beats memory-, reflection-, and prompt-optimization baselines on three continual-learning benchmarks.
+
+### What Should Embodied Agents Remember? Benchmarking and Evaluating Memory Modality for Embodied Agents
+- **arXiv**: 2610.12561 ([link](https://arxiv.org/abs/2610.12561))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: MeMoREval is a 53-task benchmark that measures both task success and the inference cost of building and using memory in embodied (VLM) agents. Agents observe events first and later answer requests from stored memory alone. Storing raw frames beats storing generated descriptions at lower write-time cost, and frames plus scene graphs score best overall, which informs memory-format and retention design.

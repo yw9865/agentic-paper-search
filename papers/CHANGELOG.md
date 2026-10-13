@@ -4,6 +4,31 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-13
+
+5 new papers (1 Security, 4 Optimization).
+
+**Security**
+- Forgetting is Not Always Bad: A Neuro-Inspired Memory Repair Mechanism for Poisoned LLM Agents (2610.13267)
+
+**Optimization**
+- Beyond the Final Embedding: Retrieving Memories from Token-Level Evidence (2610.13277)
+- Temporal Evidence Forests for Long-Horizon Multi-Party Conversational Memory (2610.12874)
+- Recurrent Harness for Agentic Continual Learning (2610.12668)
+- What Should Embodied Agents Remember? Benchmarking and Evaluating Memory Modality for Embodied Agents (2610.12561)
+
+Note: the arXiv API returned HTTP 429 after the first query, so this run fell back to the
+arXiv search pages. Skipped as peripheral or off-topic: 2610.12822 (reward hacking that
+spreads through shared code and plans; memory is incidental), 2610.12793 (robot
+manipulation subgoal grounding), 2610.13829 (Minecraft self-improvement benchmark),
+2610.13862 (onboard robot behavior trees).
+
+The summary email was not sent. Both attempts failed during SMTP login with
+`SMTPServerDisconnected: Connection unexpectedly closed`; check the Gmail app password in
+`~/.config/agentic-paper-search/email.env`.
+
+---
+
 ## 2026-10-12 [Conference scan]
 
 No new conference papers found.
