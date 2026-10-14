@@ -875,6 +875,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: DREAM is a training-free, agent-intrinsic defense against memory poisoning. It perturbs memories to expose fragile malicious entries, diagnoses anomalies from activation patterns, and then suppresses poisoned memories while reinforcing benign ones. It cuts backdoor-poisoning attack success by over 95% with strong benign utility, is competitive against injection attacks, and is up to 2.13x faster with 37.7% fewer tokens than A-MemGuard.
 
+### Memory Injection Attacks on LLM Agents via Query-Only Interaction
+- **arXiv**: 2503.03704 ([link](https://arxiv.org/abs/2503.03704))
+- **Date**: 2025-03-05 (v5: 2026-02-12)
+- **Category**: Security
+- **Summary**: MINJA is the foundational query-only memory injection attack: an ordinary user, with no direct access to the memory bank, plants malicious records purely through crafted queries and the agent's own outputs. The injected records later trigger harmful reasoning steps when the agent handles unrelated victim queries, and experiments across several agents show memory can be compromised effectively. It is the baseline attack that many later memory-poisoning attacks and defenses in this list build on.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2881,3 +2887,45 @@ Format per entry:
 - **Date**: 2026-10-08
 - **Category**: Optimization
 - **Summary**: MeMoREval is a 53-task benchmark that measures both task success and the inference cost of building and using memory in embodied (VLM) agents. Agents observe events first and later answer requests from stored memory alone. Storing raw frames beats storing generated descriptions at lower write-time cost, and frames plus scene graphs score best overall, which informs memory-format and retention design.
+
+### Test-Time Memory Construction
+- **arXiv**: 2610.13348 ([link](https://arxiv.org/abs/2610.13348))
+- **Date**: 2026-10-09
+- **Category**: Optimization
+- **Summary**: T²Mem defers memory construction to inference time: offline it stores only lightweight episode metadata linked to raw interactions, and the LLM assembles query-specific memory while reasoning. This avoids the cost and rigidity of building memory before any query arrives. It beats strong baselines on LoCoMo and LongMemEval across several backbones while substantially reducing construction overhead.
+
+### Chronos Enables Code Agents to Reason over Software Evolution
+- **arXiv**: 2610.11578 ([link](https://arxiv.org/abs/2610.11578))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: Chronos gives code agents a test-time memory of codebase history by distilling merged pull requests into structured experience cards linked by a typed graph. Related changes are retrieved by semantic search plus multi-hop graph expansion, and the same memory guides both patch generation and patch selection. It raises SWE-Agent's mean resolution rate on SWE-Bench Verified from 69.2% to 72.9%.
+
+### FlowState: Execution State as Memory for Long-Horizon LLM Agents
+- **arXiv**: 2609.34565 ([link](https://arxiv.org/abs/2609.34565))
+- **Date**: 2026-09-28 (v2: 2026-10-08)
+- **Category**: Optimization
+- **Summary**: Sidesteps the full-history vs. lossy-compression tradeoff by treating execution state as memory: typed state nodes, their relations, and references to raw tool outputs. Incremental State Update keeps the state current and Progressive State Access reveals past details on demand. Against a full-context baseline on the same model, it raises success on MemoryArena and tau3-Bench while cutting total token use by about 41-43%.
+
+### MemCalib: Benchmarking and Optimizing Memory Use in LLM Agents
+- **arXiv**: 2609.24259 ([link](https://arxiv.org/abs/2609.24259))
+- **Date**: 2026-09-21 (v3: 2026-10-08)
+- **Category**: Optimization
+- **Summary**: Argues retrieved memory only helps if the LLM weighs each memory appropriately, and introduces a benchmark built on realistic memory-system scenarios showing open and closed frontier models systematically over-use or under-use memory. Proposes MemCalib-RL, a credit-assignment method that separates over-use and under-use signals and localizes them to response tokens, which performs best overall and generalizes to external benchmarks.
+
+### MemTrace: Tracing and Attributing Errors in Large Language Model Memory Systems
+- **arXiv**: 2605.28732 ([link](https://arxiv.org/abs/2605.28732))
+- **Date**: 2026-05-27 (v4: 2026-10-08)
+- **Category**: Optimization
+- **Summary**: Defines error tracing and attribution in LLM memory systems as a new problem, converting memory pipelines into executable information-flow graphs and building MemTraceBench from Long-Context, RAG, Mem0, and EverMemOS systems. An automatic method traces operation subgraphs to find root causes, revealing systematic failures from information loss and retrieval mismatch. Feeding attributions into prompt optimization improves end-task performance by up to 7.62 points.
+
+### Kernel-Managed Shared Memory for System-Wide Personalization
+- **arXiv**: 2609.10144 ([link](https://arxiv.org/abs/2609.10144))
+- **Date**: 2026-09-09 (v2: 2026-09-30)
+- **Category**: Optimization
+- **Summary**: Moves memory management from individual agents into the agent-system kernel, which governs how memories written by specialized agents are retrieved, privacy-filtered, and injected into prompts. On AIOS across GPT-4o, Llama-3.1-8B, and Qwen-2.5-7B, it improves personalization over an unmanaged memory backend and standard RAG injection, roughly matching full unfiltered context with much shorter prompts and 15-61% lower end-to-end latency.
+
+### Will My Assistant Remember My Allergy? What Personal LLM Assistants Forget When Conversation Memory Is Compressed
+- **arXiv**: 2609.05767 ([link](https://arxiv.org/abs/2609.05767))
+- **Date**: 2026-09-04
+- **Category**: Optimization
+- **Summary**: Shows standard benchmarks overstate conversation-memory eviction policies because they compress prompts that already contain the future question. When the question is hidden until after compression, a casually mentioned allergy survives only 0-1% of the time versus 97% under full memory. Concludes that compressed caches are not persistent storage and that safety-critical facts need a separate auditable episodic store.

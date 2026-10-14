@@ -4,6 +4,35 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-14
+
+8 new papers (1 Security, 7 Optimization).
+
+**Security**
+- Memory Injection Attacks on LLM Agents via Query-Only Interaction (2503.03704)
+
+**Optimization**
+- Test-Time Memory Construction (2610.13348)
+- Chronos Enables Code Agents to Reason over Software Evolution (2610.11578)
+- FlowState: Execution State as Memory for Long-Horizon LLM Agents (2609.34565)
+- MemCalib: Benchmarking and Optimizing Memory Use in LLM Agents (2609.24259)
+- MemTrace: Tracing and Attributing Errors in Large Language Model Memory Systems (2605.28732)
+- Kernel-Managed Shared Memory for System-Wide Personalization (2609.10144)
+- Will My Assistant Remember My Allergy? What Personal LLM Assistants Forget When Conversation Memory Is Compressed (2609.05767)
+
+Note: the arXiv API returned HTTP 429 again, so this run used the arXiv search pages. FlowState,
+MemCalib and MemTrace were picked up through revisions dated 2026-10-08. 2503.03704 (MINJA),
+2609.10144 and 2609.05767 fall outside the 3-day window but are clearly on-topic and were
+missing from the tracker. Skipped as peripheral: 2610.12932 (SEEDS, evidence admission for
+search agents), 2610.08820 (KITE, KV-cache communication between agents), 2610.12789
+(EvoBelief, world-model rules), 2610.13399 (RegulaTutor, learner modeling).
+
+The summary email was not sent. SMTP login failed again with `SMTPServerDisconnected:
+Connection unexpectedly closed` (second day running); check the Gmail app password in
+`~/.config/agentic-paper-search/email.env`.
+
+---
+
 ## 2026-10-13
 
 5 new papers (1 Security, 4 Optimization).
