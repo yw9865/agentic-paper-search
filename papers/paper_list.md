@@ -881,6 +881,48 @@ Format per entry:
 - **Category**: Security
 - **Summary**: MINJA is the foundational query-only memory injection attack: an ordinary user, with no direct access to the memory bank, plants malicious records purely through crafted queries and the agent's own outputs. The injected records later trigger harmful reasoning steps when the agent handles unrelated victim queries, and experiments across several agents show memory can be compromised effectively. It is the baseline attack that many later memory-poisoning attacks and defenses in this list build on.
 
+### MemForm: Benchmarking Memory Formation Poisoning in LLM Agents
+- **arXiv**: 2610.14431 ([link](https://arxiv.org/abs/2610.14431))
+- **Date**: 2026-10-10
+- **Category**: Security
+- **Summary**: Defines memory formation poisoning, which targets how agent memories are produced and committed rather than only their content, and introduces the MemForm benchmark covering five interfaces (Content, Evidence, Scope, Selection, and Path Poisoning). Six LLMs are susceptible at all five interfaces, consolidation order alone can change behavior with identical retained experiences, and evaluated defenses give only partial mitigation.
+
+### Can Agents Forget When Asked? A Benchmark for Memory Unlearning in LLM Agents
+- **arXiv**: 2610.18052 ([link](https://arxiv.org/abs/2610.18052))
+- **Date**: 2026-10-13
+- **Category**: Security
+- **Summary**: Introduces Bemula, a benchmark for deleting user-requested personal facts from agent memory (50 multi-session dialogues, 135 forget requests, 1,742 test questions) with suites for storage, removal, preservation, relearning, and resistance to extraction attacks. Across six memory systems and three backbones, none passes more than 1.5% of forget requests end to end; systems either leave the information extractable or over-delete.
+
+### Can Agents Truly Forget? Explore Machine Unlearning for LLM Agents
+- **arXiv**: 2610.17659 ([link](https://arxiv.org/abs/2610.17659))
+- **Date**: 2026-10-13
+- **Category**: Security
+- **Summary**: Defines agent unlearning of private information across parametric knowledge, persistent memory, and tool-acquired data, arguing that parameter-level forgetting is insufficient when the information survives in memory artifacts. Its AUBench extends TOFU into an agent environment with persistent memory and provenance-tracked trajectories, revealing a gap between model-level and system-level forgetting.
+
+### When Goals Leak Across Relationships: How Cached Goal Representations Shape Cross-Client Decisions
+- **arXiv**: 2610.17365 ([link](https://arxiv.org/abs/2610.17365))
+- **Date**: 2026-10-12
+- **Category**: Security
+- **Summary**: Shows that a persistent agent with shared conversational memory lets one client's goals influence decisions for another: OLMo-3-7B-Instruct deviates from the current client's objective in 22% of eligible decisions across 20 market scenarios. Probing and ablation localize client-specific goal information in the KV cache and show it causally drives cross-client leakage, motivating per-relationship state isolation.
+
+### Purpose IR: Compiling User Purpose for Privacy-Preserving Agent Workflow State
+- **arXiv**: 2610.16414 ([link](https://arxiv.org/abs/2610.16414))
+- **Date**: 2026-10-12
+- **Category**: Security
+- **Summary**: Compiles a user's natural-language purpose into a typed intermediate representation that bounds what observations may persist into reusable agent state (plans, summaries, memories, handoffs), with release-confinement and purpose-noninterference guarantees. On 1,200 cases across LangGraph, CrewAI, and MobileRun it reaches 99.6% privacy and 83.3% privacy-compliant success, 27.5 points above the strongest high-privacy baseline.
+
+### EvolvAttack: Backdooring self Evolving VLM Agents
+- **arXiv**: 2610.15244 ([link](https://arxiv.org/abs/2610.15244))
+- **Date**: 2026-10-11
+- **Category**: Security
+- **Summary**: Proposes a self-evolving backdoor whose payload stays dormant until both a visual trigger and a sufficiently evolved memory state are present, so static scanning with clean memory sees near-zero attack success. Attack success rises from 0.5% before evolution to over 95% within 100 interactions across three VLM backbones, four agent pipelines, and recency-, semantic-, and reward-based memory evolution.
+
+### Knowing the User Is Not Knowing What We Established: Grounding Awareness in Personal Agents
+- **arXiv**: 2610.18684 ([link](https://arxiv.org/abs/2610.18684))
+- **Date**: 2026-10-13
+- **Category**: Security
+- **Summary**: Shows that persistent memory can turn an assistant's own remembered proposals into de facto authorized instructions, with richer user memory even increasing execution of proposals the user never accepted. Introduces a benchmark for distinguishing accepted, unacknowledged, revised, and scoped arrangements, traces failures through memory writing, retrieval, and action selection, and proposes a training-free Grounding Layer that checks consequential actions.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -2929,3 +2971,51 @@ Format per entry:
 - **Date**: 2026-09-04
 - **Category**: Optimization
 - **Summary**: Shows standard benchmarks overstate conversation-memory eviction policies because they compress prompts that already contain the future question. When the question is hidden until after compression, a casually mentioned allergy survives only 0-1% of the time versus 97% under full memory. Concludes that compressed caches are not persistent storage and that safety-critical facts need a separate auditable episodic store.
+
+### Memory Echo in Single-Agent Long-Term Memory: Lifecycle Evaluation and Provenance-Guided Mitigation
+- **arXiv**: 2610.17763 ([link](https://arxiv.org/abs/2610.17763))
+- **Date**: 2026-10-13
+- **Category**: Optimization
+- **Summary**: Identifies memory echo, where a single source gains outsized retrieval exposure by being repeatedly retrieved and written back to long-term memory, and introduces MEchoBench to measure its emergence, persistence, and effect on answers. The Family-Provenance-Authority framework keeps one record per source family and gates stale records on verified corrections, raising accuracy from 0.825 to 0.920 (DeepSeek V4 Flash) and cutting decision contamination from 0.106 to 0.030.
+
+### Many Steps into One: Reasoning Contraction and the Limits of Safe Memory Reuse for LLM Agents
+- **arXiv**: 2610.17544 ([link](https://arxiv.org/abs/2610.17544))
+- **Date**: 2026-10-13
+- **Category**: Optimization
+- **Summary**: Formalizes reasoning contraction, where thought templates, skill libraries, and caches replace many reasoning steps with one but keep answering from stale results after facts change. Counter-based memories (ExpeL/ACE-style) give 7-13.5x more stale answers than certified memories on edited multi-hop facts and 35-73x on verified code tasks; the paper derives a certification load bounding how much reasoning a safe memory can skip and proposes likelihood-ratio-weighted certification.
+
+### Reliable Memory from Unstable Growth: Curating Self-Written Agent Playbooks with Randomized Experiments
+- **arXiv**: 2610.18427 ([link](https://arxiv.org/abs/2610.18427))
+- **Date**: 2026-10-13
+- **Category**: Optimization
+- **Summary**: Shows that self-curated agent playbooks (ACE, Dynamic Cheatsheet) are unstable, sometimes scoring up to 69.6 points below no playbook. Randomized Block Curation randomly includes or excludes lesson blocks on practice tasks to estimate each block's causal effect and keeps the helpful ones, averaging 66.9 success versus 55.5 for the whole playbook and 53.8 for agent self-judgment.
+
+### Learning How to Remember: Memory Modality Selection for GUI Agents
+- **arXiv**: 2610.17928 ([link](https://arxiv.org/abs/2610.17928))
+- **Date**: 2026-10-13
+- **Category**: Optimization
+- **Summary**: Finds that the best format for retrieved past experience in memory-augmented GUI agents depends on the interaction step, and proposes SwitchMem, which routes between textual and visual memory at each step. It outperforms static-modality memory baselines on three GUI benchmarks.
+
+### Keep Your Receipts: Trustworthy Cleanup of Agent-Built Knowledge Graphs
+- **arXiv**: 2610.17719 ([link](https://arxiv.org/abs/2610.17719))
+- **Date**: 2026-10-13
+- **Category**: Optimization
+- **Summary**: Addresses deletion in agent knowledge-graph memory when sources are retracted or revoked: deleting only directly extracted facts barely reduces contaminated queries, and rebuilding is unstable. PolyGraph has the constructor emit per-artifact evidence receipts so cleanup becomes model-free set operations, cutting contaminated queries to 0.4-0.8% while retaining 99.8-100% of ideal recall.
+
+### Recall What Is Missing: Composing Evidence from Long-Term Agent Memory
+- **arXiv**: 2610.15642 ([link](https://arxiv.org/abs/2610.15642))
+- **Date**: 2026-10-11
+- **Category**: Optimization
+- **Summary**: Reframes the memory read phase under a fixed context budget as query-conditioned evidence composition, valuing each memory by what it adds beyond those already selected. The training-free MemPursuit uses the residual of a sparse convex query reconstruction over existing embeddings, improving LoCoMo accuracy by 7.2 points at Top-10 with 32.9x faster median reranking than BGE-v2-m3.
+
+### VitaBench: Memory Lifecycles Beyond Retrieval
+- **arXiv**: 2610.14731 ([link](https://arxiv.org/abs/2610.14731))
+- **Date**: 2026-10-10
+- **Category**: Optimization
+- **Summary**: Benchmarks memory lifecycle decisions (keep exact, compress, consolidate, or delete) made before future use is known, using repeated memory reviews and full-horizon counterfactual evaluation. Over half of states change their preferred action between short and full horizons, and a learned delayed lifecycle policy reaches 101.5 joint utility versus 83.4 for the best fixed strategy.
+
+### SEPM: Self-Evolving Procedural Memory Grounded in Task Graphs for Multi-Agent Collaboration
+- **arXiv**: 2610.14515 ([link](https://arxiv.org/abs/2610.14515))
+- **Date**: 2026-10-10
+- **Category**: Optimization
+- **Summary**: Uses task dependency graphs as a shared representation for multi-agent coordination (via a structured blackboard) and for procedural memory, distilling verified actions into reusable procedures that are created, refined, and retired under success and cost utility. It achieves the top score in all six ALFWorld/WebArena/OfficeBench settings under AutoGen and DyLAN, with gains up to 29.85 points over no added memory.

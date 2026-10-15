@@ -4,6 +4,40 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-15
+
+15 new papers (7 Security, 8 Optimization).
+
+**Security**
+- MemForm: Benchmarking Memory Formation Poisoning in LLM Agents (2610.14431)
+- Can Agents Forget When Asked? A Benchmark for Memory Unlearning in LLM Agents (2610.18052)
+- Can Agents Truly Forget? Explore Machine Unlearning for LLM Agents (2610.17659)
+- When Goals Leak Across Relationships: How Cached Goal Representations Shape Cross-Client Decisions (2610.17365)
+- Purpose IR: Compiling User Purpose for Privacy-Preserving Agent Workflow State (2610.16414)
+- EvolvAttack: Backdooring self Evolving VLM Agents (2610.15244)
+- Knowing the User Is Not Knowing What We Established: Grounding Awareness in Personal Agents (2610.18684)
+
+**Optimization**
+- Memory Echo in Single-Agent Long-Term Memory: Lifecycle Evaluation and Provenance-Guided Mitigation (2610.17763)
+- Many Steps into One: Reasoning Contraction and the Limits of Safe Memory Reuse for LLM Agents (2610.17544)
+- Reliable Memory from Unstable Growth: Curating Self-Written Agent Playbooks with Randomized Experiments (2610.18427)
+- Learning How to Remember: Memory Modality Selection for GUI Agents (2610.17928)
+- Keep Your Receipts: Trustworthy Cleanup of Agent-Built Knowledge Graphs (2610.17719)
+- Recall What Is Missing: Composing Evidence from Long-Term Agent Memory (2610.15642)
+- VitaBench: Memory Lifecycles Beyond Retrieval (2610.14731)
+- SEPM: Self-Evolving Procedural Memory Grounded in Task Graphs for Multi-Agent Collaboration (2610.14515)
+
+Note: this run used the arXiv search pages. Skipped as peripheral: 2610.18602 (future-fact recall
+in point-in-time agents, parametric rather than agent memory), 2610.14958 (activation steering as
+memory), 2610.15492 (parametric skill memory via LoRA), 2610.12793 (Gamma, robotic manipulation),
+plus embodied/navigation memory papers (2610.18478, 2610.17640).
+
+The summary email was not sent. SMTP login failed with `SMTPServerDisconnected: Connection
+unexpectedly closed` (third day running); check the Gmail app password in
+`~/.config/agentic-paper-search/email.env`.
+
+---
+
 ## 2026-10-14
 
 8 new papers (1 Security, 7 Optimization).
