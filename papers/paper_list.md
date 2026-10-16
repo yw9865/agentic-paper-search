@@ -3019,3 +3019,81 @@ Format per entry:
 - **Date**: 2026-10-10
 - **Category**: Optimization
 - **Summary**: Uses task dependency graphs as a shared representation for multi-agent coordination (via a structured blackboard) and for procedural memory, distilling verified actions into reusable procedures that are created, refined, and retired under success and cost utility. It achieves the top score in all six ALFWorld/WebArena/OfficeBench settings under AutoGen and DyLAN, with gains up to 29.85 points over no added memory.
+
+### MemCode: Discrete Semantic Representations for Long-Term Agent Memory
+- **arXiv**: 2610.19472 ([link](https://arxiv.org/abs/2610.19472))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Rewrites dialogue into self-contained memory units mapped onto a learnable discrete codebook, and uses code co-occurrence as a retrieval path alongside vector search. It reports the best overall accuracy on LongMemEval-S and LoCoMo while building per-dialogue memory several times faster than LightMem and far faster than A-MEM and MemoryOS.
+
+### Beyond Retrieval: Evidence Access and Event Aggregation in Agent Memory
+- **arXiv**: 2610.19474 ([link](https://arxiv.org/abs/2610.19474))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Argues that questions about an agent's past often require aggregating many events, which similarity retrieval alone cannot do. It adds a reusable event ledger and deterministic aggregation on top of source-preserving trajectory memory, raising Qwen3-32B exact match from 35.2% to 49.0% on aggregation questions (about +1.3 points on full AMA-Bench).
+
+### Memorizing Who, Knowing How: Benchmarking Personal and Procedural Memory for Persistent Assistants
+- **arXiv**: 2610.20022 ([link](https://arxiv.org/abs/2610.20022))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Introduces PraxisMemBench, where personal (user) memory and procedural (how-to) memory co-evolve across sessions, and shows that managing them separately degrades over time on relation-dependent tasks. The proposed PraxisMem memory manager, trained with joint-state supervision and RL, reaches 40.78% session success vs. 20.60% for Claude Code's native memory.
+
+### STRATA: Self-Maintaining Structured Experience Graphs for Self-Evolving Language Agents
+- **arXiv**: 2610.19386 ([link](https://arxiv.org/abs/2610.19386))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Replaces flat, never-pruned experience pools with a layered graph of skills, workflows, and generalized frameworks, using contrast edges to block negative transfer from look-alike experiences and pressure-triggered garbage collection for forgetting. It achieves the best average across four interactive benchmarks with lower latency and fewer environment steps (ScienceWorld 78.7 to 96.7).
+
+### EGCForest: Structured Agent Memory Organization for Enterprise Group Chats
+- **arXiv**: 2610.19836 ([link](https://arxiv.org/abs/2610.19836))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Organizes enterprise group-chat logs into three linked hierarchical forests (by channel, speaker, and deliverable) as agent memory, addressing limits of flat retrieval and summary-based memory. It outperforms RAG and memory-system baselines on three enterprise-chat benchmarks (up to +20.85 accuracy over MemOS) while keeping online retrieval efficient.
+
+### MemDuet: Learning Dual-Process Memory for Long-Context Reasoning
+- **arXiv**: 2610.19928 ([link](https://arxiv.org/abs/2610.19928))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: A recurrent memory agent in which a small model quickly selects evidence from context chunks and a large model verifies and rewrites the running memory. Trained in three stages, it delivers a 9.74x average end-to-end speedup and 73.91% fewer output tokens than RL-MemAgent on RULER-HQA, LongBench v2, and 2WikiMultiHopQA.
+
+### Maximising Transparency in Context Compaction Improves Retention of Facts and Commitments for Lightweight Coding Agents
+- **arXiv**: 2610.20116 ([link](https://arxiv.org/abs/2610.20116))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Proposes transparent-compact, a deterministic context-compaction method for the Pi coding agent that preserves user/assistant prose verbatim and explicitly marks what was removed. This improves lightweight models' retention of facts and commitments across compaction, a key working-memory management problem for long-running agents.
+
+### Seeing, Maintaining, and Learning: The Evolution of Multimodal Agent Memory
+- **arXiv**: 2610.19366 ([link](https://arxiv.org/abs/2610.19366))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Survey that frames multimodal agent memory along two axes, how memory is formed/represented and how it is managed as experience accumulates. It classifies memory management into fixed, rule-driven dynamic, and self-evolving levels and distills design principles for long-horizon, lifelong agents.
+
+### EvoWeave: Composing Reusable Agent Experience through Operation Level Graphs
+- **arXiv**: 2610.19381 ([link](https://arxiv.org/abs/2610.19381))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: An experience-memory framework storing abstract states as nodes and reusable operations as directed edges annotated with I/O contracts, provenance, and capability references. A planner decomposes tasks into dependency graphs, and retrieval plus bounded search composes relevant experience fragments instead of reusing whole trajectories.
+
+### XferAgent: Cross-Agent Experience Transfer for Self-Improving LLM Agents
+- **arXiv**: 2610.19581 ([link](https://arxiv.org/abs/2610.19581))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Lets heterogeneous LLM agents reuse each other's experience via local and shared experience graphs, merging compatible contributions and rejecting likely-unreliable merges. It addresses how shared multi-agent memory should be consolidated and selected per task.
+
+### New Model, Old Habits: Behavior Transfer under Model Swapping in Multi-Session LLM Agents
+- **arXiv**: 2610.19712 ([link](https://arxiv.org/abs/2610.19712))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Shows that when a multi-session agent swaps its backbone LLM and carries over raw history, the new model inherits the previous model's reasoning and action habits, an effect much weaker with summarized history. Proposes DASH, a history-summarization method that preserves strong-model behavior while limiting weak-to-strong transfer across repeated swaps.
+
+### Scaling Discovery Requires Forgetting
+- **arXiv**: 2610.20563 ([link](https://arxiv.org/abs/2610.20563))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Finds that LLM research agents plateau as accumulated history fixates them on earlier work, regardless of running longer, in parallel, or with shared candidates. Periodically wiping search state and restarting from the best candidate (a deliberate forgetting policy) gives up to 15% gains over parallel agents and 39% over a single agent.
+
+### HEM-Med: A Hierarchical Agentic Memory Framework for Safe Multi-Center Medication Recommendation
+- **arXiv**: 2610.20191 ([link](https://arxiv.org/abs/2610.20191))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Splits agent memory into shared cross-hospital experience memory and hospital-specific residual memory so low-resource centers can benefit from large ones, with safety-aware medication set generation checking drug interactions and formulary feasibility. Relevant as a hierarchical memory-sharing design for multi-site agents (it does not address memory privacy).

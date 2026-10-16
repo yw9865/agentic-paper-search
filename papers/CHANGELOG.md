@@ -4,6 +4,38 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-16
+
+13 new papers (0 Security, 13 Optimization).
+
+**Optimization**
+- MemCode: Discrete Semantic Representations for Long-Term Agent Memory (2610.19472)
+- Beyond Retrieval: Evidence Access and Event Aggregation in Agent Memory (2610.19474)
+- Memorizing Who, Knowing How: Benchmarking Personal and Procedural Memory for Persistent Assistants (2610.20022)
+- STRATA: Self-Maintaining Structured Experience Graphs for Self-Evolving Language Agents (2610.19386)
+- EGCForest: Structured Agent Memory Organization for Enterprise Group Chats (2610.19836)
+- MemDuet: Learning Dual-Process Memory for Long-Context Reasoning (2610.19928)
+- Maximising Transparency in Context Compaction Improves Retention of Facts and Commitments for Lightweight Coding Agents (2610.20116)
+- Seeing, Maintaining, and Learning: The Evolution of Multimodal Agent Memory (2610.19366)
+- EvoWeave: Composing Reusable Agent Experience through Operation Level Graphs (2610.19381)
+- XferAgent: Cross-Agent Experience Transfer for Self-Improving LLM Agents (2610.19581)
+- New Model, Old Habits: Behavior Transfer under Model Swapping in Multi-Session LLM Agents (2610.19712)
+- Scaling Discovery Requires Forgetting (2610.20563)
+- HEM-Med: A Hierarchical Agentic Memory Framework for Safe Multi-Center Medication Recommendation (2610.20191)
+
+Note: this run used the arXiv /new listing pages (search and API endpoints returned HTTP 429).
+No on-topic Security papers appeared in today's cs.CR listing. Skipped as peripheral: 2610.20399
+(Cortex, parametric memory), 2610.19210 (Titan-Llama, architectural neural memory), 2610.19373
+(compressed-memory vectors for xRAG, not agents), 2610.19314 (PersEvalBench, evaluator benchmark),
+2610.19843 (LAGO, agent library), 2610.19380 (personal skill learning), 2610.19158 (AgentCIScope,
+cross-app privacy, not memory). Older papers that showed up only as revisions were not added.
+
+The summary email was not sent. SMTP login failed with `SMTPServerDisconnected: Connection
+unexpectedly closed` (fourth day running); check the Gmail app password in
+`~/.config/agentic-paper-search/email.env`.
+
+---
+
 ## 2026-10-15
 
 15 new papers (7 Security, 8 Optimization).
