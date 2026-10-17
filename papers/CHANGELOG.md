@@ -4,6 +4,43 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-17
+
+16 new papers (3 Security, 13 Optimization).
+
+**Security**
+- MemCut: Every Secret Leaves a Trail in the Long-Term Memory of LLM Agents (2610.21405)
+- Poisoning the Neighborhood: A Topology-Aware Topic-Level Attack on Large-Scale HNSW-based RAG Systems (2610.21464)
+- Private Retrieval Augmented Generation via Random Projection (2610.22297)
+
+**Optimization**
+- MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning (2610.21091)
+- All-in-One Memory: Process-Rewarded Reinforcement Learning for Memory Agents (2610.21147)
+- MemScope: Evolving Agent Memory Architectures through Localized Code Repair (2610.21170)
+- Prune the Summary, Not the History: Source-Judged Compaction for Long-Horizon Agents (2610.20927)
+- Same Context, Different Agents: A Behavioral Study of Semantic Layers, Orchestration and Compaction in Data Agents (2610.20959)
+- From Long Context to Selective Memory:A Survey of Memory-Centric Compression for Large Language Models (2610.21165)
+- Rethinking the Role of Tool Graph Memory in Multi-Turn Tool Use (2610.21571)
+- Reliable Knowledge Acquisition for Continual Learning Agents (2610.21739)
+- TEM: Temporal State Tracking Memory for Large Language Model Agents (2610.21900)
+- Hy-Memory-30B-A3B: Attributed Reinforcement Learning for Long-Term Memory Writing (2610.22196)
+- Beyond Downstream QA: Rethinking How We Evaluate Agent Memory (2610.22209)
+- MetaShare: Failure-Aware Collective Self-Improvement for Open-Ended Agents (2610.21887)
+- EvolvingBrain: An Adaptive Skill System for Multi-modal Agents Self-Evolution in Open Worlds (2610.20786)
+
+Note: this run used the arXiv /new listing pages for Friday 16 October (the API returned HTTP 429).
+Skipped as peripheral: 2610.20675 (AlphaDiana, agent evaluation harness), 2610.22174 (Mosaic,
+multi-session RL), Memorilla (latent memory tokens for a frozen LLM, not agents; ID not verified),
+2610.22273 (Librarian Agents, document workspace curation), 2610.21245 (RAG privacy-accounting
+survey), 2610.22026 / 2610.22016 (multi-agent KV-cache sharing), 2610.21424 (SPRA paper
+representation), 2610.21348 (FedSkillGit), 2610.22029 (EvoHeir/HeirCommit).
+
+The summary email was not sent. SMTP login failed with `SMTPServerDisconnected: Connection
+unexpectedly closed` (fifth day running); check the Gmail app password in
+`~/.config/agentic-paper-search/email.env`.
+
+---
+
 ## 2026-10-16
 
 13 new papers (0 Security, 13 Optimization).

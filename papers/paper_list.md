@@ -923,6 +923,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Shows that persistent memory can turn an assistant's own remembered proposals into de facto authorized instructions, with richer user memory even increasing execution of proposals the user never accepted. Introduces a benchmark for distinguishing accepted, unacknowledged, revised, and scoped arrangements, traces failures through memory writing, retrieval, and action selection, and proposes a training-free Grounding Layer that checks consequential actions.
 
+### MemCut: Every Secret Leaves a Trail in the Long-Term Memory of LLM Agents
+- **arXiv**: 2610.21405 ([link](https://arxiv.org/abs/2610.21405))
+- **Date**: 2026-10-15
+- **Category**: Security
+- **Summary**: Benchmarks whether agent memory systems truly forget user-requested secrets, using 456 secrets embedded in long conversations with annotated indirect evidence. Deleting the original disclosures cuts recovery through retrieval but not from leftover evidence; even with LLM-guided deletion, 39-76% of secrets remain recoverable.
+
+### Poisoning the Neighborhood: A Topology-Aware Topic-Level Attack on Large-Scale HNSW-based RAG Systems
+- **arXiv**: 2610.21464 ([link](https://arxiv.org/abs/2610.21464))
+- **Date**: 2026-10-15
+- **Category**: Security
+- **Summary**: Shows that existing RAG poisoning attacks weaken under approximate nearest-neighbor (HNSW) indexes, and arranges poisoned documents as Hubs and Satellites to capture whole and unseen topics. On a 2M-document Wikipedia corpus it keeps over 72% retrieval success and 31.29% attack success, and existing poisoning defenses fail to stop it.
+
+### Private Retrieval Augmented Generation via Random Projection
+- **arXiv**: 2610.22297 ([link](https://arxiv.org/abs/2610.22297))
+- **Date**: 2026-10-15
+- **Category**: Security
+- **Summary**: Defends RAG datastores against data-extraction leakage by applying one shared random projection to both datastore and query embeddings, preserving query-document similarity. It sharply reduces extraction attacks and outperforms prior differential-privacy RAG methods on retrieval and generation at comparable measured privacy.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -3097,3 +3115,81 @@ Format per entry:
 - **Date**: 2026-10-14
 - **Category**: Optimization
 - **Summary**: Splits agent memory into shared cross-hospital experience memory and hospital-specific residual memory so low-resource centers can benefit from large ones, with safety-aware medication set generation checking drug interactions and formulary feasibility. Relevant as a hierarchical memory-sharing design for multi-site agents (it does not address memory privacy).
+
+### MemComposer: Learning to Assemble Memories for LLM Agents via Reinforcement Learning
+- **arXiv**: 2610.21091 ([link](https://arxiv.org/abs/2610.21091))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: Argues that semantic-similarity retrieval does not guarantee useful memories and trains a composer that decides which memories to include, how many, and in what order, using GRPO-based Experience Policy Optimization with task-success rewards. Beats the strongest baseline on three tau^2-bench domains while using fewer memory tokens.
+
+### All-in-One Memory: Process-Rewarded Reinforcement Learning for Memory Agents
+- **arXiv**: 2610.21147 ([link](https://arxiv.org/abs/2610.21147))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: AiO-Mem treats retrieval, memory writing, and stopping as steps over a shared evidence state and optimizes a single policy with a process reward model and PA-DAPO, rather than tuning retrieval and writing separately. Outperforms static memory systems and RL-trained memory agents on long-context benchmarks.
+
+### MemScope: Evolving Agent Memory Architectures through Localized Code Repair
+- **arXiv**: 2610.21170 ([link](https://arxiv.org/abs/2610.21170))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: A Patch Agent reads execution traces, runtime memory state, and memory-architecture code to make small in-place fixes instead of wholesale rewrites driven by coarse feedback. Improves accuracy on GAIA, xBench, and ALFWorld with a median code change of 4.4%.
+
+### Prune the Summary, Not the History: Source-Judged Compaction for Long-Horizon Agents
+- **arXiv**: 2610.20927 ([link](https://arxiv.org/abs/2610.20927))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Finds that most failed long-horizon runs trace back to compaction-summary entries with no support in environment output. A training-free, non-generative judge removes unsupported summary entries, improving cross-run reliability by 2.1-8.9% on AppWorld and OfficeBench without extra tokens.
+
+### Same Context, Different Agents: A Behavioral Study of Semantic Layers, Orchestration and Compaction in Data Agents
+- **arXiv**: 2610.20959 ([link](https://arxiv.org/abs/2610.20959))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Studies semantic layers, multi-agent orchestration, and history compaction alone and combined across 7 LLMs and 1,514 long tasks. Each method helps only the agent behavior type it complements (investigators, premature answerers, early quitters), can hurt others, and combinations yield less than the sum of their effects.
+
+### From Long Context to Selective Memory:A Survey of Memory-Centric Compression for Large Language Models
+- **arXiv**: 2610.21165 ([link](https://arxiv.org/abs/2610.21165))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: Surveys long-context handling as inference-time memory management, separating memory that participates in computation from external memory that can be retrieved, updated, or discarded, and models these as an information lifecycle under a cost budget. Relevant as a framing for compression, eviction, and forgetting choices in memory systems.
+
+### Rethinking the Role of Tool Graph Memory in Multi-Turn Tool Use
+- **arXiv**: 2610.21571 ([link](https://arxiv.org/abs/2610.21571))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: Across 9 models and 2 benchmarks, tool graph memory rarely significantly beats baselines while costing over twice the LLM calls, its guidance is often wrong, and random guidance retains most of the benefit. Storing the same experience as textual insights works better at almost no extra cost.
+
+### Reliable Knowledge Acquisition for Continual Learning Agents
+- **arXiv**: 2610.21739 ([link](https://arxiv.org/abs/2610.21739))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: Finds that 12-33% of entries stored by representative agent memory systems hurt later performance when reused. RIKA extracts multi-level knowledge and uses source evidence and later experience to gate what enters the agent's context.
+
+### TEM: Temporal State Tracking Memory for Large Language Model Agents
+- **arXiv**: 2610.21900 ([link](https://arxiv.org/abs/2610.21900))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: A training-free memory that stores facts as source-linked versioned records, retrieves relevant versions in source order, and labels historical values so agents can answer questions about changing information. Uses fewer tokens than session-aware RAG and beats it on LoCoMo under a fixed evidence budget.
+
+### Hy-Memory-30B-A3B: Attributed Reinforcement Learning for Long-Term Memory Writing
+- **arXiv**: 2610.22196 ([link](https://arxiv.org/abs/2610.22196))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: A compact long-term memory writer trained on Mem0, MemOS, and Hy-Memory write formats via self-distillation plus RL that rewards how well stored memory supports later answers. Ranks first in four setups including unseen EverMemOS, with a 55.49% macro average.
+
+### Beyond Downstream QA: Rethinking How We Evaluate Agent Memory
+- **arXiv**: 2610.22209 ([link](https://arxiv.org/abs/2610.22209))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: Argues QA-accuracy benchmarks conflate memory errors with retrieval and generation errors, and introduces FEB-30, 30 fact-evolution trajectories with deterministic ground truth for inspecting memory stores directly. On a representative system intrinsic and extrinsic scores differ by about 16 points, and memory operations are classified correctly only 20% of the time.
+
+### MetaShare: Failure-Aware Collective Self-Improvement for Open-Ended Agents
+- **arXiv**: 2610.21887 ([link](https://arxiv.org/abs/2610.21887))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: Maintains a shared store of successful and failed agent modifications with their performance deltas, retrieved across lineages before each generation so agents reuse effective strategies and avoid known dead ends. Matches or beats DGM-Hyperagents across five domains and reaches its best agent in 1.7-2.9x fewer iterations.
+
+### EvolvingBrain: An Adaptive Skill System for Multi-modal Agents Self-Evolution in Open Worlds
+- **arXiv**: 2610.20786 ([link](https://arxiv.org/abs/2610.20786))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Builds domain-, plan-, and action-level skills from past trajectories, condensing long interactions into structured memory that guides runtime skill selection. Reports higher success on VAB-Minecraft and DiscoveryWorld; relevant as experience-memory consolidation for multimodal agents.
