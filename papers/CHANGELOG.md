@@ -4,6 +4,20 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-18
+
+No new papers found.
+
+arXiv has not announced anything since the Friday 16 October listing, which the 2026-10-17 run already
+processed. Weekend runs see no new listings. The arXiv API returned HTTP 429 again, so this run checked
+the cs.AI and cs.CR /new pages and did web searches.
+Skipped as peripheral: 2610.20902 (Neo4j exploit-chain reasoning graph for pentest agents).
+Web searches turned up older on-topic papers that are not tracked: MEM1 (2506.15841), MemPO
+(2603.00680) and SimpleMem (2601.02553). They are well outside the recency window, so they were not
+added. Add them by hand if you want to backfill.
+
+---
+
 ## 2026-10-17
 
 16 new papers (3 Security, 13 Optimization).
