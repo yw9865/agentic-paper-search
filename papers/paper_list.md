@@ -3193,3 +3193,9 @@ Format per entry:
 - **Date**: 2026-10-14
 - **Category**: Optimization
 - **Summary**: Builds domain-, plan-, and action-level skills from past trajectories, condensing long interactions into structured memory that guides runtime skill selection. Reports higher success on VAB-Minecraft and DiscoveryWorld; relevant as experience-memory consolidation for multimodal agents.
+
+### Suggested Is Not Superseded: A Pre-Registered Evaluation of a System-One Model as a Memory-Retirement Gate
+- **arXiv**: 2610.15710 ([link](https://arxiv.org/abs/2610.15710))
+- **Date**: 2026-10-11
+- **Category**: Optimization
+- **Summary**: Studies when long-term assistant memory should retire a stored claim, using a three-way contract (superseded / needs confirmation / compatible) over 500 labeled pairs. A binary gate retires 39.2% of merely-suggested changes too early, and the three-way gate cuts that to 15.5% at a 15.3-point detection cost. The authors recommend routing suggested changes to pending evidence rather than deleting them on a similarity score.

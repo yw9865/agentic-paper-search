@@ -4,6 +4,24 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-19
+
+1 new paper (0 Security, 1 Optimization).
+
+**Optimization**
+- Suggested Is Not Superseded: A Pre-Registered Evaluation of a System-One Model as a Memory-Retirement Gate (2610.15710)
+
+arXiv's Monday listing was not out yet; the latest /new page was still Friday 16 October. The arXiv API
+keyword search surfaced 2610.15710 (submitted 2026-10-11), which earlier runs missed, so this run added it.
+Skipped as off-topic or peripheral: 2610.21126 (RoPERelay, sparse KV-cache positional geometry for general
+LLM inference), 2610.21804 (Co2In, image incremental learning), 2610.17926 (CineMem, video generation),
+2610.14406 (IMPRINT, robot policy memory), 2610.07907 (Continuous Memory Machines, recurrent architecture),
+2610.11561 (Workerville, organizational agent-safety benchmark).
+The summary email failed: the SMTP server closed the connection during AUTH on both attempts. Check the
+app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-18
 
 No new papers found.
