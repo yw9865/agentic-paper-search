@@ -4,6 +4,40 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-20
+
+15 new papers (3 Security, 12 Optimization).
+
+**Security**
+- SAFE-Mem: Secure Agentic Memory with Fine-Grained Authority and Governance-Aware Retrieval (2610.22959)
+- GRAD: Graph-Structured Antibody Defense for LLM Agents (2610.22828)
+- Stealthy Poisoning Attacks via Reused KV Cache of Reasoning (2610.22873)
+
+**Optimization**
+- Learning Personalized Memory Gating from Delayed One-Sided Feedback (2610.23812)
+- GLOBE: Evolving Structured Agentic Memory for E-commerce Product Optimization in Generative Search (2610.23709)
+- RL-Guided Temporal Localization for Dual-Channel Retrieval in Long-Horizon Agent Memory (2610.23598)
+- From Memory Hits to Answerable Evidence: Query-Conditioned Memory Compilation for Long-Term Agent Memory (2610.23313)
+- Beyond Marginal Influence: Interaction-Aware Memory Selection for LLM Agents (2610.23266)
+- Multimodal Filesystem Memory For Long-Horizon Embodied Agents (2610.22686)
+- From Relevant Memories to Sufficient Evidence: Rethinking Memory Utilization in LLM Agents (2610.22668)
+- When to Forget: Risk-Controlled Context Adaptation for Long-Horizon Agents (2610.22897)
+- Darwin-Claw: Environment-Adaptive Experience Consolidation for Recursively Self-Evolving Agents (2610.23574)
+- ECHOES: Seeing Beyond the Current Image via Recursive History Compression and Privileged On-Policy Distillation (2610.22408)
+- ProPerAgent: Toward Memory-Driven Proactive Assistance (2610.22671)
+- MARS: Memory-Aware Routing for Session-Level LLM Assistants (2610.23583)
+
+Source: the Monday 19 October listing (cs.AI/cs.CL/cs.CR/cs.LG /new) plus an arXiv API keyword search.
+The /new pages were too long to read in full and a second API query hit HTTP 429, so coverage may be
+incomplete. Skipped as off-topic or peripheral: 2610.23787 (DLite, speculative decoding), 2610.23372 (IMEP,
+VLA robot memory evaluation), 2610.22672 (GUI navigation map), 2610.22984 (self-evolving failure repair),
+2610.23311 (SRCoT, edge RAG pipeline), 2610.22381 (continual fine-tuning relearning), 2610.09027 (VLM KV-cache
+visual attack, not agent memory).
+The summary email failed again: the SMTP server closed the connection during AUTH, the same failure as 2026-10-19.
+Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-19 [Conference scan]
 
 No new conference papers found.

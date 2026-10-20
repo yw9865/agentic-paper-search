@@ -941,6 +941,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Defends RAG datastores against data-extraction leakage by applying one shared random projection to both datastore and query embeddings, preserving query-document similarity. It sharply reduces extraction attacks and outperforms prior differential-privacy RAG methods on retrieval and generation at comparable measured privacy.
 
+### SAFE-Mem: Secure Agentic Memory with Fine-Grained Authority and Governance-Aware Retrieval
+- **arXiv**: 2610.22959 ([link](https://arxiv.org/abs/2610.22959))
+- **Date**: 2026-10-16
+- **Category**: Security
+- **Summary**: Addresses agents treating unverified claims in persistent memory as authorized preferences or permissions. SAFE-Mem tags each stored claim with kind, authority, and scope labels and checks them during retrieval, reporting lower attack success and higher answer accuracy than comparable defenses on MPBench and LoCoMo.
+
+### GRAD: Graph-Structured Antibody Defense for LLM Agents
+- **arXiv**: 2610.22828 ([link](https://arxiv.org/abs/2610.22828))
+- **Date**: 2026-10-16
+- **Category**: Security
+- **Summary**: Argues that memory-poisoning and decomposition attacks spread malicious evidence across an agent's steps, so per-request defenses miss them. GRAD aggregates evidence over the execution graph into a graph-level risk score and routes it to detection experts on frozen encoders.
+
+### Stealthy Poisoning Attacks via Reused KV Cache of Reasoning
+- **arXiv**: 2610.22873 ([link](https://arxiv.org/abs/2610.22873))
+- **Date**: 2026-10-16
+- **Category**: Security
+- **Summary**: Presents R²ECAP, a black-box attack that plants poisoned reasoning traces through the chat interface of systems that reuse cached reasoning KV states, RAG-style. The adversarial influence persists after the trace is discarded, reaching up to 79% success and 46% in a reasoning-trace retrieval system while mostly evading a prompt-injection detector.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -3199,3 +3217,75 @@ Format per entry:
 - **Date**: 2026-10-11
 - **Category**: Optimization
 - **Summary**: Studies when long-term assistant memory should retire a stored claim, using a three-way contract (superseded / needs confirmation / compatible) over 500 labeled pairs. A binary gate retires 39.2% of merely-suggested changes too early, and the three-way gate cuts that to 15.5% at a 15.3-point detection cost. The authors recommend routing suggested changes to pending evidence rather than deleting them on a similarity score.
+
+### Learning Personalized Memory Gating from Delayed One-Sided Feedback
+- **arXiv**: 2610.23812 ([link](https://arxiv.org/abs/2610.23812))
+- **Date**: 2026-10-16
+- **Category**: Optimization
+- **Summary**: Frames deciding which extracted facts an agent keeps in a budgeted memory store as online learning with delayed feedback that is only observed for retained items. Warm-Start UCB starts from offline data and adapts per user, with lower regret bounds and better results than baselines across memory budgets and history lengths.
+
+### GLOBE: Evolving Structured Agentic Memory for E-commerce Product Optimization in Generative Search
+- **arXiv**: 2610.23709 ([link](https://arxiv.org/abs/2610.23709))
+- **Date**: 2026-10-16
+- **Category**: Optimization
+- **Summary**: Stores product-optimization knowledge as an evolving handbook of field-scoped behaviors, updated by a Reflector from ranking feedback and maintained by Moderator/Curator roles plus a deactivation step for redundant or harmful entries. Structured, curated memory beats monolithic prompt optimization and transfers to unseen categories.
+
+### RL-Guided Temporal Localization for Dual-Channel Retrieval in Long-Horizon Agent Memory
+- **arXiv**: 2610.23598 ([link](https://arxiv.org/abs/2610.23598))
+- **Date**: 2026-10-16
+- **Category**: Optimization
+- **Summary**: TIDER trains a 1.7B RL locator to predict the time windows that hold evidence, fuses this temporal channel with semantic retrieval, and reranks by window proximity. It reaches 61.52% on LifeBench and 78.96% on LoCoMo, gains of 8.82 and 3.66 points.
+
+### From Memory Hits to Answerable Evidence: Query-Conditioned Memory Compilation for Long-Term Agent Memory
+- **arXiv**: 2610.23313 ([link](https://arxiv.org/abs/2610.23313))
+- **Date**: 2026-10-16
+- **Category**: Optimization
+- **Summary**: MemCompile separates finding relevant memories from assembling the evidence the reader sees, compiling retrieved fragments into a bounded, answer-ready context instead of passing redundant or incomplete hits. It reports 80.52% judge accuracy on LoCoMo and strong LongMemEval-S results.
+
+### Beyond Marginal Influence: Interaction-Aware Memory Selection for LLM Agents
+- **arXiv**: 2610.23266 ([link](https://arxiv.org/abs/2610.23266))
+- **Date**: 2026-10-16
+- **Category**: Optimization
+- **Summary**: Shows that ranking memories by relevance or single-record influence misses small sufficient subsets when evidence is redundant or only works jointly. Introduces JointCoreBench and JointCore, which tests groups before singletons and finds minimum-cost sufficient sets with fewer evaluations than singleton deletion.
+
+### Multimodal Filesystem Memory For Long-Horizon Embodied Agents
+- **arXiv**: 2610.22686 ([link](https://arxiv.org/abs/2610.22686))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: MFM separates episodic, spatial, semantic/procedural, and working memory for long-horizon foundation-model agents, linking searchable text records back to the original multimodal episodes so agents can retrieve experience and re-check raw observations.
+
+### From Relevant Memories to Sufficient Evidence: Rethinking Memory Utilization in LLM Agents
+- **arXiv**: 2610.22668 ([link](https://arxiv.org/abs/2610.22668))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: Argues that relevant retrieved memories are not enough when key facts are scattered or abstracted. QEMem builds query-specific evidence sets via multi-granularity retrieval, source-referenced evidence cards, and targeted refinement, reaching 91.43% judge accuracy on LoCoMo.
+
+### When to Forget: Risk-Controlled Context Adaptation for Long-Horizon Agents
+- **arXiv**: 2610.22897 ([link](https://arxiv.org/abs/2610.22897))
+- **Date**: 2026-10-16
+- **Category**: Optimization
+- **Summary**: RECAP decides whether a long-horizon agent should keep, shorten, or drop each history block, using controlled comparisons, an edit predictor, and a certification step that limits harmful or useless edits. On Hunyuan-A13B it edits about 43% of checkpoints while matching full-history success (about 91.9%) and trimming prompt cost.
+
+### Darwin-Claw: Environment-Adaptive Experience Consolidation for Recursively Self-Evolving Agents
+- **arXiv**: 2610.23574 ([link](https://arxiv.org/abs/2610.23574))
+- **Date**: 2026-10-16
+- **Category**: Optimization
+- **Summary**: Replaces raw interaction-log memory with a hierarchical experience-consolidation system that attributes errors and distills episodic experience into operational skills and lasting memory via updated prototype vectors. It reports gains on WildClawBench.
+
+### ECHOES: Seeing Beyond the Current Image via Recursive History Compression and Privileged On-Policy Distillation
+- **arXiv**: 2610.22408 ([link](https://arxiv.org/abs/2610.22408))
+- **Date**: 2026-10-14
+- **Category**: Optimization
+- **Summary**: Compresses a GUI agent's screenshot history into a recursively updated textual state, trained by distillation from a privileged teacher that sees multiple images. The deployed agent no longer needs to keep historical screenshots.
+
+### ProPerAgent: Toward Memory-Driven Proactive Assistance
+- **arXiv**: 2610.22671 ([link](https://arxiv.org/abs/2610.22671))
+- **Date**: 2026-10-15
+- **Category**: Optimization
+- **Summary**: Introduces ProPerMem, which pairs egocentric video with year-long personal memories, and ProPerAgent, which retrieves from a graph-organized memory store and gates which memories are worth surfacing. A lightweight RL stage reduces early or repeated interventions.
+
+### MARS: Memory-Aware Routing for Session-Level LLM Assistants
+- **arXiv**: 2610.23583 ([link](https://arxiv.org/abs/2610.23583))
+- **Date**: 2026-10-16
+- **Category**: Optimization
+- **Summary**: Jointly decides which prior session context an assistant sees and which model answers each turn. On RealMem it keeps about 98% of full-context GPT-4o QA performance at roughly 15% of the generation API cost, controller overhead included.
