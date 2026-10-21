@@ -959,6 +959,48 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Presents R²ECAP, a black-box attack that plants poisoned reasoning traces through the chat interface of systems that reuse cached reasoning KV states, RAG-style. The adversarial influence persists after the trace is discarded, reaching up to 79% success and 46% in a reasoning-trace retrieval system while mostly evading a prompt-injection detector.
 
+### Whose Credential Is It? How Owner Attribution in Agent Memory Shapes Cross-User Account Misuse
+- **arXiv**: 2610.25707 ([link](https://arxiv.org/abs/2610.25707))
+- **Date**: 2026-10-19
+- **Category**: Security
+- **Summary**: Audits, in AppWorld, whether persistent agent memory that exposes another user's credentials leads to real account changes, measuring exposure, behavior, and resulting state. Agents rarely act on foreign credentials by default but misuse them often when memory presents them as the user's own; explicitly attributing the credential's owner sharply reduces misuse at some cost to task success.
+
+### Can Agents Keep Secrets They Were Never Told? Benchmarking Latent Privacy Risks Across Sessions with MemJoin
+- **arXiv**: 2610.24359 ([link](https://arxiv.org/abs/2610.24359))
+- **Date**: 2026-10-17
+- **Category**: Security
+- **Summary**: MemJoin is a 288-case benchmark in which a multi-session history reveals a sensitive relation that no single session exposes, tested on six memory systems against full- and no-history baselines. It shows that checking whether protected attribute values appear in stored or retrieved context is insufficient, because cross-session linking clues determine whether the full relation leaks.
+
+### Memory, Know Your PLACE: Governing Lifecycle State and Query-Time Eligibility in Persistent-Memory Agents
+- **arXiv**: 2610.25179 ([link](https://arxiv.org/abs/2610.25179))
+- **Date**: 2026-10-18
+- **Category**: Security
+- **Summary**: Argues persistent agent memory needs governance both when state is written and when it is used to answer later queries. PLACE adds write-side certification and read-side authorization to a Mem0 backend; with Qwen2.5 models, write checks improve state accuracy and read checks stop ineligible memories from influencing answers.
+
+### RAGLeak: Supply-Chain Privacy Backdoors in Retrieval-Augmented Generation
+- **arXiv**: 2610.25937 ([link](https://arxiv.org/abs/2610.25937))
+- **Date**: 2026-10-19
+- **Category**: Security
+- **Summary**: A supply-chain backdoor that makes a RAG generator emit reversibly obfuscated versions of private retrieved documents, which an auxiliary LLM can then reconstruct with high fidelity, exfiltrating the knowledge base. Reaches up to 100% attack success across three model families and domains with little utility loss, and survives clean fine-tuning.
+
+### Consistency Is the Attack Surface: Detecting Coordinated Retrieval Poisoning with Embedding Geometry
+- **arXiv**: 2610.24834 ([link](https://arxiv.org/abs/2610.24834))
+- **Date**: 2026-10-17
+- **Category**: Security
+- **Summary**: Shows that consistency-based RAG defenses assume a sparse attacker, while coordinated poisoning can win a retrieved majority. CoordGuard detects the dense, query-anchored structure of coordinated poison in evidence embeddings without labels or gold answers and suppresses it, lowering attack success at a modest clean-accuracy cost.
+
+### CoSec: Benchmarking Agent Security in Communities
+- **arXiv**: 2609.34790 ([link](https://arxiv.org/abs/2609.34790))
+- **Date**: 2026-09-28 (v3 revised 2026-10-19)
+- **Category**: Security
+- **Summary**: An executable 208-scenario benchmark testing whether LLM agents protect private information and enforce access rules as community membership and roles change, with attacks via dialogue, environment content, persistent memory, and multi-step workflows. Agents often complete benign tasks while breaching privacy or authorization boundaries, so task success does not imply compliance.
+
+### Memory-Induced Tool-Drift in LLM Agents
+- **arXiv**: 2605.24941 ([link](https://arxiv.org/abs/2605.24941))
+- **Date**: 2026-05-24 (v2 revised 2026-10-17)
+- **Category**: Security
+- **Summary**: Shows that personality-style preferences stored in an agent's long-term memory (e.g., cost-consciousness) silently alter tool-call parameters in contexts where they do not apply. On the 105-scenario MEMDRIFT benchmark, biased memories degrade parameters across all eight tested models, and prompting or relevance filtering does not fully prevent it.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -3289,3 +3331,111 @@ Format per entry:
 - **Date**: 2026-10-16
 - **Category**: Optimization
 - **Summary**: Jointly decides which prior session context an assistant sees and which model answers each turn. On RealMem it keeps about 98% of full-context GPT-4o QA performance at roughly 15% of the generation API cost, controller overhead included.
+
+### BetaMem: Learning to Remember a Changing World for Embodied Agents
+- **arXiv**: 2610.26554 ([link](https://arxiv.org/abs/2610.26554))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: Builds traceable six-layer long-term memory for embodied agents, governed by a dual-level write contract and trained with SFT and RL to write accurate records. Leads listed memory methods on M3-Bench-robot, LoCoMo, OpenEQA, and EgoLifeQA while cutting output tokens per stored action.
+
+### Remembering Has a Price: Learning Memory Worth under Resource Constraints
+- **arXiv**: 2610.26453 ([link](https://arxiv.org/abs/2610.26453))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: Finds that under tight generation, interaction, and memory budgets, existing lifelong-agent memory methods can do no better than plain retrieval or no memory. TokenWorth learns query-conditioned memory value online from sparse execution feedback and uses it for retrieval and bounded memory management, giving the best success rate with the fewest output tokens on LifelongAgentBench.
+
+### MemDerive: A Diagnostic Benchmark for Agent Memory over Evolving Data
+- **arXiv**: 2610.25373 ([link](https://arxiv.org/abs/2610.25373))
+- **Date**: 2026-10-18
+- **Category**: Optimization
+- **Summary**: Benchmark testing whether long-running agents can derive current task state from many changing records, with gold derivations for diagnosis. Four memory systems trail BM25 on derived state, mainly because they fail to retrieve intermediate facts they already store and rarely update conclusions after implied changes.
+
+### MemBubble: Benchmarking How Agent Memory Shapes LLM Response Diversity
+- **arXiv**: 2610.25127 ([link](https://arxiv.org/abs/2610.25127))
+- **Date**: 2026-10-18
+- **Category**: Optimization
+- **Summary**: A 1,000-item benchmark built from real-conversation user preferences that measures whether agent memory narrows response diversity. Across models and memory mechanisms, entropy drops about 35% on average versus supplying full interaction history, exposing a cost of memory compression.
+
+### Memory as Belief: Bayesian Evolution of Memory for Self-Evolving LLM Agents
+- **arXiv**: 2610.25119 ([link](https://arxiv.org/abs/2610.25119))
+- **Date**: 2026-10-18
+- **Category**: Optimization
+- **Summary**: BEAM treats the value of each stored memory as a context-dependent belief updated from execution feedback, rather than a fixed historical success rate. Improves memory use and continual self-evolution on reasoning and code-generation benchmarks.
+
+### HABIT-Bench: Evaluating Habit Induction from Longitudinal Weak Evidence in Agent Memory
+- **arXiv**: 2610.24520 ([link](https://arxiv.org/abs/2610.24520))
+- **Date**: 2026-10-17
+- **Category**: Optimization
+- **Summary**: Tests whether agent memory systems can infer user habits from weak, scattered evidence over hundreds of synthetic sessions and apply them correctly, including exceptions, habit changes, and declined suggestions. The best of eight memory methods reaches only about 33.6% macro accuracy, even with annotated evidence provided.
+
+### MemPrice: Online Memory Allocation via Adaptive Pricing for Long-Horizon Agents
+- **arXiv**: 2610.24955 ([link](https://arxiv.org/abs/2610.24955))
+- **Date**: 2026-10-18
+- **Category**: Optimization
+- **Summary**: Treats the context window as a scarce resource and decides which memories a long-horizon agent keeps, how much context each gets, and at what level of detail. An adaptive price keeps detailed memories only when their expected value justifies the space they use.
+
+### Memories That Outlive Their Reasons: Dependency-Tethered Memory for Tool-Using LLM Agents
+- **arXiv**: 2610.25123 ([link](https://arxiv.org/abs/2610.25123))
+- **Date**: 2026-10-18
+- **Category**: Optimization
+- **Summary**: Stored verification verdicts can stay valid in agent memory after an upstream dependency (e.g., a signing key) is revoked. Tether records each verdict's dependencies at write time and withdraws unsupported verdicts at read time, cutting unsafe publications to 0.3% with 37% fewer verification calls.
+
+### Do Conversational Agents Need Explicit Memory? A Controlled Comparison with Raw-History Retrieval
+- **arXiv**: 2610.24671 ([link](https://arxiv.org/abs/2610.24671))
+- **Date**: 2026-10-17
+- **Category**: Optimization
+- **Summary**: Compares six recent explicit memory systems with raw-history RAG on LongMemEval-S and BEAM-100K. Explicit memory gives only narrow gains for some question types and tight context budgets, with no consistent advantage over strong raw-history baselines despite higher construction cost.
+
+### Bud ContextCompact 2.0: Context Compaction for Agent Success and Accuracy with Small Language Models and Constrained Context Windows
+- **arXiv**: 2610.25516 ([link](https://arxiv.org/abs/2610.25516))
+- **Date**: 2026-10-18
+- **Category**: Optimization
+- **Summary**: A runtime feature that summarizes older agent turns so small models can keep working within tight context windows. Improves recall and SWE-bench Verified resolve rates on long sessions, though gains depend on trigger timing and are partly offset by summarization latency.
+
+### Editing as Language: Teaching LLM Agents a Grammar for Native Context Editing
+- **arXiv**: 2610.25550 ([link](https://arxiv.org/abs/2610.25550))
+- **Date**: 2026-10-18
+- **Category**: Optimization
+- **Summary**: Teaches agents a special-token grammar for editing their own context during generation. On four long-horizon software and terminal benchmarks, it raises task success by 4.5-5.6 points while cutting token usage by 15-36%.
+
+### Are Self-Evolving Agents Continual Learners?
+- **arXiv**: 2610.25858 ([link](https://arxiv.org/abs/2610.25858))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: Evaluates agents that rewrite prompts, memory, and skills (ReasoningBank, GEPA, Meta-Harness) on four drifting task streams from BIRD, BFCL, and ScienceWorld. They gain plasticity but lose stability, as self-edits interfere across tasks and memory retrieval pulls in irrelevant or conflicting experiences.
+
+### Procedural Memory for Language Agents: A Neurosymbolic Perspective on Explicit Goal Structure
+- **arXiv**: 2610.25996 ([link](https://arxiv.org/abs/2610.25996))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: Position paper arguing that LLM agents struggle on long multi-step tasks partly for lack of inspectable procedural memory, separate from semantic and episodic memory. Proposes Goal-Oriented Graphs of goals and prerequisites as that memory and discusses building them and combining them with neural reasoning.
+
+### Hippo: Training-Free Agent Self-Evolution via Hippocampal Replay
+- **arXiv**: 2610.24453 ([link](https://arxiv.org/abs/2610.24453))
+- **Date**: 2026-10-17
+- **Category**: Optimization
+- **Summary**: A training-free memory framework that compares multiple attempts at a task to extract reusable decisions with their applicability conditions, then merges overlapping and resolves conflicting memories. Gains on SWE-bench Verified, WebArena, and Mind2Web while retaining far fewer experiences than naive accumulation.
+
+### CoMem: Learning to Anticipate Failures from Retrieved Experience
+- **arXiv**: 2610.25790 ([link](https://arxiv.org/abs/2610.25790))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: Instead of placing retrieved past cases and learned parametric memory side by side, feeds retrieved experience into the learned memory during training and inference so it produces retrieval-conditioned failure hypotheses. Strong results across two backbones on five math, code, and multi-hop QA benchmarks.
+
+### ReTTT: Reflection-Driven Test-Time Training via Experience-Based Parametric Memory
+- **arXiv**: 2610.23942 ([link](https://arxiv.org/abs/2610.23942))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: Agents store reflection lessons in explicit memory and consolidate them into an episode-local LoRA adapter with the backbone frozen. Beats trajectory-based test-time training in all six ALFWorld, ScienceWorld, and SWE-bench Lite settings, by up to 12.14 points.
+
+### LVMH: A Meta-Optimization Harness for Long-Video Agent Memory
+- **arXiv**: 2610.23904 ([link](https://arxiv.org/abs/2610.23904))
+- **Date**: 2026-09-29
+- **Category**: Optimization
+- **Summary**: A multi-agent harness that searches memory-policy code for long-video agents as a multi-objective problem, with safeguards against self-certification and overfitting. The discovered SEEM policy relies mainly on structured text memory and consults frames selectively, generalizing to unseen benchmarks at much lower token and latency cost.
+
+### Latent Multimodal Memory Reasoning
+- **arXiv**: 2610.23890 ([link](https://arxiv.org/abs/2610.23890))
+- **Date**: 2026-09-28
+- **Category**: Optimization
+- **Summary**: LMMR organizes long-term multimodal memory for personalized agents in a latent space, mapping text and visual features into a shared sparse-autoencoder concept space to build turn-level memory graphs fed back into generation. Outperforms baselines on Mem-Gallery and MemEye.

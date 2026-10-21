@@ -4,6 +4,51 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-21
+
+25 new papers (7 Security, 18 Optimization).
+
+**Security**
+- Whose Credential Is It? How Owner Attribution in Agent Memory Shapes Cross-User Account Misuse (2610.25707)
+- Can Agents Keep Secrets They Were Never Told? Benchmarking Latent Privacy Risks Across Sessions with MemJoin (2610.24359)
+- Memory, Know Your PLACE: Governing Lifecycle State and Query-Time Eligibility in Persistent-Memory Agents (2610.25179)
+- RAGLeak: Supply-Chain Privacy Backdoors in Retrieval-Augmented Generation (2610.25937)
+- Consistency Is the Attack Surface: Detecting Coordinated Retrieval Poisoning with Embedding Geometry (2610.24834)
+- CoSec: Benchmarking Agent Security in Communities (2609.34790, v3 revised 2026-10-19)
+- Memory-Induced Tool-Drift in LLM Agents (2605.24941, v2 revised 2026-10-17)
+
+**Optimization**
+- BetaMem: Learning to Remember a Changing World for Embodied Agents (2610.26554)
+- Remembering Has a Price: Learning Memory Worth under Resource Constraints (2610.26453)
+- MemDerive: A Diagnostic Benchmark for Agent Memory over Evolving Data (2610.25373)
+- MemBubble: Benchmarking How Agent Memory Shapes LLM Response Diversity (2610.25127)
+- Memory as Belief: Bayesian Evolution of Memory for Self-Evolving LLM Agents (2610.25119)
+- HABIT-Bench: Evaluating Habit Induction from Longitudinal Weak Evidence in Agent Memory (2610.24520)
+- MemPrice: Online Memory Allocation via Adaptive Pricing for Long-Horizon Agents (2610.24955)
+- Memories That Outlive Their Reasons: Dependency-Tethered Memory for Tool-Using LLM Agents (2610.25123)
+- Do Conversational Agents Need Explicit Memory? A Controlled Comparison with Raw-History Retrieval (2610.24671)
+- Bud ContextCompact 2.0: Context Compaction for Agent Success and Accuracy with Small Language Models and Constrained Context Windows (2610.25516)
+- Editing as Language: Teaching LLM Agents a Grammar for Native Context Editing (2610.25550)
+- Are Self-Evolving Agents Continual Learners? (2610.25858)
+- Procedural Memory for Language Agents: A Neurosymbolic Perspective on Explicit Goal Structure (2610.25996)
+- Hippo: Training-Free Agent Self-Evolution via Hippocampal Replay (2610.24453)
+- CoMem: Learning to Anticipate Failures from Retrieved Experience (2610.25790)
+- ReTTT: Reflection-Driven Test-Time Training via Experience-Based Parametric Memory (2610.23942)
+- LVMH: A Meta-Optimization Harness for Long-Video Agent Memory (2610.23904)
+- Latent Multimodal Memory Reasoning (2610.23890)
+
+Source: the Tuesday 20 October listings (cs.AI, cs.CR, cs.CL, cs.MA /new, read in 100K-character chunks) plus one arXiv
+API keyword query. Further API queries hit HTTP 429. The cs.LG listing and the tail of cs.CL (past about 300K characters) were not read,
+so coverage may be incomplete. Skipped as off-topic or peripheral: 2610.25372 (SEAL, tool poisoning that persists
+through planning context, not memory), 2610.24187 (RCMEM, external memory for small math reasoners), 2610.26503
+(ScopeMem, latent prefixes for GUI agents), 2610.23892 (EMMA, long-video understanding), 2610.26836 (tool-output
+evidence substitution), 2610.24630 (Selm skill library), 2610.24944 (Epi research agent), 2610.25970 (GLOBE
+early-exit CoT), 2610.23939 (PeekKV serving), 2605.11442 (Mobius injection).
+The summary email failed again: the SMTP server closed the connection during AUTH, the third day in a row (2026-10-19 to 2026-10-21).
+Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-20
 
 15 new papers (3 Security, 12 Optimization).
