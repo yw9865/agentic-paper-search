@@ -4,6 +4,47 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-22
+
+22 new papers (6 Security, 16 Optimization).
+
+**Security**
+- ClawMMU: Protection-Coherent Virtual Memory for Stateful LLM Agents (2610.28093)
+- Disclosure Begets Disclosure: A Self-Reinforcing Privacy Loop in LLM Agents with Persistent Memory (2610.28315)
+- After the Attacker Leaves: Benchmarking Carryover Attacks on LLM Agents (2610.28425)
+- AutoRedClaw: Automated Red-Teaming for Claw-Style Agents (2610.27244)
+- Context-Aware Prompt Injection Detection via Small Language Models in RAG Pipelines: nokast-secureRAG (2610.28364)
+- Right Facts, Wrong Rule: Scope-Transfer Poisoning of Retrieval-Augmented Generation (2609.35155, v2 revised 2026-10-19)
+
+**Optimization**
+- SPEM: Structure-Aware Procedural Memory for Efficient Skill Use in LLM Agents (2610.26995)
+- Magnolia: A Persistent-Memory Agent Framework for Computational Chemistry (2610.27230)
+- M-Plan: Comprehensive Planning For LLM Agents with Memory Arrangement (2610.27032)
+- REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents (2610.27377)
+- ProMemAgent: Long-Horizon Proactive Assistance with Context-Aware Prospective Memory from Sensory Perceptions (2610.27400)
+- More Memory, Worse Agents: Error Reproduction and Anti-Persistence in LLM Agents (2610.27406)
+- MemDev-Bench: Does Memory Help Code Agents? Benchmarking Memory Systems over Real Repository Histories (2610.27524)
+- DuplexLedger: Benchmarking Transactional Memory in Full-Duplex Speech Agents (2610.27581)
+- When Does Experience Memory Help Closed-Loop LLM Driving Agents? (2610.27714)
+- Evaluating Context Compaction on the Questions That Come Later (2610.27301)
+- LAMB: Latent Multi-Hypothesis Beliefs for Long-Horizon Large Language Agents (2610.26955)
+- Memory as Code: Declarative Retrieval over Codified Long-Term Memory (2610.27700)
+- Cache Engineering for Agents (2610.28577)
+- Industrial ReMEmbR: Scaling Spatiotemporal Memory to Robot Fleets (2610.28624)
+- What Survives When Activation Steering Is Used as Memory (2610.14958, v2 revised 2026-10-19)
+- MemT-1.0: Towards Memory-Native Evolution (2610.26825, v2 revised 2026-10-20)
+
+Source: the Wednesday 21 October listings for cs.AI, cs.CL, cs.CR, cs.LG, and cs.MA, each read in 100K-character chunks.
+The arXiv API returned HTTP 429. Skipped as off-topic or peripheral: 2604.05480 (vector-database black-hole
+poisoning, not specific to RAG or agents), 2610.26935 (sabotage under intervention history, an AI-control study),
+2610.26938 (GRaSP, geo-distributed RAG latency), 2610.27495 (experience-bank distillation for training), 2610.27035
+(TEAL tool evolution), 2610.28291 (VisualEvolve skill library), 2610.27347 (legal compliance agent), 2610.27682
+(clinical temporal retrieval), 2610.27438 (MLIPS sparse attention), 2610.28223 (long-context local inference).
+The summary email failed again: the SMTP server closed the connection during AUTH, the fourth day in a row (2026-10-19 to 2026-10-22).
+Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-21
 
 25 new papers (7 Security, 18 Optimization).

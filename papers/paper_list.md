@@ -1001,6 +1001,42 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Shows that personality-style preferences stored in an agent's long-term memory (e.g., cost-consciousness) silently alter tool-call parameters in contexts where they do not apply. On the 105-scenario MEMDRIFT benchmark, biased memories degrade parameters across all eight tested models, and prompting or relevance filtering does not fully prevent it.
 
+### ClawMMU: Protection-Coherent Virtual Memory for Stateful LLM Agents
+- **arXiv**: 2610.28093 ([link](https://arxiv.org/abs/2610.28093))
+- **Date**: 2026-10-20
+- **Category**: Security
+- **Summary**: Agent long-term memory often originates from web pages and tool results, yet harnesses do not track who is authorized to act on it, so injected instructions get treated as the user's. ClawMMU labels each memory item with owner, scope, origin, and authority and checks those labels on context entry, storage reads/writes, and tool calls, turning memory attacks into protection faults even when the model is fooled.
+
+### Disclosure Begets Disclosure: A Self-Reinforcing Privacy Loop in LLM Agents with Persistent Memory
+- **arXiv**: 2610.28315 ([link](https://arxiv.org/abs/2610.28315))
+- **Date**: 2026-10-20
+- **Category**: Security
+- **Summary**: Simulated multi-session dialogues show that persistent memory improves agent responses but increases how many of a user's personal attributes can be inferred, with the gap widening over sessions. The cause is a feedback loop in which memory-informed replies restate earlier values as presuppositions; instructing agents not to state or presuppose attributes cuts leakage to near no-memory levels while keeping most quality gains.
+
+### After the Attacker Leaves: Benchmarking Carryover Attacks on LLM Agents
+- **arXiv**: 2610.28425 ([link](https://arxiv.org/abs/2610.28425))
+- **Date**: 2026-10-20
+- **Category**: Security
+- **Summary**: CarryoverBench (12 personal-assistant scenarios, 101 attack tasks) tests whether a planted indirect prompt injection reactivates in later sessions via agent memory or scheduled tasks. Across five frontier models, payloads kept re-firing over five rounds without measurable decay, motivating runtime-level rather than prompt-level defenses.
+
+### AutoRedClaw: Automated Red-Teaming for Claw-Style Agents
+- **arXiv**: 2610.27244 ([link](https://arxiv.org/abs/2610.27244))
+- **Date**: 2026-10-19
+- **Category**: Security
+- **Summary**: Motivated by poisoned persistent state (configuration files, long-term memory, reusable skills) that is repeatedly reloaded into claw-style agents across tasks and sessions, AutoRedClaw automatically generates validated end-to-end attacks and their environments. The resulting 330-case RedClaw-Bench yields over 50% attack success on most tested agent systems.
+
+### Context-Aware Prompt Injection Detection via Small Language Models in RAG Pipelines: nokast-secureRAG
+- **arXiv**: 2610.28364 ([link](https://arxiv.org/abs/2610.28364))
+- **Date**: 2026-10-20
+- **Category**: Security
+- **Summary**: A ~0.5B-parameter classifier screens retrieved content and queries in local RAG systems as safe, suspicious, or malicious to defend against indirect prompt injection and retrieval poisoning. It reaches 0.994 recall in-distribution but near-zero recall on the external PoisonedRAG benchmark, a candid negative result on generalization of small-model poisoning detectors.
+
+### Right Facts, Wrong Rule: Scope-Transfer Poisoning of Retrieval-Augmented Generation
+- **arXiv**: 2609.35155 ([link](https://arxiv.org/abs/2609.35155))
+- **Date**: 2026-09-28 (v2 revised 2026-10-19)
+- **Category**: Security
+- **Summary**: Introduces scope-transfer poisoning, where RAG documents with accurate facts induce the system to apply a valid rule outside its scope. The LENS agent-based framework builds auditable attack documents, and the authors find that checking rule applicability during generation reduces target error far more than task-alignment checks.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -3439,3 +3475,99 @@ Format per entry:
 - **Date**: 2026-09-28
 - **Category**: Optimization
 - **Summary**: LMMR organizes long-term multimodal memory for personalized agents in a latent space, mapping text and visual features into a shared sparse-autoencoder concept space to build turn-level memory graphs fed back into generation. Outperforms baselines on Mem-Gallery and MemEye.
+
+### SPEM: Structure-Aware Procedural Memory for Efficient Skill Use in LLM Agents
+- **arXiv**: 2610.26995 ([link](https://arxiv.org/abs/2610.26995))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: A procedural memory that stores atomic skills alongside reusable skill compositions mined from successful runs, reusing proven composition templates when applicable and otherwise selecting skills with a state- and structure-aware GNN. Improves success while cutting token and runtime cost on ALFWorld and SkillsBench.
+
+### Magnolia: A Persistent-Memory Agent Framework for Computational Chemistry
+- **arXiv**: 2610.27230 ([link](https://arxiv.org/abs/2610.27230))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: An LLM agent for docking, molecular dynamics, and quantum chemistry workflows with a three-tier memory that consolidates session observations into validated cross-project rules. In four case studies, memory-enabled runs pass reproducibility checks that memory-free runs fail (e.g., 10/10 vs. 1-4/10 docking-configuration checks).
+
+### M-Plan: Comprehensive Planning For LLM Agents with Memory Arrangement
+- **arXiv**: 2610.27032 ([link](https://arxiv.org/abs/2610.27032))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: A closed-loop multi-agent framework combining long-term and short-term memory that supplies agents with task milestones, insights, and on-demand hints, then stores refined task knowledge for reuse. Reports better accuracy and efficiency than baselines on ALFWorld, WebShop, and PDDL.
+
+### REM: What to Store, When to Recall, What to Forget in Experience Memory for Coding Agents
+- **arXiv**: 2610.27377 ([link](https://arxiv.org/abs/2610.27377))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: An experience-memory framework for coding agents that decides storage, recall timing, and forgetting from within the agent's reasoning-and-action loop. On repository-level bug-fixing benchmarks it retrieves related trajectories more accurately and modestly improves resolution at lower cost, arguing that memory governance matters more than retrieval accuracy.
+
+### ProMemAgent: Long-Horizon Proactive Assistance with Context-Aware Prospective Memory from Sensory Perceptions
+- **arXiv**: 2610.27400 ([link](https://arxiv.org/abs/2610.27400))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: A proactive agent that builds prospective memory from egocentric video and audio to assist with tasks due hours or days later. Releases CPMBench (1,000 instances, eight categories), where ProMemAgent achieves the strongest memory retrieval and long-horizon assistance.
+
+### More Memory, Worse Agents: Error Reproduction and Anti-Persistence in LLM Agents
+- **arXiv**: 2610.27406 ([link](https://arxiv.org/abs/2610.27406))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: Shows that agents storing distilled rules, summaries, or skills can regenerate their own errors through cycles of abstraction and re-abstraction. Anti-Persistence keeps raw trajectories and outcomes but synthesizes task-specific guidance on demand and discards it after use, yielding higher held-out success at the lowest average LLM-call cost.
+
+### MemDev-Bench: Does Memory Help Code Agents? Benchmarking Memory Systems over Real Repository Histories
+- **arXiv**: 2610.27524 ([link](https://arxiv.org/abs/2610.27524))
+- **Date**: 2026-10-20
+- **Category**: Optimization
+- **Summary**: A benchmark of ~4,900 historical tasks tied to 555 base tasks in evolving real repositories, labeled by relevance, for testing memory systems in coding agents. Memory helps localization and editing but can cause failures via unverified reuse, and raw trajectories reduce steps more than compressed memory.
+
+### DuplexLedger: Benchmarking Transactional Memory in Full-Duplex Speech Agents
+- **arXiv**: 2610.27581 ([link](https://arxiv.org/abs/2610.27581))
+- **Date**: 2026-10-20
+- **Category**: Optimization
+- **Summary**: A bilingual benchmark of 1,094 persistent full-duplex speech-agent sessions with labels for what to store, revise, or ignore. Tested models reach only ~2% final-state fact coverage; the proposed ACT-Mem add-on raises latest-value accuracy from ~4% to 8.7% at some cost to interruption handling.
+
+### When Does Experience Memory Help Closed-Loop LLM Driving Agents? A Controlled Evaluation with Resampled Warmup Pools, Token-Matched Fillers, and Audited Baselines
+- **arXiv**: 2610.27714 ([link](https://arxiv.org/abs/2610.27714))
+- **Date**: 2026-10-20
+- **Category**: Optimization
+- **Summary**: A controlled HighwayEnv evaluation with ten resampled warmup pools and token-matched filler controls. Reported experience-memory gains depend mostly on which warmup pool is drawn, no retrieval design beats the filler controls, and baseline quality can reverse conclusions.
+
+### Evaluating Context Compaction on the Questions That Come Later
+- **arXiv**: 2610.27301 ([link](https://arxiv.org/abs/2610.27301))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: Tests whether question-driven context compaction for LLM agents still serves later questions, comparing methods against random sentence deletion at equal token budgets on four corpora and recorded agent trajectories. Question-targeted selection generally does no better than random on later questions; LLMLingua-2 helps in some settings, and rankings vary across tasks.
+
+### LAMB: Latent Multi-Hypothesis Beliefs for Long-Horizon Large Language Agents
+- **arXiv**: 2610.26955 ([link](https://arxiv.org/abs/2610.26955))
+- **Date**: 2026-10-18
+- **Category**: Optimization
+- **Summary**: A recurrent framework that keeps interaction evidence and competing hypotheses about unobserved state as latent representations instead of natural-language memory, avoiding information loss from repeated compression. Matches or beats PABU on ALFWorld, BabyAI, ScienceWorld, and Crafter (+6.0 ALFWorld SR@30, +22.0 ScienceWorld).
+
+### Memory as Code: Declarative Retrieval over Codified Long-Term Memory
+- **arXiv**: 2610.27700 ([link](https://arxiv.org/abs/2610.27700))
+- **Date**: 2026-10-20
+- **Category**: Optimization
+- **Summary**: MaC organizes agent long-term memory into a three-layer executable structure and compiles queries into programs that process stored facts declaratively rather than by relevance selection. Improves LLM-judged accuracy by up to ~15.9% on LoCoMo and LongMemEval while substantially reducing token usage.
+
+### Cache Engineering for Agents
+- **arXiv**: 2610.28577 ([link](https://arxiv.org/abs/2610.28577))
+- **Date**: 2026-10-20
+- **Category**: Optimization
+- **Summary**: Lets LLM agents manage their active KV cache directly (excluding entries from attention, adjusting positional encodings) without editing history or re-prefilling retained context. The AKV serving engine exposes a stateless interface while handling cache reuse and eviction, and a tool-response rolling-drop policy improves scores at lower cost.
+
+### Industrial ReMEmbR: Scaling Spatiotemporal Memory to Robot Fleets
+- **arXiv**: 2610.28624 ([link](https://arxiv.org/abs/2610.28624))
+- **Date**: 2026-10-20
+- **Category**: Optimization
+- **Summary**: Extends NVIDIA's ReMEmbR into a shared spatiotemporal memory for warehouse robot fleets that agents query by content, position, and time. Generates scene descriptions only on demand to cut server compute, and encodes video on-device so raw frames never leave the robot.
+
+### What Survives When Activation Steering Is Used as Memory
+- **arXiv**: 2610.14958 ([link](https://arxiv.org/abs/2610.14958))
+- **Date**: 2026-10-10 (v2 revised 2026-10-19)
+- **Category**: Optimization
+- **Summary**: Tests activation steering vectors as a training-free memory for facts and user preferences in a frozen LLM. On Qwen3.5 models the memory rarely disturbs unrelated responses, but stored facts are seldom recalled and preferences can flip polarity depending on the reference vector used at storage time.
+
+### MemT-1.0: Towards Memory-Native Evolution
+- **arXiv**: 2610.26825 ([link](https://arxiv.org/abs/2610.26825))
+- **Date**: 2026-10-19 (v2 revised 2026-10-20)
+- **Category**: Optimization
+- **Summary**: A family of foundation models that build memory into their own computation instead of relying on external retrieval, combining token-level memory updates with a Mixture-of-Storage design to scale capacity. The Nano and Flash variants are competitive with retrieval-augmented methods while largely retaining general abilities.
