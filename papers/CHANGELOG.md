@@ -4,6 +4,38 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-23
+
+12 new papers (4 Security, 8 Optimization).
+
+**Security**
+- PerMIT: Securing Persistent Memory for LLM Agents via Machine-Checked Integrity Theorems and Scalable Community Trust (2610.28987)
+- Combining Long-Term Memory and LLMs Comes at a High Cost: From Prompt Injection to Persistent Compromise (2610.28810)
+- Compaction Laundering: Provenance Destruction in Context-Compacting Coding Agents (2610.29869)
+- SIREN (Luring LLMs onto the Rocks): PAIR-Driven Preference Manipulation in Web-RAG Recommenders (2607.21951, v4 revised 2026-10-21)
+
+**Optimization**
+- SpatialBrain: Spatial Intelligence Growing from Experience (2610.29317)
+- Memory-Centric Continual Learning for AI Agents (2610.29357)
+- MOSAIC: An Omni-Modal Benchmark for Long-Term Memory and Cross-Modal Reasoning in Conversational Agents (2610.29249)
+- Uni-Mem: Learning a Long-Horizon Agentic Memory Manager with Unified Online Policy Optimization (2610.29671)
+- MemoryTax: The Bitter Lesson of Agent Memory (2610.29823)
+- Remembering Through Change: Provenance-Preserving Hypergraph Memory for Multimodal Agents (2610.29995)
+- PreCoMem: Predictive Cognitive Memory for Self-Evolving Long-Term Dialogue Agents (2610.29467)
+- DiaLong: Benchmarking Reminiscence in Long-Context Dialogues (2610.25463, v2 revised 2026-10-20)
+
+Source: the Thursday 22 October listings for cs.AI, cs.CL, cs.CR, cs.LG, and cs.MA, read in 100K-character chunks.
+The last 44 cs.LG replacement entries (items 336-379) could not be read because arXiv returned HTTP 429.
+Skipped as off-topic or peripheral: 2610.28945 (MPPI world-model agent; experience memory is secondary), 2610.28706
+(SpecEvo), 2610.28914 (D-Skill), 2610.29303 (ExpEvolve idea factors), 2610.29326 (per-turn policy filter),
+2610.29223 (concept unlearning in RAG), 2605.13481 (PersonalAI 2.0, KG-RAG QA, v4), 2610.20926 (SkillNEO), 2610.30072
+(chart-experience distillation), 2607.00272 (ASPIRE robot skill library), 2610.28637 (KV retention in LLM serving),
+2610.22714 (First Passage Attention), 2604.24920 (SUDP secret delegation).
+The summary email failed again: the SMTP server closed the connection during AUTH, the fifth day in a row (2026-10-19 to 2026-10-23).
+Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-22
 
 22 new papers (6 Security, 16 Optimization).

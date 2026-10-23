@@ -1037,6 +1037,30 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Introduces scope-transfer poisoning, where RAG documents with accurate facts induce the system to apply a valid rule outside its scope. The LENS agent-based framework builds auditable attack documents, and the authors find that checking rule applicability during generation reduces target error far more than task-alignment checks.
 
+### PerMIT: Securing Persistent Memory for LLM Agents via Machine-Checked Integrity Theorems and Scalable Community Trust
+- **arXiv**: 2610.28987 ([link](https://arxiv.org/abs/2610.28987))
+- **Date**: 2026-10-20
+- **Category**: Security
+- **Summary**: A persistent-memory architecture whose two Lean 4-verified integrity theorems guarantee that environment-derived memory can reach a sensitive action only through an explicit confirmation gate. It reports zero observed attack success on the Trojan Hippo benchmark, and logged confirmations accumulate across users into community-confirmed shared knowledge bases (up to 90 agents on tau2-bench) without raising per-user verification effort.
+
+### Combining Long-Term Memory and LLMs Comes at a High Cost: From Prompt Injection to Persistent Compromise
+- **arXiv**: 2610.28810 ([link](https://arxiv.org/abs/2610.28810))
+- **Date**: 2026-10-20
+- **Category**: Security
+- **Summary**: Defines a threat model for memory injection, where prompt injection persists across sessions through chatbot memory features, and achieves all NIST attack goals against ChatGPT, Claude, and Gemini via personal memories, projects, skills, org instructions, and MCP resources. Claude's shared memory lets one attacker compromise multiple users in an organization and exfiltrate prompts; nearly half of the derived defenses are unimplemented by the services.
+
+### Compaction Laundering: Provenance Destruction in Context-Compacting Coding Agents
+- **arXiv**: 2610.29869 ([link](https://arxiv.org/abs/2610.29869))
+- **Date**: 2026-10-21
+- **Category**: Security
+- **Summary**: Coding-agent harnesses that flatten role-typed messages into plain text before summarizing let attacker-controlled content forge a user approval that survives context compaction (87-100% across five harnesses, 0% on four role-typed ones) and leads to running attacker code. Since provenance is lost in harness code, prompt defenses cannot recover it; a code-level provenance check catches 77% of attempts, and escaping role labels before flattening fixes the root cause.
+
+### SIREN (Luring LLMs onto the Rocks): PAIR-Driven Preference Manipulation in Web-RAG Recommenders
+- **arXiv**: 2607.21951 ([link](https://arxiv.org/abs/2607.21951))
+- **Date**: 2026-07-24 (v4 revised 2026-10-21)
+- **Category**: Security
+- **Summary**: Adapts the PAIR attacker-judge loop to retrieval-content poisoning, iteratively editing a retrieved webpage with 23 poisoning techniques to push a target entity to rank 1 in web-augmented LLM recommendations. It succeeds in 62 of 124 trials against two production Claude models, and successful payloads transfer to fresh sessions at a 0.805 mean rate.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -3571,3 +3595,51 @@ Format per entry:
 - **Date**: 2026-10-19 (v2 revised 2026-10-20)
 - **Category**: Optimization
 - **Summary**: A family of foundation models that build memory into their own computation instead of relying on external retrieval, combining token-level memory updates with a Mixture-of-Storage design to scale capacity. The Nano and Flash variants are competitive with retrieval-augmented methods while largely retaining general abilities.
+
+### SpatialBrain: Spatial Intelligence Growing from Experience
+- **arXiv**: 2610.29317 ([link](https://arxiv.org/abs/2610.29317))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: Keeps a vision-language backbone frozen and grows spatial-reasoning ability through memory: a 3DFusionMemory of queryable spatial relations, a reusable spatial skill library, and experience about when to use them, with completed trajectories condensed into process records and consolidated between task blocks. Beats direct answering on four of five spatial benchmarks and ties on the fifth.
+
+### Memory-Centric Continual Learning for AI Agents
+- **arXiv**: 2610.29357 ([link](https://arxiv.org/abs/2610.29357))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: Argues agent memory should be judged by whether it improves future actions rather than by fact recall, and proposes MCCL: a taxonomy of memory by storage, form, and management, a two-loop lifecycle where memory updates inside and management policies are refined from task feedback outside, an evaluation protocol for retention, adaptation, and transfer, and a scaling framework over experience, storage, and compute.
+
+### MOSAIC: An Omni-Modal Benchmark for Long-Term Memory and Cross-Modal Reasoning in Conversational Agents
+- **arXiv**: 2610.29249 ([link](https://arxiv.org/abs/2610.29249))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: A 923-question benchmark over 11-24-session persona conversations spanning text, image, video, and audio, with a matched protocol that varies only how information is represented, retrieved, and delivered to locate where memory pipelines fail. Finds modality-dependent information loss, reading errors even with correct evidence, and poor abstention.
+
+### Uni-Mem: Learning a Long-Horizon Agentic Memory Manager with Unified Online Policy Optimization
+- **arXiv**: 2610.29671 ([link](https://arxiv.org/abs/2610.29671))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: Trains a single agent memory manager for both memory construction and retrieval end-to-end with online RL, using Stage-Decoupled GRPO for per-stage learning signals and Event-Wise Credit Assignment to route rewards to the responsible memory operations. Outperforms the strongest prior RL-based memory method on LoCoMo and LongMemEval.
+
+### MemoryTax: The Bitter Lesson of Agent Memory
+- **arXiv**: 2610.29823 ([link](https://arxiv.org/abs/2610.29823))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: Compares designed memory systems such as Mem0 and Zep against coding agents that search raw conversation history, tracking cost per run. Designed memory mainly compensates for weaker models, can cost more to build than a full-context run, and caps a stronger model at what a weaker one stored; the best cost-accuracy point (99% on a LoCoMo conversation) came from an agent searching raw history at under half the full-context cost.
+
+### Remembering Through Change: Provenance-Preserving Hypergraph Memory for Multimodal Agents
+- **arXiv**: 2610.29995 ([link](https://arxiv.org/abs/2610.29995))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: MHG-Mem is a multimodal hypergraph long-term memory that links persistent entities, their evolving states across sessions, and the source visual evidence, avoiding both lossy image-to-text compression and unlinked raw observations. Paired with hypergraph-based agentic search, it gains 8.20-9.98% over the strongest baseline on three benchmarks.
+
+### PreCoMem: Predictive Cognitive Memory for Self-Evolving Long-Term Dialogue Agents
+- **arXiv**: 2610.29467 ([link](https://arxiv.org/abs/2610.29467))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: A predictive-coding memory update policy that stores user facts as confidence-weighted beliefs and gates each turn by an Effective Surprisal signal into reinforcing, storing as a low-confidence hypothesis, or softly decaying contradicted facts, separating noise from real belief drift. Reports state-of-the-art results on LoCoMo, LongMemEval-S, and PersonaMem-v2 and introduces the DiMoBench belief-drift benchmark.
+
+### DiaLong: Benchmarking Reminiscence in Long-Context Dialogues
+- **arXiv**: 2610.25463 ([link](https://arxiv.org/abs/2610.25463))
+- **Date**: 2026-10-18 (v2 revised 2026-10-20)
+- **Category**: Optimization
+- **Summary**: A benchmark of 100 human-written, LLM-extended conversations longer than prior datasets, scored by a 40-statement fact-recall task per dialogue. Both current LLMs and proposed memory-enhancement methods recall poorly, indicating long-dialogue memory remains an open problem.
