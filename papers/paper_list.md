@@ -1061,6 +1061,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Adapts the PAIR attacker-judge loop to retrieval-content poisoning, iteratively editing a retrieved webpage with 23 poisoning techniques to push a target entity to rank 1 in web-augmented LLM recommendations. It succeeds in 62 of 124 trials against two production Claude models, and successful payloads transfer to fresh sessions at a 0.805 mean rate.
 
+### Governance-State Corruption in Long-Term Memory for LLM Agents: A Cross-Model Stress Test
+- **arXiv**: 2610.30698 ([link](https://arxiv.org/abs/2610.30698))
+- **Date**: 2026-10-22
+- **Category**: Security
+- **Summary**: Studies faults that corrupt the governance state deciding which stored memories reach an agent's context, while memory content and task stay unchanged. Such corruption shifts the active memory view in most cases and causes large drops on LongMemEval and Memora that oracle-based enforcement reverses, so the authors argue that governance-state integrity should be evaluated alongside retrieval accuracy.
+
+### AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents
+- **arXiv**: 2610.31366 ([link](https://arxiv.org/abs/2610.31366))
+- **Date**: 2026-10-22
+- **Category**: Security
+- **Summary**: A behavioral benchmark that compares agents which saw and then deleted a synthetic secret against matched agents that never saw it. Deleted secrets remain recoverable from derived memory such as summaries (about two-thirds of the time with a single prompt for one model) and can be rebuilt from leftover fragments. Provenance-aware safeguards stopped the observed recovery, but literal-match write filters could not remove information already stored.
+
+### Protection Is Not One Event: A Survey of RAG Protection Research by Measured Endpoint
+- **arXiv**: 2610.30193 ([link](https://arxiv.org/abs/2610.30193))
+- **Date**: 2026-10-21
+- **Category**: Security
+- **Summary**: Surveys 118 RAG defense papers and sorts them by the endpoint each one measures, using a seven-family taxonomy. Most work measures corpus-use detection, and few studies test content disclosure or adaptive attackers. A testbed shows that blocking verbatim copying does not stop a multi-query attacker from recovering private facts from the retrieval store.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -3643,3 +3661,63 @@ Format per entry:
 - **Date**: 2026-10-18 (v2 revised 2026-10-20)
 - **Category**: Optimization
 - **Summary**: A benchmark of 100 human-written, LLM-extended conversations longer than prior datasets, scored by a 40-statement fact-recall task per dialogue. Both current LLMs and proposed memory-enhancement methods recall poorly, indicating long-dialogue memory remains an open problem.
+
+### Why Bother Me Again? Benchmarking Personal Agent Memory for Interaction Preferences
+- **arXiv**: 2610.30485 ([link](https://arxiv.org/abs/2610.30485))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: MemPABench is an interactive environment that tests whether personal agents remember how users want to be assisted, such as when to ask for clarification or confirmation and when to act independently. Across four memory systems and four LLM backbones, retrieval-based memory does no better than having no memory, and file-based memory applies preferences too broadly and adapts poorly when preferences change.
+
+### Is Complex Agentic Memory Always Needed? Naive RAG Is Stronger Than We Thought
+- **arXiv**: 2610.30755 ([link](https://arxiv.org/abs/2610.30755))
+- **Date**: 2026-10-22
+- **Category**: Optimization
+- **Summary**: Raw-RAG, a baseline that runs dense retrieval and reranking over unprocessed conversation history, beats the strongest agentic memory system it is compared with in six of seven benchmark-model settings. The authors attribute this to better evidence coverage and argue that transformed memory stores lose information that raw history keeps.
+
+### The Value of Memory in Language Agents
+- **arXiv**: 2610.31303 ([link](https://arxiv.org/abs/2610.31303))
+- **Date**: 2026-10-22
+- **Category**: Optimization
+- **Summary**: A decision-theoretic framework that tracks memory's value, measured as avoided task loss, from raw history through stored state and use to the cost of recovering or revising it. Simulations and LoCoMo diagnostics separate failures caused by lost information, misapplied evidence, and flawed evaluation.
+
+### Subgoal-aware Memory Graph for GUI Agent
+- **arXiv**: 2610.31307 ([link](https://arxiv.org/abs/2610.31307))
+- **Date**: 2026-10-22
+- **Category**: Optimization
+- **Summary**: Condenses past GUI-agent runs into subgoal-level memory units, which are coarser than single actions and finer than whole trajectories. The units are stored as graph nodes that can be merged or extended and are retrieved by the current screen. Raises success rate by 11.11% over the baseline on SPA-Bench.
+
+### Muffin - A Shared Memory Buffer for Asynchronous AI Agents
+- **arXiv**: 2610.31355 ([link](https://arxiv.org/abs/2610.31355))
+- **Date**: 2026-10-22
+- **Category**: Optimization
+- **Summary**: An asynchronous multi-agent framework in which agents post interim findings to a shared memory buffer and keep their internal reasoning private. It is more accurate than multi-agent debate and uses about 77% fewer tokens.
+
+### ColaBench: Evaluating Memory-Guided Knowledge Acquisition in Personal Agents
+- **arXiv**: 2610.30989 ([link](https://arxiv.org/abs/2610.30989))
+- **Date**: 2026-10-22
+- **Category**: Optimization
+- **Summary**: A synthetic benchmark of 349 tasks, 10 user profiles, and 13,033 documents that tests whether personal agents use long-term interaction memory to retrieve the right knowledge. The proposed MemKB links state summaries to documents and reaches 86.25% accuracy. Unsupported personal assumptions and misapplied rules remain the main sources of error.
+
+### MemPlan: Memory-Conditioned PDDL Planning for Partially Observable Text Environments
+- **arXiv**: 2610.30379 ([link](https://arxiv.org/abs/2610.30379))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: Uses LLMs only to translate between text and symbolic PDDL planning, guided by a graph memory of plausible hypotheses and a negative memory of hypotheses that feedback has refuted. Beats language-only and PDDL-aware baselines on TextWorld, ALFWorld, and Robotouille, and uses far fewer online tokens than ReAct-style planners.
+
+### Externalise the Memory: A Pre-Registered Study of Where an Embodied Agent's Experience Should Live
+- **arXiv**: 2610.30478 ([link](https://arxiv.org/abs/2610.30478))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: Compares distilling a memory-augmented VLM teacher's experience into LoRA student weights against keeping it in an external retrieval buffer of lessons. Attaching the buffer to fixed student weights gives a +34 pp gain, while distilling memory into weights does no significantly better than an action-only control.
+
+### Memory-Aware Reward Modeling: Learning Human Preferences for LLM Memory Use
+- **arXiv**: 2610.31272 ([link](https://arxiv.org/abs/2610.31272))
+- **Date**: 2026-10-22
+- **Category**: Optimization
+- **Summary**: About 1,000 pairwise judgments from 87 users on their own ChatGPT queries and memories show that users do not consistently prefer responses that draw on memory, while automatic judges strongly favor them. A reward model trained on the human judgments predicts preferences with 72.8% accuracy and can guide when memory should be used.
+
+### When Is a Memory Safe Enough to Act On? Action-Conditioned Verification for Long-Lived Agents
+- **arXiv**: 2610.31446 ([link](https://arxiv.org/abs/2610.31446))
+- **Date**: 2026-10-22
+- **Category**: Optimization
+- **Summary**: Treats re-checking the memories behind a planned action as a sequential stopping problem: proceed, verify, or abstain, depending on the action's risk and the cost of checking. The proposed AMV-Guard gate picks verification checks by expected value of information, so stale memories are not acted on in high-stakes actions.

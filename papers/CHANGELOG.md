@@ -4,6 +4,40 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-25
+
+13 new papers (3 Security, 10 Optimization).
+
+**Security**
+- Governance-State Corruption in Long-Term Memory for LLM Agents: A Cross-Model Stress Test (2610.30698)
+- AfterDeleteBench: Auditing Post-Deletion Information Persistence in LLM Agents (2610.31366)
+- Protection Is Not One Event: A Survey of RAG Protection Research by Measured Endpoint (2610.30193)
+
+**Optimization**
+- Why Bother Me Again? Benchmarking Personal Agent Memory for Interaction Preferences (2610.30485)
+- Is Complex Agentic Memory Always Needed? Naive RAG Is Stronger Than We Thought (2610.30755)
+- The Value of Memory in Language Agents (2610.31303)
+- Subgoal-aware Memory Graph for GUI Agent (2610.31307)
+- Muffin - A Shared Memory Buffer for Asynchronous AI Agents (2610.31355)
+- ColaBench: Evaluating Memory-Guided Knowledge Acquisition in Personal Agents (2610.30989)
+- MemPlan: Memory-Conditioned PDDL Planning for Partially Observable Text Environments (2610.30379)
+- Externalise the Memory: A Pre-Registered Study of Where an Embodied Agent's Experience Should Live (2610.30478)
+- Memory-Aware Reward Modeling: Learning Human Preferences for LLM Memory Use (2610.31272)
+- When Is a Memory Safe Enough to Act On? Action-Conditioned Verification for Long-Lived Agents (2610.31446)
+
+Source: the Friday 23 October listings for cs.AI, cs.CL, cs.CR, cs.LG, and cs.MA, read in 100K-character chunks.
+cs.AI new-submission entries 46-57 could not be read because the fetch tool's content filter refused that chunk; the
+other categories' cross-lists cover part of that range. The arXiv API returned HTTP 429.
+Skipped as off-topic or peripheral: 2610.30418 (Agent Mosaic, document aggregation leaks, not memory), 2610.30365
+(data-void web-search poisoning), 2610.30867 (SYNAPSE pooled tool-use experience), 2610.31401 (HERD continual learning),
+2610.31314 (state integrity in dialogue), 2610.30557 (multi-agent investing system), 2610.30790 (knowledge-model
+co-evolution), 2609.22486 (SemDN web retrieval infrastructure, v2), replacements 2604.07487 (CLEAR), 2606.06473
+(MLEvolve), and 2606.30296 (ManimAgent), plus KV-cache serving papers (2610.30206, 2610.30791, 2610.30951).
+The summary email failed again: the SMTP server closed the connection during AUTH, the sixth run in a row since 2026-10-19.
+Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-23
 
 12 new papers (4 Security, 8 Optimization).
