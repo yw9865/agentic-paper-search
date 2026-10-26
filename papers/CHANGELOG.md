@@ -4,6 +4,23 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-26
+
+1 new paper (0 Security, 1 Optimization).
+
+**Optimization**
+- ProactEgoMem: Benchmarking Proactive Memory in Streaming Egocentric Video (2610.30089)
+
+Source: arXiv search for "agent memory" sorted by announcement date (backfill from the 21-22 Oct submissions). Monday's
+listing was not out yet at run time: cs.AI/new still showed Friday 23 October, so that batch should be picked up tomorrow.
+The fetch tool's content filter refused the remaining search-result pages and follow-up searches, so coverage is partial.
+Skipped as peripheral: 2610.31107 (active preference acquisition for web agents, not a memory system), 2610.30688 (PPG
+heart-rate correction agent), 2610.31656 (METTA meta-RL test-time adaptation), and 2610.31169 (SARIA KV-cache serving).
+The summary email failed again: the SMTP server closed the connection during AUTH, the seventh run in a row since 2026-10-19.
+Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-25
 
 13 new papers (3 Security, 10 Optimization).

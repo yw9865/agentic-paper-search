@@ -3721,3 +3721,9 @@ Format per entry:
 - **Date**: 2026-10-22
 - **Category**: Optimization
 - **Summary**: Treats re-checking the memories behind a planned action as a sequential stopping problem: proceed, verify, or abstain, depending on the action's risk and the cost of checking. The proposed AMV-Guard gate picks verification checks by expected value of information, so stale memories are not acted on in high-stakes actions.
+
+### ProactEgoMem: Benchmarking Proactive Memory in Streaming Egocentric Video
+- **arXiv**: 2610.30089 ([link](https://arxiv.org/abs/2610.30089))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: A benchmark for agents that must proactively capture and update memory from streaming egocentric video, covering information capture, object-state tracking, and location tracking. At the Intervention Level the agent maintains memory itself through tool calls, and a QA split scores the memory it builds. Even the strongest proprietary and streaming models fail to build memory that is both timely and accurate.
