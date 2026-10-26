@@ -4,6 +4,24 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-26 [Conference scan]
+
+No new conference papers found.
+
+Venues checked:
+- **IEEE S&P 2027**: the accepted-papers page (direct fetch OK) still has only an empty
+  "Accepted Papers" heading and no cycle sections.
+- **USENIX Security '27**: the conference page (read via the r.jina.ai proxy) links only to the
+  Call for Papers and has no program or accepted-papers link. A guessed
+  `.../usenixsecurity27/fall-accepted-papers` URL returned 404.
+- A web search found no agent-memory papers claiming acceptance at either 2027 venue.
+- **USENIX Security '26 / IEEE S&P 2026**: both programs are final and earlier scans covered them fully,
+  so they were not re-read.
+
+Both venues were reachable, and no venue was skipped because a fetch failed.
+
+---
+
 ## 2026-10-26
 
 1 new paper (0 Security, 1 Optimization).
