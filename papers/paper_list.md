@@ -3727,3 +3727,69 @@ Format per entry:
 - **Date**: 2026-10-21
 - **Category**: Optimization
 - **Summary**: A benchmark for agents that must proactively capture and update memory from streaming egocentric video, covering information capture, object-state tracking, and location tracking. At the Intervention Level the agent maintains memory itself through tool calls, and a QA split scores the memory it builds. Even the strongest proprietary and streaming models fail to build memory that is both timely and accurate.
+
+### ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents
+- **arXiv**: 2610.32752 ([link](https://arxiv.org/abs/2610.32752))
+- **Date**: 2026-10-23
+- **Category**: Optimization
+- **Summary**: A graph-based long-term memory for LLM agents that fixes two failure points in memory pipelines: indexing errors that split or merge entities (addressed with label reconciliation and tiered entity resolution) and retrieval that treats initial similarity scores as final (addressed with query-time graph diffusion that refines triple scores while protecting direct evidence). Reports 55.1 average accuracy on MemoryAgentBench, 5.4 points above the strongest retrieval baseline, with low per-query cost and latency on consumer hardware.
+
+### Agentic Memory Management Is the Next Frontier of Information Retrieval
+- **arXiv**: 2610.32464 ([link](https://arxiv.org/abs/2610.32464))
+- **Date**: 2026-10-23
+- **Category**: Optimization
+- **Summary**: Position paper arguing that agent memory management (how memory is structured, stored, searched, retrieved, and used) is a natural extension of IR research. Proposes a system-level framework and a taxonomy of memory objects as constants, functions, and operators with distinct retrieval semantics, and a research agenda covering benchmarks, memory-utility measurement, and optimization that combines parametric and non-parametric updates.
+
+### 4DMemory: Benchmarking Long-Horizon Spatiotemporal Memory with Harness-Augmented Agents
+- **arXiv**: 2610.32332 ([link](https://arxiv.org/abs/2610.32332))
+- **Date**: 2026-10-23
+- **Category**: Optimization
+- **Summary**: Introduces LongVideo (about 900 hours of video, 5,000+ reviewed questions) and 4DMemoryBench for long-horizon spatiotemporal memory, plus a 4DMemory Harness combining skills, 22+ tool models, and a model-specific RAG memory. Across 13 models, standalone foundation models struggle at long horizons while the harness improves each by over 50%, showing the value of external memory for long-horizon agents.
+
+### Lifelong Context Adaptation through Bidirectional Memory-Skill Learning
+- **arXiv**: 2610.32295 ([link](https://arxiv.org/abs/2610.32295))
+- **Date**: 2026-10-23
+- **Category**: Optimization
+- **Summary**: MemCryst lets a frozen LLM learn memory and skills jointly: recurring episodes in memory create and revise skills, and skill-guided interactions produce new memories. Task outcomes adjust each served record's retrieval likelihood without rewriting its content. Leads 7 of 10 comparisons across embodied, long-document, conversation, math, and code settings; on ALFWorld joint serving reaches 63.17% vs. 59.83% memory-only.
+
+### SPECMEM: Accelerating Agentic Tool Calling via Live Memory Management
+- **arXiv**: 2610.31840 ([link](https://arxiv.org/abs/2610.31840))
+- **Date**: 2026-10-22
+- **Category**: Optimization
+- **Summary**: Uses a live, cross-session memory of a user's past verified tool calls as drafts for speculative decoding, with bounded per-user stores, LRU eviction, and deferral of irreversible calls until verification. Keeps acceptance stable where a frozen store decays (27% more accepted tokens, up to 1.74x wall-clock speedup); per-user scoping also closes a measured cross-user leakage channel.
+
+### Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?
+- **arXiv**: 2610.32046 ([link](https://arxiv.org/abs/2610.32046))
+- **Date**: 2026-10-23
+- **Category**: Optimization
+- **Summary**: Proposes Test-Time Memory Evolution (TTME), which updates an external memory of distilled experience instead of model weights during discovery. In a controlled comparison it outperforms test-time training on all five math tasks while cutting FLOPs by 82.8-84.6% and runtime by 47.7-58.4%, making external memory a cheaper adaptation route for agents.
+
+### Compact-Bench: Measuring What Context Compaction Costs Long-Horizon Coding Agents
+- **arXiv**: 2610.31710 ([link](https://arxiv.org/abs/2610.31710))
+- **Date**: 2026-10-22
+- **Category**: Optimization
+- **Summary**: Isolates the effect of a single compaction by pairing full-history and summary-only continuations from the same repository state, across 35 SWE-bench repairs, 146 agentic sessions, and 106 production compaction chains. Across 14 summarizer backbones, compaction breaks 5-64% of full-history successes, and LLM summaries keep at most 16.0% of recurring details vs. 79.1% for mechanical extraction, showing compaction must preserve task progress, not just relevant information.
+
+### Benchmarks Are Surprisingly Compaction-Friendly
+- **arXiv**: 2610.31778 ([link](https://arxiv.org/abs/2610.31778))
+- **Date**: 2026-10-22
+- **Category**: Optimization
+- **Summary**: Compares five compaction strategies with three frontier models in a fixed OpenCode scaffold on PaperBench, ProgramBench, and PostTrainBench. No method beats default self-summarization and more aggressive discarding costs up to 20 points, while compaction silently drops task constraints (about a third of anti-cheating rules after the first summary; how-to-work instructions dropped about 6x more often than specs in real sessions). Argues benchmarks understate compaction loss because progress is saved on disk.
+
+### AlphaMemo: Structured Search-Process Memory for Self-Evolving Alpha Mining Agents
+- **arXiv**: 2606.20625 ([link](https://arxiv.org/abs/2606.20625))
+- **Date**: 2026-05-26 (v2 revised 2026-10-22)
+- **Category**: Optimization
+- **Summary**: Instead of storing final factors or full trajectories, a self-evolving alpha-mining agent records which edit motifs (extracted from AST diffs) work or fail under specific parent contexts, with confidence-gated residual memory over a search-ledger prior and asymmetric veto of high-confidence failure patterns. Improves out-of-sample performance and discovery efficiency under a fixed budget on CSI 500 and S&P 500. Catch-up entry via the 2026-10-22 revision.
+
+### Contextual Memory Virtualisation: DAG-Based State Management and Structurally Lossless Trimming for LLM Agents
+- **arXiv**: 2602.22402 ([link](https://arxiv.org/abs/2602.22402))
+- **Date**: 2026-02-25 (v2 revised 2026-10-22)
+- **Category**: Optimization
+- **Summary**: Models an agent session's accumulated context as version-controlled state in a DAG with snapshot, branch, and trim operations, borrowing from OS virtual memory to reuse context across parallel sessions. A three-pass trimming algorithm keeps user/assistant messages intact while removing tool-output and metadata bloat, cutting tokens by 20% on average (up to 86%) and staying economical under prompt caching. Catch-up entry via the 2026-10-22 revision.
+
+### PolyMemDB: A Polyglot Database System for AI Memory Management
+- **arXiv**: 2608.25577 ([link](https://arxiv.org/abs/2608.25577))
+- **Date**: 2026-08-26 (v2 revised 2026-10-22)
+- **Category**: Optimization
+- **Summary**: A long-term memory store for personal AI agents with a polyglot architecture (graph, vector, probabilistic, and spatial-temporal memory) to avoid fragmenting multi-dimensional data, plus a probabilistic inference engine that combines temporal decay with semiring aggregation to resolve long-term factual conflicts and record fine-grained provenance. Catch-up entry via the 2026-10-22 revision.

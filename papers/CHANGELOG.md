@@ -4,6 +4,34 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-27
+
+11 new papers (0 Security, 11 Optimization).
+
+**Optimization**
+- ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents (2610.32752)
+- Agentic Memory Management Is the Next Frontier of Information Retrieval (2610.32464)
+- 4DMemory: Benchmarking Long-Horizon Spatiotemporal Memory with Harness-Augmented Agents (2610.32332)
+- Lifelong Context Adaptation through Bidirectional Memory-Skill Learning (2610.32295)
+- SPECMEM: Accelerating Agentic Tool Calling via Live Memory Management (2610.31840)
+- Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery? (2610.32046)
+- Compact-Bench: Measuring What Context Compaction Costs Long-Horizon Coding Agents (2610.31710)
+- Benchmarks Are Surprisingly Compaction-Friendly (2610.31778)
+- AlphaMemo: Structured Search-Process Memory for Self-Evolving Alpha Mining Agents (2606.20625, v2 revised 2026-10-22)
+- Contextual Memory Virtualisation: DAG-Based State Management and Structurally Lossless Trimming for LLM Agents (2602.22402, v2 revised 2026-10-22)
+- PolyMemDB: A Polyglot Database System for AI Memory Management (2608.25577, v2 revised 2026-10-22)
+
+Source: the Monday 26 October cs.AI/cs.CL/cs.CR listings, plus arXiv searches for "agent memory" and "memory poisoning"
+sorted by announcement date. No new security papers found (the cs.CR listing had none on memory). A search for
+"memory LLM agents" was refused by the fetch tool's content filter, so coverage is partial.
+Skipped as peripheral: 2610.32002 (DraMaze, script generation), 2610.32851 (enterprise RAG knowledge layer, not agent
+memory), 2609.05279 (notebook inheritance in LLM teams), 2610.32128 (retrieval evidence compression for ICL, not agents),
+and 2610.21245 (RAG privacy-accounting survey, skipped before).
+The summary email failed again: the SMTP server closed the connection during AUTH, the eighth run in a row since 2026-10-19.
+Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-26 [Conference scan]
 
 No new conference papers found.
