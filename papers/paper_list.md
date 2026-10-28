@@ -1079,6 +1079,30 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Surveys 118 RAG defense papers and sorts them by the endpoint each one measures, using a seven-family taxonomy. Most work measures corpus-use detection, and few studies test content disclosure or adaptive attackers. A testbed shows that blocking verbatim copying does not stop a multi-query attacker from recovering private facts from the retrieval store.
 
+### Logic Hijacking of RAG: Single-Document Poisoning via Local Optimization
+- **arXiv**: 2610.34829 ([link](https://arxiv.org/abs/2610.34829))
+- **Date**: 2026-10-26
+- **Category**: Security
+- **Summary**: MONOLOGUE is a black-box single-document corpus poisoning attack that sidesteps aligned LLMs' resistance to explicit refutations: it concedes the true fact as an older baseline and frames the target claim as a newer, dated correction, refining payloads offline with gated optimization and surrogate checks. It gives the strongest attack efficacy among single-document attacks across three benchmarks, three retrievers, and four open-weight generators.
+
+### GuardRAG: A Post-Retrieval Defense against Poisoning Attacks in Retrieval-Augmented Generation
+- **arXiv**: 2610.35071 ([link](https://arxiv.org/abs/2610.35071))
+- **Date**: 2026-10-26
+- **Category**: Security
+- **Summary**: A training-free, plug-and-play post-retrieval defense against coordinated poisoned documents that reinforce each other in context: it widens retrieval, removes near-duplicates, clusters documents with a query-adaptive hierarchical threshold, and prunes suspicious clusters by relevance, size, and semantic compactness. Lowers attack success across three QA datasets, several poisoning attacks, and six LLMs while preserving clean-retrieval answer quality.
+
+### Ranking Is Not Deciding: Benchmark Shortcuts and Operating-Point Collapse in Query-Time RAG Poisoning Defenses
+- **arXiv**: 2610.33849 ([link](https://arxiv.org/abs/2610.33849))
+- **Date**: 2026-10-24
+- **Category**: Security
+- **Summary**: Shows that near-perfect detection by query-time RAG poisoning filters largely reflects how poison sets were built: stripping the target-question prefix drops RAGuard's AUROC from 0.953 to 0.758 (miss rate 0.191 to 0.763) while passages still retrieve 93% of the time, and length-padding medical poison raises TrustRAG's miss rate from 0.000 to 0.827. A cautionary evaluation result for poisoning defenses of retrieval stores.
+
+### False Belief Dissemination, Persistence and Mitigation in Multi-Agent Social Networks Through the Lens of the Mandela Effect
+- **arXiv**: 2610.33026 ([link](https://arxiv.org/abs/2610.33026))
+- **Date**: 2026-10-11
+- **Category**: Security
+- **Summary**: A controlled framework linking agent communication, private agent memory, and a shared simulated web, seeded with 540 fabricated claims across 8 domains. Fabrications spread with up to 96.0% reach and acceptance barely declines after the fabricating agents are withdrawn, showing false beliefs persist in retained memories; post-spread correction beats prevention, but neither fully removes them.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -3793,3 +3817,99 @@ Format per entry:
 - **Date**: 2026-08-26 (v2 revised 2026-10-22)
 - **Category**: Optimization
 - **Summary**: A long-term memory store for personal AI agents with a polyglot architecture (graph, vector, probabilistic, and spatial-temporal memory) to avoid fragmenting multi-dimensional data, plus a probabilistic inference engine that combines temporal decay with semiring aggregation to resolve long-term factual conflicts and record fine-grained provenance. Catch-up entry via the 2026-10-22 revision.
+
+### The Hidden Costs of Forgetting: A Study of Trajectory Deletion in Software Engineering Agents
+- **arXiv**: 2610.35496 ([link](https://arxiv.org/abs/2610.35496))
+- **Date**: 2026-10-26
+- **Category**: Optimization
+- **Summary**: Evaluates 42 trajectory-reduction (forgetting) configurations varying how, where, how much, and when older-turn content is deleted, over 9,400 runs of two agents on SWE-bench Verified. Large deletions (even all reasoning text) preserve effectiveness only if delayed, agents often re-fetch deleted content, and while flat pricing shows savings in 26 of 42 settings, a caching-aware cost model shows none because trimming breaks the cached prefix.
+
+### MarkovSim: an LLM Agent Harness with Bounded Context for Long-Horizon Computational Simulation
+- **arXiv**: 2610.35349 ([link](https://arxiv.org/abs/2610.35349))
+- **Date**: 2026-10-26
+- **Category**: Optimization
+- **Summary**: Stores a long simulation workflow's record in schema-defined memory and rebuilds a compact progress summary at finite-state-machine transitions as the agent's context, keeping context bounded regardless of workflow length. On six finite element analysis benchmarks it succeeds in 16 of 18 runs and self-corrects solver and physics faults.
+
+### Learning to Remember: Advances in Memory Mechanisms for Large Language Models
+- **arXiv**: 2610.35089 ([link](https://arxiv.org/abs/2610.35089))
+- **Date**: 2026-10-26
+- **Category**: Optimization
+- **Summary**: A survey organizing LLM and agent memory research by memory life cycle, storage substrate, and system role, covering nonparametric memory, parametric memory (activations, caches, modules, weights), and memory for agent evolution, with evaluation as a cross-cutting component. Aims to guide persistent, adaptive, auditable, and safely updatable memory-augmented agents.
+
+### Adaptive Memory Index Evolution for Agents
+- **arXiv**: 2610.34977 ([link](https://arxiv.org/abs/2610.34977))
+- **Date**: 2026-10-26
+- **Category**: Optimization
+- **Summary**: AMIE is a plug-in layer that updates per-memory access state from deployment retrievals without changing stored content or retraining the host memory system; even a zero-call retrieval-frequency policy matches semantic keep/suppress policies in several settings. Trained AMIE improves downstream F1/accuracy in all 15 comparisons across five hosts and three benchmarks (+0.70 to +3.37 points, up to 25% relative).
+
+### BehaviorMem: Building and Evaluating User Memory from Real-World E-Commerce Behavior Streams
+- **arXiv**: 2610.34790 ([link](https://arxiv.org/abs/2610.34790))
+- **Date**: 2026-10-26
+- **Category**: Optimization
+- **Summary**: Introduces BehaviorMemBench from over three years of real e-commerce logs (1,194 users, 17,462 behavioral batches) and BehaviorMem, which stores explicit behavioral facts and inferred user traits in long- and short-term scopes. It outperforms other agentic memory methods on both remembering and inference, though rankings differ between the two and statistical baselines remain competitive.
+
+### The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory
+- **arXiv**: 2610.34767 ([link](https://arxiv.org/abs/2610.34767))
+- **Date**: 2026-10-26
+- **Category**: Optimization
+- **Summary**: Argues agent-memory benchmarks test retrieval but not whether a retrieved result is valid to act on, and introduces SciValidityBench (64 TaskSpecs, five validity modules, six domains) plus SciStateForge, which compiles experimental histories into explicit decision-governing state. Compiled state improves valid decisions by 9.2-18.8 points over a generic Event Graph across four model families, while retrieval alone does not.
+
+### Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents
+- **arXiv**: 2610.34673 ([link](https://arxiv.org/abs/2610.34673))
+- **Date**: 2026-10-26
+- **Category**: Optimization
+- **Summary**: Casts memory selection as budgeted slate recommendation; AgentMemRec uses recommender-system components with no LLM calls during selection or writing. Beats A-Mem, HippoRAG 2, DynamicRAG, and T-Mem by 10-31 accuracy points on LongMemEval, matches a 64-call LLM reranker at 3.2x lower serving cost, and beats Mem0 and Zep on LoCoMo.
+
+### Memory Tax: Dissecting the Net Value of Agent Memory
+- **arXiv**: 2610.34073 ([link](https://arxiv.org/abs/2610.34073))
+- **Date**: 2026-10-25
+- **Category**: Optimization
+- **Summary**: A large-scale evaluation finding many dedicated agent memory systems underperform naive RAG over raw history, and a decomposition of memory's net value into a memory benefit and a "memory tax" incurred when memory processing removes or obscures evidence. Examines the system- and evaluation-side sources of this tax.
+
+### CoEvolve: Counterfactual-Guided Co-Evolution of Memory and Collaboration in Multi-Agent Systems
+- **arXiv**: 2610.33539 ([link](https://arxiv.org/abs/2610.33539))
+- **Date**: 2026-10-24
+- **Category**: Optimization
+- **Summary**: Represents reusable collaboration patterns in LLM multi-agent systems as skills linked to supporting memories, and contrasts original and counterfactual trajectories to jointly update the skill library, skill memory, and executor memories so memory and collaboration evolve in step. Reports the best overall results on ALFWorld and WebShop among evaluated baselines.
+
+### ConMem: Counterfactual Multi-Scenario Probing for Resolving LLM Memory Misalignment
+- **arXiv**: 2610.33432 ([link](https://arxiv.org/abs/2610.33432))
+- **Date**: 2026-10-24
+- **Category**: Optimization
+- **Summary**: Introduces MemAlign (1,079 curated memory cases from multi-session conversations) and ConMem, which treats retention decisions as counterfactual causal inference probing task execution, irrelevant-input invariance, and risk-sensitive (including privacy-sensitive) boundaries. Reaches 75.16% accuracy and 65.31% Macro-F1, reducing over-retention without hurting personalization.
+
+### FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents
+- **arXiv**: 2610.33274 ([link](https://arxiv.org/abs/2610.33274))
+- **Date**: 2026-10-23
+- **Category**: Optimization
+- **Summary**: Stores each history unit once in an immutable store and renders a fresh compact memory per call under a token budget without extra LLM calls. Beats the next-best method by 11.5% on AppWorld challenge tasks at a 4k budget and A-Mem with summaries by 12.2% on 147 held-out tasks, and matches a keyword retriever on LongMemEval and LoCoMo where LLM-written memories fall behind at tight budgets.
+
+### Navigating Epistemic Parity in LLM Agents: A Benchmark for Cross-Source Conflict Resolution Between Memory and Procedural Skills
+- **arXiv**: 2610.33128 ([link](https://arxiv.org/abs/2610.33128))
+- **Date**: 2026-10-23
+- **Category**: Optimization
+- **Summary**: A 52-scenario benchmark of conflicts between episodic memory and procedural skill files (factual, format, procedural, permission). Across 1,383 runs on three open-weight models neither source wins consistently, a "skill takes precedence" directive still leaves 3-10% non-compliance, and 89% of runs silently adjudicate without disclosing the contradiction.
+
+### Parametric Session States Recover Retrieval Intent without Replaying History
+- **arXiv**: 2610.33047 ([link](https://arxiv.org/abs/2610.33047))
+- **Date**: 2026-10-17
+- **Category**: Optimization
+- **Summary**: Proposes Parametric Session State, a reusable session-memory layer for long-running assistants that tracks what to search for (project, entity, version terms set many turns earlier) while factual knowledge stays external. Avoids reprocessing the full history as long-context models do or relying on explicit textual memory as conversational rewriting does.
+
+### Lessons from Luck: Do LLM-Written Lessons Carry Chance into an Agent's Next Decision?
+- **arXiv**: 2610.33029 ([link](https://arxiv.org/abs/2610.33029))
+- **Date**: 2026-10-12
+- **Category**: Optimization
+- **Summary**: Tests whether a single ReasoningBank-style lesson memory written after a chance outcome biases a fresh session's next decision, across 256 synthetic two-tool worlds. After a chance failure of the reliable tool, readers given that lesson pick the worse tool 11.6% of the time versus 0.4% in controls, and mitigating instructions reduce but do not reliably remove the effect, a caution for memory consolidation in self-improving agents.
+
+### Intuition with Evidence: Adaptive Dual Memory for Multimodal Agents
+- **arXiv**: 2610.33019 ([link](https://arxiv.org/abs/2610.33019))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: Pairs a model-native latent memory used as an intuitive prior with a multi-indexed episodic memory for exact evidence reconstruction, routed per query by a training-free router using Jensen-Shannon divergence sensitivity and confidence proxies. Reports state-of-the-art results on multimodal benchmarks, +4.67% over vanilla episodic memory.
+
+### SLICE-Mem: Salience-Gated Lightweight Information Curation for Efficient LLM Agent Memory
+- **arXiv**: 2610.33015 ([link](https://arxiv.org/abs/2610.33015))
+- **Date**: 2026-10-08
+- **Category**: Optimization
+- **Summary**: Uses a small salience classifier to admit user turns and a dependency-parsing extractor to write short memory entries, with no generative LLM calls online and cross-entry merging done offline. Roughly matches MemOS on Memora Weekly (46.60 vs. 46.68 FAMA) and trails slightly on LongMemEval-S (56.8% vs. 59.3%) while cutting LLM token usage by 92.4% and 99.5%.

@@ -4,6 +4,47 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-28
+
+20 new papers (4 Security, 16 Optimization).
+
+**Security**
+- Logic Hijacking of RAG: Single-Document Poisoning via Local Optimization (2610.34829)
+- GuardRAG: A Post-Retrieval Defense against Poisoning Attacks in Retrieval-Augmented Generation (2610.35071)
+- Ranking Is Not Deciding: Benchmark Shortcuts and Operating-Point Collapse in Query-Time RAG Poisoning Defenses (2610.33849)
+- False Belief Dissemination, Persistence and Mitigation in Multi-Agent Social Networks Through the Lens of the Mandela Effect (2610.33026)
+
+**Optimization**
+- The Hidden Costs of Forgetting: A Study of Trajectory Deletion in Software Engineering Agents (2610.35496)
+- MarkovSim: an LLM Agent Harness with Bounded Context for Long-Horizon Computational Simulation (2610.35349)
+- Learning to Remember: Advances in Memory Mechanisms for Large Language Models (2610.35089)
+- Adaptive Memory Index Evolution for Agents (2610.34977)
+- BehaviorMem: Building and Evaluating User Memory from Real-World E-Commerce Behavior Streams (2610.34790)
+- The Right Fact, the Wrong Decision: SciValidityBench for Scientific Agent Memory (2610.34767)
+- Agent Memory as Recommendation: Recommender-System Design for Long-Term Memory of LLM Agents (2610.34673)
+- Memory Tax: Dissecting the Net Value of Agent Memory (2610.34073)
+- CoEvolve: Counterfactual-Guided Co-Evolution of Memory and Collaboration in Multi-Agent Systems (2610.33539)
+- ConMem: Counterfactual Multi-Scenario Probing for Resolving LLM Memory Misalignment (2610.33432)
+- FlexA-Mem: Budget-Adaptive Agentic Memory for LLM Agents (2610.33274)
+- Navigating Epistemic Parity in LLM Agents: A Benchmark for Cross-Source Conflict Resolution Between Memory and Procedural Skills (2610.33128)
+- Parametric Session States Recover Retrieval Intent without Replaying History (2610.33047)
+- Lessons from Luck: Do LLM-Written Lessons Carry Chance into an Agent's Next Decision? (2610.33029)
+- Intuition with Evidence: Adaptive Dual Memory for Multimodal Agents (2610.33019)
+- SLICE-Mem: Salience-Gated Lightweight Information Curation for Efficient LLM Agent Memory (2610.33015)
+
+Source: the Tuesday 27 October cs.AI/cs.CL/cs.CR listings (first portion of each page only; pages were truncated), plus arXiv
+abstract searches for "agent memory", "memory poisoning", "long-term memory LLM", and "context compression agents" sorted by
+announcement date. A "memory privacy agents" search hit HTTP 429, so privacy coverage may be partial.
+Skipped as peripheral: 2610.35066 (MemVLN), 2610.33487 (ReSight) and 2610.33158 (GEMS), all embodied/spatial memory without a
+clear LLM-agent framing; 2610.34724 (HaMo) and 2610.34043 (KEEL), experience/skill learning rather than memory systems;
+2610.34500 (CaliMem, data-curation agent); 2610.34967 (Rivet, repository context packing); 2610.35451 (OpenClaw security
+study, memory mentioned only in passing); 2610.33020 (latent-state sharing between model copies); 2610.33006 (general
+context compression, not agents).
+The summary email failed again: the SMTP server closed the connection during AUTH, the ninth run in a row since 2026-10-19.
+Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-27
 
 11 new papers (0 Security, 11 Optimization).
