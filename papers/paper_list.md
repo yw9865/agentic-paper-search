@@ -1103,6 +1103,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: A controlled framework linking agent communication, private agent memory, and a shared simulated web, seeded with 540 fabricated claims across 8 domains. Fabrications spread with up to 96.0% reach and acceptance barely declines after the fabricating agents are withdrawn, showing false beliefs persist in retained memories; post-spread correction beats prevention, but neither fully removes them.
 
+### The Envelope Layer: An Underestimated Surface of LLM Agent Defense
+- **arXiv**: 2610.37415 ([link](https://arxiv.org/abs/2610.37415))
+- **Date**: 2026-10-27
+- **Category**: Security
+- **Summary**: Studies the "envelope layer" through which malicious content enters an agent, using the A2A-TIBA attack in a factorial label/forgery experiment plus a dedicated memory experiment. Memory has the largest effect: remembered prior successful attacks increase breaches while prior failures decrease them, so the authors argue memory is part of the agent's security boundary alongside labels and frontend permissions.
+
+### From Voiceprints to User Entities: Online Speaker-Memory Construction for Multi-User Spoken Agents
+- **arXiv**: 2610.36713 ([link](https://arxiv.org/abs/2610.36713))
+- **Date**: 2026-10-27
+- **Category**: Security
+- **Summary**: Proposes EvoSpeakerMem, a training-free layer that treats voiceprints as evidence for persistent user entities and partitions memory reads/writes by identity on top of a replaceable text-memory backend, plus the LoCoMo-ID benchmark with hidden speakers and condition shifts. Improves identity-gated QA with no wrong-user authorizations, but shows QA gains can coexist with incorrect cross-user links, a cross-user memory-access risk that accuracy alone hides.
+
+### Factual Yet One-Sided: Stance Poisoning and Evidence Balancing in Retrieval-Augmented Generation
+- **arXiv**: 2610.34294 ([link](https://arxiv.org/abs/2610.34294))
+- **Date**: 2026-10-25
+- **Category**: Security
+- **Summary**: Shows that injecting factually correct but one-sided documents into a RAG corpus shifts all four tested generators toward the poisoned stance, growing with the poisoned share. Proposes a Stance-Balancing Middleware between retriever and generator that enforces a fixed supporting/opposing/neutral evidence mix with no extra LLM calls, reducing stance deviation at about 1.5% GPU overhead.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -3913,3 +3931,57 @@ Format per entry:
 - **Date**: 2026-10-08
 - **Category**: Optimization
 - **Summary**: Uses a small salience classifier to admit user turns and a dependency-parsing extractor to write short memory entries, with no generative LLM calls online and cross-entry merging done offline. Roughly matches MemOS on Memora Weekly (46.60 vs. 46.68 FAMA) and trails slightly on LongMemEval-S (56.8% vs. 59.3%) while cutting LLM token usage by 92.4% and 99.5%.
+
+### Rare, Relevant, and Still Wrong: How Memory Fails LLM Group Decisions
+- **arXiv**: 2610.37624 ([link](https://arxiv.org/abs/2610.37624))
+- **Date**: 2026-10-27
+- **Category**: Optimization
+- **Summary**: Studies how to compress a multi-agent LLM discussion into a short memory for a final decision-maker, comparing rarest-first and relevance-based fact selection on the 480-task CrossProfile benchmark. Both heuristics fail predictably (relevance keeps on-topic misleading facts; rarest-first is near random), the decider shows a social-proof bias toward multiply-attributed facts, and removing attribution tags raises accuracy by 13-24 points.
+
+### ETAMem: Decoupling and Aligning Heterogeneous Memory for Long-Term Conversational Agents
+- **arXiv**: 2610.37443 ([link](https://arxiv.org/abs/2610.37443))
+- **Date**: 2026-10-27
+- **Category**: Optimization
+- **Summary**: Splits conversation history into atomic, emotion-flagged units organized into incrementally updated event, affect, and time views, and allocates a query-specific retrieval budget across views with an entropy-based method. Reports 12.46% and 7.96% relative accuracy gains on LoCoMo and LongMemEval-S with competitive token efficiency.
+
+### Spine: Compiling Subtask Trees into Structured Context for Long-Horizon Coding Agents
+- **arXiv**: 2610.37224 ([link](https://arxiv.org/abs/2610.37224))
+- **Date**: 2026-10-27
+- **Category**: Optimization
+- **Summary**: Records declared subtask scopes in a persistent SpineTree and compiles it into context before each model call, keeping details of unfinished subtasks while collapsing completed ones into their results and preserving prefix-cache reuse. Integrated into Codex, it reports an 11.8% higher SWE-Milestone score at 32.4% lower total cost, a structured alternative to blind history trimming for long-horizon agents.
+
+### Proactive Memory for Event-Driven LLM Agents
+- **arXiv**: 2610.36967 ([link](https://arxiv.org/abs/2610.36967))
+- **Date**: 2026-10-27
+- **Category**: Optimization
+- **Summary**: ProactMem organizes an agent's event-stream history into recent events, source-verified temporal trajectories, and replay-validated behavioral regularities so the agent can anticipate service opportunities. Introduces the longitudinal ProactiveStream benchmark and reports 52.6% F1, a 21.4% relative gain over the strongest of five memory baselines.
+
+### TrawMem: Reframing Agent Memory as Task-Oriented Role-Adaptive Workspaces
+- **arXiv**: 2610.36918 ([link](https://arxiv.org/abs/2610.36918))
+- **Date**: 2026-10-27
+- **Category**: Optimization
+- **Summary**: Argues query relevance alone misses how memories help a task, and organizes interaction histories into local threads with assigned roles, jointly selecting complementary memories into task-oriented workspaces. Gains 2.23-3.14 macro-F1 on LoCoMo and MemGallery over representative memory systems and beats SimpleMem while using about 5-13% fewer context tokens.
+
+### Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems
+- **arXiv**: 2610.36652 ([link](https://arxiv.org/abs/2610.36652))
+- **Date**: 2026-10-27
+- **Category**: Optimization
+- **Summary**: DiscernMem is a training-free framework for multi-agent systems that refines memories via with/without-memory counterfactual team runs (repairing faulty rules without regressing earlier tasks) and learns per role when to apply or withhold each memory from its usage history. Achieves the best average scores on AutoGen, CAMEL, and MacNet across four benchmarks with Qwen3-4B.
+
+### When Retrieval Is Not Enough: Obsolete Facts in Agent Memory
+- **arXiv**: 2610.36308 ([link](https://arxiv.org/abs/2610.36308))
+- **Date**: 2026-10-26
+- **Category**: Optimization
+- **Summary**: Disentangles retrieval from answer generation on MemoryAgentBench FactConsolidation and finds accuracy falls as retrieved evidence grows even when the newest fact is retrieved; most errors arise when an outdated version of the fact is also present. Controlled swaps show an obsolete competing fact harms more than unrelated evidence of the same size, motivating explicit update/forgetting handling in agent memory.
+
+### Stratum: Repository Memory for Coding Agents Beyond the Context Window
+- **arXiv**: 2610.36153 ([link](https://arxiv.org/abs/2610.36153))
+- **Date**: 2026-10-26
+- **Category**: Optimization
+- **Summary**: Frames cross-session forgetting in coding agents as a memory-architecture rather than context-length problem and proposes a tiered repository-resident memory accessed through page-safe tools that report what was returned, what remains, and its cost (1.7 ms median retrieval over one million nodes). Fresh agents inheriting memory found the root-cause file in 21/24 trials vs. 6/24 for retrieval-only, at 4.5x lower median token cost.
+
+### EMMA: Structured Episodic Memory for Multi-Agent Workflow Synthesis
+- **arXiv**: 2610.35966 ([link](https://arxiv.org/abs/2610.35966))
+- **Date**: 2026-10-25
+- **Category**: Optimization
+- **Summary**: Treats a multi-agent system's configuration (memory-routing controller, specialist prompts, per-step procedural skills) as structured episodic memory, with a reflector that scopes each diagnosed failure to one bounded, guarded edit. Beats ACE, GEPA, EvoMAS, and ADAS on KramaBench, AppWorld, and BBEH (up to +32.5%) while using 17-38% fewer training executions.

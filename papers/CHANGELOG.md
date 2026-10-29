@@ -4,6 +4,37 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-29
+
+12 new papers (3 Security, 9 Optimization).
+
+**Security**
+- The Envelope Layer: An Underestimated Surface of LLM Agent Defense (2610.37415)
+- From Voiceprints to User Entities: Online Speaker-Memory Construction for Multi-User Spoken Agents (2610.36713)
+- Factual Yet One-Sided: Stance Poisoning and Evidence Balancing in Retrieval-Augmented Generation (2610.34294)
+
+**Optimization**
+- Rare, Relevant, and Still Wrong: How Memory Fails LLM Group Decisions (2610.37624)
+- ETAMem: Decoupling and Aligning Heterogeneous Memory for Long-Term Conversational Agents (2610.37443)
+- Spine: Compiling Subtask Trees into Structured Context for Long-Horizon Coding Agents (2610.37224)
+- Proactive Memory for Event-Driven LLM Agents (2610.36967)
+- TrawMem: Reframing Agent Memory as Task-Oriented Role-Adaptive Workspaces (2610.36918)
+- Remembering Is Not Enough: Refining Memories and Learning When to Use Them in Multi-Agent Systems (2610.36652)
+- When Retrieval Is Not Enough: Obsolete Facts in Agent Memory (2610.36308)
+- Stratum: Repository Memory for Coding Agents Beyond the Context Window (2610.36153)
+- EMMA: Structured Episodic Memory for Multi-Agent Workflow Synthesis (2610.35966)
+
+Source: arXiv abstract searches sorted by announcement date for "agent memory", "long-term memory LLM", "memory injection
+agent", "retrieval-augmented generation attack", "context compression agent", and "memory privacy LLM agent". Each candidate
+was verified against its abstract page. "memory poisoning" and "RAG poisoning" searches timed out, but the RAG-attack search
+covered the same recent poisoning papers.
+Skipped as peripheral: 2610.37203 (legged-robot spatial memory); 2610.36355 (WAKMan, KV-cache serving manager);
+2610.36264 (agent inbox coordination); 2610.36826 (rubric/harness co-evolution); 2610.36544 (restart monitors).
+The summary email failed again: the SMTP server closed the connection during AUTH, the tenth run in a row since 2026-10-19.
+Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-28
 
 20 new papers (4 Security, 16 Optimization).
