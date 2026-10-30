@@ -4,6 +4,25 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-30
+
+1 new paper (1 Security, 0 Optimization).
+
+**Security**
+- When Compression Becomes an Attack Surface: Black-Box Attacks on Prompt-Compressed LLM Agents (2510.22963)
+
+Source: arXiv's newest announcement is still 2026-10-28, and every on-topic paper in it was already recorded, so this run
+found nothing newer than 2610.37624. The one addition is an older paper (v1 2025-10, v4 2026-06) that a web search surfaced;
+it was verified against its abstract page. Searches for "agent memory", "memory poisoning", "retrieval-augmented generation
+attack", and "long-term memory conversational", plus the cs.AI/cs.CR/cs.CL /new listings, turned up no other unrecorded
+on-topic papers. Several further arXiv searches (context compression, memory privacy, memory extraction, context
+management) returned HTTP 429 and were not completed.
+Skipped as general surveys without a security/optimization focus: 2512.13564, 2603.07670, 2602.05665, 2602.06052.
+The summary email failed again: the SMTP server closed the connection during AUTH, the eleventh run in a row since
+2026-10-19. Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-29
 
 12 new papers (3 Security, 9 Optimization).

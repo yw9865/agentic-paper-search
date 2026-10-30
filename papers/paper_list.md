@@ -1121,6 +1121,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Shows that injecting factually correct but one-sided documents into a RAG corpus shifts all four tested generators toward the poisoned stance, growing with the poisoned share. Proposes a Stance-Balancing Middleware between retriever and generator that enforces a fixed supporting/opposing/neutral evidence mix with no extra LLM calls, reducing stance deviation at about 1.5% GPU overhead.
 
+### When Compression Becomes an Attack Surface: Black-Box Attacks on Prompt-Compressed LLM Agents
+- **arXiv**: 2510.22963 ([link](https://arxiv.org/abs/2510.22963))
+- **Date**: 2025-10-27 (v4 revised 2026-06-19)
+- **Category**: Security
+- **Summary**: Shows that when trusted and untrusted inputs share an agent's prompt-compression budget, an attacker who perturbs only the untrusted inputs can make the compressor drop key evidence or safety guardrails before the backend model sees them ("adversarial information loss"). The transfer-based black-box attack COMA reaches 0.71 average attack success across three tasks and six compressors (vs. 0.21 for the best baseline) and transfers to two real-world agent case studies, exposing context compression as a security surface in agent memory pipelines.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
