@@ -4,6 +4,33 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-10-31
+
+7 new papers (3 Security, 4 Optimization).
+
+**Security**
+- Is it my preference? Role Grounding Attack against Agent's Memory via Social Interaction (2610.38209)
+- Security Impact of Coding Agent's Memory Files (2610.38521)
+- Sticky Collusion: Persistence of LLM Agent Collusion after Incentive Removal and Partner Replacement (2610.39660)
+
+**Optimization**
+- MemSteer: Turning User Histories into Supervision for Agent Memory Optimization (2610.39276)
+- SkillMem: Compact External Skill Memory for Latent Multi-Agent Reasoning (2610.37935)
+- Let Them Sleep: Recursive Self-Pruning Memory for Long-Horizon LLM Agents (2610.25561)
+- PACE-Mem: Prefix-Aware Complementary Evidence for Multimodal Agents (2610.24378)
+
+Source: arXiv API search sorted by submission date, plus the 2026-10-30 cs.AI/cs.CR/cs.CL /new listings (each only
+partially read because of page size). All entries verified against their abstract pages.
+Skipped as off-topic or memory only peripheral: 2610.39781 (agent re-entry into dormant threads, evaluation of
+behavior), 2610.39122 (self-evolving agents vs. indirect prompt injection; no persistent memory described),
+2610.37738 (jailbreaks via skill Markdown files framed as config, not memory), 2610.39532 (multi-agent privacy
+information flow; memory only motivating), 2610.38210 (generic LLM KV compression, not agents), 2610.34251 (robot VLA
+memory). A second filtered arXiv API query returned HTTP 429 and was not completed.
+The summary email failed again: the SMTP server closed the connection during AUTH, the twelfth run in a row since
+2026-10-19. Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-30
 
 1 new paper (1 Security, 0 Optimization).

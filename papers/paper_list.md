@@ -1127,6 +1127,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Shows that when trusted and untrusted inputs share an agent's prompt-compression budget, an attacker who perturbs only the untrusted inputs can make the compressor drop key evidence or safety guardrails before the backend model sees them ("adversarial information loss"). The transfer-based black-box attack COMA reaches 0.71 average attack success across three tasks and six compressors (vs. 0.21 for the best baseline) and transfers to two real-world agent case studies, exposing context compression as a security surface in agent memory pipelines.
 
+### Is it my preference? Role Grounding Attack against Agent's Memory via Social Interaction
+- **arXiv**: 2610.38209 ([link](https://arxiv.org/abs/2610.38209))
+- **Date**: 2026-10-28
+- **Category**: Security
+- **Summary**: Shows that agent memory systems lose speaker attribution in nested social-platform conversations, so an attacker's stated preferences get stored as the victim user's own. Across five memory systems and six LLMs, this misattribution persists into later retrieval and can steer the victim agent toward an attacker-controlled tool and leak sensitive data in tool arguments.
+
+### Security Impact of Coding Agent's Memory Files
+- **arXiv**: 2610.38521 ([link](https://arxiv.org/abs/2610.38521))
+- **Date**: 2026-10-28
+- **Category**: Security
+- **Summary**: Treats the project memory files that coding agents auto-load as trusted guidance every session as an attack surface: anyone who can edit them (e.g. via a pull request) can steer the agent without touching the developer's prompt. Across 12 vulnerability classes and 36 SecRepoBench tasks, evaluates whether malicious memory files make agents write test-passing but insecure code and whether agents disclose the file's influence.
+
+### Sticky Collusion: Persistence of LLM Agent Collusion after Incentive Removal and Partner Replacement
+- **arXiv**: 2610.39660 ([link](https://arxiv.org/abs/2610.39660))
+- **Date**: 2026-10-29
+- **Category**: Security
+- **Summary**: Finds that collusion between LLM agents persists after the collusion incentive is removed or a partner is replaced, with agent memory as the carrier of the behavior. Wiping memory ends collusion in every history while partial memory often sustains it, making memory a channel for adversarial persistence across episodes in multi-agent systems.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -3991,3 +4009,27 @@ Format per entry:
 - **Date**: 2026-10-25
 - **Category**: Optimization
 - **Summary**: Treats a multi-agent system's configuration (memory-routing controller, specialist prompts, per-step procedural skills) as structured episodic memory, with a reflector that scopes each diagnosed failure to one bounded, guarded edit. Beats ACE, GEPA, EvoMAS, and ADAS on KramaBench, AppWorld, and BBEH (up to +32.5%) while using 17-38% fewer training executions.
+
+### MemSteer: Turning User Histories into Supervision for Agent Memory Optimization
+- **arXiv**: 2610.39276 ([link](https://arxiv.org/abs/2610.39276))
+- **Date**: 2026-10-29
+- **Category**: Optimization
+- **Summary**: Generates evidence-backed question-answer supervision from unlabeled user histories (with checks such as source auditing) and uses it in MemSteer-Opt to tune an agent's memory storage, retrieval, and context construction without updating model weights. Reports gains on ATM-Bench and RHELM.
+
+### SkillMem: Compact External Skill Memory for Latent Multi-Agent Reasoning
+- **arXiv**: 2610.37935 ([link](https://arxiv.org/abs/2610.37935))
+- **Date**: 2026-10-27
+- **Category**: Optimization
+- **Summary**: Stores each reusable skill as a small external latent memory, read through a role-aware reader by different agents in latent multi-agent reasoning and trained by distilling the effect of textual skills with a frozen backbone. Avoids repeated processing of textual skills, giving up to 4.23x end-to-end inference speedup and over 38x storage reduction for a 100-skill library.
+
+### Let Them Sleep: Recursive Self-Pruning Memory for Long-Horizon LLM Agents
+- **arXiv**: 2610.25561 ([link](https://arxiv.org/abs/2610.25561))
+- **Date**: 2026-10-18
+- **Category**: Optimization
+- **Summary**: Proposes RSPM, a consolidation/forgetting policy that periodically clusters recent failures into short rules, deletes the raw episodes, lets unreinforced rules decay, and promotes rules that recur across contexts. Improves results on three tasks while cutting retry loops by about 93% and stored entries by about 30%.
+
+### PACE-Mem: Prefix-Aware Complementary Evidence for Multimodal Agents
+- **arXiv**: 2610.24378 ([link](https://arxiv.org/abs/2610.24378))
+- **Date**: 2026-10-17
+- **Category**: Optimization
+- **Summary**: A training-free, plug-in retrieval method for clip-based multimodal agent memory that selects evidence by balancing query relevance against redundancy with already-chosen items and sets retrieval depth adaptively from where relevance scores drop off. Improves QA accuracy by about 1.6% over Adaptive-k at similar retrieval depth.
