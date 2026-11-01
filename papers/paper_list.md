@@ -4033,3 +4033,33 @@ Format per entry:
 - **Date**: 2026-10-17
 - **Category**: Optimization
 - **Summary**: A training-free, plug-in retrieval method for clip-based multimodal agent memory that selects evidence by balancing query relevance against redundancy with already-chosen items and sets retrieval depth adaptively from where relevance scores drop off. Improves QA accuracy by about 1.6% over Adaptive-k at similar retrieval depth.
+
+### CALM: Conflict-Aware Lifecycle Memory Governance for Long-Horizon Language Agents
+- **arXiv**: 2610.38573 ([link](https://arxiv.org/abs/2610.38573))
+- **Date**: 2026-10-28
+- **Category**: Optimization
+- **Summary**: Separates persistent memory storage from query-time admission: records become evidence-grounded memory cells whose validity and lifecycle states are updated from support, conflict, and dependency signals, and a training-free or learned gate selects temporally applicable evidence per query. Reports the best overall accuracy on LongMemEval-S and LoCoMo, suppresses erroneous memories, and shows that retaining superseded records helps earlier-state reasoning.
+
+### Long-Term Agent Memory through Complementary Curation and Consolidation
+- **arXiv**: 2610.39790 ([link](https://arxiv.org/abs/2610.39790))
+- **Date**: 2026-10-29
+- **Category**: Optimization
+- **Summary**: Pairs episodic memories with structured relational memories for long-running conversational agents and adds a consolidation step to keep the memory store efficient. Finds the two memory types complementary, reaching 90.2% on LoCoMo and 85.5% on LongMemEval-S, ahead of recent memory frameworks.
+
+### MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents
+- **arXiv**: 2610.38332 ([link](https://arxiv.org/abs/2610.38332))
+- **Date**: 2026-10-28
+- **Category**: Optimization
+- **Summary**: Builds global, approach-level, and implementation-level memory from past trajectories of scientific coding agents, retrieving implementation memory from the agent's current activity and using an LLM gate to decide whether to inject a past lesson or nothing. Beats retrieval and memory baselines on four benchmarks (numerical solving, kernel optimization, scientific software repair), with ablations supporting both the multi-level structure and the gated injection.
+
+### What Should a Navigator Remember? Spatiotemporal Memory for Zero-Shot Vision-Language Navigation
+- **arXiv**: 2610.38318 ([link](https://arxiv.org/abs/2610.38318))
+- **Date**: 2026-10-28
+- **Category**: Optimization
+- **Summary**: Studies what an 8B-scale LLM/VLM navigation agent should retain, keeping task-progress memory, a compressed pose-tied observation history, and accumulated geometry that an observer model writes and a reasoner model reads. Tops Qwen3-based zero-shot baselines on R2R-CE val-unseen, and removing temporal memory more than doubles average path length (16.9 m to 39.1 m).
+
+### SimpleMem: Efficient Lifelong Memory for LLM Agents
+- **arXiv**: 2601.02553 ([link](https://arxiv.org/abs/2601.02553))
+- **Date**: 2026-01-05
+- **Category**: Optimization
+- **Summary**: A three-stage lifelong memory pipeline that compresses raw interaction history into compact indexed memory units, consolidates overlapping context to reduce redundancy, and estimates query needs to retrieve only a targeted amount of context. Reports a 26.4% average F1 gain on LoCoMo and up to 30x lower inference-time token use than baselines (ICLR 2026).

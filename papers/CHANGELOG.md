@@ -4,6 +4,31 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-01
+
+5 new papers (0 Security, 5 Optimization).
+
+**Optimization**
+- CALM: Conflict-Aware Lifecycle Memory Governance for Long-Horizon Language Agents (2610.38573)
+- Long-Term Agent Memory through Complementary Curation and Consolidation (2610.39790)
+- MUSE: Multi-Level Memory with Selective Runtime Injection for Scientific Coding Agents (2610.38332)
+- What Should a Navigator Remember? Spatiotemporal Memory for Zero-Shot Vision-Language Navigation (2610.38318)
+- SimpleMem: Efficient Lifelong Memory for LLM Agents (2601.02553; older, found via web search and not previously tracked)
+
+Source: arXiv API search sorted by submission date (newest entries 2026-10-29; a second query returned HTTP 429),
+the full 2026-10-30 cs.AI /new listing and cs.CR /new listing, the first part of cs.CL /new, plus web search. No
+new listings since Friday (weekend). All entries verified against their abstract pages.
+Skipped as off-topic or memory only peripheral: 2610.40545 (value-indexed memory tested on MiniGrid RL, not LLM
+agents), 2610.40482 (financial memory graph, no LLM agent framing), 2610.38744 (embodied planner with minor memory
+module), 2610.37826 (multi-hop RAG QA-answer cache), 2610.39714 (molecular discovery agent, memory peripheral),
+2610.38869 (multi-agent belief-update auditing), 2610.38126 (on-device/cloud context leakage, no persistent memory),
+2609.18526 (consumer LLM serving confidentiality, not agents), 2610.39812 (video world model memory), 2610.38577
+(continual learning for image classification).
+The summary email failed again: the SMTP server closed the connection during AUTH, the thirteenth run in a row since
+2026-10-19. Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-10-31
 
 7 new papers (3 Security, 4 Optimization).
