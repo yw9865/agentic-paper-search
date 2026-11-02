@@ -4,6 +4,33 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-02
+
+6 new papers (2 Security, 4 Optimization).
+
+**Security**
+- Judging Before Propagation: Task-Graph Contextual Integrity for Multi-Agent Privacy (2610.39532)
+- Appreciation Teaches Unauthorized Execution: Self-Evolution Degrades the Robustness of Personal Agents to Indirect Prompt Injection (2610.39122)
+
+**Optimization**
+- Routed Continual Learning (2610.38796)
+- HEDGE: Gated Hypergraph Memory for Scalable Multi-Agent Debate (2610.38902)
+- Don't Lose the Thread: Empowering Long-Horizon LLM Agents with Cognitive Resource Self-Allocation (2610.40350)
+- The Price of Scale in Proactive Memory Recall (2610.34507; v1 2026-10-25, revised 2026-10-29)
+
+Source: full 2026-10-30 /new listings for cs.AI, cs.CR, cs.MA, and the remainder of cs.CL (completing the previous
+run's partial coverage), plus web search. arXiv API returned HTTP 429 again; the Monday listing was not yet published.
+All entries verified against their abstract pages.
+Skipped as off-topic or memory only peripheral: 2610.37738 (jailbreak via skill Markdown loaded as system prompt, not
+memory), 2610.39781 (social re-entry evaluation, memory one factor), 2610.39180 (embodied experience transfer, no LLM
+framing in abstract), 2610.37779 (latent KV-state communication, not long-term memory), 2610.39840 (continual learning
+knowledge poisoning in model weights), 2608.25489 (parametric KG memory, not agents), 2603.07670 and 2604.01707
+(general memory surveys, older).
+The summary email failed again: the SMTP server closed the connection during AUTH, the fourteenth run in a row since
+2026-10-19. Check the app password in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-01
 
 5 new papers (0 Security, 5 Optimization).

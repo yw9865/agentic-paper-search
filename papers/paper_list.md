@@ -1145,6 +1145,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Finds that collusion between LLM agents persists after the collusion incentive is removed or a partner is replaced, with agent memory as the carrier of the behavior. Wiping memory ends collusion in every history while partial memory often sustains it, making memory a channel for adversarial persistence across episodes in multi-agent systems.
 
+### Judging Before Propagation: Task-Graph Contextual Integrity for Multi-Agent Privacy
+- **arXiv**: 2610.39532 ([link](https://arxiv.org/abs/2610.39532))
+- **Date**: 2026-10-29
+- **Category**: Security
+- **Summary**: Argues that multi-agent LLM systems with persistent memory and inter-agent messaging leak private data when a locally acceptable disclosure combines with what recipients already know or propagates to downstream agents. Proposes Task-Graph Contextual Integrity, which authorizes flows against intended propagation scope and each recipient's evolving disclosure state, cutting unauthorized disclosures by about 86-94% on the 144-case MAPLE-Bench while keeping about 94-96% of task accuracy.
+
+### Appreciation Teaches Unauthorized Execution: Self-Evolution Degrades the Robustness of Personal Agents to Indirect Prompt Injection
+- **arXiv**: 2610.39122 ([link](https://arxiv.org/abs/2610.39122))
+- **Date**: 2026-10-29
+- **Category**: Security
+- **Summary**: Shows that what a self-evolving personal agent learns from user feedback in an earlier phase persists and makes it more likely to obey a similar task injected by a third party later without user authorization. Attack success rises by 14.0-48.8 points under skill evolution and 3.0-39.3 points under RL, making learned agent state a channel for cross-session adversarial persistence.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4063,3 +4075,27 @@ Format per entry:
 - **Date**: 2026-01-05
 - **Category**: Optimization
 - **Summary**: A three-stage lifelong memory pipeline that compresses raw interaction history into compact indexed memory units, consolidates overlapping context to reduce redundancy, and estimates query needs to retrieve only a targeted amount of context. Reports a 26.4% average F1 gain on LoCoMo and up to 30x lower inference-time token use than baselines (ICLR 2026).
+
+### Routed Continual Learning
+- **arXiv**: 2610.38796 ([link](https://arxiv.org/abs/2610.38796))
+- **Date**: 2026-10-28
+- **Category**: Optimization
+- **Summary**: Instead of one costly global trajectory history or a single lossy compressed memory, clusters past agent trajectories and keeps each cluster's state in a memory system chosen from a fixed library, with an LLM router picking or creating a cluster before each run and a Context Memory Adapter linking memory to the agent loop. On mixed CL-Bench and tau3-Bench streams it improves normalized reward over a global in-context history while cutting estimated API cost by 65-72%.
+
+### HEDGE: Gated Hypergraph Memory for Scalable Multi-Agent Debate
+- **arXiv**: 2610.38902 ([link](https://arxiv.org/abs/2610.38902))
+- **Date**: 2026-10-28
+- **Category**: Optimization
+- **Summary**: Stores multi-agent debate history as a semantic hypergraph whose hyperedges group related claims across agents, and trains a selection module (SFT plus RL) to store, back up, or discard each memory candidate. Beats single-agent, multi-agent, and memory baselines across seven benchmarks (+5.0 points over the strongest multi-agent system) while reducing memory usage by 48% and debate rounds by 34%.
+
+### Don't Lose the Thread: Empowering Long-Horizon LLM Agents with Cognitive Resource Self-Allocation
+- **arXiv**: 2610.40350 ([link](https://arxiv.org/abs/2610.40350))
+- **Date**: 2026-10-29
+- **Category**: Optimization
+- **Summary**: CORAL gives agents a callable working-memory management toolset to checkpoint progress and verified facts, then reset cluttered context into a fresh episode, with multi-episode agentic RL training the checkpointing behavior. An 8B model reaches 42.8% on GAIA using 6-7x fewer input tokens than ReAct, and the method transfers to multi-hop QA and BrowseComp.
+
+### The Price of Scale in Proactive Memory Recall
+- **arXiv**: 2610.34507 ([link](https://arxiv.org/abs/2610.34507))
+- **Date**: 2026-10-25 (v2 2026-10-29)
+- **Category**: Optimization
+- **Summary**: Frames deciding when a long-lived assistant should volunteer a stored memory as a multiple-testing problem whose false-alarm rate grows with memory-store size, and proposes a cue-swap conformal gate with a finite-sample false-alarm guarantee. On LongMemEval it keeps false alarms low at the hit rate of a label-tuned threshold, at about 50 ms per decision on one CPU thread.
