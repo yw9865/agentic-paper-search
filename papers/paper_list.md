@@ -1157,6 +1157,24 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Shows that what a self-evolving personal agent learns from user feedback in an earlier phase persists and makes it more likely to obey a similar task injected by a third party later without user authorization. Attack success rises by 14.0-48.8 points under skill evolution and 3.0-39.3 points under RL, making learned agent state a channel for cross-session adversarial persistence.
 
+### Accept Changes, Reject Attacks: Robust Memory Management for LLM Agents
+- **arXiv**: 2610.41056 ([link](https://arxiv.org/abs/2610.41056))
+- **Date**: 2026-10-29
+- **Category**: Security
+- **Summary**: Observes that an agent's memory manager must both overwrite outdated facts and refuse planted or injected content, which require opposite write decisions, and defines memory robustness with an evidence-conditioned accuracy metric that checks retrieved records are complete, current, and attack-free. Finds existing memory systems and defenses no more robust than an untuned manager, while fine-tuning on episodes with inserted changes and attacks more than doubles overall accuracy across three backbones.
+
+### Prevented is Not Protected: What Attack Success Rate Hides about RAG
+- **arXiv**: 2610.40742 ([link](https://arxiv.org/abs/2610.40742))
+- **Date**: 2026-10-29
+- **Category**: Security
+- **Summary**: Argues that attack success rate, the standard metric for RAG knowledge-poisoning defenses, hides defense-induced failures and does not explain why attacks were prevented. Proposes a matched-query Aligned RAG Evaluation protocol and shows on HotpotQA and Natural Questions that some defenses introduce new target-positive answers and that evaluation criteria can reorder defense rankings.
+
+### Language Models Show Conformity Bias in RAG: When the Majority Endorses a Poisoned Claim
+- **arXiv**: 2610.41012 ([link](https://arxiv.org/abs/2610.41012))
+- **Date**: 2026-10-29
+- **Category**: Security
+- **Summary**: Tests whether models detect misinformation less often when many mutually consistent poisoned documents appear in the retrieved context. On 200 SciFact questions, Gemma-3-12b flags poisoned claims 25% of the time when they are a minority of the evidence but only 10% when they are the majority, suggesting that poisoning many retrieval entries is disproportionately effective.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4099,3 +4117,33 @@ Format per entry:
 - **Date**: 2026-10-25 (v2 2026-10-29)
 - **Category**: Optimization
 - **Summary**: Frames deciding when a long-lived assistant should volunteer a stored memory as a multiple-testing problem whose false-alarm rate grows with memory-store size, and proposes a cue-swap conformal gate with a finite-sample false-alarm guarantee. On LongMemEval it keeps false alarms low at the hit rate of a label-tuned threshold, at about 50 ms per decision on one CPU thread.
+
+### In-Model Context Compression with Agentic Soft Tokens for Long-Horizon LLM Agents
+- **arXiv**: 2610.41291 ([link](https://arxiv.org/abs/2610.41291))
+- **Date**: 2026-10-30
+- **Category**: Optimization
+- **Summary**: Proposes ASTC, a training-free method that condenses a long-horizon agent's growing interaction history into soft tokens, using the recurrent dynamics of hybrid Gated DeltaNet-attention layers to detect already-absorbed information while keeping exact details as hard tokens. Matches or beats the uncompressed agent with up to about 51% fewer end-to-end attention pairs, while trained external compressors need 15-104x more attention pairs per successful task.
+
+### KEEPER: Learning Control-Sufficient Textual Memory for Long-Horizon LLM Agents
+- **arXiv**: 2610.41482 ([link](https://arxiv.org/abs/2610.41482))
+- **Date**: 2026-10-30
+- **Category**: Optimization
+- **Summary**: Shows that recursively updated textual memory in long-horizon agents propagates earlier mistakes into later updates, a self-consistency bias toward retaining stored incorrect claims. Proposes learning control-sufficient memory and evaluating error persistence and retention of valid information alongside task success.
+
+### Context as Infrastructure: Knowledge Compilation for Retrieval in Agentic Systems with Harnesses
+- **arXiv**: 2610.41172 ([link](https://arxiv.org/abs/2610.41172))
+- **Date**: 2026-10-30
+- **Category**: Optimization
+- **Summary**: Finds that simple BM25/grep agentic search harnesses already reach high accuracy on BrowseComp-Plus and FRAMES but waste context through repeated queries and rereads. Proposes knowledge compilation, where LLMs pre-enrich documents with navigation trees, entity graphs, and wikis, cutting query tokens when evidence is sufficient; implemented in open-source RAGFlow.
+
+### M*: Every Task Deserves Its Own Memory Harness
+- **arXiv**: 2604.11811 ([link](https://arxiv.org/abs/2604.11811))
+- **Date**: 2026-04-10 (v3 2026-10-30)
+- **Category**: Optimization
+- **Summary**: Automatically discovers task-specific memory programs for LLM agents via reflective code evolution that jointly optimizes the schema, logic, and instructions of an executable Python memory harness. Outperforms fixed memory baselines on conversation, embodied planning, and specialized reasoning tasks, with evolved programs adopting different processing mechanisms per domain.
+
+### MEMIG: Self-evolving Memory Construction for Antibody Optimization
+- **arXiv**: 2610.41245 ([link](https://arxiv.org/abs/2610.41245))
+- **Date**: 2026-10-30
+- **Category**: Optimization
+- **Summary**: Argues that self-evolving LLM agent memory for biomolecule optimization should store measured outcomes in structured, indexable form instead of free-text rewrites. MEMIG indexes insights with domain-grounded identifiers, accumulates oracle-measured effects, and tracks epistasis between interventions, improving most in silico antibody optimization settings.

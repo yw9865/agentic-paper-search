@@ -4,6 +4,29 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-03
+
+8 new papers (3 Security, 5 Optimization).
+
+**Security**
+- Accept Changes, Reject Attacks: Robust Memory Management for LLM Agents (2610.41056)
+- Prevented is Not Protected: What Attack Success Rate Hides about RAG (2610.40742)
+- Language Models Show Conformity Bias in RAG: When the Majority Endorses a Poisoned Claim (2610.41012)
+
+**Optimization**
+- In-Model Context Compression with Agentic Soft Tokens for Long-Horizon LLM Agents (2610.41291)
+- KEEPER: Learning Control-Sufficient Textual Memory for Long-Horizon LLM Agents (2610.41482)
+- Context as Infrastructure: Knowledge Compilation for Retrieval in Agentic Systems with Harnesses (2610.41172)
+- M*: Every Task Deserves Its Own Memory Harness (2604.11811; v1 2026-04-10, revised 2026-10-30)
+- MEMIG: Self-evolving Memory Construction for Antibody Optimization (2610.41245)
+
+Source: 2026-11-02 /new listings for cs.AI, cs.CL, cs.CR, cs.MA, and the first portion of cs.LG, plus web search.
+Skipped as off-scope or borderline: embodied-memory survey not specific to LLM agents (2610.41688),
+RL knowledge-graph memory without LLMs (2607.18368), RoboArchitect (memory secondary), EvoMemBench
+and P-ContextBench (benchmarks without a security/optimization focus).
+
+---
+
 ## 2026-11-02 [Conference scan]
 
 No new conference papers found.
