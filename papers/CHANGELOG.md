@@ -4,6 +4,32 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-04
+
+10 new papers (1 Security, 9 Optimization).
+
+**Security**
+- MemHarmBench: Evaluating Cross-Session Prompt Injection in Memory-Persistent AI Agents (2611.01700)
+
+**Optimization**
+- A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory (2611.02912)
+- Agent Memory as Rate-Limited Filtering: Explicit State Outlasts Long Context Beyond a Reader-Dependent Horizon (2611.02361)
+- Top-k Retrieval Leaves Memory Value Undetermined (2611.03289)
+- Who Schedules Agent Memory? A Sidecar Approach to Long-Horizon Tasks (2611.00779)
+- Memorix: Managing Memory Selections for AI Agents (2611.00060; submitted 2026-10-13, announced 2026-11-03)
+- MEMENTO: Learning Context Management for Long Context Processing Agents (2611.00244)
+- Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents (2611.01747)
+- KITE: Retrieval as a Decision Procedure for Long-Term Conversational Memory (2610.41521)
+- Do agents need to sleep? (2611.02216)
+
+Source: 2026-11-03 /new listings (cs.AI, cs.CL, cs.CR, cs.MA, partial cs.LG) plus arXiv abstract search
+(arXiv API returned HTTP 429). Skipped as off-scope or borderline: StateFence (2611.02605; task-state
+protection, memory only a named injection vector), TenonAgent (2611.00051; host RAM, not agent memory),
+MemUse (2611.01718) and MemU-Bench (2611.00191) (evaluation without security/optimization focus),
+TrackMem (2611.02001; domain-specific belief tracking), KV-cache serving papers (2611.00391, 2611.02543).
+
+---
+
 ## 2026-11-03
 
 8 new papers (3 Security, 5 Optimization).

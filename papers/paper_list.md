@@ -1175,6 +1175,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Tests whether models detect misinformation less often when many mutually consistent poisoned documents appear in the retrieved context. On 200 SciFact questions, Gemma-3-12b flags poisoned claims 25% of the time when they are a minority of the evidence but only 10% when they are the majority, suggesting that poisoning many retrieval entries is disproportionately effective.
 
+### MemHarmBench: Evaluating Cross-Session Prompt Injection in Memory-Persistent AI Agents
+- **arXiv**: 2611.01700 ([link](https://arxiv.org/abs/2611.01700))
+- **Date**: 2026-11-01
+- **Category**: Security
+- **Summary**: Introduces a benchmark testing whether harmful directives planted in an agent's persistent memory steer its decisions in later, unrelated sessions, with harm measured by the affected party (user, workspace/project owner, external stakeholders). Finds across several agent systems that such cross-session attacks often go unnoticed: agents complete tasks normally while making critical choices that serve the attacker.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4147,3 +4153,57 @@ Format per entry:
 - **Date**: 2026-10-30
 - **Category**: Optimization
 - **Summary**: Argues that self-evolving LLM agent memory for biomolecule optimization should store measured outcomes in structured, indexable form instead of free-text rewrites. MEMIG indexes insights with domain-grounded identifiers, accumulates oracle-measured effects, and tracks epistasis between interventions, improving most in silico antibody optimization settings.
+
+### A State Change Is Local, Its Consequences Are Not: Dependency-Aware State Revision for Long-Term Agent Memory
+- **arXiv**: 2611.02912 ([link](https://arxiv.org/abs/2611.02912))
+- **Date**: 2026-11-02
+- **Category**: Optimization
+- **Summary**: Observes that agent memory systems correct contradicted facts but leave the beliefs, plans, and actions derived from them in place. StateGraph builds a state dependency graph from interaction histories and uses counterfactual checks to invalidate a dependent state only when it loses all independent support, keeping long-term memory consistent as the world changes.
+
+### Agent Memory as Rate-Limited Filtering: Explicit State Outlasts Long Context Beyond a Reader-Dependent Horizon
+- **arXiv**: 2611.02361 ([link](https://arxiv.org/abs/2611.02361))
+- **Date**: 2026-11-02
+- **Category**: Optimization
+- **Summary**: Frames agent memory as recursive filtering and shows that open models reading full access-log histories drop to near-chance accuracy at 256 events, whereas models given a compact current state stay at 96-98%. An explicit per-event update filter reaches 80-89%, arguing that compact explicit state outperforms long context and retrieval beyond a reader-dependent horizon.
+
+### Top-k Retrieval Leaves Memory Value Undetermined
+- **arXiv**: 2611.03289 ([link](https://arxiv.org/abs/2611.03289))
+- **Date**: 2026-11-02
+- **Category**: Optimization
+- **Summary**: Proves that an agent's retrieval log (which memories were used and whether the episode succeeded) cannot identify each memory's contribution under top-k retrieval, undermining keep/merge/evict decisions. Introduces LEDGER, which estimates the identifiable Shapley values, flags the rest as undetermined, and adjusts retrieval so future logs identify more memory values, evaluated on HotpotQA and LoCoMo.
+
+### Who Schedules Agent Memory? A Sidecar Approach to Long-Horizon Tasks
+- **arXiv**: 2611.00779 ([link](https://arxiv.org/abs/2611.00779))
+- **Date**: 2026-10-31
+- **Category**: Optimization
+- **Summary**: Argues that the timing of memory retrieval adds latency and workload to the main agent, and proposes MemSidecar, which decouples memory scheduling from task execution via event-triggered Hooks or a Foresight agent that anticipates queries and pre-caches results. Reports 41.23%/44.34% on MCP-Persona with lower execution cost and latency.
+
+### Memorix: Managing Memory Selections for AI Agents
+- **arXiv**: 2611.00060 ([link](https://arxiv.org/abs/2611.00060))
+- **Date**: 2026-10-13
+- **Category**: Optimization
+- **Summary**: Argues that what an agent should read is largely determined by the project, so memory selection can be precomputed and reused; uses an immutable versioned store, Views separating selection from composition, and Quests/Profiles that keep views current. Reports up to 1.5x higher resolve rates on SWE-ContextBench, up to 100x lower amortized cost, and up to 38x faster builds.
+
+### MEMENTO: Learning Context Management for Long Context Processing Agents
+- **arXiv**: 2611.00244 ([link](https://arxiv.org/abs/2611.00244))
+- **Date**: 2026-10-30
+- **Category**: Optimization
+- **Summary**: Trains a Qwen3-8B agent to condense its history into self-written notes, first via hindsight-generated note trajectories and then RL rewarding correctness, note quality, and calibration. On book-level QA up to 2.5M tokens it raises accuracy from 36.9% to 67.8% while keeping context under 20K tokens, at a fraction of the cost of larger agents.
+
+### Evolving Memory, Learning to Meta-Control: Test-Time Adaptation for Experience-augmented LLM Agents
+- **arXiv**: 2611.01747 ([link](https://arxiv.org/abs/2611.01747))
+- **Date**: 2026-11-01
+- **Category**: Optimization
+- **Summary**: Proposes OMCE, which updates an experience memory from task feedback and learns a contextual-bandit meta-controller choosing how to apply experience (DIRECT, EPISODE, GUIDE, DISTILL). Reports up to 20.5-point gains in first-attempt success and 5.7-62.5x lower per-task token use versus ACE.
+
+### KITE: Retrieval as a Decision Procedure for Long-Term Conversational Memory
+- **arXiv**: 2610.41521 ([link](https://arxiv.org/abs/2610.41521))
+- **Date**: 2026-10-30
+- **Category**: Optimization
+- **Summary**: Replaces embedding similarity search in LLM agent memory with a structured index over a controlled topic vocabulary, compiling each question into a retrieval plan plus keyword matching. Reaches 93.5% on LoCoMo and 86.0% on LongMemEval-S using about 1.6k reader-context tokens per question.
+
+### Do agents need to sleep?
+- **arXiv**: 2611.02216 ([link](https://arxiv.org/abs/2611.02216))
+- **Date**: 2026-11-01
+- **Category**: Optimization
+- **Summary**: Position paper arguing that persistent LLM agents accumulating memory exhibit failures akin to unregulated learning in brains (degraded recall, stored errors). Maps a selectionist theory of sleep onto memory-store operations and predicts that selective consolidation and forgetting will outperform alternatives as stores grow.
