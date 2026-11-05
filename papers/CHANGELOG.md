@@ -4,6 +4,35 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-05
+
+9 new papers (2 Security, 7 Optimization).
+
+**Security**
+- Reliability Stress Testing of RAG Retrieval under Query-Relevant Corpus Poisoning (2611.04264)
+- IAMRAGBENCH: Benchmarking Authorization Expansions in LLM-Generated AWS IAM Policies under RAG Poisoning (2611.03431)
+
+**Optimization**
+- Scalaris: A Scalable Enterprise Memory Architecture for Conversational AI Assistants (2611.02612)
+- Chain on Demand: Deferred Evidence Organization for Long-Term Conversational Memory (2611.02480)
+- EvoMemState: Evolving Memory State for Personal Agents (2611.03743)
+- What Is This Memory Useful For? Measuring Task-Conditioned Utility in Long-Term Agent Memory (2611.03930)
+- WASP-Mem: Let Agent Organize Procedural Memory. Human Spend Effort on Diagnosis (2611.04003)
+- Why Pay for Long Reasoning When Rewrite Do Trick? Causal Effects of Reasoning History Compaction on Future Generation and Agent Cost (2611.03852)
+- MDSKILL: Learning to Internalize Skill Memory through Multi-View Distillation for Efficient Dynamic Agent Self-Evolution (2611.05313)
+
+Source: 2026-11-04 /new listings (cs.AI, cs.CL, cs.CR, cs.MA, cs.LG; partially truncated) plus arXiv abstract
+search. Skipped as off-scope or borderline: Voluntary Servitude (2611.04393; agent manipulation, retrieval only a
+test vector), The Web Doesn't Sit Still (2611.03754; search-agent injection, not memory), GroupAssistBench
+(2611.04867) (evaluation without security/optimization focus), MemRole (2611.01778; role-play reasoning),
+EvoGroup (2611.03868; harness self-evolution), ResMem (2611.00450; RAG-to-parametric distillation, not agentic),
+Speech-LLM history interference (2611.05124).
+
+Note: summary email NOT sent; scripts/send_email.py failed twice at SMTP AUTH
+(SMTPServerDisconnected: Connection unexpectedly closed).
+
+---
+
 ## 2026-11-04
 
 10 new papers (1 Security, 9 Optimization).

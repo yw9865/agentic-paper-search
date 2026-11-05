@@ -1181,6 +1181,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Introduces a benchmark testing whether harmful directives planted in an agent's persistent memory steer its decisions in later, unrelated sessions, with harm measured by the affected party (user, workspace/project owner, external stakeholders). Finds across several agent systems that such cross-session attacks often go unnoticed: agents complete tasks normally while making critical choices that serve the attacker.
 
+### Reliability Stress Testing of RAG Retrieval under Query-Relevant Corpus Poisoning
+- **arXiv**: 2611.04264 ([link](https://arxiv.org/abs/2611.04264))
+- **Date**: 2026-11-03
+- **Category**: Security
+- **Summary**: Stress-tests whether RAG retrievers admit poisoned documents, varying poison content, attacker query knowledge, poison count, and contamination spread. On 623 SciFact/NFCorpus queries, five query-targeted poisons cut classical retrievers' nDCG@10 by roughly 40-62% and almost fully exposed a dense retriever, identifying full-query matching as the main retrieval-side risk factor; term-overlap filtering helps but hurts clean retrieval, while MMR does not reduce exposure.
+
+### IAMRAGBENCH: Benchmarking Authorization Expansions in LLM-Generated AWS IAM Policies under RAG Poisoning
+- **arXiv**: 2611.03431 ([link](https://arxiv.org/abs/2611.03431))
+- **Date**: 2026-11-02
+- **Category**: Security
+- **Summary**: A 60-task benchmark testing whether poisoned retrieval context steers LLM copilots into writing over-permissive AWS IAM policies. Attack success is about 16% with direct inclusion, 2% under BM25 retrieval over 720 documents, and about 64% when the weakening is framed as a legitimate security exception, motivating independent pre-deployment authorization checks on RAG-generated policies.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4207,3 +4219,45 @@ Format per entry:
 - **Date**: 2026-11-01
 - **Category**: Optimization
 - **Summary**: Position paper arguing that persistent LLM agents accumulating memory exhibit failures akin to unregulated learning in brains (degraded recall, stored errors). Maps a selectionist theory of sleep onto memory-store operations and predicts that selective consolidation and forgetting will outperform alternatives as stores grow.
+
+### Scalaris: A Scalable Enterprise Memory Architecture for Conversational AI Assistants
+- **arXiv**: 2611.02612 ([link](https://arxiv.org/abs/2611.02612))
+- **Date**: 2026-11-02
+- **Category**: Optimization
+- **Summary**: Enterprise memory architecture combining long- and short-term memory with separate storage/retrieval pipelines for user messages and assistant replies, pulling in only query-relevant assistant content to keep the answer model's context small. With Qwen3-32B it reports 92.2% on LongMemEval-S and 90.77% on LoCoMo while supplying roughly 10x fewer context tokens than Hindsight.
+
+### Chain on Demand: Deferred Evidence Organization for Long-Term Conversational Memory
+- **arXiv**: 2611.02480 ([link](https://arxiv.org/abs/2611.02480))
+- **Date**: 2026-11-02
+- **Category**: Optimization
+- **Summary**: Instead of pre-building summaries/graphs, defers evidence organization to query time: builds a query-specific evidence chain from a broad candidate pool by balancing relevance, lexical diversity, and coverage, then restores same-session neighborhoods without modifying memory. Uses the limited evidence budget more efficiently, reaching 82.2% on non-adversarial LoCoMo and 86.6% on LongMemEval-S.
+
+### EvoMemState: Evolving Memory State for Personal Agents
+- **arXiv**: 2611.03743 ([link](https://arxiv.org/abs/2611.03743))
+- **Date**: 2026-11-02
+- **Category**: Optimization
+- **Summary**: Augments persistent fact memory for personal agents with relational states (tracking how facts update, constrain, or conflict as memory evolves) and an RL-generated request-specific reasoning state. Built via ontology-guided induction, it improves retrieval completeness and response accuracy over existing memory systems.
+
+### What Is This Memory Useful For? Measuring Task-Conditioned Utility in Long-Term Agent Memory
+- **arXiv**: 2611.03930 ([link](https://arxiv.org/abs/2611.03930))
+- **Date**: 2026-11-02
+- **Category**: Optimization
+- **Summary**: Measures the utility of stored agent memories relative to specific future tasks rather than a single importance score; answer-bearing memories yield +0.33 mean reward on LongMemEval-V2 recall tasks, with raw memories beating summaries and structured records, but no gain on coding benchmarks. Releases paired utility/cost measurements and argues memory compression should be judged by preserved task utility alongside cost.
+
+### WASP-Mem: Let Agent Organize Procedural Memory. Human Spend Effort on Diagnosis
+- **arXiv**: 2611.04003 ([link](https://arxiv.org/abs/2611.04003))
+- **Date**: 2026-11-02
+- **Category**: Optimization
+- **Summary**: Consolidates agent execution traces and feedback into persistent, interlinked procedural-memory wiki pages, improving TheAgentCompany checkpoint pass rates by 4.6-6.1% over the best baseline while using 57-61% less storage. Finds rigid human schemas and strict deduplication hurt, while human diagnosis of failed traces beats repeated self-judgment.
+
+### Why Pay for Long Reasoning When Rewrite Do Trick? Causal Effects of Reasoning History Compaction on Future Generation and Agent Cost
+- **arXiv**: 2611.03852 ([link](https://arxiv.org/abs/2611.03852))
+- **Date**: 2026-11-02
+- **Category**: Optimization
+- **Summary**: Studies training-free compaction where open-weight models rewrite their earlier reasoning into condensed state summaries before tool results arrive. Compaction usually shortens subsequent reasoning and can lower software-agent cost, but quality and wall-clock effects depend on the model and compressor, so compaction should be tailored per model and evaluated on both efficiency and retained capability.
+
+### MDSKILL: Learning to Internalize Skill Memory through Multi-View Distillation for Efficient Dynamic Agent Self-Evolution
+- **arXiv**: 2611.05313 ([link](https://arxiv.org/abs/2611.05313))
+- **Date**: 2026-11-03
+- **Category**: Optimization
+- **Summary**: Addresses noisy, redundant, or conflicting self-generated skill memories by splitting them into grounding, planning, and execution views, selecting high-quality skills with dynamic metrics, and distilling them into a single policy so the memory is internalized rather than prompted. Outperforms prior methods by up to 7.1% on ALFWorld and 8.1% on WebShop without extra compute or stronger teachers.
