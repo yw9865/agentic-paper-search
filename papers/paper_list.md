@@ -1193,6 +1193,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: A 60-task benchmark testing whether poisoned retrieval context steers LLM copilots into writing over-permissive AWS IAM policies. Attack success is about 16% with direct inclusion, 2% under BM25 retrieval over 720 documents, and about 64% when the weakening is framed as a legitimate security exception, motivating independent pre-deployment authorization checks on RAG-generated policies.
 
+### Signed but Steerable: Measuring and Closing the Text-Vector Integrity Gap in Offline Retrieval-Augmented Generation
+- **arXiv**: 2611.06498 ([link](https://arxiv.org/abs/2611.06498))
+- **Date**: 2026-11-04
+- **Category**: Security
+- **Summary**: Shows that signing a distributed RAG knowledge pack authenticates its publisher but not that its precomputed embedding vectors actually encode its text, so an attacker controlling the vectors can hijack retrieval; on a Raspberry Pi 5 offline RAG deployment such an attack drops answer accuracy from 0.75 to 0.39. Proposes verifying quantization codes against the text instead of raw vectors, which accepted all honest vectors in tests.
+
+### When Do Summaries Become Instructions? Unsupported Policy in LLM Agents' Self-Written Handoff Summaries
+- **arXiv**: 2611.06545 ([link](https://arxiv.org/abs/2611.06545))
+- **Date**: 2026-11-04
+- **Category**: Security
+- **Summary**: Examines whether handoff summaries that replace a long-running agent's history during context compaction assert permissions or restrictions unsupported by the record, and whether successor agents act on them. Unsupported policy appears in about 1-2% of summaries, and removing false approvals reduced unauthorized actions from 24 to 7 of 120 held-out runs, showing compacted memory can act as an unvetted instruction channel (self-generated rather than attacker-planted).
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4261,3 +4273,51 @@ Format per entry:
 - **Date**: 2026-11-03
 - **Category**: Optimization
 - **Summary**: Addresses noisy, redundant, or conflicting self-generated skill memories by splitting them into grounding, planning, and execution views, selecting high-quality skills with dynamic metrics, and distilling them into a single policy so the memory is internalized rather than prompted. Outperforms prior methods by up to 7.1% on ALFWorld and 8.1% on WebShop without extra compute or stronger teachers.
+
+### Route to Remember: Adaptive Memory Selection for LLM Agents
+- **arXiv**: 2611.05636 ([link](https://arxiv.org/abs/2611.05636))
+- **Date**: 2026-11-03
+- **Category**: Optimization
+- **Summary**: Argues that text-based agent memory grows more expensive per query as history accumulates, and makes parametric "weight memory" competitive for long-term factual recall via on-policy self-distillation plus a router that chooses between weight and text memory. On HaluMem it matches or beats strong text-memory baselines while reading fewer tokens per query.
+
+### FlyHash for LLM Agent Memory: An Empirical Validation and a New Application
+- **arXiv**: 2611.05791 ([link](https://arxiv.org/abs/2611.05791))
+- **Date**: 2026-11-04
+- **Category**: Optimization
+- **Summary**: Applies FlyHash, a fruit-fly-olfaction-inspired sparse hashing scheme, to LLM agent memory retrieval and finds it preserves neighbor structure better than SimHash at equal bit budgets, including on agent-memory relevance labels. However, it yields no practical memory or latency savings over HNSW, giving a useful negative result for bio-inspired retrieval indexing.
+
+### Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments
+- **arXiv**: 2611.05450 ([link](https://arxiv.org/abs/2611.05450))
+- **Date**: 2026-11-03
+- **Category**: Optimization
+- **Summary**: Introduces ReScopeBench, 18 interactive environments for studying how agents acquire, reuse, and revise stored experience, separating environment-structure knowledge from reusable rules and constraints. Across 20 models, stored experience helps, but agents struggle to revise it when environments change, highlighting experience update/forgetting as a key gap in long-horizon memory management.
+
+### Reglos: A Self-Evolving Personal Memory Agent with Recursive Self-Improvement
+- **arXiv**: 2611.06049 ([link](https://arxiv.org/abs/2611.06049))
+- **Date**: 2026-11-04
+- **Category**: Optimization
+- **Summary**: A training-free personal memory agent that updates each user's memory after every conversation, superseding outdated preferences and dropping facts that no longer apply. Its memory harness self-improves through a loop where a coding agent proposes changes from failure traces and a critic from a different model family filters out benchmark-gaming edits.
+
+### SUMONE: A Simple and Efficient Summarizer for Plug-and-Play Agent Memory
+- **arXiv**: 2611.06445 ([link](https://arxiv.org/abs/2611.06445))
+- **Date**: 2026-11-04
+- **Category**: Optimization
+- **Summary**: Trains a standalone summarizer with GRPO to compress long agent interaction histories, rewarding how well a frozen reconstructor recovers masked trajectory content from the summary plus a length penalty, so no reference summaries or downstream rollouts are needed. Cuts estimated inference cost by about 75-78% on DeepSearchQA and SWE-bench Verified with only a 0.04 absolute performance drop, and transfers across models and harnesses without retraining.
+
+### Tools Need Not Speak in Text: Latent Context Compression for Agents
+- **arXiv**: 2611.06500 ([link](https://arxiv.org/abs/2611.06500))
+- **Date**: 2026-11-04
+- **Category**: Optimization
+- **Summary**: Proposes Coca-Cola, which compresses raw tool outputs into latent tokens injected directly into the agent's input embedding space, trained to retain information needed for the next action. On web-search QA benchmarks it reduces token use by roughly 70-89% and runtime by 24-56% while improving task performance.
+
+### SpecCompact: Accelerating LLM Agent Context Compaction with Slot-Parallel Semantic Speculative Verification
+- **arXiv**: 2611.06876 ([link](https://arxiv.org/abs/2611.06876))
+- **Date**: 2026-11-04
+- **Category**: Optimization
+- **Summary**: Speeds up agent history compaction by having a small fine-tuned drafter generate structured summary slots in parallel, which a larger target model verifies and corrects semantically. Achieves 2.04-5.63x faster compaction than Hermes-style summarization.
+
+### Twists and Turns: A Graph-Based Benchmark and Framework for Long-Term Memory in Exploration Tasks
+- **arXiv**: 2611.06414 ([link](https://arxiv.org/abs/2611.06414))
+- **Date**: 2026-11-04
+- **Category**: Optimization
+- **Summary**: Argues that long-running trial-and-error work (research, software development) produces branching graphs of attempts and revisions that recall-focused memory benchmarks miss, and releases LExMem (224 dialogues, 2,018 QA instances). Proposes LExGraph, which incrementally organizes dialogues into linked memory nodes and retrieves evidence via hybrid retrieval with neighbor expansion.

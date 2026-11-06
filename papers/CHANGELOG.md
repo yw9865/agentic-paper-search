@@ -4,6 +4,36 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-06
+
+10 new papers (2 Security, 8 Optimization).
+
+**Security**
+- Signed but Steerable: Measuring and Closing the Text-Vector Integrity Gap in Offline Retrieval-Augmented Generation (2611.06498)
+- When Do Summaries Become Instructions? Unsupported Policy in LLM Agents' Self-Written Handoff Summaries (2611.06545)
+
+**Optimization**
+- Route to Remember: Adaptive Memory Selection for LLM Agents (2611.05636)
+- FlyHash for LLM Agent Memory: An Empirical Validation and a New Application (2611.05791)
+- Towards Robust Long-Lived Agents: Benchmarking Experience Lifecycles in Evolving Environments (2611.05450)
+- Reglos: A Self-Evolving Personal Memory Agent with Recursive Self-Improvement (2611.06049)
+- SUMONE: A Simple and Efficient Summarizer for Plug-and-Play Agent Memory (2611.06445)
+- Tools Need Not Speak in Text: Latent Context Compression for Agents (2611.06500)
+- SpecCompact: Accelerating LLM Agent Context Compaction with Slot-Parallel Semantic Speculative Verification (2611.06876)
+- Twists and Turns: A Graph-Based Benchmark and Framework for Long-Term Memory in Exploration Tasks (2611.06414)
+
+Source: 2026-11-05 /new listings (cs.AI, cs.CL, cs.CR, cs.MA, cs.LG; partially truncated) plus arXiv abstract
+search. Skipped as off-scope or borderline: Prospective Memory for Proactive LLM Agents (2611.05731; proactivity,
+no security/efficiency focus), Robocasa-Mem (2611.06475; robot manipulation), Shared Organizational Cortex
+(2611.05753; knowledge architecture position), Context compression vs. refusal alignment (2611.06380; not agent
+memory), EchoKV (2611.05903) and KVGuard (2611.06138) (KV-cache serving), Signed, Sealed, Leaked (2611.06585; MCP
+tool exfiltration, not memory).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH
+(SMTPServerDisconnected: Connection unexpectedly closed), same failure as 2026-11-05.
+
+---
+
 ## 2026-11-05
 
 9 new papers (2 Security, 7 Optimization).
