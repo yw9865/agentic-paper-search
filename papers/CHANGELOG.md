@@ -4,6 +4,33 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-07
+
+8 new papers (2 Security, 6 Optimization).
+
+**Security**
+- The Memory Trap: Language Agents Overgeneralize from Benign Interactions (2611.07554)
+- Decision Models as Retrieval Gates Against Injection and Pollution (2611.08325)
+
+**Optimization**
+- Enhancing Local and Global Structure in Compressed AI Agent Memory (2611.08341)
+- Persistent Retrieval for Conversational Agents: A Study of Retrieval Efficiency (2611.07899)
+- MedGraph: Maintaining Patient State with Graph Memory for Long-Term Medical Dialogue (2611.08433)
+- QRAE: Query-Relevant Attention Entropy for Context Compression in DeepSearch Agents (2611.07976)
+- CORE: Coarse-to-Fine Search with Context Management for Deep Research (2611.07859)
+- Axis-LoRA: Probing and Adapting Embedding Models for Personal-Memory Retrieval (2611.07820)
+
+Source: 2026-11-06 /new listings (cs.AI, cs.CL, cs.CR, cs.MA, cs.LG; partially truncated) with each candidate
+verified on its abstract page; arXiv API returned 503/429. Skipped as off-scope or borderline: PersonaAgent
+(2611.08094; payment fraud classifier, not LLM agent), Evolver (2611.07595; skill reuse, not memory-focused),
+Signed but Not Safe (2611.07483; transient handoff integrity, no memory), ZeroRAG (2611.07928; decentralized RAG
+routing), Octopus (2611.06956) and LowRAM (2611.07025) (KV-cache sharing/compression).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH
+(SMTPServerDisconnected: Connection unexpectedly closed), third consecutive day (also 2026-11-05, 2026-11-06).
+
+---
+
 ## 2026-11-06
 
 10 new papers (2 Security, 8 Optimization).

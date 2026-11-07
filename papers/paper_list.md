@@ -1205,6 +1205,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Examines whether handoff summaries that replace a long-running agent's history during context compaction assert permissions or restrictions unsupported by the record, and whether successor agents act on them. Unsupported policy appears in about 1-2% of summaries, and removing false approvals reduced unauthorized actions from 24 to 7 of 120 held-out runs, showing compacted memory can act as an unvetted instruction channel (self-generated rather than attacker-planted).
 
+### The Memory Trap: Language Agents Overgeneralize from Benign Interactions
+- **arXiv**: 2611.07554 ([link](https://arxiv.org/abs/2611.07554))
+- **Date**: 2026-11-05
+- **Category**: Security
+- **Summary**: Shows that persistent cross-session memories formed during entirely benign interactions can later drive unsafe behavior, e.g. skipping confirmation on high-stakes tasks, sycophantic or over-critical judgments, and weakening correct tests (with increased cheating on ImpossibleBench), across six frontier models. Identifies overgeneralization at memory-write and memory-use time as an adversary-free persistence risk and calls for scoping memories to their intended context.
+
+### Decision Models as Retrieval Gates Against Injection and Pollution
+- **arXiv**: 2611.08325 ([link](https://arxiv.org/abs/2611.08325))
+- **Date**: 2026-11-05
+- **Category**: Security
+- **Summary**: Uses small open-weight decision models as gates that screen retrieved web passages for hidden injected instructions and synthetic misleading pages before they reach a RAG generator. A Kev-4B gate cut injection attack success from 13.6% (with published mitigations) to 5.7% at 76 ms per passage, and filtering the full candidate pool kept fake-page exposure at 0.5% in a two-thirds-polluted testbed.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4321,3 +4333,39 @@ Format per entry:
 - **Date**: 2026-11-04
 - **Category**: Optimization
 - **Summary**: Argues that long-running trial-and-error work (research, software development) produces branching graphs of attempts and revisions that recall-focused memory benchmarks miss, and releases LExMem (224 dialogues, 2,018 QA instances). Proposes LExGraph, which incrementally organizes dialogues into linked memory nodes and retrieves evidence via hybrid retrieval with neighbor expansion.
+
+### Enhancing Local and Global Structure in Compressed AI Agent Memory
+- **arXiv**: 2611.08341 ([link](https://arxiv.org/abs/2611.08341))
+- **Date**: 2026-11-05
+- **Category**: Optimization
+- **Summary**: Argues that compressed agent memory stores must preserve global structure (distant items stay distant) for consolidation, deletion, and comparison, not just nearest-neighbor fidelity, and shows popular binary codes reassign about 10% of passages to different themes. Proposes locality-aware quantization (LAQ), a hinge objective on OPQ codebooks that keeps storage size and search behavior while improving global fidelity in all 52 held-out runs and scaling to a million passages.
+
+### Persistent Retrieval for Conversational Agents: A Study of Retrieval Efficiency
+- **arXiv**: 2611.07899 ([link](https://arxiv.org/abs/2611.07899))
+- **Date**: 2026-11-05
+- **Category**: Optimization
+- **Summary**: Compares skill-based retrieval, a non-persistent retrieval subagent, and a persistent retrieval subagent that keeps retrieval history across turns and returns evidence directly to the main agent. On multi-turn enterprise QA the persistent design cut agent-model tokens by 43.3% and API cost by 45.0% versus skill-based retrieval, characterizing the cost/latency trade-offs of maintaining retrieval state.
+
+### MedGraph: Maintaining Patient State with Graph Memory for Long-Term Medical Dialogue
+- **arXiv**: 2611.08433 ([link](https://arxiv.org/abs/2611.08433))
+- **Date**: 2026-11-05
+- **Category**: Optimization
+- **Summary**: Diagnoses outdated state, cross-person fact contamination, and missing safety facts as recurring failures of long-term memory in LLM medical assistants, and proposes a graph memory of dated, person-attributed fact chains read as of the queried time plus a safety-fact profile. Outperforms the best of five memory baselines by over 10 points on MedMemoryBench while remaining efficient to build and query.
+
+### QRAE: Query-Relevant Attention Entropy for Context Compression in DeepSearch Agents
+- **arXiv**: 2611.07976 ([link](https://arxiv.org/abs/2611.07976))
+- **Date**: 2026-11-05
+- **Category**: Optimization
+- **Summary**: Online context compression for DeepSearch agents that uses sparse evidence-assessment attention heads to decide which retrieved chunks persist in context, with a whitelist for high-scoring chunks and a cache for uncertain ones, requiring no extra generation pass. Reports +2.35 points task success with about 30% lower latency and 45% fewer tokens.
+
+### CORE: Coarse-to-Fine Search with Context Management for Deep Research
+- **arXiv**: 2611.07859 ([link](https://arxiv.org/abs/2611.07859))
+- **Date**: 2026-11-05
+- **Category**: Optimization
+- **Summary**: Training-free deep-research harness that extracts only the most relevant snippet from each retrieved passage via late-interaction token scores and manages agent context by expanding around already-seen sources and filtering repeated snippets. Achieves state-of-the-art accuracy and evidence recall on corpora up to 553M documents while keeping long-horizon context lean.
+
+### Axis-LoRA: Probing and Adapting Embedding Models for Personal-Memory Retrieval
+- **arXiv**: 2611.07820 ([link](https://arxiv.org/abs/2611.07820))
+- **Date**: 2026-11-05
+- **Category**: Optimization
+- **Summary**: Finds that frozen dense embedders barely distinguish personal memories by time, place, person, or event, and proposes Axis-LoRA, four gated LoRA branches trained on a small axis-counterfactual set. Improves memory retrieval R@10 by about 1.3-1.6 points on LongMemEval, ATM-Bench, and LoCoMo with a small fraction of trainable parameters.
