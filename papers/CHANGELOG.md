@@ -4,6 +4,25 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-08
+
+1 new paper (0 Security, 1 Optimization).
+
+**Optimization**
+- StreamMemBench: Streaming Evaluation of Agent Memory for Future-Oriented Assistance (2606.14571; v3 revised 2026-11-05)
+
+Source: weekend, no new arXiv announcement; re-scanned the remaining (previously truncated) portions of the
+2026-11-06 /new listings (cs.AI, cs.CL, cs.CR, cs.MA) plus a web search; arXiv API returned 429. Each candidate
+verified on its abstract page. Skipped as off-scope or borderline: MCPHallu (2611.07689; MCP hallucination
+benchmark, memory only one subtype), Recursive Self-Improvement for Role-Playing Dialogue (2611.07469; persona
+quality), Cultural Adaptation within Repeated Social Interactions (2611.08334; memory secondary), EvoDesign
+(2604.09568; diagram generation), How Do AI Agents Waste Your Money? (2611.07238; token waste, not memory).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH
+(SMTPServerDisconnected: Connection unexpectedly closed), fourth consecutive day (since 2026-11-05).
+
+---
+
 ## 2026-11-07
 
 8 new papers (2 Security, 6 Optimization).

@@ -4369,3 +4369,9 @@ Format per entry:
 - **Date**: 2026-11-05
 - **Category**: Optimization
 - **Summary**: Finds that frozen dense embedders barely distinguish personal memories by time, place, person, or event, and proposes Axis-LoRA, four gated LoRA branches trained on a small axis-counterfactual set. Improves memory retrieval R@10 by about 1.3-1.6 points on LongMemEval, ATM-Bench, and LoCoMo with a small fraction of trainable parameters.
+
+### StreamMemBench: Streaming Evaluation of Agent Memory for Future-Oriented Assistance
+- **arXiv**: 2606.14571 ([link](https://arxiv.org/abs/2606.14571))
+- **Date**: 2026-06-12 (v3 revised 2026-11-05)
+- **Category**: Optimization
+- **Summary**: Streaming benchmark for personal-agent memory built from EgoLife egocentric streams, using two-step task sequences that test whether agents use stored evidence and then reuse feedback and interaction experience in follow-up tasks. Evaluating eight memory systems on two backbones shows that current systems often fail to use observed evidence or to turn feedback into reliable later behavior, even when the evidence is stored.
