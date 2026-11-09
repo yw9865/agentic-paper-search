@@ -4375,3 +4375,15 @@ Format per entry:
 - **Date**: 2026-06-12 (v3 revised 2026-11-05)
 - **Category**: Optimization
 - **Summary**: Streaming benchmark for personal-agent memory built from EgoLife egocentric streams, using two-step task sequences that test whether agents use stored evidence and then reuse feedback and interaction experience in follow-up tasks. Evaluating eight memory systems on two backbones shows that current systems often fail to use observed evidence or to turn feedback into reliable later behavior, even when the evidence is stored.
+
+### MEMOIR: A Training-Free Memory Lifecycle for Long-Horizon LLM Agents
+- **arXiv**: 2611.07631 ([link](https://arxiv.org/abs/2611.07631))
+- **Date**: 2026-11-05
+- **Category**: Optimization
+- **Summary**: Training-free memory lifecycle that combines judge-gated consolidation (screening merges so answer-relevant evidence survives compression) with retrospective attribution that updates retrieval priority after each query, plus a UCB-style bonus for under-exposed memories. On LoCoMo it raises evidence recall@5 by 11.92 points over cosine retrieval and shrinks the store with no observed evidence loss in audited merges, adding no LLM call on the online write path.
+
+### FSFM: A Biologically-Inspired Framework for Selective Forgetting of Agent Memory
+- **arXiv**: 2604.20300 ([link](https://arxiv.org/abs/2604.20300))
+- **Date**: 2026-04-22 (v2 revised 2026-04-23)
+- **Category**: Optimization
+- **Summary**: Proposes selective forgetting for LLM agent memory, inspired by hippocampal consolidation and the Ebbinghaus curve, with a taxonomy of passive decay, active deletion, safety-triggered, and adaptive reinforcement-based mechanisms. Controlled experiments report an 8.49% gain in access efficiency and a 29.2% signal-to-noise improvement, and the safety-triggered path also removes malicious or privacy-sensitive memories.

@@ -4,6 +4,26 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-09
+
+2 new papers (0 Security, 2 Optimization).
+
+**Optimization**
+- MEMOIR: A Training-Free Memory Lifecycle for Long-Horizon LLM Agents (2611.07631)
+- FSFM: A Biologically-Inspired Framework for Selective Forgetting of Agent Memory (2604.20300; older paper, previously missed)
+
+Source: Monday listing not yet announced at scan time (/new pages still show 2026-11-06); used arXiv full-text
+search sorted by announcement date ("agent memory", "memory poisoning agent") plus a web search. Each candidate
+verified on its abstract page. Skipped as off-scope or borderline: Meta^2 (2611.05139; harness evolution, memory
+tangential), PARC (2611.02601; on-device pruning with partial KV context reuse), Drift No More (2611.04315;
+hidden-state steering), CogniLife (2611.04483; marketplace knowledge distillation, memory unevaluated),
+PACE (2610.01349; tool capability enforcement, not memory).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH
+(SMTPServerDisconnected: Connection unexpectedly closed), fifth consecutive day (since 2026-11-05).
+
+---
+
 ## 2026-11-08
 
 1 new paper (0 Security, 1 Optimization).
