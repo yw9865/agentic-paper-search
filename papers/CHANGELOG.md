@@ -4,6 +4,30 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-10
+
+3 new papers (1 Security, 2 Optimization).
+
+**Security**
+- MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory (2611.09721)
+
+**Optimization**
+- ENGRAM: From Agent Experience to Weights through Verified Consolidation (2611.09472)
+- How Much Conversation History Does an AI Agent Need? (2611.09662)
+
+Source: arXiv full-text search sorted by announcement date ("agent memory", "memory poisoning agent",
+"long-term memory agent", "agent memory privacy leakage", "memory LLM agents retrieval compression") plus a web
+search. Each candidate verified on its abstract page. Skipped as off-scope or borderline: Memory-Aware Multi-Agent
+CRS (2611.08718; memory used for recommendation, not efficiency/security), Relic and Gumi (2611.08504; companion-agent
+governance design with a two-participant pilot), Decision Context (2611.08644; correction-to-rule injection),
+TwinHash (2611.09254; serving-level output/KV reuse, not agent memory), Encoding Memory in World Models (2611.09625;
+model-based RL, not LLM agents).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), same failure as 2026-11-09. Check credentials in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-09 [Conference scan]
 
 No new conference papers found.

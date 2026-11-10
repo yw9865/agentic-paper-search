@@ -1217,6 +1217,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Uses small open-weight decision models as gates that screen retrieved web passages for hidden injected instructions and synthetic misleading pages before they reach a RAG generator. A Kev-4B gate cut injection attack success from 13.6% (with published mitigations) to 5.7% at 76 ms per passage, and filtering the full candidate pool kept fake-page exposure at 0.5% in a two-thirds-polluted testbed.
 
+### MemoryDojo: Benchmarking Poisoning Through LLM Agent Memory
+- **arXiv**: 2611.09721 ([link](https://arxiv.org/abs/2611.09721))
+- **Date**: 2026-11-06
+- **Category**: Security
+- **Summary**: Benchmark of 155 multi-session trajectories across four domains and five agent memory systems that traces how malicious instructions stored in one session persist and influence later behavior. Finds every tested memory system vulnerable, with large differences in downstream impact, and proposes a memory-aware poison optimization procedure that further raises poisoning effectiveness.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4387,3 +4393,15 @@ Format per entry:
 - **Date**: 2026-04-22 (v2 revised 2026-04-23)
 - **Category**: Optimization
 - **Summary**: Proposes selective forgetting for LLM agent memory, inspired by hippocampal consolidation and the Ebbinghaus curve, with a taxonomy of passive decay, active deletion, safety-triggered, and adaptive reinforcement-based mechanisms. Controlled experiments report an 8.49% gain in access efficiency and a 29.2% signal-to-noise improvement, and the safety-triggered path also removes malicious or privacy-sensitive memories.
+
+### ENGRAM: From Agent Experience to Weights through Verified Consolidation
+- **arXiv**: 2611.09472 ([link](https://arxiv.org/abs/2611.09472))
+- **Date**: 2026-11-06
+- **Category**: Optimization
+- **Summary**: Consolidates LLM agent experience into model weights via a demonstration-aware skill gate and trace-based student training, then releases external episodic records from retrieval only after held-out probes verify the updated model without retrieval matches the base model with retrieval. Verified release substantially shrinks the retrievable memory footprint while staying near retain-all performance, beats immediate and random release, and reduces input tokens and model calls.
+
+### How Much Conversation History Does an AI Agent Need?
+- **arXiv**: 2611.09662 ([link](https://arxiv.org/abs/2611.09662))
+- **Date**: 2026-11-06
+- **Category**: Optimization
+- **Summary**: Measures the trade-off between retained conversational history and reader-token cost on 1,100 BEAM questions, sweeping five fixed passage budgets with retrieval and reader held constant. Scores rise with budget but with diminishing returns per token, abstention sometimes improves at smaller budgets, and retaining only user messages lets Qwen match full state for direct requirements but not for references to earlier offers, informing memory budget selection for agents.
