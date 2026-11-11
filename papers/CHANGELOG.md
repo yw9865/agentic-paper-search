@@ -4,6 +4,30 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-11
+
+2 new papers (1 Security, 1 Optimization).
+
+**Security**
+- When Experience Becomes a Backdoor: Poisoning Self-Evolving LLM Agents via Failure-Aware Task Optimization (2611.10542)
+
+**Optimization**
+- MIRIX-2.0: Multi-Agent Memory System (2611.12068)
+
+Source: arXiv full-text search sorted by announcement date ("agent memory", "memory poisoning agent",
+"long-term memory LLM agents", "agent memory privacy leakage", "memory LLM agent efficient retrieval compression",
+"agent memory forgetting consolidation", "agent context compression long-horizon memory", "persistent memory
+injection LLM agent") plus a web search. Each candidate verified on its abstract page. Skipped as off-scope or
+borderline: Correct Answers from Insufficient Histories (2611.11840; memory-evaluation methodology, not
+security/efficiency), Agents of Chaos SoK (2611.10843; broad agentic-attack survey, not memory-specific), Peer Memory
+Changes Who LLM Agents Consult (2611.09990; consultation behavior, no efficiency/security angle).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), third consecutive day (2026-11-09, 11-10, 11-11). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-10
 
 3 new papers (1 Security, 2 Optimization).

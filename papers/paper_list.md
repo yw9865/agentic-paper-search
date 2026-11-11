@@ -1223,6 +1223,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Benchmark of 155 multi-session trajectories across four domains and five agent memory systems that traces how malicious instructions stored in one session persist and influence later behavior. Finds every tested memory system vulnerable, with large differences in downstream impact, and proposes a memory-aware poison optimization procedure that further raises poisoning effectiveness.
 
+### When Experience Becomes a Backdoor: Poisoning Self-Evolving LLM Agents via Failure-Aware Task Optimization
+- **arXiv**: 2611.10542 ([link](https://arxiv.org/abs/2611.10542))
+- **Date**: 2026-11-07
+- **Category**: Security
+- **Summary**: Task-level backdoor attack (BadEvolve) on self-evolving agents that convert past execution experience into reusable skills: an attacker who only supplies poisoned evolution tasks, without direct access to the skill store, induces the agent to implant persistent backdoors into its own skills. Diagnoses attack failures across induction, activation, following, and effect stages, uses rollback and a failure memory to avoid repeated ineffective updates, and is shown effective across multiple self-evolution frameworks, benchmarks, and backbone LLMs.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4405,3 +4411,9 @@ Format per entry:
 - **Date**: 2026-11-06
 - **Category**: Optimization
 - **Summary**: Measures the trade-off between retained conversational history and reader-token cost on 1,100 BEAM questions, sweeping five fixed passage budgets with retrieval and reader held constant. Scores rise with budget but with diminishing returns per token, abstention sometimes improves at smaller budgets, and retaining only user messages lets Qwen match full state for direct requirements but not for references to earlier offers, informing memory budget selection for agents.
+
+### MIRIX-2.0: Multi-Agent Memory System
+- **arXiv**: 2611.12068 ([link](https://arxiv.org/abs/2611.12068))
+- **Date**: 2026-11-09
+- **Category**: Optimization
+- **Summary**: Multi-agent memory system with six typed memory agents that keep complete records, a provenance hypergraph, and budgeted retrieval, plus an off-write-path AutoDream component that merges duplicates and distills task sessions into skills. Requires no fine-tuning and reports top scores on four of five QA benchmarks (91.4% LoCoMo, 72.6% LongMemEval-S) and the best procedural-memory success on ALFWorld, WebShop, and MetaClaw-Bench, targeting the cost of searching ever-growing memory stores without lossy consolidation.
