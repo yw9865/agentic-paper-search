@@ -1229,6 +1229,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Task-level backdoor attack (BadEvolve) on self-evolving agents that convert past execution experience into reusable skills: an attacker who only supplies poisoned evolution tasks, without direct access to the skill store, induces the agent to implant persistent backdoors into its own skills. Diagnoses attack failures across induction, activation, following, and effect stages, uses rollback and a failure memory to avoid repeated ineffective updates, and is shown effective across multiple self-evolution frameworks, benchmarks, and backbone LLMs.
 
+### Who Remembers What? Multi-Granularity Memory Extraction for Multi-User, Multi-Agent Interaction
+- **arXiv**: 2611.10439 ([link](https://arxiv.org/abs/2611.10439))
+- **Date**: 2026-11-07
+- **Category**: Security
+- **Summary**: MixUA distills user-agent trajectories into lessons scoped to a user-agent pair, a single user, a single agent, or global, so shared memory helps across users without leaking private facts into scopes other users can read. Introduces CrossLearnBench with privacy probes for cross-scope leakage; with five users and seven agents it gains up to 16 points over no memory while at most 0.02% of probes find a planted private fact in a forbidden scope.
+
+### On Private Knowledge Retrieval and Private Inference for secure multi-agent systems
+- **arXiv**: 2611.13696 ([link](https://arxiv.org/abs/2611.13696))
+- **Date**: 2026-11-10
+- **Category**: Security
+- **Summary**: Targets poisoning of the semantic memory of LLM multi-agent systems by signing the external knowledge base to block unauthorized modification, with agents querying it through a local Horn-clause (Prolog-style) inference engine. Provides Python implementations at several privacy levels for the retrieval itself, including k-anonymity and information-theoretic private information retrieval (IT-PIR).
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4417,3 +4429,39 @@ Format per entry:
 - **Date**: 2026-11-09
 - **Category**: Optimization
 - **Summary**: Multi-agent memory system with six typed memory agents that keep complete records, a provenance hypergraph, and budgeted retrieval, plus an off-write-path AutoDream component that merges duplicates and distills task sessions into skills. Requires no fine-tuning and reports top scores on four of five QA benchmarks (91.4% LoCoMo, 72.6% LongMemEval-S) and the best procedural-memory success on ALFWorld, WebShop, and MetaClaw-Bench, targeting the cost of searching ever-growing memory stores without lossy consolidation.
+
+### Can LLM Agents Organize Their Own Memory?
+- **arXiv**: 2611.11929 ([link](https://arxiv.org/abs/2611.11929))
+- **Date**: 2026-11-09
+- **Category**: Optimization
+- **Summary**: SoMem stores agent memory as linked documents and lets the agent itself decide what to summarize, how to group information, and when to revise topics, with each summary linked back to its source interactions and a runtime that validates updates and derives temporal, relational, and recency views. Beats the strongest baseline by 2.66, 3.10, and 2.00 points on LoCoMo, BEAM-100K, and LongMemEval-S, and the built memory is reusable across models.
+
+### HiVe-Mem: Interleaving Horizontal Memory Expansion and Vertical Evidence Composition for Multimodal Agents
+- **arXiv**: 2611.12872 ([link](https://arxiv.org/abs/2611.12872))
+- **Date**: 2026-11-09
+- **Category**: Optimization
+- **Summary**: Multimodal agent memory that expands semantically retrieved seed memories through a relational graph of textual and visual anchors, and uses a lightweight trainable selector to pick a query-adapted subset of evidence forms (summaries, captions, visual views, raw images, interaction history) per memory. Improves accuracy on three multimodal memory benchmarks while cutting token consumption by about 90% versus the most efficient multimodal baselines.
+
+### Coding Agent Memory Post-Training II: Unlocking the Memory Potential of Pre-trained File Operations for Long-Horizon Tasks via On-Policy Distillation
+- **arXiv**: 2611.14009 ([link](https://arxiv.org/abs/2611.14009))
+- **Date**: 2026-11-10
+- **Category**: Optimization
+- **Summary**: Trains agents whose histories exceed the context window to manage memory through pre-trained Bash file operations in a persistent workspace rather than bespoke memory tools, introducing five agentic-RL environments (CAMG-II) and a single policy (CAMP-II) trained with asynchronous on-policy distillation. CAMP-II achieves 2.97x the gain of the strongest distillation baseline and transfers to Terminal-Bench 2.1 and SWE-Bench Pro V2.
+
+### Personalized Memory Rubrics: Learning What to Remember per User via Rubric-Guided Credit Assignment
+- **arXiv**: 2611.14017 ([link](https://arxiv.org/abs/2611.14017))
+- **Date**: 2026-11-10
+- **Category**: Optimization
+- **Summary**: Learns per-user memory add/modify/discard policies for long-horizon personalized agents by converting terminal QA feedback into per-step, per-user credit via universal and per-user rubric layers and token-level rubric-guided credit assignment. The rubric and memory policy co-evolve during training, adding no inference overhead, and outperform memory-augmented baselines on four benchmarks.
+
+### Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents
+- **arXiv**: 2611.14320 ([link](https://arxiv.org/abs/2611.14320))
+- **Date**: 2026-11-10
+- **Category**: Optimization
+- **Summary**: Identifies memory-induced degradation, where agents fail tasks they could solve without memory because condensed lessons are wrong or misapplied, and proposes WikiTrace, which links each lesson to a success/failure rationale and the raw trajectory so the agent can verify and correct suspicious lessons before acting. Outperforms existing memory methods and an unlinked-lesson baseline across five agentic benchmarks.
+
+### When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents
+- **arXiv**: 2611.14326 ([link](https://arxiv.org/abs/2611.14326))
+- **Date**: 2026-11-10
+- **Category**: Optimization
+- **Summary**: Gates memory writes in self-evolving agents by treating each candidate lesson as a hypothesis (precondition, behavior change, expected effect, verifier) tested in a temporary state on transfer, falsification, and archived-regression probes before being committed, refined, or rejected. Reports strong results on web, app, tool-use, and long-term memory benchmarks with fewer harmful committed updates and less regression damage.

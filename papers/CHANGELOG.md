@@ -4,6 +4,34 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-12
+
+8 new papers (2 Security, 6 Optimization).
+
+**Security**
+- Who Remembers What? Multi-Granularity Memory Extraction for Multi-User, Multi-Agent Interaction (2611.10439)
+- On Private Knowledge Retrieval and Private Inference for secure multi-agent systems (2611.13696)
+
+**Optimization**
+- Can LLM Agents Organize Their Own Memory? (2611.11929)
+- HiVe-Mem: Interleaving Horizontal Memory Expansion and Vertical Evidence Composition for Multimodal Agents (2611.12872)
+- Coding Agent Memory Post-Training II: Unlocking the Memory Potential of Pre-trained File Operations for Long-Horizon Tasks via On-Policy Distillation (2611.14009)
+- Personalized Memory Rubrics: Learning What to Remember per User via Rubric-Guided Credit Assignment (2611.14017)
+- Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents (2611.14320)
+- When Should Agents Remember? Falsification-Gated Self-Evolution for LLM Agents (2611.14326)
+
+Source: arXiv full-text search sorted by announcement date ("agent memory", "memory poisoning agent",
+"long-term memory LLM agents", "agent memory compression", "agent memory privacy") plus a web search. Each
+candidate verified on its abstract page. Skipped as off-scope or borderline: TreeAgent (2611.13946; long structured
+document processing, not agent memory), BioMem (2611.13426; domain evaluation of memory systems), Unprompted
+coordination through shared memory (2611.12412; coordination behavior study).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), fourth consecutive day (2026-11-09 through 11-12). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-11
 
 2 new papers (1 Security, 1 Optimization).
