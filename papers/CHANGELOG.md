@@ -4,6 +4,31 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-13
+
+3 new papers (2 Security, 1 Optimization).
+
+**Security**
+- Isolation Is Not Confidentiality: Security Boundaries of Geometric Access Control in RAG (2611.14061)
+- MIRAGE: Misleading Retrieval-Augmented Generation via Black-box and Query-agnostic Poisoning Attacks (2512.08289, v5 revised 2026-11-10)
+
+**Optimization**
+- Activation-Guided Graph Retrieval for Cognitive Memory Reconstruction in Language Model Systems (2611.13127)
+
+Source: arXiv full-text search sorted by announcement date ("agent memory", "memory poisoning agent", "agentic memory",
+"long-term memory LLM agents", "memory LLM agent privacy", "memory compression LLM agents", "memory retrieval agent
+long-horizon", "retrieval-augmented generation poisoning"), the cs.AI/cs.CR/cs.CL /new listings (dated 2026-11-11;
+pages too long to read in full, so coverage is partial), plus a web search. Each candidate verified on its abstract
+page. Skipped as off-scope or borderline: StealthyPoison (2611.12155; third-party skill-registry poisoning without
+persistence), Synapse-Control (2611.13615; runtime advice control, memory peripheral), OpticalRAG (2611.13675; RAG
+token compression, not agent memory), SELD (2611.12903; context-compression evaluation).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), fifth consecutive day (2026-11-09 through 11-13). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-12
 
 8 new papers (2 Security, 6 Optimization).

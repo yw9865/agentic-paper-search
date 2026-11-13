@@ -1241,6 +1241,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Targets poisoning of the semantic memory of LLM multi-agent systems by signing the external knowledge base to block unauthorized modification, with agents querying it through a local Horn-clause (Prolog-style) inference engine. Provides Python implementations at several privacy levels for the retrieval itself, including k-anonymity and information-theoretic private information retrieval (IT-PIR).
 
+### Isolation Is Not Confidentiality: Security Boundaries of Geometric Access Control in RAG
+- **arXiv**: 2611.14061 ([link](https://arxiv.org/abs/2611.14061))
+- **Date**: 2026-11-10
+- **Category**: Security
+- **Summary**: Security analysis of search-preserving geometric embedding transformations used to enforce per-policy access control in shared RAG vector stores, across policy isolation, representation confidentiality, query-forgery resistance, and policy-membership hiding. Finds that they preserve utility and isolation but fail the other three: a curious user can invert original embeddings from a few hundred pairs and forge policy-compatible queries, and policy geometry leaks document membership even when unauthorized retrieval is blocked.
+
+### MIRAGE: Misleading Retrieval-Augmented Generation via Black-box and Query-agnostic Poisoning Attacks
+- **arXiv**: 2512.08289 ([link](https://arxiv.org/abs/2512.08289))
+- **Date**: 2025-12-09 (v5 revised 2026-11-10)
+- **Category**: Security
+- **Summary**: Black-box, query-agnostic knowledge-base poisoning attack on RAG that uses a surrogate model to synthesize likely user queries, embed poisoned content so it stays retrievable, and refine it for persuasiveness. On a new benchmark built from three long-form domain datasets it beats prior attacks in effectiveness and stealth and transfers across retriever and LLM configurations.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4465,3 +4477,9 @@ Format per entry:
 - **Date**: 2026-11-10
 - **Category**: Optimization
 - **Summary**: Gates memory writes in self-evolving agents by treating each candidate lesson as a hypothesis (precondition, behavior change, expected effect, verifier) tested in a temporary state on transfer, falsification, and archived-regression probes before being committed, refined, or rejected. Reports strong results on web, app, tool-use, and long-term memory benchmarks with fewer harmful committed updates and less regression damage.
+
+### Activation-Guided Graph Retrieval for Cognitive Memory Reconstruction in Language Model Systems
+- **arXiv**: 2611.13127 ([link](https://arxiv.org/abs/2611.13127))
+- **Date**: 2026-11-09
+- **Category**: Optimization
+- **Summary**: Architecture preprint arguing that long-lived LLM systems need activation-conditioned memory availability rather than relevance-only retrieval: request and goal cues seed an authorized memory graph, activation and fan attenuation bound the traversal, and retrieved entities emit new cues to reconstruct a typed evidence graph before generation. Provides cost estimates, ablation and failure conditions, and an evaluation protocol, but no benchmark measurements.
