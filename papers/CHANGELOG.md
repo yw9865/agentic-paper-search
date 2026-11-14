@@ -4,6 +4,32 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-14
+
+6 new papers (0 Security, 6 Optimization).
+
+**Optimization**
+- CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation (2611.17316)
+- Discovering Effective Agent Memory Designs through Program Evolution (2611.17068)
+- HeMeR: Heterogeneous Memory Reconciliation for Embodied Agents via Structured KV Reuse (2611.16487)
+- MemCredit: From Relevance to Utility for Decision-Time Memory in Long-Horizon Web Agents (2611.15600)
+- DISCERN: Preserve at Write, Resolve at Read for Persistent LLM-Agent Memory (2611.15729)
+- When Agents Need to Consolidate Memories: What RRR Consolidation Explains, and What It Does Not Explain, in Conversation ESAA (2611.15644)
+
+Source: arXiv full-text search sorted by announcement date ("agent memory", "agentic memory", "memory poisoning",
+"memory injection agent", "long-term memory LLM", "memory LLM agent privacy", "memory compression agents",
+"retrieval-augmented generation poisoning", "RAG privacy leakage") plus a web search. Each candidate verified on its
+abstract page. No new on-topic Security papers surfaced. Skipped as off-scope or borderline: Evidence-Governed
+Evolution (2611.16378; statistical adoption gating of self-updates, not adversarial), MindMem (2611.16223; retrieval
+quality for character dialogue, no efficiency/security angle), Recompute or Restore? (2611.15126; NPU KV serving),
+Tideway (2611.14848; MoE hardware memory tiering), Private Dense Retrieval (2608.25735; v1 Aug 2026, not agent memory).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), sixth consecutive day (2026-11-09 through 11-14). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-13
 
 3 new papers (2 Security, 1 Optimization).

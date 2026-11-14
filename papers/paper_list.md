@@ -4483,3 +4483,39 @@ Format per entry:
 - **Date**: 2026-11-09
 - **Category**: Optimization
 - **Summary**: Architecture preprint arguing that long-lived LLM systems need activation-conditioned memory availability rather than relevance-only retrieval: request and goal cues seed an authorized memory graph, activation and fan attenuation bound the traversal, and retrieved entities emit new cues to reconstruct a typed evidence graph before generation. Provides cost estimates, ablation and failure conditions, and an evaluation protocol, but no benchmark measurements.
+
+### CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation
+- **arXiv**: 2611.17316 ([link](https://arxiv.org/abs/2611.17316))
+- **Date**: 2026-11-12
+- **Category**: Optimization
+- **Summary**: Memory framework for coding agents working through successive tasks on an evolving repository that weighs each memory segment's prospective value (estimated via with/without-segment runs on the next task) against its storage and retrieval cost, yielding compact memory anchored on repository locations and executable checks. On ChainSWE a 27B actor's resolve rate rises from 21.0% to 25.7% with 17% fewer steps and 11% fewer total tokens than the memory-free baseline.
+
+### Discovering Effective Agent Memory Designs through Program Evolution
+- **arXiv**: 2611.17068 ([link](https://arxiv.org/abs/2611.17068))
+- **Date**: 2026-11-12
+- **Category**: Optimization
+- **Summary**: Introduces MAPE, which evolves complete agent memory programs from minimal seeds through a standardized lifecycle interface and a diagnosis-proposal loop. On LoCoMo and LongMemEval it reports up to 12% absolute accuracy gains over hand-designed memory systems at 35% of the serving cost, and shows that adding cost to the search objective shifts computation from LLM-based memory construction to selective query-time processing.
+
+### HeMeR: Heterogeneous Memory Reconciliation for Embodied Agents via Structured KV Reuse
+- **arXiv**: 2611.16487 ([link](https://arxiv.org/abs/2611.16487))
+- **Date**: 2026-11-12
+- **Category**: Optimization
+- **Summary**: Inference framework for embodied agents with declarative, procedural, and working memory that tracks memory-content changes between decisions, preserves KV states for unchanged memory, and recomputes only the KV states affected by memory updates. Evaluated on ALFWorld, Habitat, and real robots, it reaches 83.20% task success while cutting per-step inference time from 2.94 s to 1.87 s versus MemRL.
+
+### MemCredit: From Relevance to Utility for Decision-Time Memory in Long-Horizon Web Agents
+- **arXiv**: 2611.15600 ([link](https://arxiv.org/abs/2611.15600))
+- **Date**: 2026-11-11
+- **Category**: Optimization
+- **Summary**: Selects memories for long-horizon agents by estimated decision utility rather than semantic relevance: counterfactual tests measure each memory's contribution, a lightweight estimator learns to predict it, and at inference predicted utility chooses which similarity-retrieved candidates fit a fixed token budget. Reaches 86.57 SR@50 on ALFWorld with a 500-token memory budget versus 65.67 for BM25, and finds memory utility is sparse, state-dependent, and poorly predicted by relevance.
+
+### DISCERN: Preserve at Write, Resolve at Read for Persistent LLM-Agent Memory
+- **arXiv**: 2611.15729 ([link](https://arxiv.org/abs/2611.15729))
+- **Date**: 2026-11-11
+- **Category**: Optimization
+- **Summary**: Argues persistent agent memory is a resolution rather than retrieval problem and replaces merge/overwrite update policies with an additive bi-temporal provenance graph that never merges similarly named entities or deletes superseded values; an agentic read-time loop resolves entity identity, currency, and abstention via four gated actions. Reports best abstention calibration on the new ENT-310 benchmark (F1 0.924 vs. at most 0.802) and a small lead on LoCoMo.
+
+### When Agents Need to Consolidate Memories: What RRR Consolidation Explains, and What It Does Not Explain, in Conversation ESAA
+- **arXiv**: 2611.15644 ([link](https://arxiv.org/abs/2611.15644))
+- **Date**: 2026-11-11
+- **Category**: Optimization
+- **Summary**: Proposes Memory-TCG, a ringing/resonance/renormalization-inspired consolidation layer for cross-session conversational agent memory, and studies decision recall under output token budgets (0.44 at 1,024 tokens vs. 0.06 for chronological retrieval, full recall at 4,096). Shows conflict detection is fragile under tight budgets and that reserving budget for conflicts trades off against decision recall; framed as an exploratory engineering analysis on synthetic fixtures.
