@@ -4,6 +4,28 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-15
+
+1 new paper (0 Security, 1 Optimization).
+
+**Optimization**
+- AstroMemBench: A Benchmark for Memory Systems in Embodied Spacecraft Agents (2611.16590)
+
+Source: arXiv full-text search sorted by announcement date ("agent memory", "agentic memory", "memory poisoning",
+"long-term memory LLM", "retrieval-augmented generation poisoning", "memory privacy agent") plus a web search. No new
+arXiv announcements since the 2026-11-14 run (weekend); newest submissions are still dated 2026-11-12. Candidate
+verified on its abstract page. Skipped as off-scope or borderline: Does a Self-Learning Migration Agent Learn?
+(2611.16143; evaluation-methodology audit of experience memory, no security/optimization contribution), Reducing
+Batch Makespan for LLM Agent Workloads (2611.16661; inference scheduling, not agent memory), HyperPage (2611.16149;
+disk-resident vector index layout), EM-TRACE (2611.15655; affective episodic recall diagnosis), SHARP (2611.14220;
+POI prediction).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), seventh consecutive day (2026-11-09 through 11-15). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-14
 
 6 new papers (0 Security, 6 Optimization).

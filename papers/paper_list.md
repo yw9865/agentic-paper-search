@@ -4519,3 +4519,9 @@ Format per entry:
 - **Date**: 2026-11-11
 - **Category**: Optimization
 - **Summary**: Proposes Memory-TCG, a ringing/resonance/renormalization-inspired consolidation layer for cross-session conversational agent memory, and studies decision recall under output token budgets (0.44 at 1,024 tokens vs. 0.06 for chronological retrieval, full recall at 4,096). Shows conflict detection is fragile under tight budgets and that reserving budget for conflicts trades off against decision recall; framed as an exploratory engineering analysis on synthetic fixtures.
+
+### AstroMemBench: A Benchmark for Memory Systems in Embodied Spacecraft Agents
+- **arXiv**: 2611.16590 ([link](https://arxiv.org/abs/2611.16590))
+- **Date**: 2026-11-12
+- **Category**: Optimization
+- **Summary**: Introduces a long-horizon memory benchmark for embodied spacecraft agents (16 memory subchallenges, 2,240 instances across planetary, on-orbit, and deep-space tasks) scored on task completion, safety, and resource use under limited power and compute. Comparing Mem0, Chain-of-Memory, LightMem, and RAG, it finds no clear same-session advantage for dedicated memory systems over RAG, but Mem0 outperforms RAG by 12.25 points after a session restart, with gains concentrated in instruction retention and result reuse rather than ongoing state tracking.
