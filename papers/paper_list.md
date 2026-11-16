@@ -4525,3 +4525,9 @@ Format per entry:
 - **Date**: 2026-11-12
 - **Category**: Optimization
 - **Summary**: Introduces a long-horizon memory benchmark for embodied spacecraft agents (16 memory subchallenges, 2,240 instances across planetary, on-orbit, and deep-space tasks) scored on task completion, safety, and resource use under limited power and compute. Comparing Mem0, Chain-of-Memory, LightMem, and RAG, it finds no clear same-session advantage for dedicated memory systems over RAG, but Mem0 outperforms RAG by 12.25 points after a session restart, with gains concentrated in instruction retention and result reuse rather than ongoing state tracking.
+
+### MIGRO: A Decoupled and Portable Long-Term Memory System for Language Models
+- **arXiv**: 2611.15315 ([link](https://arxiv.org/abs/2611.15315))
+- **Date**: 2026-11-11
+- **Category**: Optimization
+- **Summary**: Proposes MIGRO, a model-decoupled long-term memory system that preserves historical evidence exactly, organizes it loosely, and defers retrieval selection until query time ("asymmetric fidelity with deferred selectivity"), using a shared semantic index, host-specific adapters for each model's tokenizer, and reversible encoding to shrink archival storage. Reports higher LoCoMo quality than the strongest baseline with far less private memory, retains most quality after handoff to a new model, and uses less storage than the most compact baseline on million-token BEAM histories.

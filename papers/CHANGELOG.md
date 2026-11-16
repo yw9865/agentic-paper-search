@@ -4,6 +4,25 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-16
+
+1 new paper (0 Security, 1 Optimization).
+
+**Optimization**
+- MIGRO: A Decoupled and Portable Long-Term Memory System for Language Models (2611.15315)
+
+Source: arXiv full-text search sorted by announcement date ("agent memory", "memory poisoning", "retrieval-augmented
+generation poisoning", "long-term memory LLM") plus the cs.AI new-submissions listing. No new arXiv announcements since
+the 2026-11-15 run (cs.AI listing still dated Friday 2026-11-13); MIGRO was a missed 2026-11-11 submission found via the
+cs.AI listing, verified on its abstract page. Skipped as off-scope: Prior-as-Skill (2611.15766; VLM skill step-order
+prior robustness), TimeOmni-Live (2611.09502; time-series understanding).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), eighth consecutive day (2026-11-09 through 11-16). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-15
 
 1 new paper (0 Security, 1 Optimization).
