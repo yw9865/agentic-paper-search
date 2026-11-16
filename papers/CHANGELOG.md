@@ -4,6 +4,26 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-16 [Conference scan]
+
+No new conference papers found.
+
+Venues checked:
+- **IEEE S&P 2027**: the accepted-papers page (direct fetch OK) still has only an empty
+  "Accepted Papers" heading and no cycle sections.
+- **USENIX Security '27**: the conference page (direct fetch OK this week, no 403) links only to the
+  Call for Papers and has no program or accepted-papers link. A guessed
+  `.../usenixsecurity27/summer-accepted-papers` URL returned 404. Per the CFP, Cycle 1 authors are
+  notified 2026-12-03 and Cycle 1 accepted papers are published after the 2027-01-14 final-paper
+  deadline, so no USENIX '27 list is expected before mid-January 2027.
+- A web search found no agent-memory papers claiming acceptance at either 2027 venue.
+- **USENIX Security '26 / IEEE S&P 2026**: both programs are final and earlier scans covered them fully,
+  so they were not re-read.
+
+Both venues were reachable, and no venue was skipped because a fetch failed.
+
+---
+
 ## 2026-11-16
 
 1 new paper (0 Security, 1 Optimization).
