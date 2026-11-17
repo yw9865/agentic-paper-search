@@ -4,6 +4,29 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-17
+
+2 new papers (1 Security, 1 Optimization).
+
+**Security**
+- Forget the Lineage: Forward-Secure, Lineage-Complete Cryptographic Erasure for LLM-Agent Memory (2611.18133)
+
+**Optimization**
+- When Should LLM Agents Forget? Memory Filtering Under Query-Critical Resolver Errors (2611.17338)
+
+Source: arXiv full-text search sorted by announcement date ("agent memory", "agentic memory", "memory poisoning",
+"long-term memory LLM", "retrieval-augmented generation poisoning") plus the cs.AI new-submissions listing (Monday
+2026-11-16). Both candidates verified on their abstract pages; 2611.17338 was submitted 2026-08-30 but first announced
+2026-11-16. Skipped as off-scope or borderline: Can Agents Keep Up with Time? (2611.17806; temporal reasoning over dated
+records, not memory management), RAG-FGO (2611.17788; query-rewriting prompt optimization), StreamEmbed (2611.18516;
+screenshot embedding indexing), Agent-as-a-Judge (2611.18067; evaluator survey).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), ninth consecutive day (2026-11-09 through 11-17). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-16 [Conference scan]
 
 No new conference papers found.

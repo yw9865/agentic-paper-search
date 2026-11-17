@@ -1253,6 +1253,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Black-box, query-agnostic knowledge-base poisoning attack on RAG that uses a surrogate model to synthesize likely user queries, embed poisoned content so it stays retrievable, and refine it for persuasiveness. On a new benchmark built from three long-form domain datasets it beats prior attacks in effectiveness and stealth and transfers across retriever and LLM configurations.
 
+### Forget the Lineage: Forward-Secure, Lineage-Complete Cryptographic Erasure for LLM-Agent Memory
+- **arXiv**: 2611.18133 ([link](https://arxiv.org/abs/2611.18133))
+- **Date**: 2026-11-13
+- **Category**: Security
+- **Summary**: Shows that deleting a source message does not erase LLM-agent memory, since derived summaries, facts, embeddings, storage residue, and backups persist, and defines lineage-complete forward-secure erasure against an attacker who later obtains all storage and current keys. Proposes LinEra, which keys each memory from its parents' keys via a puncturable PRF so one puncture renders all descendants unreadable (integrated with mem0); on LoCoMo the attacker recovered 70 of 71 forgotten secrets under logical deletion and none under LinEra, at the cost of a forgetting radius that grows with the writer's fan-in.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4531,3 +4537,9 @@ Format per entry:
 - **Date**: 2026-11-11
 - **Category**: Optimization
 - **Summary**: Proposes MIGRO, a model-decoupled long-term memory system that preserves historical evidence exactly, organizes it loosely, and defers retrieval selection until query time ("asymmetric fidelity with deferred selectivity"), using a shared semantic index, host-specific adapters for each model's tokenizer, and reversible encoding to shrink archival storage. Reports higher LoCoMo quality than the strongest baseline with far less private memory, retains most quality after handoff to a new model, and uses less storage than the most compact baseline on million-token BEAM histories.
+
+### When Should LLM Agents Forget? Memory Filtering Under Query-Critical Resolver Errors
+- **arXiv**: 2611.17338 ([link](https://arxiv.org/abs/2611.17338))
+- **Date**: 2026-08-30 (announced 2026-11-16)
+- **Category**: Optimization
+- **Summary**: Studies forgetting policies that hard-delete facts a resolver labels as stale, showing gains of about +0.19 to +0.23 with perfect resolution flip to losses of about -0.18 at low resolver reliability, and that wrongly deleting query-critical facts hurts more than retaining stale ones. Argues deletion should be treated as cost-sensitive: validate drop risk on matched data with a deployment-matched gate, or default to retention when validation is unavailable.
