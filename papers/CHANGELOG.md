@@ -4,6 +4,37 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-18
+
+10 new papers (2 Security, 8 Optimization).
+
+**Security**
+- HEAMS: Holistic Evaluation of Agent Memory Systems (2611.20144)
+- Evaluating Authorization and Trust Boundaries in Agentic Orchestration Frameworks (2611.21259)
+
+**Optimization**
+- Jetriever: Shifting Agent Memory Retrieval from Similarity to Utility (2611.21478)
+- StaleBench: Isolating Stale Retrieval in Agent Memory, and Pricing the Fix (2611.19752)
+- LEDGER: Auditable Agent Memory Under Change (2611.20927)
+- Instant Weight-Space Consolidation for Long-Term Memory in LLMs (2611.20759)
+- Read Boundaries in Agent Memory: Consistency, Completeness, and Repair (2611.19264)
+- MemDoctor: Stage-wise Error Attribution and Repair for MLLM Agent Memory (2611.21019)
+- When Facts Change, Which Decisions Break? Dependency-Aware Context Graphs for Agents (2611.19859)
+- AdMem: Expectation-Grounded Procedural Memory for Long-Horizon Task-Solving Agents (2611.20605)
+
+Source: arXiv full-text search sorted by announcement date ("agentic memory", "memory poisoning", "long-term memory"
+LLM, memory + privacy/leakage/injection, "memory" + "LLM agents", RAG poisoning). All candidates verified on their
+abstract pages (submitted 2026-11-14 to 11-16). Skipped as off-scope or borderline: Experience Rot (2611.20922; stale
+experience after tool changes, no memory security/efficiency method), A Matrix with Steps (2611.20230; not explicitly
+LLM-based), Security of Deep Research Agents (2611.20045; not memory-specific), Lost in the Hallway (2611.21485;
+embodied spatial memory benchmark), Physics-Indexed Specialist Memory (2611.21598; catastrophic forgetting in models).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), tenth consecutive day (2026-11-09 through 11-18). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-17
 
 2 new papers (1 Security, 1 Optimization).

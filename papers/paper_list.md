@@ -1259,6 +1259,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Shows that deleting a source message does not erase LLM-agent memory, since derived summaries, facts, embeddings, storage residue, and backups persist, and defines lineage-complete forward-secure erasure against an attacker who later obtains all storage and current keys. Proposes LinEra, which keys each memory from its parents' keys via a puncturable PRF so one puncture renders all descendants unreadable (integrated with mem0); on LoCoMo the attacker recovered 70 of 71 forgotten secrets under logical deletion and none under LinEra, at the cost of a forgetting radius that grows with the writer's fan-in.
 
+### HEAMS: Holistic Evaluation of Agent Memory Systems
+- **arXiv**: 2611.20144 ([link](https://arxiv.org/abs/2611.20144))
+- **Date**: 2026-11-15
+- **Category**: Security
+- **Summary**: Argues agent memory systems should be evaluated as custodians of users' persistent information, and releases an open-source framework with desiderata and benchmarks spanning performance, efficiency, security (poisoning), privacy (inappropriate disclosure), and user sovereignty (correction, deletion, over-retention), plus a prototype memory system (MilaMem) and a governance layer that wraps any memory system. Finds strong task performance can coexist with weak privacy and security, and that recall and retention policies improve poisoning resistance, with recall policies trading disclosure reduction against helpfulness.
+
+### Evaluating Authorization and Trust Boundaries in Agentic Orchestration Frameworks
+- **arXiv**: 2611.21259 ([link](https://arxiv.org/abs/2611.21259))
+- **Date**: 2026-11-16
+- **Category**: Security
+- **Summary**: Runs twelve experiments mapped to the OWASP Top 10 for Agentic Applications against LangChain, LangGraph, AutoGen, and OpenClaw (with gpt-4o-mini), covering prompt injection, unauthorized tool and resource access, memory poisoning, and inter-agent trust attacks. Shows that untrusted memory state can steer responses as a risk distinct from access-control violations, and concludes that framework features and model-level instructions are not sufficient security guarantees on their own.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4543,3 +4555,51 @@ Format per entry:
 - **Date**: 2026-08-30 (announced 2026-11-16)
 - **Category**: Optimization
 - **Summary**: Studies forgetting policies that hard-delete facts a resolver labels as stale, showing gains of about +0.19 to +0.23 with perfect resolution flip to losses of about -0.18 at low resolver reliability, and that wrongly deleting query-critical facts hurts more than retaining stale ones. Argues deletion should be treated as cost-sensitive: validate drop risk on matched data with a deployment-matched gate, or default to retention when validation is unavailable.
+
+### Jetriever: Shifting Agent Memory Retrieval from Similarity to Utility
+- **arXiv**: 2611.21478 ([link](https://arxiv.org/abs/2611.21478))
+- **Date**: 2026-11-16
+- **Category**: Optimization
+- **Summary**: Ranks each stored agent memory by a decision score for its usefulness to the current question rather than by semantic similarity. On InMind's 125 indirect-query tasks it places the gold exchange first in 84.8% of cases (vs. 1.6% for BM25 and 0.0% for MiniLM), scores 55.4% vs. 44.3% for ReFind on a MemoryAgentBench sample, and costs roughly USD 0.008-0.031 per question.
+
+### StaleBench: Isolating Stale Retrieval in Agent Memory, and Pricing the Fix
+- **arXiv**: 2611.19752 ([link](https://arxiv.org/abs/2611.19752))
+- **Date**: 2026-11-15
+- **Category**: Optimization
+- **Summary**: Benchmark of 892 real time-varying facts (currency labels from Wikidata via TempLAMA) showing that standard retrieval metrics can rank agent memory update policies backwards, and proposing Contamination@5, which ranks them correctly. Finds that entity resolution on write and query paths recovers most freshness lost when the lexical anchor is removed, and that Mem0, Graphiti, LangMem, and ERASE each handle superseded facts differently.
+
+### LEDGER: Auditable Agent Memory Under Change
+- **arXiv**: 2611.20927 ([link](https://arxiv.org/abs/2611.20927))
+- **Date**: 2026-11-16
+- **Category**: Optimization
+- **Summary**: Agent memory in which an LLM proposes facts but explicit rules decide currency, source trust, and deletion, with each fact carrying provenance and validity interval; LEDGER+EP adds episodic search over raw turns that is also purged on forget requests. Reaches about 91-94% vs. 82-83% for full-history replay on a synthetic coding-agent workload and matches full replay on a LongMemEval subset using about 1% of the context.
+
+### Instant Weight-Space Consolidation for Long-Term Memory in LLMs
+- **arXiv**: 2611.20759 ([link](https://arxiv.org/abs/2611.20759))
+- **Date**: 2026-11-16
+- **Category**: Optimization
+- **Summary**: Proposes CLAM, where a recurrent hypernetwork compiles session activations into a low-rank adapter in a single forward pass (no gradient steps or LLM generation calls), paired with an episodic buffer for verbatim detail and a fixed-size gated latent state carried across sessions. On LoCoMo and LongMemEval-S with 2-7B models it beats agentic and gradient-based memory baselines while cutting memory build time 3-151x versus extraction systems.
+
+### Read Boundaries in Agent Memory: Consistency, Completeness, and Repair
+- **arXiv**: 2611.19264 ([link](https://arxiv.org/abs/2611.19264))
+- **Date**: 2026-11-14
+- **Category**: Optimization
+- **Summary**: Shows that agent-memory services assembling evidence over multiple reads can pair assertions with source content from different revisions when updates interleave, and evaluates read/write locking, optimistic epoch validation, and snapshot isolation in Cognee and Hindsight. Quantifies the latency trade-offs (e.g., epoch validation lowers update p95 but raises recall p95; Hindsight recall p95 rises from 19 to 29 ms) and recovery behavior after failed incremental updates. Accepted to IEEE CCWC 2027.
+
+### MemDoctor: Stage-wise Error Attribution and Repair for MLLM Agent Memory
+- **arXiv**: 2611.21019 ([link](https://arxiv.org/abs/2611.21019))
+- **Date**: 2026-11-16
+- **Category**: Optimization
+- **Summary**: Decomposes multimodal agent memory into Write, Update, Retrieve, and Answer stages with nine error types, finding most failures originate before answering and injected errors persist when no other record holds the correct fact. MemDoctor lets the memory-building MLLM trace needed facts backward, accept only evidence-grounded diagnoses, and repair the faulty stage; a 4B backbone beats 8B baselines on Mem-Gallery and MemLens and the loop also improves MuRAG and A-Mem.
+
+### When Facts Change, Which Decisions Break? Dependency-Aware Context Graphs for Agents
+- **arXiv**: 2611.19859 ([link](https://arxiv.org/abs/2611.19859))
+- **Date**: 2026-11-15
+- **Category**: Optimization
+- **Summary**: Studies dependency graphs extracted from agent read traces to selectively repair only decisions affected by a changed fact, compared against full recomputation, rolling summary memory, and lexical retrieval on 120 workflows. Trace-derived graphs reduce review load and cost but omitted supports can hurt plan correctness; argues selective memory repair must be judged on both executable correctness and total processing cost.
+
+### AdMem: Expectation-Grounded Procedural Memory for Long-Horizon Task-Solving Agents
+- **arXiv**: 2611.20605 ([link](https://arxiv.org/abs/2611.20605))
+- **Date**: 2026-11-16
+- **Category**: Optimization
+- **Summary**: Observes that accumulated workflow memory underperforms a memoryless ReAct agent in seven of eight AgentBoard domains, and fixes this with per-action credit assignment (actor states an expected outcome, a critic writes a rewarded procedural entry) plus a noisy-OR utility score that drives retrieval, eviction, and merging as a forgetting/consolidation policy. Solves 441 of 707 tasks vs. 388 for ReAct and 312 for the workflow-induction baseline.
