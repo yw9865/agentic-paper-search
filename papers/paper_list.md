@@ -1271,6 +1271,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Runs twelve experiments mapped to the OWASP Top 10 for Agentic Applications against LangChain, LangGraph, AutoGen, and OpenClaw (with gpt-4o-mini), covering prompt injection, unauthorized tool and resource access, memory poisoning, and inter-agent trust attacks. Shows that untrusted memory state can steer responses as a risk distinct from access-control violations, and concludes that framework features and model-level instructions are not sufficient security guarantees on their own.
 
+### Surfacing Disagreement Beats Resolving It: A Gated Ablation Study of Provenance-Weighted Memory for Multi-Agent Debate
+- **arXiv**: 2611.22461 ([link](https://arxiv.org/abs/2611.22461))
+- **Date**: 2026-11-17
+- **Category**: Security
+- **Summary**: Tests five shared-memory mechanisms for multi-agent debate under a fixed budget with pre-declared gates (39 runs on DebateGraph), finding that only one helps: preserving contradictions and passing a ranked conflict set instead of collapsing to a single winning fact, which raises F1 by about 0.34 and cuts successful attacks on poisoned memory items from 22 to 7 of 122 at equal cost. A write trust-gate backfired because its groundedness signal favors fabricated entities already in the graph; argues silently reconciling shared memory is an assumption worth abandoning.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4603,3 +4609,39 @@ Format per entry:
 - **Date**: 2026-11-16
 - **Category**: Optimization
 - **Summary**: Observes that accumulated workflow memory underperforms a memoryless ReAct agent in seven of eight AgentBoard domains, and fixes this with per-action credit assignment (actor states an expected outcome, a critic writes a rewarded procedural entry) plus a noisy-OR utility score that drives retrieval, eviction, and merging as a forgetting/consolidation policy. Solves 441 of 707 tasks vs. 388 for ReAct and 312 for the workflow-induction baseline.
+
+### EvoDisco: Strategy Discovery for Evolving Agent Memory
+- **arXiv**: 2611.22102 ([link](https://arxiv.org/abs/2611.22102))
+- **Date**: 2026-11-17
+- **Category**: Optimization
+- **Summary**: Treats memory evolution as strategy discovery: a learnable policy reads the current memory and recent task history and selects one of four semantic operators (Abstract, Refine, Bridge, Reframe) that compress, split, link, or reorganize memories, trained with a two-level fitness that rewards retrieval-quality gains and penalizes memory complexity. Outperforms MemP and MemRL on ALFWorld, WebShop, and LifelongAgentBench, with up to +17.9 points over MemRL on ALFWorld.
+
+### RegimeCouncil: Paired-Evidence Routing For Memory Conflict Governance In LLM Agents
+- **arXiv**: 2611.22113 ([link](https://arxiv.org/abs/2611.22113))
+- **Date**: 2026-11-17
+- **Category**: Optimization
+- **Summary**: Formalizes memory conflict governance (how far negative feedback about an outdated stored fact should propagate) and proposes a lightweight training-free router that switches between a per-fact local advisor and a pooled global advisor only when global pooling shows sustained utility advantage. Beats the better fixed policy by 5.2-7.3 points on disagreement cases across LongMemEval, TempLAMA, and TAQA with Qwen3-30B-A3B and GPT-4o.
+
+### RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't
+- **arXiv**: 2611.22179 ([link](https://arxiv.org/abs/2611.22179))
+- **Date**: 2026-11-17
+- **Category**: Optimization
+- **Summary**: Shows a minimal RAG-based block-summary memory (BRIDGE) matches prior state of the art on LongMemEval-S and BEAM and beats the best baseline on EverMemBench, arguing extra primitives (extraction, supersession, reflection, graph synthesis) add little on current benchmarks. Five adversarial probes requiring application of remembered rules reveal no single architecture wins, motivating evaluation of what memory enables an agent to do rather than what it retrieves.
+
+### LMMR: Learned Multigranular Memory Retrieval for Small Language Model Agents
+- **arXiv**: 2611.22425 ([link](https://arxiv.org/abs/2611.22425))
+- **Date**: 2026-11-17
+- **Category**: Optimization
+- **Summary**: Learned retrieval for context-limited small-model agents that chooses both which source to read and at what granularity (paragraph vs. sentence fragment), using a marginal-contribution reranker and a token-budgeted selector. Under a 400-token budget a frozen 2B reader beats query expansion by 2.1-4.6 F1 on HotpotQA, 2WikiMultihopQA, and MuSiQue while cutting memory input by 23-27%, and outperforms a coarse retriever plus LLMLingua-2 compression.
+
+### LMLineage: Content Lineage and Context Governance for LLM Agents
+- **arXiv**: 2611.22511 ([link](https://arxiv.org/abs/2611.22511))
+- **Date**: 2026-11-17
+- **Category**: Optimization
+- **Summary**: Out-of-band system that attributes each output sentence of an agent to supporting input passages with calibrated confidence, without white-box access or extra inference passes, and uses this lineage for concept-drift micro compaction that compacts only input documents the agent has stopped referencing while preserving user instructions. Attribution takes about 1 s per turn, stays stable to 40 turns, and drift detection produced no false compactions.
+
+### Multi-Agent Memory Inconsistency: Where Factual Conflicts Disappear in LLM Agents
+- **arXiv**: 2611.22245 ([link](https://arxiv.org/abs/2611.22245))
+- **Date**: 2026-11-17
+- **Category**: Optimization
+- **Summary**: Introduces a benchmark and evidence-flow profiler for multi-agent systems where workers with separate contexts gather evidence for a lead agent, using controlled factual conflicts in document-review tasks. Delegation raises retrieval of both conflicting claims (about 50% to 69%) but lowers conflict detection (16% to 13%) because workers report both claims for only 35% of retrieved pairs, identifying worker-to-lead memory handoffs as the key loss point.

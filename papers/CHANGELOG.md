@@ -4,6 +4,34 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-19
+
+7 new papers (1 Security, 6 Optimization).
+
+**Security**
+- Surfacing Disagreement Beats Resolving It: A Gated Ablation Study of Provenance-Weighted Memory for Multi-Agent Debate (2611.22461)
+
+**Optimization**
+- EvoDisco: Strategy Discovery for Evolving Agent Memory (2611.22102)
+- RegimeCouncil: Paired-Evidence Routing For Memory Conflict Governance In LLM Agents (2611.22113)
+- RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't (2611.22179)
+- LMMR: Learned Multigranular Memory Retrieval for Small Language Model Agents (2611.22425)
+- LMLineage: Content Lineage and Context Governance for LLM Agents (2611.22511)
+- Multi-Agent Memory Inconsistency: Where Factual Conflicts Disappear in LLM Agents (2611.22245)
+
+Source: arXiv search sorted by announcement date ("agent memory", "memory LLM agents", "agent memory attack",
+"RAG poisoning", "long-term memory LLM", memory + poisoning/injection/privacy). All candidates verified on their
+abstract pages (submitted 2026-11-17). Skipped as off-scope or borderline: What Moves a LoCoMo Score? (2611.19199;
+benchmark-scoring methodology rather than a memory method), GuardAgent (2611.22274; memory used as a tool for
+recommendation-attack detection, not memory security), LaFlash (2611.22746; storage hardware), PhysScope (2611.23010;
+visual reasoning), Transfer Once, Ask Locally (2611.23085; on-device audio-visual QA).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), eleventh consecutive day (2026-11-09 through 11-19). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-18
 
 10 new papers (2 Security, 8 Optimization).
