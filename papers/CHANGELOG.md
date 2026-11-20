@@ -4,6 +4,32 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-20
+
+5 new papers (2 Security, 3 Optimization).
+
+**Security**
+- Weighing the Envelope: Component Weight and Arbitration in Envelope-Layer Defenses for a Single LLM Agent (2611.23844)
+- Securing and Auditing Long-Horizon LLM Agents: State-Transfer Auditing and Controls in the Agent Harness (2611.23346)
+
+**Optimization**
+- Resolution as Attention for Efficient Agent Memory Perception (2611.24422)
+- ARISE: Practical Self-Evolving Memory for Accurate and Cost-Efficient Enterprise Agents (2611.23588)
+- MemoSync: Co-Managing Developer-Agent Metamemory Across Contexts (2611.24165)
+
+Source: arXiv search sorted by announcement date ("agent memory", "memory LLM agents", "long-term memory LLM",
+"agentic memory", "memory poisoning", "memory injection agent", "RAG poisoning", "agent memory privacy"). All
+candidates verified on their abstract pages (submitted 2026-11-17/18). Skipped as off-scope or borderline: Beyond
+Episodic Recall / EvoNav (2611.22321; robot navigation memory, not LLM agents), OpenKAGE (2611.24302; Minecraft
+agent-group evolution), Perception into Imagination (2611.22294; world-model memory), Think Once, Act Fast
+(2611.22432; harness self-improvement), Space-X (2611.24004), GateWatch (2611.24619; probe memory footprint).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), twelfth consecutive day (2026-11-09 through 11-20). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-19
 
 7 new papers (1 Security, 6 Optimization).

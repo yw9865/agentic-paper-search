@@ -1277,6 +1277,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Tests five shared-memory mechanisms for multi-agent debate under a fixed budget with pre-declared gates (39 runs on DebateGraph), finding that only one helps: preserving contradictions and passing a ranked conflict set instead of collapsing to a single winning fact, which raises F1 by about 0.34 and cuts successful attacks on poisoned memory items from 22 to 7 of 122 at equal cost. A write trust-gate backfired because its groundedness signal favors fabricated entities already in the graph; argues silently reconciling shared memory is an assumption worth abandoning.
 
+### Weighing the Envelope: Component Weight and Arbitration in Envelope-Layer Defenses for a Single LLM Agent
+- **arXiv**: 2611.23844 ([link](https://arxiv.org/abs/2611.23844))
+- **Date**: 2026-11-18
+- **Category**: Security
+- **Summary**: Studies a single MCP-enabled agent under a threat model where the attacker pre-plants a malicious tool and poisons long-term memory, so that a benign user request triggers the tool without the attacker entering the conversation. Finds that a tool-side forced-verification label substantially reduces semantic breach, but strong "success" memory pulls the defense back and memory authorization wording erodes it in a dose-dependent way, framing envelope labels as a reversible soft gate rather than a substitute for permissions or sandboxing.
+
+### Securing and Auditing Long-Horizon LLM Agents: State-Transfer Auditing and Controls in the Agent Harness
+- **arXiv**: 2611.23346 ([link](https://arxiv.org/abs/2611.23346))
+- **Date**: 2026-11-17
+- **Category**: Security
+- **Summary**: Argues that security failures in long-horizon agents occur at state transfers between context, session history, persistent memory, and environment (e.g. unverified memory writes, memory consolidation stripping source authority, lossy context compaction). Proposes a harness audit architecture emitting hash-chained records at each transfer boundary that supports both causal failure attribution and runtime controls (least privilege, information flow control, transactional recovery), and on 240 fault-injection trajectories catches cross-transfer violations missed by tool-only logs at microsecond overhead.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4645,3 +4657,21 @@ Format per entry:
 - **Date**: 2026-11-17
 - **Category**: Optimization
 - **Summary**: Introduces a benchmark and evidence-flow profiler for multi-agent systems where workers with separate contexts gather evidence for a lead agent, using controlled factual conflicts in document-review tasks. Delegation raises retrieval of both conflicting claims (about 50% to 69%) but lowers conflict detection (16% to 13%) because workers report both claims for only 35% of retrieved pairs, identifying worker-to-lead memory handoffs as the key loss point.
+
+### Resolution as Attention for Efficient Agent Memory Perception
+- **arXiv**: 2611.24422 ([link](https://arxiv.org/abs/2611.24422))
+- **Date**: 2026-11-18
+- **Category**: Optimization
+- **Summary**: Proposes Resolution as Attention (RAA), which renders an agent's past interactions as images and adjusts each one's resolution per step according to its relevance to the next decision, using a lightweight teacher-guided relevance estimator. Cuts token consumption by over 50% without hurting task performance across tasks and backbones, and plugs into existing memory management methods for further savings.
+
+### ARISE: Practical Self-Evolving Memory for Accurate and Cost-Efficient Enterprise Agents
+- **arXiv**: 2611.23588 ([link](https://arxiv.org/abs/2611.23588))
+- **Date**: 2026-11-17
+- **Category**: Optimization
+- **Summary**: Presents a memory architecture in which enterprise agents attribute their own failures, store corrections as retrievable micro memory, and consolidate them into macro rules that are accepted only if held-out accuracy rises, without changing weights, tools, or workflows. Gains 10.9 pp on SOP-Bench and 5.8 pp on tau^2-bench (outperforming GEPA) while using 4.0% fewer model calls and 5.2% fewer output tokens.
+
+### MemoSync: Co-Managing Developer-Agent Metamemory Across Contexts
+- **arXiv**: 2611.24165 ([link](https://arxiv.org/abs/2611.24165))
+- **Date**: 2026-11-18
+- **Category**: Optimization
+- **Summary**: Addresses the opacity of what AI coding agents store, retrieve, and apply across sessions with a co-management system where the agent proposes memory candidates and reports which items it uses, and the developer reviews, edits, and scopes them. A between-subjects study (N=132) shows higher task performance and developer-agent memory alignment with no increase in perceived workload, plus a week-long deployment with nine developers.
