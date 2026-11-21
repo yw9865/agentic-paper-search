@@ -4,6 +4,36 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-21
+
+6 new papers (1 Security, 5 Optimization).
+
+**Security**
+- DriftGuard: Online Memory-Drift Detection via Causal Attribution for LLM Agents (2611.25583)
+
+**Optimization**
+- MemFolder: Structure-Guided Memory Folding for Efficient Agent Memory Management (2611.26427)
+- How Much Should an Agent Remember? Deployment Lessons from Self-Distilled Memory for LLM Agents (2611.26361)
+- Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents (2611.25123)
+- HabitusMem: Belief Memory over Evolving User Preferences for LLM Agents (2611.25855)
+- STARK: Moving towards Personalized Agents That Truly Learn and Remember (2611.25705)
+
+Source: arXiv search sorted by announcement date ("agent memory", "agentic memory", "long-term memory LLM",
+"memory poisoning", "memory injection agent", "RAG poisoning", "agent memory privacy", "memory LLM agents
+compression", "memory retrieval agents", "conversational memory LLM", "memory multi-agent LLM", "prompt injection
+persistent memory"). All candidates verified on their abstract pages (submitted 2026-11-18/19). Skipped as off-scope
+or borderline: Aggron (2611.26435) and TripleKV (2611.25112) (KV-cache serving), ChronoDossier (2611.25407; offline
+persona-state benchmark, memory acquisition out of scope), EvoMem (2611.25889; long-video understanding), EgoWitness
+(2611.25849; egocentric spatial memory benchmark), SpatialMem (2611.25925), Held While Waiting (2611.26480; runtime
+session reservation), TideCache (2611.26619), Attacks and Defenses in Decentralized MAS (2611.25056; no memory
+angle), BiSpace (2611.25861; model editing).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), thirteenth consecutive day (2026-11-09 through 11-21). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-20
 
 5 new papers (2 Security, 3 Optimization).

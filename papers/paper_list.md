@@ -1289,6 +1289,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Argues that security failures in long-horizon agents occur at state transfers between context, session history, persistent memory, and environment (e.g. unverified memory writes, memory consolidation stripping source authority, lossy context compaction). Proposes a harness audit architecture emitting hash-chained records at each transfer boundary that supports both causal failure attribution and runtime controls (least privilege, information flow control, transactional recovery), and on 240 fault-injection trajectories catches cross-transfer violations missed by tool-only logs at microsecond overhead.
 
+### DriftGuard: Online Memory-Drift Detection via Causal Attribution for LLM Agents
+- **arXiv**: 2611.25583 ([link](https://arxiv.org/abs/2611.25583))
+- **Date**: 2026-11-19
+- **Category**: Security
+- **Summary**: Defines "memory drift" as adversarial or misleading retrieved memories steering an agent's execution path toward undesired actions, and proposes a two-stage defense: offline, paired counterfactual replays are aggregated into a memory drift score (MDS) via component-wise majority voting; online, a risk model estimates MDS from pre-action information to flag drift-inducing memories at serving time without counterfactual rollouts. Relevant as a runtime detector for poisoned or harmful memory retrievals.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4675,3 +4681,33 @@ Format per entry:
 - **Date**: 2026-11-18
 - **Category**: Optimization
 - **Summary**: Addresses the opacity of what AI coding agents store, retrieve, and apply across sessions with a co-management system where the agent proposes memory candidates and reports which items it uses, and the developer reviews, edits, and scopes them. A between-subjects study (N=132) shows higher task performance and developer-agent memory alignment with no increase in perceived workload, plus a week-long deployment with nine developers.
+
+### MemFolder: Structure-Guided Memory Folding for Efficient Agent Memory Management
+- **arXiv**: 2611.26427 ([link](https://arxiv.org/abs/2611.26427))
+- **Date**: 2026-11-19
+- **Category**: Optimization
+- **Summary**: Targets the storage, retrieval, and generation cost of ever-growing external agent memory by sequentially reducing record count (RecordFolder, which consolidates records into fewer retrieval units using cross-record structure) and context length (ContextFolder, which encodes records into compact text with verification feedback). On Mem0, RecordFolder retains 99.0% of original average performance across three text benchmarks with 50% fewer records, beating the strongest baseline by 1.9 pp in retention.
+
+### How Much Should an Agent Remember? Deployment Lessons from Self-Distilled Memory for LLM Agents
+- **arXiv**: 2611.26361 ([link](https://arxiv.org/abs/2611.26361))
+- **Date**: 2026-11-19
+- **Category**: Optimization
+- **Summary**: Mines one to three lessons per episode from agent trajectories, consolidates them into guidelines, and studies how much of that memory to inject at inference; the central finding is that the right memory budget is model-dependent. DeepSeek-V3.2 benefits from its full 191-guideline set (+9.5 task completion), while gpt-oss-120b improves from 39.9% to 51.2% with all guidelines but peaks at 55.4% with a selected subset of about 29 (accepted to IAAI 2027).
+
+### Forget Freely, Grep Later: Lossless, Index-Free Memory for Long-Horizon LLM Agents
+- **arXiv**: 2611.25123 ([link](https://arxiv.org/abs/2611.25123))
+- **Date**: 2026-11-18
+- **Category**: Optimization
+- **Summary**: Proposes GrepMem, an append-only plain-text log of the full agent history plus a regex search tool, with no embeddings, index, or extraction model, and trains Qwen3.5-9B with RL under five context-management strategies. GrepMem reaches 95-97% accuracy on ContextBench versus at most 21% for lossy baselines and beats SUPO's summarization by 8.8 pp on BCP-Multi, arguing that lossless cheap storage plus search can replace lossy compression.
+
+### HabitusMem: Belief Memory over Evolving User Preferences for LLM Agents
+- **arXiv**: 2611.25855 ([link](https://arxiv.org/abs/2611.25855))
+- **Date**: 2026-11-19
+- **Category**: Optimization
+- **Summary**: Reframes long-term agent memory as the assistant's revisable belief about a user's latent, changing preference state, implemented as a trained memory writer that states these beliefs as text records for a frozen agent. Achieves the best results among compared memory systems on PersonaMem-v2 and VitaBench 2.0 across two agent families, addressing how memory should be updated rather than merely accumulated as preferences evolve.
+
+### STARK: Moving towards Personalized Agents That Truly Learn and Remember
+- **arXiv**: 2611.25705 ([link](https://arxiv.org/abs/2611.25705))
+- **Date**: 2026-11-19
+- **Category**: Optimization
+- **Summary**: Introduces a dual-graph memory architecture with an Episodic Graph of linked interaction episodes and an Insight Graph of LLM-extracted behavioral signals, where events act as edges between insights, plus cross-user transfer for cold-start users. Improves over prior state of the art by 1.48 judge score on LongMemEval information extraction and 0.93 on LoCoMo open-domain questions, and gains 3 ROUGE-L on LongLaMP at 5% graph sparsity.
