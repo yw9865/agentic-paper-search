@@ -4711,3 +4711,15 @@ Format per entry:
 - **Date**: 2026-11-19
 - **Category**: Optimization
 - **Summary**: Introduces a dual-graph memory architecture with an Episodic Graph of linked interaction episodes and an Insight Graph of LLM-extracted behavioral signals, where events act as edges between insights, plus cross-user transfer for cold-start users. Improves over prior state of the art by 1.48 judge score on LongMemEval information extraction and 0.93 on LoCoMo open-domain questions, and gains 3 ROUGE-L on LongLaMP at 5% graph sparsity.
+
+### MemMend: A Selective Revision Framework for Memory Question Answering
+- **arXiv**: 2611.25721 ([link](https://arxiv.org/abs/2611.25721))
+- **Date**: 2026-11-19
+- **Category**: Optimization
+- **Summary**: Proposes a modular selective-revision layer for long-term memory QA that routes only potentially incomplete answers to an editor, which applies bounded exact-text replacements accepted only when grounded in resolvable source coordinates, avoiding extra semantic-verification calls. On LoCoMo it beats a verified revision chain (67.17 F1, 88.35 Judge) while using 62.37% fewer revision calls, and as a drop-in it lifts native PropMem, Mem0, and SimpleMem answers by up to 6.44 F1, offering a reusable quality-cost operating point for agent memory systems.
+
+### OpenKAGE: Open-Ended Lifelong Learning in the Open World via Knowledge-Sharing Agent-Group Evolution
+- **arXiv**: 2611.24302 ([link](https://arxiv.org/abs/2611.24302))
+- **Date**: 2026-11-18
+- **Category**: Optimization
+- **Summary**: Introduces an agent-group framework with a two-layer knowledge store (a memory layer for situated memories and an experience layer for transferable experience and skills with applicability conditions) and a sharing mechanism that semantically consolidates textual experience into an evolving shared knowledge graph while sharing executable skills verbatim. In Minecraft it sustains open-ended exploration across agent groups, and the accumulated memory transfers to new groups on a different backbone model, addressing multi-agent memory consolidation for long-horizon lifelong learning.

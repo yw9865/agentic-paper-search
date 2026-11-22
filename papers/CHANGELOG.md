@@ -4,6 +4,29 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-22
+
+2 new papers (0 Security, 2 Optimization).
+
+**Optimization**
+- MemMend: A Selective Revision Framework for Memory Question Answering (2611.25721)
+- OpenKAGE: Open-Ended Lifelong Learning in the Open World via Knowledge-Sharing Agent-Group Evolution (2611.24302)
+
+Source: arXiv search sorted by announcement date ("agent memory", "agentic memory", "memory poisoning", "long-term
+memory LLM", "RAG poisoning", "memory LLM agents", "conversational memory", "memory injection", "memory privacy
+agent", "memory compression agent", "experience memory agent", "memory retrieval agents"). No submissions newer than
+2026-11-19 were listed yet (weekend). Both candidates verified on their abstract pages; they were missed by the
+previous run. Skipped as off-scope or borderline: GuardAgent (2611.22274; memory used as a detector component, not a
+memory-security study), LaFlash (2611.22746; flash hardware), ShelfKV (2611.23769; VLM KV cache), MEM-STRESS
+(2611.23691; HCI field study), Safe Personal RSI (2611.23651; self-update gating), KnowledgeClaw (2611.24294; knowledge
+base construction).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), fourteenth consecutive day (2026-11-09 through 11-22). Check credentials in
+~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-21
 
 6 new papers (1 Security, 5 Optimization).
