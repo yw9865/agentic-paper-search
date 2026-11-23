@@ -4,6 +4,18 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-23
+
+No new papers found.
+
+Source: arXiv search sorted by announcement date ("agent memory", "agentic memory", "memory poisoning", "long-term
+memory LLM", "RAG poisoning", "conversational memory", "memory LLM agents") plus web search. The newest listed
+submissions were still dated 2026-11-19 (Monday's announcement not yet out); every on-topic candidate from
+2026-11-18/19 is already in seen_ids.json or was triaged as out of scope in earlier runs. Older relevant papers
+surfaced by web search (ACON 2510.00615, Memex 2603.04257) were left out as well outside the recency window.
+
+---
+
 ## 2026-11-22
 
 2 new papers (0 Security, 2 Optimization).
