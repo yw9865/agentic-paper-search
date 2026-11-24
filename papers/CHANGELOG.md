@@ -4,6 +4,33 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-24
+
+3 new papers (2 Security, 1 Optimization).
+
+**Security**
+- Epistemic Guard: Out-of-Process MCP Receipt Proxying, Post-Turn Prose Supervision, and Provenance-Gated Memory for Tool-Using Autonomous Agents (2611.27095)
+- Privacy Protection in Self-Evolving Personal Agents: Persistent Memory and Cross-Carrier Transfer (2611.26983)
+
+**Optimization**
+- Contexture: Runtime Context Eviction for High-Throughput Agent Serving (2611.26980)
+
+Source: arXiv search sorted by announcement date ("agent memory", "agentic memory", "memory LLM agents", "memory
+poisoning", "long-term memory LLM", "RAG poisoning", "conversational memory", "memory injection", "memory compression
+agent", "experience memory agent", "memory privacy agent", "memory retrieval agents", "memory multi-agent LLM") plus
+web search. Monday's announcement (submissions of 2026-11-19/20) is now listed. All three verified on their abstract
+pages. Skipped as off-scope or borderline: SNOOP / Actions Speak Louder than Words (2611.27046; web-behavior covert
+channel, memory only one leaked context source), LightRAG regulation poisoning thesis (2611.27460; static RAG corpus
+poisoning), Mem-X (2611.27166), NavTTT (2611.27219) and VMSA (2611.27381) (embodied/video memory capability, no
+efficiency or security angle), AstronautBench (2611.26910; self-improvement benchmark), System-One RSI (2611.26007;
+"muscle memory" metaphor), RAG KB word-substitution poisoning detection (2611.27410; static knowledge-base poisoning, judged from title only).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), fifteenth consecutive failed attempt (2026-11-09 through 11-24; no email attempted on 11-23).
+Check credentials in ~/.config/agentic-paper-search/email.env.
+
+---
+
 ## 2026-11-23 [Conference scan]
 
 No new conference papers found.

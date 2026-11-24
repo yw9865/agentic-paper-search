@@ -1295,6 +1295,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Defines "memory drift" as adversarial or misleading retrieved memories steering an agent's execution path toward undesired actions, and proposes a two-stage defense: offline, paired counterfactual replays are aggregated into a memory drift score (MDS) via component-wise majority voting; online, a risk model estimates MDS from pre-action information to flag drift-inducing memories at serving time without counterfactual rollouts. Relevant as a runtime detector for poisoned or harmful memory retrievals.
 
+### Epistemic Guard: Out-of-Process MCP Receipt Proxying, Post-Turn Prose Supervision, and Provenance-Gated Memory for Tool-Using Autonomous Agents
+- **arXiv**: 2611.27095 ([link](https://arxiv.org/abs/2611.27095))
+- **Date**: 2026-11-20
+- **Category**: Security
+- **Summary**: Targets "provenance collapse" in MCP tool-using agents, where unverified prose or web text enters durable memory alongside verified tool outputs, and releases an open-source out-of-process MCP receipt proxy that isolates signing keys, keeps Merkle logs, and gates SQLite memory writes across 7 provenance domains. Reports blocking 100% of 100 unauthorized memory writes and rejecting all tampered receipts, with 93.2% accuracy on 250 traces at 17.9 ms median CPU latency, making it a practical write-time defense against memory injection.
+
+### Privacy Protection in Self-Evolving Personal Agents: Persistent Memory and Cross-Carrier Transfer
+- **arXiv**: 2611.26983 ([link](https://arxiv.org/abs/2611.26983))
+- **Date**: 2026-11-20
+- **Category**: Security
+- **Summary**: Thematic survey of privacy in personal agents whose persistent memory carries private experience into later decisions, comparing memory admission, maintenance, release, and withdrawal by protected change, observer, and validation setting. Worked scenarios trace one private fact through booking, feedback-driven learning, and withdrawal, and diagnostic experiments quantify the utility cost of wider label protection and broad memory deletion and show how missing lineage hides descendant memories from withdrawal.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4723,3 +4735,9 @@ Format per entry:
 - **Date**: 2026-11-18
 - **Category**: Optimization
 - **Summary**: Introduces an agent-group framework with a two-layer knowledge store (a memory layer for situated memories and an experience layer for transferable experience and skills with applicability conditions) and a sharing mechanism that semantically consolidates textual experience into an evolving shared knowledge graph while sharing executable skills verbatim. In Minecraft it sustains open-ended exploration across agent groups, and the accumulated memory transfers to new groups on a different backbone model, addressing multi-agent memory consolidation for long-horizon lifelong learning.
+
+### Contexture: Runtime Context Eviction for High-Throughput Agent Serving
+- **arXiv**: 2611.26980 ([link](https://arxiv.org/abs/2611.26980))
+- **Date**: 2026-11-20
+- **Category**: Optimization
+- **Summary**: Observes that agents resend ever-growing execution histories in which 64% of final-history tokens are superseded by later tool operations, and decouples the harness's full history from the model's execution context so superseded content is evicted at runtime without extra model calls or training. Improves throughput under SLO by 20-73% over the best baseline and cuts GPU energy per session by up to 11% with a mean +1.4-point accuracy change, addressing working-memory/context management cost for long-horizon agents.
