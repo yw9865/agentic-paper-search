@@ -4,6 +4,35 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-25
+
+6 new papers (1 Security, 5 Optimization).
+
+**Security**
+- FORGETMENOT: Auditing Memory Driven Privacy Risks in Commercial AI Agents (2611.29804)
+
+**Optimization**
+- DMC-5: Dual-Model Collaboration with Cache-aware Context Compression for Long-horizon Agents (2611.30412)
+- Engram: Multi-Stage Memory for Agentic Tuning of Heterogeneous Models (2611.28356)
+- HyperHarness: Learning to Generate Personalized Agent Harnesses from User Histories (2611.29062)
+- ContextFact: Remembering Facts in Context for Long-Term Conversational Agents (2611.29155)
+- Evaluating Memanto on DolphinBench for AI Agents (2611.28231)
+
+Source: arXiv search sorted by announcement date ("agent memory", "agentic memory", "memory LLM agents", "memory
+poisoning", "long-term memory LLM", "memory injection", "memory compression agent", "conversational memory", "memory
+privacy agent", "memory multi-agent LLM", "RAG poisoning", "experience memory agent", "memory retrieval agents",
+"context compression agents", "persistent memory agent attack", "memory forgetting consolidation LLM"). All six verified
+on their abstract pages. Skipped as off-scope or borderline: MMMem (2611.30287; multimodal experience consolidation
+framed as accuracy, no efficiency or security angle), Composing Distilled Memory and Retrieval Policies (2611.30230;
+capability/transfer study), Grounding Collaborative Agents in Group Cognition (2611.29036; group-briefing benchmark),
+PULSE (2611.28374; project-state benchmark), RecallWorld (2611.28666), SuperNav-1.5 (2611.29912) and Self-Upgrading
+Embodied Agents (2611.31117) (embodied/video memory capability; judged from title only), Aggron (2611.26435) and TripleKV (2611.25112) (already
+skipped previously as KV-cache serving infrastructure).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), sixteenth consecutive failed attempt (2026-11-09 through 11-25; no email attempted on 11-23).
+Check credentials in ~/.config/agentic-paper-search/email.env.
+
 ## 2026-11-24
 
 3 new papers (2 Security, 1 Optimization).

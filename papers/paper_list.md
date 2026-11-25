@@ -1307,6 +1307,12 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Thematic survey of privacy in personal agents whose persistent memory carries private experience into later decisions, comparing memory admission, maintenance, release, and withdrawal by protected change, observer, and validation setting. Worked scenarios trace one private fact through booking, feedback-driven learning, and withdrawal, and diagnostic experiments quantify the utility cost of wider label protection and broad memory deletion and show how missing lineage hides descendant memories from withdrawal.
 
+### FORGETMENOT: Auditing Memory Driven Privacy Risks in Commercial AI Agents
+- **arXiv**: 2611.29804 ([link](https://arxiv.org/abs/2611.29804))
+- **Date**: 2026-11-22
+- **Category**: Security
+- **Summary**: Auditing framework for the privacy risks of long-term (persistent and chat-history) memory in five commercial AI agents, built from ~3,800 multi-turn sessions (~6M tokens). Finds that user-visible memory shows only ~20% of the attributes agents actually store, that a stealth memory injection (SMI) technique raises stored sensitive attributes by 25% (Copilot) and 15% (Claude), that all five agents leak after memory deletion, and that memory can be disclosed to a third-party email recipient (31.9% leakage for Gemini).
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4741,3 +4747,33 @@ Format per entry:
 - **Date**: 2026-11-20
 - **Category**: Optimization
 - **Summary**: Observes that agents resend ever-growing execution histories in which 64% of final-history tokens are superseded by later tool operations, and decouples the harness's full history from the model's execution context so superseded content is evicted at runtime without extra model calls or training. Improves throughput under SLO by 20-73% over the best baseline and cuts GPU energy per session by up to 11% with a mean +1.4-point accuracy change, addressing working-memory/context management cost for long-horizon agents.
+
+### DMC-5: Dual-Model Collaboration with Cache-aware Context Compression for Long-horizon Agents
+- **arXiv**: 2611.30412 ([link](https://arxiv.org/abs/2611.30412))
+- **Date**: 2026-11-23
+- **Category**: Optimization
+- **Summary**: Splits long-horizon agent work between a general compression model that integrates the full trajectory (kept as an append-only canonical view so its prefix stays cacheable) and a specialized agent model that acts on a compact decision view, with integrity-aware memory abstractions (YAMATO) to keep execution-critical tool information through lossy compression. On AppWorld, OfficeBench, and multi-objective QA it cuts agent input by 38.5-57.0% and end-to-end cost by 14.5-28.0% with 78-85% compressor cache hits, while improving task performance by 1.0-5.8%.
+
+### Engram: Multi-Stage Memory for Agentic Tuning of Heterogeneous Models
+- **arXiv**: 2611.28356 ([link](https://arxiv.org/abs/2611.28356))
+- **Date**: 2026-11-20
+- **Category**: Optimization
+- **Summary**: Cross-session memory for LLM agents that tune neural networks, linking past trial outcomes with their hypotheses and rationale and checking whether the evidence applies to the current model; an online agent injects lessons at three decision points while an offline agent distills validated lessons between sessions. On two ads models it matches a no-memory 32-trial result with 47% fewer trials, showing memory consolidation as a direct cost reduction for long-horizon agent workflows.
+
+### HyperHarness: Learning to Generate Personalized Agent Harnesses from User Histories
+- **arXiv**: 2611.29062 ([link](https://arxiv.org/abs/2611.29062))
+- **Date**: 2026-11-21
+- **Category**: Optimization
+- **Summary**: Learns a shared history-to-harness generator that writes executable, user-specific memory retrieval and answer-guidance code from a user's history in a single pass, avoiding costly per-user harness search. Across PersonaMem v3, Mem-PAL, and MemoryCD it ranks first in seven of nine settings and cuts answer-time tokens by 90.32% relative to long-context prompting.
+
+### ContextFact: Remembering Facts in Context for Long-Term Conversational Agents
+- **arXiv**: 2611.29155 ([link](https://arxiv.org/abs/2611.29155))
+- **Date**: 2026-11-22
+- **Category**: Optimization
+- **Summary**: Studies how memory-construction and retrieval-unit boundaries affect answerability, then links context-preserving fact memories with source-grounded entity representations and uses entity-linked expansion at query time. Reaches 86.49% on LoCoMo and 91.00% on LongMemEval-S while using only 21% of the evidence tokens of the strongest baseline, improving memory retrieval efficiency.
+
+### Evaluating Memanto on DolphinBench for AI Agents
+- **arXiv**: 2611.28231 ([link](https://arxiv.org/abs/2611.28231))
+- **Date**: 2026-11-20
+- **Category**: Optimization
+- **Summary**: Evaluates Memanto, a memory agent that ranks memories with an information-theoretic relevance score, on DolphinBench's 600 workplace tasks where the memory need is implicit in tool calls. Completes 83.83% of tasks (versus 70.67% for the best reported Mem0 setup) at the lowest total cost ($10.86 vs. $61.48) and shortest median latency (15.32 s), showing that the memory system drives both task completion and its cost.
