@@ -1313,6 +1313,18 @@ Format per entry:
 - **Category**: Security
 - **Summary**: Auditing framework for the privacy risks of long-term (persistent and chat-history) memory in five commercial AI agents, built from ~3,800 multi-turn sessions (~6M tokens). Finds that user-visible memory shows only ~20% of the attributes agents actually store, that a stealth memory injection (SMI) technique raises stored sensitive attributes by 25% (Copilot) and 15% (Claude), that all five agents leak after memory deletion, and that memory can be disclosed to a third-party email recipient (31.9% leakage for Gemini).
 
+### When Successful Collaboration Becomes an Attack Surface: Insider Memory Poisoning in Multi-Agent Systems
+- **arXiv**: 2611.31307 ([link](https://arxiv.org/abs/2611.31307))
+- **Date**: 2026-11-22
+- **Category**: Security
+- **Summary**: Proposes MIMPA, an insider attack on multi-agent systems with shared memory of successful collaboration records: using only normal participation privileges (no direct memory access), a malicious agent helps the team answer correctly while embedding a target-specific payload that is retained as a "successful" record and later retrieved to steer benign agents to a designated wrong answer. Outperforms existing insider attacks across three benchmarks and two backbones, survives hierarchical memory management, and is only partially mitigated by auditing.
+
+### DoppelVet: Comparative Safety Verification for Self-Evolving Agents
+- **arXiv**: 2611.29306 ([link](https://arxiv.org/abs/2611.29306))
+- **Date**: 2026-11-22
+- **Category**: Security
+- **Summary**: Verification framework that vets proposed updates (natural-language memories or skills) before they enter a self-evolving agent's persistent state, by constructing a signal-matched alternative update and replaying both from the same state to compare behaviors. Raises harmful-update detection AUC from 0.762 to 0.940 (DoppelVet-Grid) and 0.681 to 0.826 (DoppelVet-Tool) across nine verifiers, and cuts degrading trajectories from 30.39% to 0.43% over a ten-generation self-update loop, acting as a write-time guard against harmful memory persistence.
+
 ## Optimization
 
 ### Auditing Forgetting in Limited Memory Language Models
@@ -4777,3 +4789,39 @@ Format per entry:
 - **Date**: 2026-11-20
 - **Category**: Optimization
 - **Summary**: Evaluates Memanto, a memory agent that ranks memories with an information-theoretic relevance score, on DolphinBench's 600 workplace tasks where the memory need is implicit in tool calls. Completes 83.83% of tasks (versus 70.67% for the best reported Mem0 setup) at the lowest total cost ($10.86 vs. $61.48) and shortest median latency (15.32 s), showing that the memory system drives both task completion and its cost.
+
+### Leto: Utility-Centric Agent Memory
+- **arXiv**: 2611.33005 ([link](https://arxiv.org/abs/2611.33005))
+- **Date**: 2026-11-24
+- **Category**: Optimization
+- **Summary**: Reframes agent memory as a prediction problem optimized for future utility rather than fidelity to the past: memory indexing keeps conversation details reachable via their sources, memory replay anticipates the context a request needs, and a utility loop uses response outcomes to refine future memory selection. Beats the strongest of six memory systems by 16.3 points on PrefEval and leads MemoryArena, while matching raw-history retrieval on long-context understanding with fewer served context tokens.
+
+### SAG-Mem-1.0 Technical Report
+- **arXiv**: 2611.33124 ([link](https://arxiv.org/abs/2611.33124))
+- **Date**: 2026-11-24
+- **Category**: Optimization
+- **Summary**: Conversational memory framework that stores complete dialogue messages in non-overlapping chunks with a lexical index (no LLM-based extraction or summarization at construction time) and finds complementary evidence via BM25 plus evidence-guided lexical query expansion. Scores 83.08 on LoCoMo and 80.20 on LongMemEval (+7.20 over the best baseline), and its Lite variant has lower operational cost than full context and all memory baselines with low query latency.
+
+### RECAP: Training Long-horizon LLM Agents with Context Compaction
+- **arXiv**: 2611.31258 ([link](https://arxiv.org/abs/2611.31258))
+- **Date**: 2026-10-19
+- **Category**: Optimization
+- **Summary**: RL framework that jointly learns context compaction (replacing interaction history with summaries under a limited context budget) and the agent policy, using a behavior-distortion objective that measures divergence between the agent's behavior under compressed vs. original history; its gradient yields a distortion-based summary reward plus self-distillation for post-compaction actions. Improves Qwen3.5-4B by 4.6% on BrowseComp-plus and 4.3% on SWE-bench Verified over task-reward-only RL.
+
+### CompAct-Bench: A Benchmark for Working-Context Compaction in Long-Horizon Agent Tasks
+- **arXiv**: 2611.25673 ([link](https://arxiv.org/abs/2611.25673))
+- **Date**: 2026-11-19
+- **Category**: Optimization
+- **Summary**: Benchmark that inserts compaction boundaries into successful agent trajectories (BrowseComp, SWE-bench, an internal CompanyBench), compresses the preceding working context with the model under test at controlled retention ratios, and measures downstream task completion. Finds compaction remains highly lossy even for frontier models, with failures stemming both from omitted information and distorted task state (e.g. unresolved issues rewritten as conclusions).
+
+### KV-LTM: Persistent Per-Session KV Caches as Long-Term Memory for Personal Assistants
+- **arXiv**: 2611.21998 ([link](https://arxiv.org/abs/2611.21998))
+- **Date**: 2026-11-16
+- **Category**: Optimization
+- **Summary**: Proposes a long-term memory tier for personal assistants that stores each session's raw text plus its KV cache under a fixed reader model, answering by restoring cached sessions instead of relying on lossy derivation/selection, with text as memory of record and the cache as a recompute-free prefill accelerator. Specifies retention budgets and read path, analytically sizes storage (~0.34-3.6 TB per user-year vs. ~49 MB of text) and per-query cost, and defines an evaluation protocol for the storage-vs-recompute trade-off.
+
+### Rethinking Agent Trajectory Compression: A Workflow-Aware Perspective
+- **arXiv**: 2611.08865 ([link](https://arxiv.org/abs/2611.08865))
+- **Date**: 2026-11-06
+- **Category**: Optimization
+- **Summary**: Proposes WAAC, which compresses long-horizon agent trajectories by extracting reusable workflow compression experience from successful past trajectories and combining it with online backward dependency analysis to decide what each piece of history must retain. Reaches 87.6 on PinchBench and 19.0% perfect completion on Odysseys while cutting execution cost by 19.7% and 29.1% versus the strongest baselines.

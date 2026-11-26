@@ -4,6 +4,35 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-26
+
+8 new papers (2 Security, 6 Optimization).
+
+**Security**
+- When Successful Collaboration Becomes an Attack Surface: Insider Memory Poisoning in Multi-Agent Systems (2611.31307)
+- DoppelVet: Comparative Safety Verification for Self-Evolving Agents (2611.29306)
+
+**Optimization**
+- Leto: Utility-Centric Agent Memory (2611.33005)
+- SAG-Mem-1.0 Technical Report (2611.33124)
+- RECAP: Training Long-horizon LLM Agents with Context Compaction (2611.31258)
+- CompAct-Bench: A Benchmark for Working-Context Compaction in Long-Horizon Agent Tasks (2611.25673)
+- KV-LTM: Persistent Per-Session KV Caches as Long-Term Memory for Personal Assistants (2611.21998)
+- Rethinking Agent Trajectory Compression: A Workflow-Aware Perspective (2611.08865)
+
+Source: arXiv search sorted by announcement date ("agent memory", "agentic memory", "memory poisoning", "long-term
+memory LLM", "memory injection agent", "memory compression agent", "conversational memory", "RAG poisoning", "context
+compression agents", "memory privacy agent", "memory multi-agent LLM", "experience memory agent", "memory retrieval
+agents", "memory forgetting consolidation LLM"). All eight verified on their abstract pages. Skipped as off-scope or
+borderline: EON query obfuscation (2611.31344; embedding-guardrail evasion in dense retrieval generally, memory retrieval
+only one of several targets), LoomKV (2611.32954; KV-cache serving infrastructure), CoverMem (2611.32119), XMind
+(2611.32209), RoboLiveMem (2611.30047) (embodied/driving memory; judged from title only), RePrism (2611.32545) and
+TimeTravelContainer (2611.32255) (agent serving/sandbox infrastructure; judged from title only).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), seventeenth consecutive failed attempt (2026-11-09 through 11-26; no email attempted on 11-23).
+Check credentials in ~/.config/agentic-paper-search/email.env.
+
 ## 2026-11-25
 
 6 new papers (1 Security, 5 Optimization).
