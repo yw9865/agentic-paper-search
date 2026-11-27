@@ -4,6 +4,32 @@ Log of paper additions from each scheduled run. Newest first.
 
 ---
 
+## 2026-11-27
+
+4 new papers (0 Security, 4 Optimization).
+
+**Optimization**
+- MGMem: An Efficient, Deterministic, and Provenance-Preserving Framework for Long-Horizon Agent Memory (2611.33174)
+- Semantic Density Does Not Predict Agent-Memory Collapse (2611.33184)
+- Failure Broadens, Success Sharpens: Continual Adaptation of Tool-Use Agents Across Diverse Tasks with Dual-Polarity Memory (2611.33612)
+- Procedure Inference as Memory: Learning Recruiter Decision Procedures from OKF-Structured Episodes in Multi-Session Hiring Assistants (2611.34576)
+
+Source: arXiv search sorted by announcement date ("agent memory", "agentic memory", "memory poisoning", "long-term
+memory LLM", "memory injection agent", "context compression agent", "RAG poisoning", "conversational memory", "memory
+privacy agent", "memory extraction attack LLM", "experience memory agent", "memory retrieval agents", "memory
+consolidation forgetting LLM", "memory multi-agent LLM", "persistent memory attack"). All four verified on their
+abstract pages (2611.33174 and 2611.33184 carry October 2026 submission dates despite 2611 IDs, as shown on arXiv).
+No new on-topic Security papers found. Skipped as off-scope or borderline: TASK Memory (2611.34762; use-time memory
+hallucination/reliability, no efficiency or security angle), MetaDecomp (2611.33822; procedural memory for task
+decomposition, capability-focused), BRAG (2611.31656; general Bayesian RAG retrieval), EATS (2611.33897), Agentic
+LongLive (2611.34907), MMotion (2611.33819), Read Before You Use (2611.33687) (domain/multimodal memory capability),
+Routing and Cache Retention (2611.34584; KV-cache serving infrastructure), PROVE (2611.34215; multi-agent collusion,
+not memory).
+
+Note: summary email NOT sent; scripts/send_email.py failed at SMTP AUTH (SMTPServerDisconnected: Connection
+unexpectedly closed), eighteenth consecutive failed attempt (2026-11-09 through 11-27; no email attempted on 11-23).
+Check credentials in ~/.config/agentic-paper-search/email.env.
+
 ## 2026-11-26
 
 8 new papers (2 Security, 6 Optimization).

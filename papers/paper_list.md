@@ -4825,3 +4825,27 @@ Format per entry:
 - **Date**: 2026-11-06
 - **Category**: Optimization
 - **Summary**: Proposes WAAC, which compresses long-horizon agent trajectories by extracting reusable workflow compression experience from successful past trajectories and combining it with online backward dependency analysis to decide what each piece of history must retain. Reaches 87.6 on PinchBench and 19.0% perfect completion on Odysseys while cutting execution cost by 19.7% and 29.1% versus the strongest baselines.
+
+### MGMem: An Efficient, Deterministic, and Provenance-Preserving Framework for Long-Horizon Agent Memory
+- **arXiv**: 2611.33174 ([link](https://arxiv.org/abs/2611.33174))
+- **Date**: 2026-10-21
+- **Category**: Optimization
+- **Summary**: Replaces the costly, non-deterministic generative-LLM indexing step of long-horizon agent memory (summaries, facts, knowledge graphs; thousands of generative calls per build) with a deterministic discriminative-parser pipeline that organizes recurring cross-session mentions into an incidence graph, resolves question mentions with a subject-conditioned three-stage resolver, and returns raw dialogue episodes to preserve provenance. Outperforms matched-protocol baselines on LoCoMo with zero generative indexing calls and stays competitive on LongMemEval-S.
+
+### Semantic Density Does Not Predict Agent-Memory Collapse
+- **arXiv**: 2611.33184 ([link](https://arxiv.org/abs/2611.33184))
+- **Date**: 2026-10-28
+- **Category**: Optimization
+- **Summary**: Pre-registered study of whether memory-store statistics (mean pairwise cosine similarity plus 13 geometry, retrieval, and graph statistics) give early warning of accuracy decline in persistent agent memory, across 805 snapshots from 13 memory methods on ALFWorld, AppWorld, ScienceWorld, WebShop, and ARC-AGI. Finds no statistic reliably predicts collapse (classifiers falsely flag 56.9% of stable checkpoints on PropWorld runs up to 5,000 tasks), while size-limited stores stay stable and the only failure came from unbounded whole-store prompting exceeding input capacity, informing memory-capacity and growth management.
+
+### Failure Broadens, Success Sharpens: Continual Adaptation of Tool-Use Agents Across Diverse Tasks with Dual-Polarity Memory
+- **arXiv**: 2611.33612 ([link](https://arxiv.org/abs/2611.33612))
+- **Date**: 2026-11-25
+- **Category**: Optimization
+- **Summary**: Proposes DualPM, a retrieval-free procedural memory workflow that generates memories from both local successes and failures within each trajectory and periodically consolidates them under a fixed memory capacity to prevent memory explosion over long multi-domain tool-use task streams. Shows failure memory broadens coverage while success memory streamlines execution, with cross-domain generalization and portability on EvoMemBench (NeurIPS 2026 workshop).
+
+### Procedure Inference as Memory: Learning Recruiter Decision Procedures from OKF-Structured Episodes in Multi-Session Hiring Assistants
+- **arXiv**: 2611.34576 ([link](https://arxiv.org/abs/2611.34576))
+- **Date**: 2026-11-25
+- **Category**: Optimization
+- **Summary**: Introduces Open Knowledge Format (OKF)-indexed episodic memory that retrieves related events through their lineage, plus Procedure Memory that learns reusable decision procedures from episodes via prompted reflection or RL, for multi-session assistants. OKF retrieval beats full-history context and conversation search while using 69% fewer context tokens, Procedure Memory cuts conversational turns by up to 39%, and on PersonaMem-v2 it reaches 50.2% accuracy versus 48.6% for full history with 90.5% fewer reader input tokens.
